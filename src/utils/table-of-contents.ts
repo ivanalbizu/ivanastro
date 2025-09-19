@@ -19,7 +19,7 @@ export function extractHeadings(content: string): Heading[] {
   
   while ((match = headingRegex.exec(withoutFrontmatter)) !== null) {
     const depth = match[1].length;
-    const text = match[2].trim();
+    const text = match[2];
     const slug = slugger.slug(text);
 
     headings.push({ depth, text, slug });
