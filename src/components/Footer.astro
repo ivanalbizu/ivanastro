@@ -4,7 +4,7 @@ import SocialLinks from '@components/SocialLinks.astro';
 
 const currentYear = new Date().getFullYear();
 ---
-<footer class="site-footer">
+<footer class="footer" id="footer">
   <div class="footer-content">
     <div class="footer-info">
       <p class="copyright">
@@ -20,7 +20,7 @@ const currentYear = new Date().getFullYear();
 </footer>
 
 <style lang="scss">
-  .site-footer {
+  .footer {
     background-color: var(--color-surface);
     border-top: var(--border-width-md) solid var(--color-border);
     margin-top: auto;

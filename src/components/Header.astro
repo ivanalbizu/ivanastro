@@ -9,6 +9,10 @@ const { base = "" } = Astro.site
 ---
 
 <header class="site-header">
+  <div class="skip-to-content">
+    <a href="#main-content">Saltar al contenido principal</a>
+    <a href="#footer">Saltar a enlaces en pié de página</a>
+  </div>
   <div class="header-content">
     <Button
       tag="button"
@@ -206,6 +210,28 @@ const { base = "" } = Astro.site
 <script src="../assets/js/script.ts"></script>
 
 <style lang="scss">
+  .skip-to-content {
+    a {
+      padding: 6px;
+      position: absolute;
+      top: -40px;
+      left: 0px;
+      color: white;
+      border-right: 1px solid white;
+      border-bottom: 1px solid white;
+      border-bottom-right-radius: 8px;
+      background: #bf1722;
+      transition: top 0.5s ease-out;
+      z-index: 100;
+    }
+    a:focus {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      outline-color: transparent;
+      transition: top 0.05s ease-in;
+    }
+  }
   .site-header {
     border-bottom: var(--border-width-md) solid var(--color-border);
     background-color: var(--color-surface);
