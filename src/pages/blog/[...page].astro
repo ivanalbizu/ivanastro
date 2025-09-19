@@ -1,0 +1,178 @@
+---
+import Layout from "@layouts/Layout.astro";
+import PageHeader from "@components/PageHeader.astro";
+import PostMeta from "@components/PostMeta.astro";
+import { Picture } from 'astro:assets';
+import Pagination from "@components/Pagination.astro";
+import { config } from "../../config";
+
+import type { GetStaticPaths, Page } from "astro";
+import { getCollection } from "astro:content";
+
+interface Props {
+  page: Page<any>;
+}
+
+const base = import.meta.env.BASE_URL;
+
+export const getStaticPaths: GetStaticPaths = (async ({ paginate }: any) => {
+  const posts = await getCollection("blog");
+
+  const sortedPosts = posts.sort(
+    (a: any, b: any) =>
+      new Date(b.data.date).getTime() -
+      new Date(a.data.date).getTime(),
+  );
+
+  return paginate(sortedPosts,{
+    props: {
+      posts: sortedPosts,
+    },
+    pageSize: config.pageSize
+  })
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname.split("/");
+const firstPath = pathname[1];
+---
+
+<Layout
+  title="Blog"
+  description="Entradas publicadas en el Blog"
+>
+  <div>
+    <PageHeader title="Blog">
+      Publicaciones relacionadas con el <span lang="en">frontend</span>. Hablo
+      sobre HTML, CSS y javascript.
+    </PageHeader>
+
+    {
+      page.data.length > 0 ? (
+        <div class="posts-list">
+          {page.data.map(async (post: any) => (
+            <article class="post-item">
+              <h2 class="post-title" transition:name={`transition-title-${post.id}`}>
+                <a
+                  href={`${base}blog/${post.id}`}
+                >
+                  {post.data.title}
+                </a>
+              </h2>
+              {post.data.image && <Picture src={post.data.image} formats={['avif', 'webp']} alt="A description of my image." transition:name={`transition-picture-${post.id}`} />}
+              <PostMeta frontmatter={post.data} showReadMore />
+            </article>
+          ))}
+          {
+            (page.lastPage > 1) && (
+              <div>
+                <Pagination
+                  urlPattern={firstPath}
+                  length={page.lastPage}
+                  currentUrl={page.url.current}
+                  currentPage={page.currentPage}
+                  firstUrl={page.url.first}
+                  prevUrl={page.url.prev}
+                  nextUrl={page.url.next}
+                  lastUrl={page.url.last}
+                />
+              </div>
+            )
+          }
+        </div>
+      ) : (
+        <div class="no-posts">
+          <p>
+            No hay publicaciones en {" "}
+            <code>src/pages/blog/</code>
+          </p>
+        </div>
+      )
+    }
+  </div>
+</Layout>
+
+<style lang="scss">
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--grid-unit) * 6);
+  }
+
+  .post-item {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: calc(var(--grid-unit) * 4);
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  .post-title {
+    font-family: var(--font-family-primary);
+    font-size: var(--fs-heading-4);
+    font-weight: 700;
+    margin-bottom: calc(var(--grid-unit) * 2);
+    a {
+      color: var(--color-text-primary);
+      text-underline-offset: 3px;
+      transition: color var(--transition-duration-normal) ease;
+      &:hover,
+      &:focus {
+        color: var(--color-interaction-default);
+      }
+    }
+  }
+
+  .post-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--grid-unit) / 2);
+  }
+
+  .category {
+    background-color: var(--color-text-primary);
+    color: white;
+    padding: calc(var(--grid-unit) / 4) calc(var(--grid-unit) / 2);
+    font-size: var(--fs-paragraph-5);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    border-radius: 2px;
+  }
+
+  /* Dark mode category styles */
+  :global([data-theme="dark"]) .category {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .category {
+      background-color: var(--color-surface);
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border);
+    }
+  }
+
+  .post-excerpt {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: calc(var(--grid-unit) * 2);
+    font-size: var(--fs-paragraph-1);
+  }
+
+  .no-posts {
+    text-align: center;
+    padding: calc(var(--grid-unit) * 6);
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .no-posts code {
+    background-color: var(--color-surface);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+  }
+</style>

@@ -1,0 +1,164 @@
+---
+import "../styles/global.css";
+
+import Header from "@components/Header.astro";
+import Sidebar from "@components/Sidebar.astro";
+import Footer from "@components/Footer.astro";
+import SEO from "@components/SEO.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+const currentPath = Astro.url.pathname;
+
+import { ClientRouter } from "astro:transitions";
+
+export interface Props {
+  title: string;
+  description?: string;
+  showSidebar?: boolean;
+  image?: string;
+  type?: "website" | "article";
+  publishedTime?: string;
+  canonical?: string;
+}
+
+const {
+  title,
+  description,
+  showSidebar = true,
+  image,
+  type,
+  publishedTime,
+  canonical,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      @font-face {
+        font-family: "Atkinson Hyperlegible", sans-serif;
+        src: url('/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "Atkinson Hyperlegible", sans-serif;
+        src: url('/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+    <slot name="head" />
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      publishedTime={publishedTime}
+      canonical={canonical}
+    />
+    <ClientRouter />
+    <script is:inline>
+      const applyTheme = (isDark) => {
+        document.documentElement.classList.toggle("dark", isDark);
+        document.documentElement.setAttribute(
+          "data-theme",
+          isDark ? "dark" : "light",
+        );
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      };
+
+      const getThemePreference = () => {
+        return (
+          localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light")
+        );
+      };
+
+      const initializeTheme = () => {
+        const isDark = getThemePreference() === "dark";
+        applyTheme(isDark);
+      };
+
+      initializeTheme();
+
+      const attachThemeToggle = () => {
+        const toggleButton = document.getElementById("theme-toggle");
+        if (!toggleButton) return;
+
+        toggleButton.addEventListener("click", () => {
+          const isDark = !document.documentElement.classList.contains("dark");
+          applyTheme(isDark);
+        });
+      };
+
+      document.addEventListener("astro:after-swap", () => {
+        initializeTheme();
+        attachThemeToggle();
+      });
+
+      document.addEventListener(
+        "astro:page-load",
+        () => {
+          attachThemeToggle();
+        },
+        { once: true },
+      );
+    </script>
+  </head>
+  <body class="body">
+    <Header />
+    <main class="main-content" class:list={{ "with-sidebar": showSidebar }}>
+      <div class="content">
+        <Breadcrumbs currentPath={currentPath} />
+        <slot />
+      </div>
+      {
+        showSidebar && (
+          <aside class="sidebar" aria-label="Enlaces del blog">
+            <Sidebar limitRecentPost={4} />
+          </aside>
+        )
+      }
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style lang="scss">
+  .body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .main-content {
+    flex: 1;
+    width: min(var(--max-width), 100%);
+    margin-inline: auto;
+    padding: calc(var(--grid-unit) * 3) var(--content-padding);
+  }
+
+  .main-content.with-sidebar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(var(--grid-unit) * 4);
+  }
+
+  .content {
+    min-width: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .main-content.with-sidebar {
+      grid-template-columns: 1fr var(--sidebar-width);
+    }
+  }
+</style>

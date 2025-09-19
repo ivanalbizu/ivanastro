@@ -1,0 +1,36 @@
+---
+export interface Props {
+	id: string;
+	name: string;
+	height?: string;
+	defaultTab?: "result" | "html,result" | "css,result" | "js,result";
+	dos?: boolean;
+}
+const { height = "600", id, name = "", defaultTab = "result" } = Astro.props;
+---
+
+<p
+	class="codepen"
+	data-height={height}
+	data-default-tab={defaultTab}
+	data-slug-hash={id}
+	data-pen-title={name}
+	data-user="ivan_albizu"
+	style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: var(--border-width-md) solid; margin: 1em 0; padding: 1em;"
+>
+	<span
+		>See the Pen <a href=`https://codepen.io/ivan_albizu/pen/${id}`> {name}</a> by
+		Iván Albizu (<a href="https://codepen.io/ivan_albizu">@ivan_albizu</a>) on <a
+			href="https://codepen.io">CodePen</a
+		>.</span
+	>
+</p>
+
+<script>
+	const script = document.createElement("script");
+	script.type = "text/javascript";
+	script.async = true;
+	script.src = "https://public.codepenassets.com/embed/index.js";
+
+	document.head.appendChild(script);
+</script>

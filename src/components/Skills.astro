@@ -1,0 +1,68 @@
+---
+
+---
+
+<ul class="skills">
+  <li class="css">css / sass</li>
+  <li class="html">html</li>
+  <li class="js">javascript</li>
+  <li class="astro">astro</li>
+  <li class="vue">vuejs</li>
+  <li class="nuxt">nuxt</li>
+  <li class="android">android</li>
+  <li class="mjml">mjml</li>
+</ul>
+
+<style lang="scss">
+  .skills {
+    width: min(500px, 100%);
+    margin: 0 auto;
+    li {
+      position: relative;
+      &:not(:last-of-type) {
+        margin-bottom: calc(var(--grid-unit) * 3);
+      }
+      &::before,
+      &::after {
+        display: inline-block;
+        content: "";
+        height: 6px;
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+      }
+      &::before {
+        background-color: #e19d9d;
+        width: 100%;
+      }
+      &::after {
+        background-color: var(--color-accent);
+        width: var(--percentage, 60%);
+      }
+    }
+    .css {
+      --percentage: 98%;
+    }
+    .html {
+      --percentage: 98%;
+    }
+    .js {
+      --percentage: 90%;
+    }
+    .astro {
+      --percentage: 70%;
+    }
+    .mjml {
+      --percentage: 88%;
+    }
+    .vue {
+      --percentage: 40%;
+    }
+    .nuxt {
+      --percentage: 30%;
+    }
+    .android {
+      --percentage: 10%;
+    }
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+title: AngularJS Wordpress Theme
+slug: angularjs-wordpress-theme
+published: true
+description: Construcción de Theme Wordpress con AngularJS 1, usando plugins de Wordpress Wp Rest Api para generar JSON de las entradas y Advanced Custom Fields (ACF) para añadir nuevos campos
+categories:
+  - angularJS
+  - javascript
+  - php
+  - css
+  - wordpress
+date: "2016-10-26 15:10:00"
+image: ../../assets/images/angularjs-wordpress-theme.jpg
+image_alt: AngularJS Wordpress Theme
+---
+
+## Instalación
+
+Instalar el tema que se encuentra en mi <a href="https://github.com/ivanalbizu/Angular-Wordpress-Theme/" target="_blank">GitHub</a>.
+
+## Después de habilitar el tema
+
+* Instalar y habilitar los plugins
+* Especificar la ruta base de la instalación. En <code>header.php</code> la etiqueta <code>&lt;base href="/wordpress/"&gt;</code>
+* Importar los custom fields con el archivo <code>advanced-custom-field-export.xml</code>
+* Editar el formulario de contacto que generar Contact Form 7 por defecto.
+	*	Al campo correo electrónico añadir la siquiente ID: <code>checkvalid</code>
+	*	Al campo submit añadir las siguientes clases: <code>waves-effect waves-light btn cyan darken-3</code>
+
+## Crear contenido
+
+* Crear una página y añadir los campos necesarios
+* Hay dos tipo de entradas: ventas y alquileres. Crear contenido para ambos (para el tipo venta hay un campo llamado "Destacada venta", la entrada que la tenga marcada se mostrará en la Home)
+
+Para ver la <a href="http://inmo.mentiraspoliticas.es" target="_blank">demo en funcionamiento</a>.

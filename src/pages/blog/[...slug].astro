@@ -1,0 +1,298 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Button from "@components/Button.astro";
+import PostMeta from "@components/PostMeta.astro";
+import BlogEntryJSONLD from "@components/BlogEntryJSONLD.astro";
+import { Picture } from 'astro:assets';
+import TableOfContents from "@components/TableOfContents.astro";
+import {
+  extractHeadings,
+  filterHeadingsForTOC,
+} from "@utils/table-of-contents";
+import {
+  calculateReadingTime,
+  extractTextFromMarkdown,
+} from "@utils/reading-time";
+
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+
+  return allPosts.map((post: any) => {
+    // For import.meta.glob, access raw content through compiledContent or body
+    const rawContent = post.body || post.rawContent?.() || "";
+    const plainText = extractTextFromMarkdown(rawContent);
+    const readingTime = calculateReadingTime(plainText);
+    const allHeadings = extractHeadings(rawContent);
+    const tocHeadings = filterHeadingsForTOC(allHeadings);
+
+    return {
+      params: {
+        slug: post.data.slug,
+      },
+      props: { post, readingTime, tocHeadings },
+    };
+  });
+}
+
+const { post, tocHeadings } = Astro.props;
+const { Content } = await render(post);
+
+const pageTitle = post.data.title;
+const base = import.meta.env.BASE_URL;
+const publishedTime = post.data.date
+  ? new Date(post.data.date).toISOString()
+  : undefined;
+---
+
+<Layout
+  title={pageTitle}
+  description={post.data.description || ''}
+  type="article"
+  publishedTime={publishedTime}
+>
+  <BlogEntryJSONLD slot="head" {...Astro.props} />
+  <article>
+    <header class="post-header">
+      <h1 class="post-title" transition:name={`transition-title-${post.id}`}>{post.data.title}</h1>
+      {post.data.image && <Picture src={post.data.image} formats={['avif', 'webp']} alt="A description of my image." transition:name={`transition-picture-${post.id}`} />}
+      <PostMeta frontmatter={post.data}></PostMeta>
+      <hr class="hr" />
+    </header>
+
+    <TableOfContents headings={tocHeadings} />
+
+    <div class="post-content">
+      <Content />
+    </div>
+
+    <footer class="post-footer">
+      {
+        post.data.categories && post.data.categories.length > 0 && (
+          <div class="tags-label">Categorias:</div>
+          <div class="post-categories">
+            {post.data.categories.map((category: string) => (
+              <Button
+                tag="a"
+                variant="secondary"
+                size="sm"
+                href={`${base}categorias/${category.toLowerCase().replace(/[\/\s]+/g, "-")}`}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+        )
+      }
+
+      <div class="post-navigation">
+        <Button tag="a" href={`${base}blog`}> Volver al Blog </Button>
+      </div>
+    </footer>
+  </article>
+</Layout>
+
+<style lang="scss">
+  .post-header {
+    margin-bottom: calc(var(--grid-unit) * 6);
+  }
+
+  .post-title {
+    font-family: var(--font-family-primary);
+    font-size: var(--fs-heading-3);
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.03em;
+    line-height: 1.1;
+    margin-bottom: calc(var(--grid-unit) * 3);
+  }
+
+  .post-excerpt {
+    font-size: var(--fs-heading-6);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin: 0;
+  }
+
+  .post-content {
+    font-size: var(--fs-paragraph-2);
+    line-height: 1.7;
+    margin-bottom: calc(var(--grid-unit) * 6);
+  }
+
+  .post-content :global(h1) {
+    font-family: var(--font-family-primary);
+    font-size: var(--fs-heading-3);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: calc(var(--grid-unit) * 6);
+    margin-bottom: calc(var(--grid-unit) * 3);
+  }
+
+  .post-content :global(h2) {
+    font-family: var(--font-family-primary);
+    font-size: var(--fs-heading-4);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: calc(var(--grid-unit) * 6);
+    margin-bottom: calc(var(--grid-unit) * 3);
+  }
+
+  .post-content :global(h3) {
+    font-family: var(--font-family-primary);
+    font-size: var(--fs-heading-5);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: calc(var(--grid-unit) * 4);
+    margin-bottom: calc(var(--grid-unit) * 2);
+  }
+
+  .post-content :global(p) {
+    margin-bottom: calc(var(--grid-unit) * 3);
+  }
+
+  .post-content :global(blockquote) {
+    border-left: var(--border-width-lg) solid var(--color-accent);
+    padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 3);
+    margin: calc(var(--grid-unit) * 4) 0;
+    background-color: var(--color-surface);
+    font-style: italic;
+    font-size: var(--fs-paragraph-1);
+    color: var(--color-text-secondary);
+  }
+
+  .post-content :global(pre) {
+    background-color: #000000;
+    color: #ffffff;
+    padding: calc(var(--grid-unit) * 3);
+    margin: calc(var(--grid-unit) * 4) 0;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: var(--fs-paragraph-4);
+    line-height: 1.5;
+  }
+
+  .post-content :global(pre code) {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  /* Custom Prism syntax highlighting for German flag colors */
+  /* CSS selectors like h1 - use gold */
+  .post-content :global(.token.selector),
+  .post-content :global(.token.tag) {
+    color: #ffd700 !important;
+  }
+
+  /* CSS properties and functions - use red */
+  .post-content :global(.token.property),
+  .post-content :global(.token.class-name),
+  .post-content :global(.token.function) {
+    color: var(--color-accent) !important;
+  }
+
+  .post-content :global(.token.punctuation),
+  .post-content :global(.token.brace),
+  .post-content :global(.token.bracket) {
+    color: #cccccc !important;
+  }
+
+  .post-content :global(.token.string),
+  .post-content :global(.token.attr-value),
+  .post-content :global(.token.url) {
+    color: #ffcc00 !important;
+  }
+
+  .post-content :global(.token.comment) {
+    color: #888888 !important;
+    font-style: italic;
+  }
+
+  .post-content :global(.token.number),
+  .post-content :global(.token.boolean) {
+    color: #66d9ef !important;
+  }
+
+  /* Reset default Prism styles and apply our theme */
+  .post-content :global(pre[class*="language-"]) {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  .post-content :global(code[class*="language-"]) {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  .post-content :global(code) {
+    font-family: var(--font-mono);
+    font-size: var(--fs-paragraph-4);
+    background-color: var(--color-surface);
+    color: var(--color-accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    font-weight: 700;
+  }
+
+  .post-content :global(img) {
+    border: var(--border-width-md) solid var(--color-border);
+    margin: calc(var(--grid-unit) * 4) 0;
+    border-radius: 4px;
+  }
+
+  .post-content :global(ul),
+  .post-content :global(ol) {
+    margin-bottom: calc(var(--grid-unit) * 3);
+    padding-left: calc(var(--grid-unit) * 3);
+  }
+
+  .post-content :global(li) {
+    margin-bottom: calc(var(--grid-unit) / 2);
+  }
+
+  .post-content :global(strong) {
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  .post-content :global(em) {
+    font-style: italic;
+  }
+
+  .post-content :global(hr) {
+    height: 2px;
+    background-color: var(--color-accent);
+    border: none;
+    margin: calc(var(--grid-unit) * 4) 0;
+  }
+
+  .post-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: calc(var(--grid-unit) * 3);
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--grid-unit) * 3);
+  }
+
+  .tags-label {
+    font-family: var(--font-family-primary);
+    font-weight: 700;
+    font-size: var(--fs-paragraph-4);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-text-primary);
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+import { generateBreadcrumbs } from "@utils/generateBreadcrumbs";
+
+const { pathname: currentPath, origin } = Astro.url;
+
+const breadcrumbs = generateBreadcrumbs({ currentPath });
+
+// TODO: el breadcrumb está pintando el PATH, me gustaría que fuera el título
+---
+
+{
+  breadcrumbs.length > 0 && (
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol>
+        {
+          breadcrumbs?.map(({ link, label }: any) => {
+            const isLast = breadcrumbs.at(-1).link === link;
+
+            return (
+              <li>
+                {!isLast ? <a href={link}>{label}</a> : <span aria-current="page">{label}</span>}
+                {!isLast && " / "}
+              </li>
+            );
+          })
+        }
+      </ol>
+    </nav>
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbs.map(({ link, label }: any, index: any) => {
+          const isLast = breadcrumbs.at(-1).link === link;
+
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            name: label,
+            item: isLast ? undefined : `${origin}${link}`,
+          };
+        }),
+      })}
+    />
+  )
+}
+
+<style lang="scss">
+  .breadcrumb {
+    margin-bottom: calc(var(--grid-unit) * 2);
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: "";
+      margin: 0;
+      padding: 0;
+    }
+    li,a {
+      margin-right: var(--grid-unit);
+    }
+  }
+</style>

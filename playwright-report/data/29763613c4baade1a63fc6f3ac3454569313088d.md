@@ -1,0 +1,128 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Volks-Typo":
+    - /url: /
+    - img "Volks-Typo"
+  - navigation "Main navigation":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Blog":
+          - /url: /blog
+      - listitem:
+        - link "Categories":
+          - /url: /categories
+      - listitem:
+        - link "About":
+          - /url: /about
+  - button "Toggle dark mode":
+    - img
+    - img
+  - link "Star":
+    - /url: https://github.com/jdrhyne2/volks-typo
+  - link "RSS":
+    - /url: /rss.xml
+  - button "Search articles":
+    - img
+- navigation "Mobile navigation":
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: /
+    - listitem:
+      - link "Blog":
+        - /url: /blog
+    - listitem:
+      - link "Categories":
+        - /url: /categories
+    - listitem:
+      - link "About":
+        - /url: /about
+- main:
+  - heading "Volks-Typo" [level=1]
+  - paragraph: Bauhaus Meets Monumental
+  - paragraph: An aesthetic exploration where Bauhaus functionalism collides with monumental grandeur. Form follows function, with a twist.
+  - separator
+  - link "View Demo":
+    - /url: "#demo"
+  - link "Get Started":
+    - /url: "#installation"
+  - heading "Live Demo" [level=2]
+  - paragraph: See the theme in action with sample blog posts that demonstrate all typography, layout, and design elements working together in perfect dissonant harmony.
+  - article:
+    - heading "The Aesthetic Tension of Modernist Design" [level=3]
+    - time: June 8, 2025
+    - text: •5 min read
+    - paragraph: An examination of how opposing design philosophies can create compelling visual narratives in contemporary digital spaces.
+    - text: Design Typography History
+  - article:
+    - 'heading "Understanding Bauhaus: Form, Function, and the Modern Web" [level=3]'
+    - time: June 7, 2025
+    - text: •5 min read
+    - paragraph: From the workshops of Weimar to the screens of today, the Bauhaus movement's radical approach to design continues to influence how we think about digital spaces.
+    - text: Design History Web Development
+  - article:
+    - heading "Building Modernist Layouts with CSS Grid" [level=3]
+    - time: June 6, 2025
+    - text: •5 min read
+    - paragraph: CSS Grid isn't just a layout tool—it's a design philosophy made manifest in code. Learn how to create modernist-inspired layouts that would make Mondrian proud.
+    - text: Web Development Design CSS
+  - link "View Blog":
+    - /url: /blog
+  - heading "Design Philosophy" [level=2]
+  - heading "Dissonant Harmony" [level=3]
+  - paragraph: Bauhaus minimalism meets monumental design. Clean aesthetics with bold, commanding presence.
+  - heading "Perfect Readability" [level=3]
+  - paragraph: Optimized typography with ideal line lengths and spacing for maximum comprehension.
+  - heading "Left Aligned" [level=3]
+  - paragraph: Natural reading flow with consistent left alignment throughout all content.
+  - heading "Typographic Tension" [level=3]
+  - paragraph: Cormorant Garamond meets Inter. Classical serif headings contrast modern sans-serif body.
+  - heading "Constructivist Grid" [level=3]
+  - paragraph: 8-point grid system creates structural order. Blood-red rules command attention.
+  - heading "Fast Performance" [level=3]
+  - paragraph: Zero JavaScript, minimal CSS, self-hosted fonts for blazing speed.
+  - heading "Typography" [level=2]
+  - paragraph: Work Sans provides exceptional readability across all text sizes and contexts
+  - heading "MONUMENTAL TYPE" [level=1]
+  - paragraph: Cormorant Garamond • 900 Weight • Blood Red
+  - paragraph: Bauhaus-inspired body text in Inter creates perfect readability. Function meets form in every letterform, optimized for modern screens.
+  - paragraph: Inter • 400 Weight • Charcoal Black
+  - code: npm install volks-typo
+  - paragraph: JetBrains Mono • Monospace Code
+  - heading "Quick Start" [level=2]
+  - heading "01" [level=3]
+  - heading "Clone Repository" [level=4]
+  - code: git clone https://github.com/yourusername/volks-typo.git cd volks-typo
+  - heading "02" [level=3]
+  - heading "Install Dependencies" [level=4]
+  - code: npm install
+  - heading "03" [level=3]
+  - heading "Start Development" [level=4]
+  - code: npm run dev
+- contentinfo:
+  - paragraph: © 2025 Your Name. All rights reserved.
+  - paragraph:
+    - text: Powered by
+    - link "Astro":
+      - /url: https://astro.build
+    - text: •
+    - link "Volks-Typo Theme":
+      - /url: https://github.com/yourusername/volks-typo
+  - link "GitHub":
+    - /url: https://github.com/yourusername
+    - img
+  - link "Twitter/X":
+    - /url: https://twitter.com/yourusername
+    - img
+  - link "LinkedIn":
+    - /url: https://linkedin.com/in/yourusername
+    - img
+  - link "Email":
+    - /url: mailto:your.email@example.com
+    - img
+```

@@ -1,0 +1,15 @@
+---
+import Layout from "@layouts/Layout.astro";
+import PageHeader from "@components/PageHeader.astro";
+import { config } from "../config";
+
+const { title } = config;
+const pageTitle = "Página no encontrada.";
+const pageDescription = "Lo siento, la página que intentas visitar no está disponible. Quizás la dirección esté equivocada o la página haya sido movida.";
+---
+
+<Layout title={`${pageTitle} | ${title}`} description={pageDescription}>
+  <div class="container">
+    <PageHeader title={pageTitle}>{pageDescription}</PageHeader>
+  </div>
+</Layout>

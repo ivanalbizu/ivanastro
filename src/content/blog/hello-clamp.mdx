@@ -1,0 +1,56 @@
+---
+title: Mejora responsive mediante función clamp() de CSS
+slug: hello-clamp
+published: true
+description: Mejora de la experencia de usuario mediante el uso de la función clamp() de CSS para unidades, estableciando valores mínimos, máximos y deseados
+categories:
+  - css
+date: "2021-04-04 15:10:00"
+image: ../../assets/images/hello-clamp.jpg
+image_alt: Mejora responsive mediante función clamp() de CSS
+---
+
+La función CSS clamp(parametro1, parametro2, parametro3) permite establecer tres valores unitarios para propiedades CSS: <a href="https://www.w3schools.com/cssref/css_units.asp" target="_blank" rel="noopener">https://www.w3schools.com/cssref/css_units.asp</a>.
+
+Los tres parámetros serán:
+
+* Parámetro 1: valor mínimo
+* Parámetro 2: valor deseado
+* Parámetro 3: valor máximo
+
+Clamp puede ser generado también mediante la combinación de las las funciones `min()` y `max()`: `max(MIN, min(VAL, MAX))` `font-size: clamp(14px, 4vw, 30px);` Para los parámetros se puede usar otras funciones como `calc()`
+
+Más detalles en <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()" target="_blank" rel="noopener">https://developer.mozilla.org</a>
+
+En este PEN puede ver ejemplo. He usado la función <code>clamp()</code> y un <code>mixin SCSS</code> basado en <code>mediaqueries</code>. Recomiendo abrirlo directamente en codepen, cambiar tamaños de pantalla y editar los valores para ver como se ajustan a la pantalla
+
+import Codepen from '../../components/Codepen.astro'
+
+<Codepen id="abpBOym" defaultTab="result" name={frontmatter.title} />
+
+## ¿Por que puede ser interesante el uso de clamp()?
+
+1.  Hacer una web más fluida, desde tamaño Mobile hasta Desktop, actuando en:
+  1.  Tamaño de fuentes y separación, principalmente para títulos de páginas y secciones
+  2.  Separaciones interiores en cajas (padding)
+  3.  Separación de elementos respecto a otros (margin)
+2.  Se podrían ahorrar más diseños. La transición desde Mobile hasta Desktop será fluida, estableciendo una guía de estilos
+3.  Se puede ahorrar algo de tiempo en maquetación (menos usos de mediaqueries, toma de medidas...)
+
+## Y esto, ¿A que viene?, ¿Las web actuales no son buenas?
+
+Para nada, se siguen usando mediaqueries, unidades en %, vw, vh, vmax, vmin
+
+Se podría simplificar la maquetación Responsive, o al menos, conseguir una web más fluida
+
+No implica que siempre se tenga que usar, ni siempre tendrá sentido aplicar estos métodos
+
+Este planteamiento no pretende simplificar el diseño, hay otros aspectos como imágenes, iconos, grid de productos... a los que esto pudiera no aplicar. Por ejemplo, para un grid de productos puede no interesar que los tamaños no sean lineales y si "escalonados". Pueden darse casos especiales que requieran diseño especial y maquetación acorde
+
+## Calculadora de tamaños VW en función de tamaños mínimos / máximos para tamaño de pantalla mínimo / máximo
+
+Si miraste el Pen anterior, para insertar el valor habrás visto "unidades" con muchos decimales. En este Pen puedes obtener los cálculos a modo de calculadora
+
+<Codepen id="rNjwLxE" defaultTab="result" name={frontmatter.title} />
+
+<a href="https://github.com/ivanalbizu/css-clamp" target="_blank" rel="noopener">Código en mi GitHub</a>

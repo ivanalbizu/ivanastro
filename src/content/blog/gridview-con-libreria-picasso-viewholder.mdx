@@ -1,0 +1,55 @@
+---
+title: GridView con librería Picasso ViewHolder
+slug: gridview-con-libreria-picasso-viewholder
+published: true
+description: Construcción de GridView de Android usando la viewHolder sin usar librerias como Picasso
+categories:
+  - android
+  - java
+date: "2014-12-27 15:10:00"
+---
+
+En esta entrada voy a realizar una variante del primer post sobre <a href="gridview-con-libreria-picasso/">Artículo uso librería Picasso</a>.
+
+En este caso mostraré una información adicional. Se trata de ubicar un <code>TextView</code> que muestre cual es el dominio extraído de la URL de la imagen. Voy a crear para ello nuevos archivos:
+
+* La clase Pojo se llama `Imagen.java` con un atributo `String` para imagen
+* La clase `Imagenes.java` donde estarán las imágenes a cargar
+* La vista de las imágenes y textos en `molde.xml`. `ImageView` y `TextView` dentro de un `RelativeLayout`.
+
+Voy a modificar los siguientes archivos:
+
+* `GridviewAdapter.java`
+* `MainActivity.java`
+
+## Modificación de GridviewAdapter.java
+
+* Se usa un método, `getDomainName(String url)`, al que se le pasa una URL y devuelve el dominio
+* Se crea clase `ViewHolder` con dos variables de tipos `ImageView` y `TextView`
+* Método `getView(...):`
+  * Las primeras líneas capturan el ancho de pantalla y para luego, con Picasso redimensionarlas mediante `resize(imageWidth, imageWidth)`
+  * Se declara el objeto patrón de tipo `ViewHolder`
+  * Dentro de claúsula `if` se instancia el patrón, se guarda dentro de `convertView` el layout de la vista, se obtienen las referencias de la imagen y el texto. Al `convertView` se le asigna un Tag con `setTag(...)` para después poder llamarla
+  * En la claúsula `else` se le pasa al patrón las referencias del `convertView` mediante `getTag()`
+  * Al `TextView` se le asigna el texto mediante `patron.texto.setText(getDomainName(items[position].getImagen()))`
+  * La imagen se introduce especificando el ítem sobre el que se itera `load(items[position])` y se establece al `ImageView` mediante `into(patron.imagen)`
+
+## Creación del layout
+
+Se crea el archivo <code>molde.xml</code>. Se usa un RelativeLayout para contener el <code>ImageView</code> y el <code>TextView</code>
+
+## Clase Pojo
+
+Sólo tiene un atributo la clase <code>Imagen.java</code>, que será de tipo <code>String</code>. Con su constructor y sus Getters y Setters.
+
+## Clase que contiene las URL de las imágenes
+
+Se trata de construir con un array de imágenes y la clase Pojo todas las imágenes a usar.
+
+## MainActivity.java
+
+Se instancia el Adaptador del <code>GridgenyView</code> y el <code>GridView</code> del layout. En <code>onCreate(...)</code> se le pasa al adaptador el array de imágenes de la clase Imagenes.java.
+
+Y el vídeo del paso a paso
+
+<iframe class="ratio-16-9" title={frontmatter.title} type="text/html" src="http://www.youtube.com/embed/KRIBZyP1hd8?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>

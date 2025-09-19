@@ -1,0 +1,51 @@
+---
+title: Codeigniter + Cloud9. Primeros pasos
+slug: codeigniter-cloud9-primeros-pasos
+description: Ejemplo de como usar Framework PHP Codeigniter y base de datos MySql usando IDE web Cloud9
+published: true
+categories:
+  - php
+date: "2015-02-17 15:10:00"
+---
+
+En esta primera publicación comenzaré con la descarga de Codeigniter y la preparación del IDE web Cloud9 para poder empezar a trabajar. Para ello necesito descargar la última versión estable de Codeigniter. Creación de un Workspace en Cloud9 e instalación de phpmyadmin en Cloud9. Los pasos seguidos son los siguientes:
+
+1.  Crear Workspace PHP
+2.  Vaciar el contenido del Workspace
+3.  Descargar última versión estable CodeIgniter
+4.  Subir a Cloud 9
+5.  Descomprimir:
+    1.  `sudo unzip CodeIgniter-2.2.1.zip`
+6.  Copiar CodeIgniter al Workspace:
+    1.  `sudo cp -r CodeIgniter-2.2.1/* /home/ubuntu/workspace/`
+7.  Eliminar directorio y comprimido de CodeIgniter:
+    1.  `sudo rm -r CodeIgniter-2.2.1`
+    2.  `sudo rm -r CodeIgniter-2.2.1.zip`
+8.  Instalar PHPMyAdmin:
+    1.  `phpmyadmin-ctl install`
+    2.  En consola aparece enlace y usuario (mismo de Cloud9) y contraseña(vacío)
+
+Y el vídeo del paso a paso: Nota: para dar un poco de seguridad a nuestro PhpMyAdmin: Ejecutamos la siguiente línea: Editamos un archivo PHP:
+
+```bash
+sudo nano /etc/phpmyadmin/config.inc.php 
+```
+
+Al final del documento localizamos la línea:
+
+```bash
+$cfg['Servers'][$i]['AllowNoPassword'] = TRUE;
+```
+
+Y lo ponemos a FALSE, para que sea necesaria la contraseña Accedemos a mysql para establecer la contraseña:
+
+```bash
+mysql-ctl cli
+UPDATE mysql.user SET Password=PASSWORD('nuestraContraseña') WHERE User='poner_usuario_cloud9';
+```
+
+Salimos guardando (Ctrl+x.  Yes.  Enter)
+
+Y el vídeo del paso a paso
+
+<iframe class="ratio-16-9" title={frontmatter.title} type="text/html" src="http://www.youtube.com/embed/GO04WRhjjVk?autoplay=0&origin=https://ivanalbizu.eu/" frameborder="0"></iframe>

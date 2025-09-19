@@ -1,0 +1,56 @@
+{
+  "name": "migration",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "My personal Site built with Astro. Write about html, css, scss, javascript, astro, webgl, php, android, java",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "lint": "eslint . --ext .js,.ts,.astro",
+    "format": "prettier --write .",
+    "generate-screenshots": "node generate-screenshots.js",
+    "test:features": "playwright test",
+    "matter": "node .scripts/matter.cjs"
+  },
+  "author": "@ivanalbizu",
+  "license": "MIT",
+  "homepage": "https://github.com/ivanalbizu/ivanastro",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanalbizu/ivanastro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivanalbizu/ivanastro/issues"
+  },
+  "keywords": [
+    "astro",
+    "blog",
+    "theme",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/rss": "^4.0.12",
+    "astro": "^5.9.1",
+    "sass": "^1.90.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@playwright/test": "^1.54.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-astro": "^1.2.0",
+    "github-slugger": "^2.0.0",
+    "gray-matter": "^4.0.3",
+    "playwright": "^1.54.1",
+    "prettier": "^3.3.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "typescript": "^5.6.0"
+  }
+}

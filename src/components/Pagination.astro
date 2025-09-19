@@ -1,0 +1,300 @@
+---
+import Button from "@components/Button.astro";
+
+const { length, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, urlPattern = '' } =
+	Astro.props;
+const paginationList: number[] = Array.from(
+	{ length: length },
+	(_, i): number => i + 1,
+);
+---
+
+<nav aria-label="Paginación del blog" class="pagination">
+	<div hidden id="prefix">Página</div>
+	<div hidden id="prev">anterior</div>
+	<div hidden id="next">siguiente</div>
+	<div hidden id="first">primera</div>
+	<div hidden id="last">última</div>
+
+	<ul class="pagination__list">
+		{
+			!firstUrl ? (
+				<li>
+					<Button
+						tag="span"
+						variant="secondary"
+						size="sm"
+						disabled={true}
+						class="pagination__link"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m17 18l-6-6l6-6M7 6v12"
+							/>
+						</svg>
+					</Button>
+				</li>
+			) : (
+				<li>
+					<Button
+						tag="a"
+						variant="secondary"
+						size="sm"
+						href={firstUrl}
+						aria-labelledby="prefix first"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m17 18l-6-6l6-6M7 6v12"
+							/>
+						</svg>
+					</Button>
+				</li>
+			)
+		}
+		{
+			prevUrl ? (
+				<li>
+					<Button
+						tag="a"
+						variant="secondary"
+						size="sm"
+						href={prevUrl}
+						aria-labelledby="prefix prev"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m15 18l-6-6l6-6"
+							/>
+						</svg>
+					</Button>
+				</li>
+			) : (
+				<li>
+					<Button
+						tag="span"
+						variant="secondary"
+						size="sm"
+						disabled={true}
+						class="pagination__link"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m15 18l-6-6l6-6"
+							/>
+						</svg>
+					</Button>
+				</li>
+			)
+		}
+		{
+			paginationList.map((num) => (
+				<li class="pagination__number">
+					<Button
+						tag="a"
+						variant="secondary"
+						size="sm"
+						href={`${firstUrl ? `${firstUrl}` : `${urlPattern}`}${num == 1 ? "" : "/" + num}`}
+						class={`pagination__link ${currentPage == num ? "disabled active" : ""}`}
+						id={`link-${num}`}
+						aria-labelledby={`prefix link-${num}`}
+						{...(currentPage == num && { "aria-current": "true" })}
+					>
+						{num}
+					</Button>
+				</li>
+			))
+		}
+		{
+			!nextUrl ? (
+				<li>
+					<Button
+						tag="span"
+						variant="secondary"
+						size="sm"
+						disabled={true}
+						class="pagination__link"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m9 18l6-6l-6-6"
+							/>
+						</svg>
+					</Button>
+					<span
+						class="pagination__link disabled"
+						aria-labelledby="prefix next"
+					/>
+				</li>
+			) : (
+				<li>
+					<Button
+						tag="a"
+						variant="secondary"
+						size="sm"
+						href={nextUrl}
+						aria-labelledby="prefix next"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m9 18l6-6l-6-6"
+							/>
+						</svg>
+					</Button>
+				</li>
+			)
+		}
+		{
+			!lastUrl ? (
+				<li>
+					<Button
+						tag="span"
+						variant="secondary"
+						size="sm"
+						disabled={true}
+						class="pagination__link"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m7 18l6-6l-6-6m10 0v12"
+							/>
+						</svg>
+					</Button>
+				</li>
+			) : (
+				<li>
+					<Button
+						tag="a"
+						variant="secondary"
+						size="sm"
+						href={lastUrl}
+						aria-labelledby="prefix last"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m7 18l6-6l-6-6m10 0v12"
+							/>
+						</svg>
+					</Button>
+				</li>
+			)
+		}
+	</ul>
+</nav>
+
+<style lang="scss">
+	.pagination {
+		container-type: inline-size;
+		&__list {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 4px;
+			list-style-type: "";
+			margin: 0;
+			padding: 0;
+		}
+		&__list li {
+			margin: 0;
+			> * {
+				min-width: var(--target-size);
+				text-align: center;
+				justify-content: center;
+				aspect-ratio: 1;
+			}
+		}
+		@container (max-width: 767.98px) {
+			&__number {
+				display: none;
+			}
+		}
+	}
+</style>

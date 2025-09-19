@@ -1,0 +1,23 @@
+---
+const { post, title, description, date, categories, image } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "keywords": categories,
+  "author": {
+    "@type": "Person",
+    "name": "Iván Albizu",
+    "url": "https://ivanalbizu.eu/sobre-mi"
+  },
+  "datePublished": date,
+  "dateCreated": date,
+  "url": `https://ivanalbizu.eu/blog/${post.id}`,
+  "inLanguage ": "es-Es",
+  "image": image,
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

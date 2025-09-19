@@ -1,0 +1,218 @@
+---
+import type { Polymorphic } from "astro/types";
+
+type Tag = "a" | "button" | "span";
+
+type Props<TagGeneric extends Tag> = {
+  tag: TagGeneric;
+  variant?: "link" | "secondary" | "tertiary";
+  size?: "sm" | "lg";
+  disabled?: boolean;
+  classList?: string[];
+} & Polymorphic<{ as: TagGeneric }>;
+
+const {
+  tag: Tag,
+  variant = null,
+  size = null,
+  disabled = false,
+  classList = [],
+  href,
+  type = "button",
+  ...rest
+} = Astro.props;
+
+const baseAttributes = {
+  classes: [
+    "btn",
+    variant ? `btn--${variant}` : "",
+    size ? `btn--${size}` : "",
+    disabled ? `btn--disabled` : "",
+    ...classList,
+  ],
+  ...rest,
+};
+
+const anchorAttributes = {
+  href: href,
+};
+
+const buttonAttributes = {
+  type: type,
+};
+
+const attributeBasedOnTag = Tag === "a" ? anchorAttributes : buttonAttributes;
+
+const allAttributes = { ...baseAttributes, ...attributeBasedOnTag };
+
+const { classes, ...attributes } = allAttributes;
+---
+
+<Tag class:list={[classes]} {...attributes}>
+  <slot />
+</Tag>
+
+<style lang="scss">
+  .btn {
+    font-family: var(--font-family-primary);
+    font-size: var(--fs-btn-default);
+    letter-spacing: 0.03em;
+    padding: calc(var(--grid-unit) * 1.5) calc(var(--grid-unit) * 3);
+    border-radius: 4px;
+    text-decoration-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    transition:
+      color var(--transition-duration-slow) ease,
+      background var(--transition-duration-slow) ease,
+      border var(--transition-duration-slow) ease;
+
+    //default is primary
+    background-color: var(--color-interaction-default);
+    color: white;
+    border: var(--border-width-md) solid var(--color-interaction-default);
+    &.active,
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: var(--color-interaction-default);
+    }
+
+    &--link {
+      background-color: transparent;
+      color: var(--color-text-primary);
+      border: var(--border-width-md) solid transparent;
+      &.active,
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        //color: var(--color-background);
+      }
+    }
+
+    &--secondary {
+      background-color: transparent;
+      color: var(--color-text-primary);
+      border: var(--border-width-md) solid var(--color-border);
+      &.active,
+      &:hover,
+      &:focus {
+        background-color: var(--color-text-primary);
+        color: var(--color-background);
+      }
+    }
+
+    &--tertiary {
+      background-color: var(--color-text-primary);
+      border: var(--border-width-md) solid var(--color-text-primary);
+      color: white;
+      &.active,
+      &:hover,
+      &:focus {
+        background-color: var(--color-interaction-default);
+        border-color: var(--color-interaction-default);
+        color: white;
+      }
+    }
+
+    &--sm {
+      padding: calc(var(--grid-unit) / 2) calc(var(--grid-unit));
+      font-size: var(--fs-btn-sm);
+      letter-spacing: 0.03em;
+      line-height: 1;
+      min-height: 34px;
+    }
+
+    &--disabled {
+      opacity: .4;
+      pointer-events: none;
+    }
+  }
+
+  :global([data-theme="dark"]) .btn {
+    background-color: var(--color-interaction-default);
+    color: white;
+    border-color: var(--color-interaction-default);
+  }
+
+  :global([data-theme="dark"]) .btn:hover,
+  :global([data-theme="dark"]) .btn:focus {
+    background-color: transparent;
+    color: var(--color-interaction-default);
+  }
+
+  :global([data-theme="dark"]) .btn--link {
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+  }
+
+  :global([data-theme="dark"]) .btn--link:hover,
+  :global([data-theme="dark"]) .btn--link:focus {
+    color: var(--color-interaction-default);
+  }
+
+  :global([data-theme="dark"]) .btn--secondary {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+  }
+
+  :global([data-theme="dark"]) .btn--secondary:hover,
+  :global([data-theme="dark"]) .btn--secondary:focus {
+    background-color: var(--color-interaction-default);
+    color: white;
+    border-color: var(--color-interaction-default);
+  }
+
+  :global([data-theme="dark"]) .btn--tertiary {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+  }
+
+  :global([data-theme="dark"]) .btn--tertiary:hover,
+  :global([data-theme="dark"]) .btn--tertiary:focus {
+    background-color: var(--color-interaction-default);
+    color: white;
+    border-color: var(--color-interaction-default);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .btn {
+      background-color: var(--color-interaction-default);
+      color: white;
+      border-color: var(--color-interaction-default);
+      &.active,
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: var(--color-interaction-default);
+      }
+    }
+    .btn--secondary {
+      background-color: transparent;
+      color: var(--color-text-primary);
+      border-color: var(--color-border);
+      &.active,
+      &:hover,
+      &:focus {
+        background-color: var(--color-interaction-default);
+        color: white;
+        border-color: var(--color-interaction-default);
+      }
+    }
+    .btn--tertiary {
+      background-color: var(--color-surface);
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-border);
+      &.active,
+      &:hover,
+      &:focus {
+        background-color: var(--color-interaction-default);
+        color: white;
+        border-color: var(--color-interaction-default);
+      }
+    }
+  }
+</style>

@@ -1,0 +1,14 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Categories from "@components/Categories.astro";
+import PageHeader from "@components/PageHeader.astro";
+---
+
+<Layout title="Categorias" description="Explorar artículos por categoría" showSidebar={true}>
+  <div class="container">
+    <PageHeader title="Categorias">
+      Explora artículos organizados por categoría. Haz clic en cualquier categoría para ver publicaciones relacionadas.
+    </PageHeader>
+    <Categories />
+  </div>
+</Layout>

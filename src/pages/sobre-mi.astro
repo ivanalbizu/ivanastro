@@ -1,0 +1,172 @@
+---
+import Layout from '@layouts/Layout.astro';
+import PageHeader from "@components/PageHeader.astro";
+import { config } from '../config';
+
+const { author } = config;
+const pageDescription = `Saber más de ${author.name}`;
+---
+
+<Layout title={`Sobre mí`} description={pageDescription}>
+  <div class="container">
+    <PageHeader title="Sobre mí"></PageHeader>
+
+    <div class="author-section">
+      <div class="author-avatar">
+        {author.avatar ? (
+          <img src={author.avatar} alt={author.name} />
+        ) : (
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <clipPath id="circleClip">
+                  <circle cx="40" cy="40" r="39" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#circleClip)">
+                <ellipse cx="40" cy="28" rx="13" ry="15" fill="currentColor"/>
+                <path d="M33 40 Q33 44 35 46 L45 46 Q47 44 47 40 Z" fill="currentColor"/>
+                <path d="M35 46 Q28 48 22 54 Q16 60 14 70 L14 80 L66 80 L66 70 Q64 60 58 54 Q52 48 45 46 Z" fill="currentColor"/>
+              </g>
+            </svg>
+          </div>
+        )}
+      </div>
+      <h2 class="author-name">{author.name}</h2>
+      <p class="author-bio">{author.bio}</p>
+
+    </div>
+
+    <div class="content-section">
+      <h2>Stack tecnológico</h2>
+      <ul>
+        <li><strong>Bold Typography</strong>: Strong typographic hierarchy with uppercase headings</li>
+        <li><strong>Minimalism as a Base</strong>: Clean, uncluttered aesthetic with generous white space</li>
+        <li><strong>Geometric Structure</strong>: Consistent 8-point grid system for layout harmony</li>
+        <li><strong>High Contrast</strong>: Clear visual separation between elements</li>
+      </ul>
+      <h2>Herramientas</h2>
+      <ul>
+        <li><strong>Bold Typography</strong>: Strong typographic hierarchy with uppercase headings</li>
+        <li><strong>Minimalism as a Base</strong>: Clean, uncluttered aesthetic with generous white space</li>
+        <li><strong>Geometric Structure</strong>: Consistent 8-point grid system for layout harmony</li>
+        <li><strong>High Contrast</strong>: Clear visual separation between elements</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .author-section {
+    text-align: center;
+    margin-bottom: calc(var(--grid-unit) * 10);
+    padding: calc(var(--grid-unit) * 6) calc(var(--grid-unit) * 4);
+    background-color: var(--color-surface);
+    border-radius: calc(var(--grid-unit));
+  }
+
+  .author-avatar {
+    margin-bottom: calc(var(--grid-unit) * 3);
+  }
+
+  .author-avatar img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: var(--border-width-lg) solid var(--color-accent);
+  }
+
+  .avatar-placeholder {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: var(--border-width-lg) solid var(--color-accent);
+    background-color: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-medium-gray);
+    margin: 0 auto;
+  }
+
+  .author-name {
+    font-family: var(--font-family-primary);
+    font-size: var(--fs-heading-3);
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: calc(var(--grid-unit) * 2);
+  }
+
+  .author-bio {
+    font-size: var(--fs-heading-6);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto calc(var(--grid-unit) * 4);
+  }
+
+  .content-section {
+    line-height: 1.7;
+  }
+
+  .content-section h2 {
+    font-family: var(--font-family-primary);
+    font-size: var(--fs-heading-4);
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: calc(var(--grid-unit) * 6);
+    margin-bottom: calc(var(--grid-unit) * 3);
+  }
+
+  .content-section p {
+    font-size: var(--fs-heading-6);
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin-bottom: calc(var(--grid-unit) * 3);
+  }
+
+  .content-section ul {
+    margin: calc(var(--grid-unit) * 2) 0;
+    padding-left: calc(var(--grid-unit) * 3);
+  }
+
+  .content-section li {
+    margin-bottom: calc(var(--grid-unit) * 2);
+    font-size: var(--fs-heading-6);
+    line-height: 1.6;
+  }
+
+  .content-section strong {
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 768px) {
+    .author-section {
+      padding: calc(var(--grid-unit) * 4) calc(var(--grid-unit) * 3);
+    }
+
+    .author-bio {
+      font-size: var(--fs-heading-6);
+    }
+
+    .author-avatar img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .avatar-placeholder {
+      width: 120px;
+      height: 120px;
+    }
+
+    .content-section p,
+    .content-section li {
+      font-size: var(--fs-paragraph-2);
+    }
+  }
+</style>
