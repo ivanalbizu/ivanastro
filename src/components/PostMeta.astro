@@ -4,6 +4,7 @@ export interface Props {
   showCategories?: boolean;
   showExcerpt?: boolean;
   showReadMore?: boolean;
+  readingTime?: string;
 }
 
 const {
@@ -11,6 +12,7 @@ const {
   showCategories = true,
   showExcerpt = true,
   showReadMore = false,
+  readingTime
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
@@ -27,8 +29,8 @@ const base = import.meta.env.BASE_URL;
       }
     </time>
     {
-      frontmatter.readingTime && (
-        <span class="post-meta__reading-time">{frontmatter.readingTime}</span>
+      readingTime && (
+        <span class="post-meta__reading-time">{readingTime}</span>
       )
     }
   </div>
