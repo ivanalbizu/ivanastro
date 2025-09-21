@@ -32,6 +32,7 @@ function trapFocus(element: HTMLElement, moveFocused: boolean) {
     }
   });
 }
+
 // Hamburger menu functionality
 function initHamburgerMenu() {
   const HAM_TOGGLE = document.getElementById(
@@ -118,7 +119,7 @@ async function initSearch() {
     .getElementById("search-close")
     ?.addEventListener("click", closeSearch);
   searchInput?.addEventListener("input", handleSearch);
-
+  document.getElementById("font-size")?.addEventListener("click", handleFontSize);
   // Close on escape key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && searchOverlay?.classList.contains("active")) {
@@ -139,6 +140,11 @@ function openSearch() {
   document.body.style.overflow = "hidden";
   trapFocus(searchOverlay, false);
   setTimeout(() => searchInput?.focus(), 100);
+}
+
+function handleFontSize() {
+  const htmlRoot = document.documentElement as HTMLElement;
+  htmlRoot.classList.toggle("zoomed");
 }
 
 function closeSearch() {
@@ -199,15 +205,14 @@ function displayResults(results: any[], query: string) {
         day: "numeric",
       })}</time>
       ${post.description ? `<p class="search-result-excerpt">${post.description}</p>` : ""}
-      ${
-        post.categories
+      ${post.categories
           ? `
         <div class="search-result-categories">
           ${post.categories.map((cat: string) => `<span class="btn search-category">${cat}</span>`).join(" ")}
         </div>
       `
           : ""
-      }
+        }
     </article>
   `,
     )

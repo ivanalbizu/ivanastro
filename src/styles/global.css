@@ -84,6 +84,10 @@
     scroll-behavior: smooth;
   }
 }
+.zoomed {
+  --fs-scale: 1.2;
+  --max-width: 2000px;
+}
 
 *,
 *::before,
