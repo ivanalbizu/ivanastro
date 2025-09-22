@@ -99,6 +99,7 @@ let searchData: any[] = [],
   focusableEls: NodeListOf<HTMLElement>,
   firstFocusableEl: HTMLElement,
   lastFocusableEl: HTMLElement;
+const htmlRoot = document.documentElement as HTMLElement;
 
 async function initSearch() {
   try {
@@ -226,16 +227,27 @@ function displayResults(results: any[], query: string) {
   }
 }
 
+function initZoomed() {
+  if (getZoomedPreference()) {
+    htmlRoot.classList.add("zoomed");
+  }
+};
+
+function getZoomedPreference() {
+  return localStorage.getItem("zoomed") == "true" || false;
+};
+
 function handleFontSize() {
-  const htmlRoot = document.documentElement as HTMLElement;
   htmlRoot.classList.toggle("zoomed");
+  localStorage.setItem("zoomed", htmlRoot.classList.contains("zoomed") ? 'true' : 'false');
 }
 
 // Initialize when DOM is loaded
 function init() {
   initHamburgerMenu();
-  initSearch();
-}
+  initSearch();  
+  initZoomed();
+};
 
 document.addEventListener("astro:after-swap", () => {
   init();

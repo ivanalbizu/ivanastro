@@ -43,7 +43,8 @@
   --font-mono: monospace;
   
   --grid-unit: 0.5rem;
-  --max-width: 1200px;
+  --max-width: 75rem;
+  --max-width-thin: 37.5rem;
   --sidebar-width: 320px;
   --content-padding: calc(var(--grid-unit) * 3);
 
@@ -86,7 +87,8 @@
 }
 .zoomed {
   --fs-scale: 1.2;
-  --max-width: 2000px;
+  --max-width: 125rem;
+  --max-width-thin: 62.5rem;
 }
 
 *,
