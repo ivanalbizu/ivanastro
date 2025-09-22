@@ -227,26 +227,6 @@ const { base = "" } = Astro.site
 <script src="../assets/js/script.ts"></script>
 
 <style lang="scss">
-  .skip-to-content {
-    a {
-      padding: 6px;
-      position: absolute;
-      top: -80px;
-      left: 0px;
-      color: white;
-      border-bottom-right-radius: 8px;
-      background: #bf1722;
-      transition: top var(--transition-duration-normal) ease;
-      z-index: 100;
-      &:focus {
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        outline-color: transparent;
-        transition: top 0.05s ease-in;
-      }
-    }
-  }
   .site-header {
     border-bottom: var(--border-width-md) solid var(--color-border);
     background-color: var(--color-surface);

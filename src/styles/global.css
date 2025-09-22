@@ -301,3 +301,23 @@ hr {
 .ratio-16-9 {
   aspect-ratio: 16/9;
 }
+
+.skip-to-content a {
+  padding: 6px;
+  position: absolute;
+  top: -80px;
+  left: 0px;
+  color: white;
+  border-bottom-right-radius: 8px;
+  background: #bf1722;
+  transition: top var(--transition-duration-normal) ease;
+  z-index: 100;
+}
+
+.skip-to-content a:focus {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  outline-color: transparent;
+  transition: top 0.05s ease-in;
+}
