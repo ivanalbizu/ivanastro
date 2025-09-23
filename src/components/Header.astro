@@ -322,6 +322,7 @@ const { base = "" } = Astro.site
     font-size: var(--fs-heading-6);
     color: var(--color-text-primary);
     padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 3);
+    max-width: calc(100% - var(--target-size) - (var(--grid-unit) * 2));
   }
 
   .search-input::placeholder {
