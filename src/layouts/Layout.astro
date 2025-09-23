@@ -117,7 +117,7 @@ const {
     <Header />
     <main class="main-content" class:list={{ "with-sidebar": showSidebar }} id="main-content">
       <div class="content">
-        <Breadcrumbs currentPath={currentPath} />
+        <Breadcrumbs currentPath={currentPath} title={title} />
         <slot />
       </div>
       {

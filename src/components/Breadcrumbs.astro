@@ -2,10 +2,9 @@
 import { generateBreadcrumbs } from "@utils/generateBreadcrumbs";
 
 const { pathname: currentPath, origin } = Astro.url;
+const { title } = Astro.props;
 
 const breadcrumbs = generateBreadcrumbs({ currentPath });
-
-// TODO: el breadcrumb está pintando el PATH, me gustaría que fuera el título
 ---
 
 {
@@ -18,7 +17,7 @@ const breadcrumbs = generateBreadcrumbs({ currentPath });
 
             return (
               <li>
-                {!isLast ? <a href={link}>{label}</a> : <span aria-current="page">{label}</span>}
+                {!isLast ? <a href={link}>{label}</a> : <span aria-current="page">{title || label}</span>}
                 {!isLast && " / "}
               </li>
             );
