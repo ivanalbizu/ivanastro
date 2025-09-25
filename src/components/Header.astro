@@ -82,15 +82,9 @@ const { base = "" } = Astro.site
             </Button>
           </li>
           <li><a href={base + "blog"} class="nav-link">Blog</a></li>
-          <li><a href={base + "categorias"} class="nav-link">Categorias</a></li>
+          <li><a href={base + "categorias"} class="nav-link">Categorías</a></li>
           <li><a href={base + "sobre-mi"} class="nav-link">Sobre mí</a></li>
-          <li>
-            <a
-              href={base + "cv-ivan-gonzalez-albizu.pdf"}
-              class="nav-link"
-              target="_blank">CV</a
-            >
-          </li>
+          <li><a href={base + "curriculum"} class="nav-link">CV</a></li>
         </ul>
       </nav>
 
@@ -188,12 +182,7 @@ const { base = "" } = Astro.site
         placeholder="Buscar artículos..."
         autocomplete="off"
       />
-      <Button
-        tag="button"
-        variant="link"
-        size="sm"
-        id="search-close"
-      >
+      <Button tag="button" variant="link" size="sm" id="search-close">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

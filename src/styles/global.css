@@ -117,7 +117,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   color: var(--color-accent);
-  margin-bottom: calc(var(--grid-unit) * 2);
+  margin-block-end: calc(var(--grid-unit) * 2);
 }
 
 h1 {
@@ -126,7 +126,7 @@ h1 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0.05em;
-  margin-bottom: calc(var(--grid-unit) * 4);
+  margin-block-end: calc(var(--grid-unit) * 4);
 }
 
 h2 {
@@ -146,7 +146,7 @@ h3 {
 }
 
 p {
-  margin-bottom: calc(var(--grid-unit) * 2);
+  margin-block-end: calc(var(--grid-unit) * 2);
   font-size: var(--fs-paragraph-2);
 }
 
@@ -173,8 +173,8 @@ button {
 }
 
 ul, ol {
-  margin-bottom: calc(var(--grid-unit) * 2);
-  padding-left: calc(var(--grid-unit) * 3);
+  margin-block-end: calc(var(--grid-unit) * 2);
+  padding-left: calc(var(--grid-unit) * 2);
 }
 ul[class],
 ol[class] {
@@ -182,7 +182,7 @@ ol[class] {
 }
 
 li {
-  margin-bottom: calc(var(--grid-unit) / 2);
+  margin-block-end: calc(var(--grid-unit) / 2);
 }
 
 blockquote {

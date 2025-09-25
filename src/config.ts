@@ -39,7 +39,7 @@ export const config: SiteConfig = {
     {
       label: "Linkedin",
       name: "linkedin",
-      href: "https://www.linkedin.com/in/ivanalbizu/",
+      href: "https://www.linkedin.com/in/ivanalbizu",
     },
     {
       label: "Twitter",
