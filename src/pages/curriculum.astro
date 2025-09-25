@@ -1,6 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import PageHeader from "@components/PageHeader.astro";
+import { Picture } from 'astro:assets';
+import image_cv from '../assets/images/cv/foto-ivan-albizu.jpeg';
 
 import { config } from "../config";
 
@@ -26,10 +28,7 @@ const pageDescription =
     </PageHeader>
     <div class="cv">
       <div class="cv__photo">
-        <img
-          src="/foto-ivan-albizu.jpeg"
-          alt="Foto carné Iván Albizu"
-        />
+        <Picture src={image_cv} formats={['avif', 'webp']} alt="A description of my image." />
       </div>
       <section class="cv__intro">
         <h1>Iván González Albizu</h1>
@@ -100,8 +99,11 @@ const pageDescription =
             <h5>Capgemini</h5>
             <div><time>Mar 2022</time> - Actual</div>
             <ul>
-              <li>Maquetación componentes Angular</li>
-              <li>Configuración básica Storybook para Angular</li>
+              <li>Uso diario de Astro</li>
+              <li>Maquetación con metodología BEM y Atomic Design</li>
+              <li>Creación de historias en Storybook de componentes Stencil y Angular</li>
+              <li>Maquetación de componentes Angular y Stencil</li>
+              <li>Creación de componentes con Stencil</li>
             </ul>
           </div>
         </article>
@@ -204,11 +206,11 @@ const pageDescription =
 <style lang="scss">
   .cv {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "photo intro"
-      "left left"
-      "right right";
+      "intro"
+      "left"
+      "right";
     gap: 48px 32px;
     margin-block-end: calc(var(--grid-unit) * 2);
 
@@ -222,7 +224,7 @@ const pageDescription =
     &__photo {
       grid-area: photo;
       display: none;
-      @media (min-width: 575px) {
+      @media (min-width: 768px) {
         display: block;
       }
     }
@@ -274,12 +276,16 @@ const pageDescription =
     border-bottom: var(--border-width-md) solid var(--color-light-gray);
     margin-block-end: 26px;
 
-    @media (min-width: 575px) {
+    @media (min-width: 768px) {
       display: grid;
       grid-template-columns: 1fr 3fr;
+      gap: 0 16px;
       &__content {
         display: grid;
         grid-template-columns: 1fr auto;
+        ul {
+          grid-column: 1 / -1;
+        }
       }
     }
   }
