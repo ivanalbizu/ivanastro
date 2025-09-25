@@ -46,7 +46,7 @@
   --max-width: 75rem;
   --max-width-thin: 37.5rem;
   --sidebar-width: 320px;
-  --content-padding: calc(var(--grid-unit) * 3);
+  --content-padding: calc(var(--grid-unit) * 2);
 
   --target-size: 44px;
 
@@ -86,7 +86,7 @@
   }
 }
 .zoomed {
-  --fs-scale: 1.2;
+  --fs-scale: 1.15;
   --max-width: 125rem;
   --max-width-thin: 62.5rem;
 }
