@@ -172,7 +172,7 @@ function handleSearch(event: Event) {
           )),
     )
     .slice(0, 10);
-
+  
   displayResults(results, query);
   trapFocus(searchOverlay, false);
 }
@@ -194,7 +194,7 @@ function displayResults(results: any[], query: string) {
       (post: any) => `
     <article class="search-result">
       <h3 class="search-result-title">
-        <a href="${base}blog/${post.slug.startsWith("/") ? post.slug.slice(1) : post.slug}">${post.title}</a>
+        <a href="${base}blog/${post.slug}">${post.title}</a>
       </h3>
       <time class="search-result-date">${new Date(
         post.date,

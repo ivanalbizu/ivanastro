@@ -1,20 +1,17 @@
 export async function GET() {
-  // Get all blog posts
-  console.log('hols');
-  
+  // Get all blog posts 
   const posts = await import.meta.glob('../content/blog/*.mdx');
   
   const searchData = [];
   
   for (const path in posts) {
     const post = await posts[path]();
-    const url = path.replace('../content', '').replace('.md', '');
     
     searchData.push({
       title: post.frontmatter.title || 'Untitled',
-      url: url,
+      slug: post.frontmatter.slug,
       date: post.frontmatter.date || new Date().toISOString(),
-      excerpt: post.frontmatter.description || '',
+      description: post.frontmatter.description || '',
       categories: post.frontmatter.categories || []
     });
   }
