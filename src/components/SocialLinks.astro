@@ -2,23 +2,25 @@
 import { config } from "../config";
 ---
 
-<div class="social-links">
+<ul class="social-links">
 	{
 		config.social.map((item) => (
-			<a
-				href={item.href}
-				target="_blank"
-				rel="noopener"
-				aria-label={item.label}
-				class="social-link"
-			>
-				<svg fill="currentColor" aria-hidden="true">
-					<use href={`#${item.name}`} />
-				</svg>
-			</a>
+			<li>
+				<a
+					href={item.href}
+					target="_blank"
+					rel="noopener"
+					aria-label={item.label}
+					class="social-link"
+				>
+					<svg fill="currentColor" aria-hidden="true">
+						<use href={`#${item.name}`} />
+					</svg>
+				</a>
+			</li>
 		))
 	}
-</div>
+</ul>
 
 <svg
 	aria-hidden="true"
@@ -70,6 +72,8 @@ import { config } from "../config";
 		display: flex;
 		gap: calc(var(--grid-unit) * 1.5);
 		align-items: center;
+		margin: 0;
+		padding: 0;
 	}
 	.social-link {
 		display: flex;
