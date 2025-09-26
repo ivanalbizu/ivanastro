@@ -7,7 +7,7 @@ const { base = "" } = Astro.site
   : { base: "" };
 
 const { pathname } = Astro.url;
-const pathSegment = pathname.slice(1);
+const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
 ---
 
 <header class="site-header">
@@ -86,8 +86,8 @@ const pathSegment = pathname.slice(1);
           <li>
             <a
               href={base + "blog"}
-              class:list={["nav-link", pathSegment === "blog" ? "active" : ""]}
-              aria-current={pathSegment === 'blog' ? 'page' : null}
+              class:list={["nav-link", pathSegment == "blog" ? "active" : ""]}
+              aria-current={pathSegment == 'blog' ? 'page' : null}
               >Blog</a>
           </li>
           <li>
@@ -95,9 +95,9 @@ const pathSegment = pathname.slice(1);
               href={base + "categorias"}
               class:list={[
                 "nav-link",
-                pathSegment === "categorias" ? "active" : "",
+                pathSegment == "categorias" ? "active" : "",
               ]}
-              aria-current={pathSegment === 'categorias' ? 'page' : null}
+              aria-current={pathSegment == 'categorias' ? 'page' : null}
               >Categorías</a>
           </li>
           <li>
@@ -105,9 +105,9 @@ const pathSegment = pathname.slice(1);
               href={base + "sobre-mi"}
               class:list={[
                 "nav-link",
-                pathSegment === "sobre-mi" ? "active" : "",
+                pathSegment == "sobre-mi" ? "active" : "",
               ]}
-              aria-current={pathSegment === 'sobre-mi' ? 'page' : null}
+              aria-current={pathSegment == 'sobre-mi' ? 'page' : null}
               >Sobre mí</a>
           </li>
           <li>
@@ -115,9 +115,9 @@ const pathSegment = pathname.slice(1);
               href={base + "curriculum"}
               class:list={[
                 "nav-link",
-                pathSegment === "curriculum" ? "active" : "",
+                pathSegment == "curriculum" ? "active" : "",
               ]}
-              aria-current={pathSegment === 'curriculum' ? 'page' : null}
+              aria-current={pathSegment == 'curriculum' ? 'page' : null}
               >CV</a>
           </li>
         </ul>
