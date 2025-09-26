@@ -1,7 +1,7 @@
 ---
 import Button from "@components/Button.astro";
 
-const { length, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, urlPattern = '' } =
+const { length, currentPage, firstUrl, prevUrl, nextUrl, lastUrl, urlPattern = '/blog' } =
 	Astro.props;
 const paginationList: number[] = Array.from(
 	{ length: length },
@@ -138,7 +138,7 @@ const paginationList: number[] = Array.from(
 						tag="a"
 						variant="secondary"
 						size="sm"
-						href={`${firstUrl ? `${firstUrl}` : `${urlPattern}`}${num == 1 ? "" : "/" + num}`}
+						href={`${urlPattern}${num == 1 ? "" : "/" + num}`}
 						class={`pagination__link ${currentPage == num ? "disabled active" : ""}`}
 						id={`link-${num}`}
 						aria-labelledby={`prefix link-${num}`}

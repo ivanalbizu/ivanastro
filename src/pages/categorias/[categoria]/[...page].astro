@@ -57,7 +57,7 @@ const { categoria } = Astro.params;
 ---
 
 <Layout
-  title={`${categoria}`}
+  title={`${page.currentPage > 1 ? 'Página ' + page.currentPage : categoria}`}
   description={`Entrada{posts.length === 1 ? "" : "s"} en la categoría ${categoria}`}
 >
   <div>
@@ -85,7 +85,7 @@ const { categoria } = Astro.params;
             (page.lastPage > 1) && (
               <div>
                 <Pagination
-                  urlPattern={categoria}
+                  urlPattern={`/categorias/${categoria}`}
                   length={page.lastPage}
                   currentUrl={page.url.current}
                   currentPage={page.currentPage}
