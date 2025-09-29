@@ -3,6 +3,7 @@ import { config } from "../config";
 ---
 
 <ul class="social-links">
+	<span class="visually-hidden">Enlaces a redes sociales y profesionales</span>
 	{
 		config.social.map((item) => (
 			<li>
@@ -10,9 +11,9 @@ import { config } from "../config";
 					href={item.href}
 					target="_blank"
 					rel="noopener"
-					aria-label={item.label}
 					class="social-link"
 				>
+					<span class="visually-hidden">Abrir cuenta de {item.label} en nueva ventana</span>
 					<svg fill="currentColor" aria-hidden="true">
 						<use href={`#${item.name}`} />
 					</svg>

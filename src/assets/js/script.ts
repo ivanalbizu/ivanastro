@@ -207,7 +207,7 @@ function displayResults(results: any[], query: string) {
       ${post.categories
           ? `
         <div class="search-result-categories">
-          ${post.categories.map((cat: string) => `<span class="btn search-category">${cat}</span>`).join(" ")}
+          ${post.categories.map((cat: string) => `<a href="${base}categorias/${cat}"><span class="visually-hidden">Ver publicaciones sobre </span>${cat}</a>`).join(" ")}
         </div>
       `
           : ""
