@@ -2,8 +2,8 @@
 import { config } from "../config";
 ---
 
-<ul class="social-links">
-	<span class="visually-hidden">Enlaces a redes sociales y profesionales</span>
+<span hidden id="social-links-label">Enlaces a redes sociales y profesionales</span>
+<ul class="social-links" aria-labelledby="social-links-label">
 	{
 		config.social.map((item) => (
 			<li>

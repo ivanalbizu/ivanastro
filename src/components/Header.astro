@@ -515,6 +515,9 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     display: flex;
     align-items: center;
     gap: calc(var(--grid-unit));
+    .btn {
+      min-height: var(--target-size);
+    }
   }
 
   @media (max-width: 767.98px) {

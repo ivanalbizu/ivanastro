@@ -37,8 +37,8 @@ const categories = [
   {
     recentPosts.length > 0 && (
       <section class="recent-posts">
-        <h2 class="section-title">Entradas recientes</h2>
-        <ul class="post-list">
+        <h2 class="section-title" id="sidebar-recent">Entradas recientes</h2>
+        <ul class="post-list" aria-labelledby="sidebar-recent">
           {recentPosts.map((post: any) => (
             <li class="post-item">
               <a
@@ -64,9 +64,11 @@ const categories = [
   {
     categories.length > 0 && (
       <section class="categories">
-        <h2 class="section-title">Categorias</h2>
-        <ul class="category-list">
-          <span class="visually-hidden">Enlaces a entradas de Blog categorizadas</span>
+        <h2 class="section-title" id="sidebar-category">
+          <span hidden>Enlaces a entradas por </span>
+          Categorias
+        </h2>
+        <ul class="category-list" aria-labelledby="sidebar-category">
           {categories.map((category) => (
             <li class="category-item">
               <Button

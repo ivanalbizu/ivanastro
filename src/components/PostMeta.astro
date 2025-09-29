@@ -38,8 +38,8 @@ const base = import.meta.env.BASE_URL;
     showCategories &&
       frontmatter.categories &&
       frontmatter.categories.length > 0 && (
+        <span hidden>Enlaces de publicaciones de Blog relacionadas con este publicación</span>
         <ul class="post-meta__categories">
-          <span class="visually-hidden">Enlaces a publicaciones de Blog relacionadas con este publicación</span>
           {frontmatter.categories.map((category: string) => (
             <li>
               <a
@@ -61,7 +61,7 @@ const base = import.meta.env.BASE_URL;
     showReadMore && (
       <a href={`${base}blog/${frontmatter.slug}`} class="post-meta__readmore">
         Seguir leyendo
-        <span class="visually-hidden">sobre {frontmatter.title}</span>
+        <span hidden>sobre {frontmatter.title}</span>
       </a>
     )
   }
