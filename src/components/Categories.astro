@@ -1,5 +1,7 @@
 ---
 import type { HTMLTag } from 'astro/types';
+import Button from "@components/Button.astro";
+
 
 import { getCollection } from "astro:content";
 
@@ -50,14 +52,16 @@ const sortedCategories = Object.entries(categoryMap)
 
 <div class="categories-grid">
   {sortedCategories.map(([category, posts]: [string, any[]]) => (
-    <div class="category-card">
-      <a href={`${base}categorias/${category.toLowerCase().replace(/[\/\s]+/g, '-')}`} class="category-link">
-        <Element {...props} class="category-title">{category}</Element>
-        <p class="category-count">
+    <Button tag="a" variant="secondary" href={`${base}categorias/${category.toLowerCase().replace(/[\/\s]+/g, '-')}`} hasChevron class="icon chevron">
+      <span class="counter">
+        <span class="counter__top">
+          {category}
+        </span>
+        <span class="counter__bottom">
           {posts.length} entrada{posts.length === 1 ? '' : 's'}
-        </p>
-      </a>
-    </div>
+        </span>
+      </span>
+    </Button>
   ))}
 </div>
 
@@ -68,52 +72,23 @@ const sortedCategories = Object.entries(categoryMap)
 )}
 
 <style lang="scss">
+  .counter {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+    &__top {
+      text-transform: uppercase;
+    }
+    &__bottom {
+      font-size: 0.85em;
+      color: var(--color-text-muted);
+      line-height: 1;
+    }
+  }
   .categories-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: calc(var(--grid-unit) * 2);
-  }
-
-  .category-card {
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    transition: transform var(--transition-duration-normal) ease, border-color var(--transition-duration-normal) ease, box-shadow var(--transition-duration-normal) ease;
-    overflow: hidden;
-    &:hover,
-    &:focus,
-    &:focus-within {
-      border-color: var(--color-interaction-default);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  .category-link {
-    display: block;
-    padding: calc(var(--grid-unit) * 2);
-    text-decoration-color: transparent;
-    color: inherit;
-    &:hover .category-title {
-      color: var(--color-interaction-default);
-    }
-  }
-
-  .category-title {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-paragraph-1);
-    font-weight: 700;
-    margin-bottom: calc(var(--grid-unit) / 2);
-    letter-spacing: 0.03em;
-    color: var(--color-text-primary);
-    transition: color var(--transition-duration-normal) ease;
-  }
-
-  .category-count {
-    font-family: var(--font-mono);
-    font-size: var(--fs-paragraph-5);
-    color: var(--color-text-muted);
-    letter-spacing: 0.03em;
-    margin: 0;
   }
 
   .no-categories {

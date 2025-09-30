@@ -7,6 +7,7 @@ type Props<TagGeneric extends Tag> = {
   tag: TagGeneric;
   variant?: "link" | "secondary" | "tertiary";
   size?: "sm" | "lg";
+  hasChevron?: boolean;
   disabled?: boolean;
   classList?: string[];
 } & Polymorphic<{ as: TagGeneric }>;
@@ -15,6 +16,7 @@ const {
   tag: Tag,
   variant = null,
   size = null,
+  hasChevron = false,
   disabled = false,
   classList = [],
   href,
@@ -49,7 +51,30 @@ const { classes, ...attributes } = allAttributes;
 ---
 
 <Tag class:list={[classes]} {...attributes}>
+  <slot name="icon" />
   <slot />
+  {
+    hasChevron && (
+      <span class="btn__chevron">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m9 18l6-6l-6-6"
+          />
+        </svg>
+      </span>
+    )
+  }
 </Tag>
 
 <style lang="scss">
@@ -62,6 +87,8 @@ const { classes, ...attributes } = allAttributes;
     text-decoration-color: transparent;
     display: inline-flex;
     align-items: center;
+    gap: var(--grid-unit);
+    text-align: left;
     transition:
       color var(--transition-duration-slow) ease,
       background var(--transition-duration-slow) ease,
@@ -109,7 +136,7 @@ const { classes, ...attributes } = allAttributes;
       &.active,
       &:hover,
       &:focus {
-        color: var(--color-text-primary);;
+        color: var(--color-text-primary);
       }
     }
 
@@ -122,8 +149,16 @@ const { classes, ...attributes } = allAttributes;
     }
 
     &--disabled {
-      opacity: .4;
+      opacity: 0.4;
       pointer-events: none;
+    }
+
+    &__icon {
+      align-self: start;
+    }
+    &__chevron {
+      margin-left: auto;
+      display: flex;
     }
   }
 
