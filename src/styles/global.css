@@ -36,6 +36,10 @@
   --border-width-sm: 1px;
   --border-width-md: 2px;
   --border-width-lg: 4px;
+
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
   
   --font-family-primary: "Atkinson Hyperlegible", sans-serif;
   --font-family-secondary: "Atkinson Hyperlegible", sans-serif;
@@ -197,7 +201,7 @@ code {
   font-size: var(--fs-paragraph-4);
   background-color: var(--color-surface);
   padding: 2px 4px;
-  border-radius: 3px;
+  border-radius: var(--border-radius-sm);
   border: var(--border-width-sm) solid var(--color-border);
 }
 
@@ -208,7 +212,7 @@ pre {
   padding: calc(var(--grid-unit) * 2);
   margin: calc(var(--grid-unit) * 3) 0;
   overflow-x: auto;
-  border-radius: 4px;
+  border-radius: var(--border-radius-sm);
 }
 
 pre code {
@@ -238,7 +242,7 @@ img::before {
   height: calc(100% + 10px);
   width: 100%;
   background-color: var(--color-light-gray);
-  border-radius: 5px;
+  border-radius: var(--border-radius-md);
 }
 img::after {
   content: "🖼️ Imagen rota " attr(alt);
