@@ -84,7 +84,7 @@ const { headings } = Astro.props;
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: calc(var(--grid-unit) * 2);
-    margin-bottom: calc(var(--grid-unit) * 4);
+    margin-block-end: calc(var(--grid-unit) * 4);
   }
 
   .toc-title {
@@ -94,7 +94,7 @@ const { headings } = Astro.props;
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    margin-bottom: calc(var(--grid-unit) * 2);
+    margin-block-end: calc(var(--grid-unit) * 2);
     padding-bottom: calc(var(--grid-unit));
     border-bottom: var(--border-width-md) solid var(--color-accent);
   }
@@ -110,7 +110,7 @@ const { headings } = Astro.props;
   }
 
   .toc-item {
-    margin-bottom: calc(var(--grid-unit));
+    margin-block-end: calc(var(--grid-unit));
     counter-increment: toc-counter;
     position: relative;
     &::before {

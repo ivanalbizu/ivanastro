@@ -109,7 +109,7 @@ const { page } = Astro.props;
     font-family: var(--font-family-primary);
     font-size: var(--fs-heading-4);
     font-weight: 700;
-    margin-bottom: calc(var(--grid-unit) * 2);
+    margin-block-end: calc(var(--grid-unit) * 2);
     a {
       color: var(--color-text-primary);
       text-underline-offset: 3px;
@@ -155,7 +155,7 @@ const { page } = Astro.props;
   .post-excerpt {
     color: var(--color-text-secondary);
     line-height: 1.6;
-    margin-bottom: calc(var(--grid-unit) * 2);
+    margin-block-end: calc(var(--grid-unit) * 2);
     font-size: var(--fs-paragraph-1);
   }
 
@@ -163,7 +163,6 @@ const { page } = Astro.props;
     text-align: center;
     padding: calc(var(--grid-unit) * 6);
     color: var(--color-text-muted);
-    font-style: italic;
   }
 
   .no-posts code {

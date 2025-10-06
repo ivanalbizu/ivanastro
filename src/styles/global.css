@@ -126,7 +126,6 @@ h1 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0.05em;
-  margin-block-end: calc(var(--grid-unit) * 4);
 }
 
 h2 {
@@ -264,7 +263,7 @@ figcaption {
   font-size: var(--fs-paragraph-4);
   color: var(--color-text-muted);
   text-align: center;
-  margin-top: calc(var(--grid-unit) / 2);
+  margin-block-start: calc(var(--grid-unit) / 2);
 }
 
 hr {

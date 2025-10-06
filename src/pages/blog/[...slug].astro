@@ -95,7 +95,7 @@ const publishedTime = post.data.date
 
 <style lang="scss">
   .post-header {
-    margin-bottom: calc(var(--grid-unit) * 6);
+    margin-block-end: calc(var(--grid-unit) * 6);
   }
 
   .post-title {
@@ -105,7 +105,7 @@ const publishedTime = post.data.date
     color: var(--color-accent);
     letter-spacing: 0.03em;
     line-height: 1.1;
-    margin-bottom: calc(var(--grid-unit) * 3);
+    margin-block-end: calc(var(--grid-unit) * 3);
   }
 
   .post-excerpt {
@@ -119,7 +119,7 @@ const publishedTime = post.data.date
   .post-content {
     font-size: var(--fs-paragraph-2);
     line-height: 1.7;
-    margin-bottom: calc(var(--grid-unit) * 6);
+    margin-block-end: calc(var(--grid-unit) * 6);
   }
 
   .post-content :global(h1) {
@@ -129,8 +129,8 @@ const publishedTime = post.data.date
     color: var(--color-text-primary);
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    margin-top: calc(var(--grid-unit) * 6);
-    margin-bottom: calc(var(--grid-unit) * 3);
+    margin-block-start: calc(var(--grid-unit) * 6);
+    margin-block-end: calc(var(--grid-unit) * 3);
   }
 
   .post-content :global(h2) {
@@ -140,8 +140,8 @@ const publishedTime = post.data.date
     color: var(--color-text-primary);
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    margin-top: calc(var(--grid-unit) * 6);
-    margin-bottom: calc(var(--grid-unit) * 3);
+    margin-block-start: calc(var(--grid-unit) * 6);
+    margin-block-end: calc(var(--grid-unit) * 3);
   }
 
   .post-content :global(h3) {
@@ -151,12 +151,12 @@ const publishedTime = post.data.date
     color: var(--color-text-primary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    margin-top: calc(var(--grid-unit) * 4);
-    margin-bottom: calc(var(--grid-unit) * 2);
+    margin-block-start: calc(var(--grid-unit) * 4);
+    margin-block-end: calc(var(--grid-unit) * 2);
   }
 
   .post-content :global(p) {
-    margin-bottom: calc(var(--grid-unit) * 3);
+    margin-block-end: calc(var(--grid-unit) * 3);
   }
 
   .post-content :global(blockquote) {
@@ -255,16 +255,16 @@ const publishedTime = post.data.date
 
   .post-content :global(ul),
   .post-content :global(ol) {
-    margin-bottom: calc(var(--grid-unit) * 3);
+    margin-block-end: calc(var(--grid-unit) * 3);
     padding-left: calc(var(--grid-unit) * 3);
   }
 
   .post-content :global(li) {
-    margin-bottom: calc(var(--grid-unit) / 2);
+    margin-block-end: calc(var(--grid-unit) / 2);
   }
 
   .post-content :global(strong) {
-    font-weight: 700;
+    font-weight: bold;
     color: var(--color-text-primary);
   }
 
