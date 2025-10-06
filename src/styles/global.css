@@ -48,6 +48,7 @@
   
   --grid-unit: 0.5rem;
   --max-width: 75rem;
+  --max-width-medium: 50rem;
   --max-width-thin: 37.5rem;
   --sidebar-width: 320px;
   --content-padding: calc(var(--grid-unit) * 2);
