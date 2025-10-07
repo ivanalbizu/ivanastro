@@ -252,7 +252,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
   .site-header {
     border-bottom: var(--border-width-md) solid var(--color-border);
     background-color: var(--color-surface);
-    padding: calc(var(--grid-unit) * 2) 0;
+    padding: var(--grid-unit) 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -510,10 +510,6 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
         text-decoration-color: revert;
         background-color: transparent;
       }
-    }
-
-    .site-header {
-      padding: calc(var(--grid-unit) * 3) 0;
     }
     .header-content {
       display: flex;
