@@ -88,8 +88,8 @@ const { headings } = Astro.props;
   }
 
   .toc-title {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-paragraph-1);
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-paragraph-1);
     font-weight: 700;
     color: var(--color-accent);
     text-transform: uppercase;
@@ -117,8 +117,8 @@ const { headings } = Astro.props;
       content: counter(toc-counter) ".";
       position: absolute;
       left: 0;
-      font-family: var(--font-mono);
-      font-size: var(--fs-paragraph-4);
+      font-family: var(--typography-font-family-mono);
+      font-size: var(--typography-font-size-paragraph-4);
       color: var(--color-text-muted);
       font-weight: 700;
     }
@@ -151,7 +151,7 @@ const { headings } = Astro.props;
   .toc-level-3 {
     margin-left: calc(var(--grid-unit) * 2);
     .toc-link {
-      font-size: var(--fs-paragraph-3);
+      font-size: var(--typography-font-size-paragraph-3);
       color: var(--color-text-secondary);
       &:hover,
       &:focus {

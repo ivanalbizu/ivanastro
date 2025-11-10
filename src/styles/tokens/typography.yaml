@@ -1,0 +1,43 @@
+typography:
+  font:
+    family:
+      primary:
+        $value: "'Atkinson Hyperlegible', sans-serif"
+      secondary:
+        $value: "'Atkinson Hyperlegible', sans-serif"
+      body:
+        $value: "'Atkinson Hyperlegible', sans-serif"
+      mono:
+        $value: monospace
+    size:
+      heading:
+        1:
+          $value: calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale))
+        2: 
+          $value: calc(clamp(1.5rem, 3vw + 1rem, 3rem) * var(--typography-font-size-scale))
+        3: 
+          $value: calc(clamp(1.3rem, 2.5vw + 1rem, 2.5rem) * var(--typography-font-size-scale))
+        4: 
+          $value: calc(clamp(1.2rem, 2.5vw + 1rem, 2rem) * var(--typography-font-size-scale))
+        5: 
+          $value: calc(clamp(1.15rem, 2vw + 1rem, 1.4rem) * var(--typography-font-size-scale))
+        6: 
+          $value: calc(clamp(1.125rem, 1.8vw + 1rem, 1.25rem) * var(--typography-font-size-scale))
+      paragraph:
+        1:
+          $value: calc(1.1rem * var(--typography-font-size-scale))
+        2:
+          $value: calc(1rem * var(--typography-font-size-scale))
+        3:
+          $value: calc(0.95rem * var(--typography-font-size-scale))
+        4:
+          $value: calc(0.9rem * var(--typography-font-size-scale))
+        5:
+          $value: calc(0.85rem * var(--typography-font-size-scale))
+      btn:
+        default:
+          $value: calc(1.15rem * var(--typography-font-size-scale))
+        sm:
+          $value: calc(1rem * var(--typography-font-size-scale))
+      scale:
+        $value: 1

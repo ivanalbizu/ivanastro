@@ -273,7 +273,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     display: flex;
     min-height: var(--target-size);
     align-items: center;
-    font-family: var(--font-family-primary);
+    font-family: var(--typography-font-family-primary);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -340,15 +340,15 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
 
   .search-input {
     flex: 1;
-    font-family: var(--font-body);
-    font-size: var(--fs-heading-6);
+    font-family: var(--typography-font-family-body);
+    font-size: var(--typography-font-size-heading-6);
     color: var(--color-text-primary);
     padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 3);
     max-width: calc(100% - var(--target-size) - (var(--grid-unit) * 2));
   }
 
   .search-input::placeholder {
-    color: var(--color-medium-gray);
+    color: var(--color-gray-medium);
   }
 
   .search-results {
@@ -398,7 +398,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     color: var(--color-text-muted);
     font-style: italic;
     margin: 0;
-    font-size: var(--fs-paragraph-1);
+    font-size: var(--typography-font-size-paragraph-1);
   }
 
   .nav-list {
@@ -472,9 +472,9 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     display: flex;
     align-items: center;
     padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 4);
-    font-family: var(--font-family-primary);
+    font-family: var(--typography-font-family-primary);
     font-weight: 700;
-    font-size: var(--fs-heading-4);
+    font-size: var(--typography-font-size-heading-4);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--color-text-primary);
@@ -499,7 +499,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
 
   @media (min-width: 768px) {
     .nav-link {
-      font-size: var(--fs-paragraph-2);
+      font-size: var(--typography-font-size-paragraph-2);
       letter-spacing: 0.03em;
       padding: calc(var(--grid-unit) / 2) calc(var(--grid-unit));
       border-bottom: 0;

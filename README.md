@@ -397,13 +397,13 @@ Edit CSS variables in `src/styles/global.css`:
 :root {
   /* Monotone Palette */
   --color-white: #ffffff;
-  --color-light-gray: #f5f5f5;
-  --color-medium-gray: #888888;
-  --color-dark-gray: #333333;
+  --color-gray-light: #f5f5f5;
+  --color-gray-medium: #888888;
+  --color-gray-dark: #333333;
   --color-black: #000000;
   
   /* Accent Color */
-  --color-accent-red: #dc2626;
+  --color-accent: #dc2626;
 }
 ```
 
@@ -413,10 +413,10 @@ Modify font families in `src/styles/global.css`:
 
 ```css
 :root {
-  --font-family-primary: 'Oswald', sans-serif;
+  --typography-font-family-primary: 'Oswald', sans-serif;
   --font-heading-secondary: 'Roboto Condensed', sans-serif;
-  --font-body: 'Work Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --typography-font-family-body: 'Work Sans', sans-serif;
+  --typography-font-family-mono: 'JetBrains Mono', monospace;
 }
 ```
 

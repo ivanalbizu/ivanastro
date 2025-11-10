@@ -1,0 +1,15 @@
+border:
+  width:
+    sm:
+      $value: 1px
+    md:
+      $value: 2px
+    lg:
+      $value: 4px
+  radius:
+    sm:
+      $value: 2px
+    md:
+      $value: 4px
+    lg:
+      $value: 8px

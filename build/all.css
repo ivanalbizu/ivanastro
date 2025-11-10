@@ -1,0 +1,46 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
+  --color-white: white;
+  --color-black: black;
+  --color-gray-light: #f5f5f5;
+  --color-gray-medium: #666;
+  --color-gray-dark: #333;
+  --color-accent: #a20000;
+  --color-interaction-default: #0054e5;
+  --color-background: var(--color-white);
+  --color-surface: var(--color-gray-light);
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-gray-dark);
+  --color-text-muted: var(--color-gray-medium);
+  --color-border: var(--color-gray-medium);
+  --transition-duration-slow: 0.3s;
+  --transition-duration-normal: 0.2s;
+  --transition-duration-fast: 0.1s;
+  --typography-font-family-primary: 'Atkinson Hyperlegible', sans-serif;
+  --typography-font-family-secondary: 'Atkinson Hyperlegible', sans-serif;
+  --typography-font-family-body: 'Atkinson Hyperlegible', sans-serif;
+  --typography-font-family-mono: monospace;
+  --typography-font-size-heading-1: calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale));
+  --typography-font-size-heading-2: calc(clamp(1.5rem, 3vw + 1rem, 3rem) * var(--typography-font-size-scale));
+  --typography-font-size-heading-3: calc(clamp(1.3rem, 2.5vw + 1rem, 2.5rem) * var(--typography-font-size-scale));
+  --typography-font-size-heading-4: calc(clamp(1.2rem, 2.5vw + 1rem, 2rem) * var(--typography-font-size-scale));
+  --typography-font-size-heading-5: calc(clamp(1.15rem, 2vw + 1rem, 1.4rem) * var(--typography-font-size-scale));
+  --typography-font-size-heading-6: calc(clamp(1.125rem, 1.8vw + 1rem, 1.25rem) * var(--typography-font-size-scale));
+  --typography-font-size-paragraph-1: calc(1.1rem * var(--typography-font-size-scale));
+  --typography-font-size-paragraph-2: calc(1rem * var(--typography-font-size-scale));
+  --typography-font-size-paragraph-3: calc(0.95rem * var(--typography-font-size-scale));
+  --typography-font-size-paragraph-4: calc(0.9rem * var(--typography-font-size-scale));
+  --typography-font-size-paragraph-5: calc(0.85rem * var(--typography-font-size-scale));
+  --typography-font-size-btn-default: calc(1.15rem * var(--typography-font-size-scale));
+  --typography-font-size-btn-sm: calc(1rem * var(--typography-font-size-scale));
+  --typography-font-size-scale: 1;
+}
