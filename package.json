@@ -14,7 +14,8 @@
     "generate-screenshots": "node generate-screenshots.js",
     "test:features": "playwright test",
     "matter": "node .scripts/matter.cjs",
-    "build:tokens": "npx co build"
+    "build:tokens": "npx co build",
+    "build:tokens:watch": "npx co build --watch"
   },
   "author": "@ivanalbizu",
   "license": "MIT",
