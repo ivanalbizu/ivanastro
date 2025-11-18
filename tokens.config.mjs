@@ -8,10 +8,7 @@ export default {
   plugins: [
     pluginCSS({
       modeSelectors: [
-        { mode: "light", selectors: ["@media (prefers-color-scheme: light)", '[data-color-mode="light"]'] },
-        { mode: "lightHighContrast", selectors: ["@media (prefers-color-scheme: light) and (prefers-contrast: more)", '[data-color-mode="lightHighContrast"]'] },
         { mode: "dark", selectors: ["@media (prefers-color-scheme: dark)", '[data-theme="dark"]'] },
-        { mode: "darkHighContrast", selectors: ["@media (prefers-color-scheme: dark) and (prefers-contrast: more)", '[data-color-mode="darkHighContrast"]'] },
         { mode: "reducedMotion", selectors: ["@media (prefers-reduced-motion: reduce)"] }
       ],
     }),
