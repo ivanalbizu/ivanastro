@@ -75,12 +75,6 @@
   }
 }
 
-.hola {
-  --transition-duration-fast: 0ms;
-  --transition-duration-normal: 0ms;
-  --transition-duration-slow: 0ms;
-}
-
 @supports (color: color(display-p3 1 1 1)) {
   :root {
     --color-accent: color(display-p3 0.6352941176470588 0 0);

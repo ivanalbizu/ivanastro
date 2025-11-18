@@ -12,7 +12,7 @@ export default {
         { mode: "lightHighContrast", selectors: ["@media (prefers-color-scheme: light) and (prefers-contrast: more)", '[data-color-mode="lightHighContrast"]'] },
         { mode: "dark", selectors: ["@media (prefers-color-scheme: dark)", '[data-theme="dark"]'] },
         { mode: "darkHighContrast", selectors: ["@media (prefers-color-scheme: dark) and (prefers-contrast: more)", '[data-color-mode="darkHighContrast"]'] },
-        { mode: "reducedMotion", selectors: ["@media (prefers-reduced-motion: reduce)", '.hola'] }
+        { mode: "reducedMotion", selectors: ["@media (prefers-reduced-motion: reduce)"] }
       ],
     }),
     pluginJS()
