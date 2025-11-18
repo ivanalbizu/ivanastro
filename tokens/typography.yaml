@@ -1,15 +1,17 @@
 typography:
   font:
     family:
+      $type: fontFamily
       primary:
-        $value: "'Atkinson Hyperlegible', sans-serif"
+        $value: ["AtkinsonHyperlegible", "-system-ui", "sans-serif"]
       secondary:
-        $value: "'Atkinson Hyperlegible', sans-serif"
+        $value: ["AtkinsonHyperlegible", "-system-ui", "sans-serif"]
       body:
-        $value: "'Atkinson Hyperlegible', sans-serif"
+        $value: ["AtkinsonHyperlegible", "-system-ui", "sans-serif"]
       mono:
         $value: monospace
     size:
+      $type: dimension
       heading:
         1:
           $value: calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale))
@@ -40,4 +42,5 @@ typography:
         sm:
           $value: calc(1rem * var(--typography-font-size-scale))
       scale:
+        $type: number
         $value: 1
