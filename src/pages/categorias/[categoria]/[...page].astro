@@ -142,37 +142,6 @@ const { categoria } = Astro.params;
     }
   }
 
-  .post-categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: calc(var(--grid-unit) / 2);
-  }
-
-  .category {
-    background-color: var(--color-text-primary);
-    color: white;
-    padding: calc(var(--grid-unit) / 4) calc(var(--grid-unit) / 2);
-    font-size: var(--typography-font-size-paragraph-5);
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    border-radius: var(--border-radius-sm);
-  }
-
-  /* Dark mode category styles */
-  :global([data-theme="dark"]) .category {
-    background-color: var(--color-surface);
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-border);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .category {
-      background-color: var(--color-surface);
-      color: var(--color-text-primary);
-      border: 1px solid var(--color-border);
-    }
-  }
-
   .post-excerpt {
     color: var(--color-text-secondary);
     line-height: 1.6;
