@@ -324,7 +324,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
 
   .search-container {
     max-width: var(--max-width-medium);
-    margin: calc(var(--grid-unit) * 5) auto calc(var(--grid-unit) * 3) auto;
+    margin: calc(var(--grid-unit) * 5) auto calc(var(--grid-unit) * 3);
   }
 
   .search-header {
@@ -335,7 +335,6 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     border: var(--border-width-md) solid var(--color-border);
     border-radius: var(--border-radius-lg);
     padding: calc(var(--grid-unit) * 3);
-    margin-block-end: calc(var(--grid-unit) * 5);
   }
 
   .search-input {
@@ -518,9 +517,6 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     }
     .mobile-only {
       display: none !important;
-    }
-    .search-container {
-      margin: calc(var(--grid-unit) * 10) auto calc(var(--grid-unit) * 4) auto;
     }
     .search-results {
       padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 4)
