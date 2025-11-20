@@ -1,12 +1,11 @@
 @import url(tokens/tokens.css);
 
 :root {
-  --grid-unit: 0.5rem;
   --max-width: 75rem;
   --max-width-medium: 50rem;
   --max-width-thin: 37.5rem;
-  --sidebar-width: 320px;
-  --content-padding: calc(var(--grid-unit) * 2);
+  --sidebar-width: 20rem;
+  --content-padding: var(--space-sm);
 
   --target-size: 44px;
 }
@@ -47,7 +46,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: var(--color-accent);
-  margin-block-end: calc(var(--grid-unit) * 2);
+  margin-block-end: var(--space-sm);
 }
 
 h1 {
@@ -75,7 +74,7 @@ h3 {
 }
 
 p {
-  margin-block-end: calc(var(--grid-unit) * 2);
+  margin-block-end: var(--space-sm);
   font-size: var(--typography-font-size-paragraph-2);
 }
 
@@ -102,8 +101,8 @@ button {
 }
 
 ul, ol {
-  margin-block-end: calc(var(--grid-unit) * 2);
-  padding-left: calc(var(--grid-unit) * 2);
+  margin-block-end: var(--space-sm);
+  padding-left: var(--space-sm);
 }
 ul[class],
 ol[class] {
@@ -111,13 +110,13 @@ ol[class] {
 }
 
 li {
-  margin-block-end: calc(var(--grid-unit) * 0.5);
+  margin-block-end: var(--space-xxxs);
 }
 
 blockquote {
   border-left: 4px solid var(--color-border);
-  padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 3);
-  margin: calc(var(--grid-unit) * 3) 0;
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-md) 0;
   background-color: var(--color-surface);
   font-style: italic;
 }
@@ -135,8 +134,8 @@ pre {
   font-family: var(--typography-font-family-mono);
   background-color: var(--color-surface);
   border: var(--border-width-sm) solid var(--color-border);
-  padding: calc(var(--grid-unit) * 2);
-  margin: calc(var(--grid-unit) * 3) 0;
+  padding: var(--space-sm);
+  margin: var(--space-md) 0;
   overflow-x: auto;
   border-radius: var(--border-radius-sm);
 }
@@ -151,7 +150,7 @@ img {
   max-width: 100%;
   height: auto;
   border: var(--border-width-sm) solid var(--color-border);
-  margin: calc(var(--grid-unit) * 2) 0;
+  margin: var(--space-sm) 0;
   display: block;
   line-height: 2;
   min-height: 40px;
@@ -193,14 +192,14 @@ figcaption {
   font-size: var(--typography-font-size-paragraph-4);
   color: var(--color-text-muted);
   text-align: center;
-  margin-block-start: calc(var(--grid-unit) * 0.5);
+  margin-block-start: var(--space-xxxs);
 }
 
 hr {
   border: none;
   height: 4px;
   background-color: var(--color-accent);
-  margin: calc(var(--grid-unit) * 4) 0;
+  margin: var(--space-lg) 0;
 }
 
 :target {

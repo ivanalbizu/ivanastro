@@ -71,12 +71,12 @@ const base = import.meta.env.BASE_URL;
   .post-meta {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--grid-unit) * 1.5);
+    gap: var(--space-xs);
     align-items: start;
     &-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0 calc(var(--grid-unit) * 1.5);
+      gap: 0 var(--space-xs);
       justify-content: space-between;
       width: 100%;
     }
@@ -97,7 +97,7 @@ const base = import.meta.env.BASE_URL;
     &__categories {
       display: flex;
       flex-wrap: wrap;
-      gap: calc(var(--grid-unit));
+      gap: var(--space-xxs);
       padding: 0;
       margin: 0;
     }
@@ -117,7 +117,7 @@ const base = import.meta.env.BASE_URL;
       font-size: var(--typography-font-size-paragraph-4);
       transition: color var(--transition-duration-normal) ease;
       display: inline-block;
-      margin-block-start: var(--grid-unit);
+      margin-block-start: var(--space-xxs);
     }
     &:hover,
     &:focus {

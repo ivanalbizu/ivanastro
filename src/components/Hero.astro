@@ -32,7 +32,7 @@ import { config } from '../config';
 <style lang="scss">
   .hero {
     text-align: center;
-    padding: calc(var(--grid-unit) * 10) calc(var(--grid-unit) * 2);
+    padding: var(--space-xxxl) var(--space-sm);
     background: linear-gradient(
       135deg,
       var(--color-surface) 0%,
@@ -54,7 +54,7 @@ import { config } from '../config';
     text-transform: uppercase;
     letter-spacing: 0.1em;
     line-height: 0.9;
-    margin-block-end: calc(var(--grid-unit) * 2);
+    margin-block-end: var(--space-sm);
   }
 
   .hero-subtitle {
@@ -64,14 +64,14 @@ import { config } from '../config';
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    margin-block-end: calc(var(--grid-unit) * 3);
+    margin-block-end: var(--space-md);
   }
 
   .hero-description {
     font-size: var(--typography-font-size-paragraph-1);
     line-height: 1.6;
     color: var(--color-text-primary);
-    margin-block-end: calc(var(--grid-unit) * 4);
+    margin-block-end: var(--space-lg);
     max-width: var(--max-width-thin);
     margin-inline: auto;
   }
@@ -81,12 +81,12 @@ import { config } from '../config';
     background-color: var(--color-accent);
     border: none;
     width: 150px;
-    margin: 0 auto calc(var(--grid-unit) * 4);
+    margin: 0 auto var(--space-lg);
   }
 
   .hero-actions {
     display: flex;
-    gap: calc(var(--grid-unit) * 2);
+    gap: var(--space-sm);
     justify-content: center;
     flex-wrap: wrap;
   }

@@ -3,7 +3,7 @@ import pluginJS from "@cobalt-ui/plugin-js";
 
 /** @type {import("@cobalt-ui/core").Config} */
 export default {
-  tokens: ["./tokens/colors.yaml", "./tokens/border.yaml", "./tokens/transition.yaml", "./tokens/typography.yaml"],
+  tokens: ["./tokens/colors.yaml", "./tokens/space.yaml", "./tokens/border.yaml", "./tokens/transition.yaml", "./tokens/typography.yaml"],
   outDir: "./src/styles/tokens/",
   plugins: [
     pluginCSS({

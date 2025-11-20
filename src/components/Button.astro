@@ -82,12 +82,12 @@ const { classes, ...attributes } = allAttributes;
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-btn-default);
     letter-spacing: 0.03em;
-    padding: calc(var(--grid-unit) * 1.5) calc(var(--grid-unit) * 3);
+    padding: var(--space-xs) var(--space-md);
     border-radius: var(--border-radius-md);
     text-decoration-color: transparent;
     display: inline-flex;
     align-items: center;
-    gap: var(--grid-unit);
+    gap: var(--space-xxs);
     text-align: left;
     transition:
       color var(--transition-duration-slow) ease,
@@ -141,7 +141,7 @@ const { classes, ...attributes } = allAttributes;
     }
 
     &--sm {
-      padding: calc(var(--grid-unit) * 0.5) var(--grid-unit);
+      padding: var(--space-xxxs) var(--space-xxs);
       font-size: var(--typography-font-size-btn-sm);
       letter-spacing: 0.03em;
       line-height: 1;

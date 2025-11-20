@@ -17,7 +17,7 @@ const { title } = Astro.props;
 <style lang="scss">
   .header {
     text-align: center;
-    margin-block-end: calc(var(--grid-unit) * 8);
+    margin-block-end: var(--space-xxl);
 
     &__title {
       font-family: var(--typography-font-family-primary);
@@ -27,7 +27,7 @@ const { title } = Astro.props;
       text-transform: uppercase;
       letter-spacing: 0.03em;
       line-height: 1.1;
-      margin-block-end: calc(var(--grid-unit) * 3);
+      margin-block-end: var(--space-md);
     }
 
     &__txt {
@@ -35,7 +35,7 @@ const { title } = Astro.props;
       line-height: 1.6;
       color: var(--color-text-secondary);
       margin-inline: auto;
-      margin-block-end: calc(var(--grid-unit) * 4);
+      margin-block-end: var(--space-lg);
       max-width: var(--max-width-thin);
     }
   }

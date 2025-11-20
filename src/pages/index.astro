@@ -91,7 +91,7 @@ const sortedPosts = posts
 
 <style lang="scss">
   .container {
-    padding: calc(var(--grid-unit) * 8) 0;
+    padding: var(--space-xxl) 0;
   }
 
   .section-title {
@@ -101,7 +101,7 @@ const sortedPosts = posts
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    margin-block-end: calc(var(--grid-unit) * 2);
+    margin-block-end: var(--space-sm);
     text-align: center;
   }
 
@@ -110,22 +110,22 @@ const sortedPosts = posts
     font-size: var(--typography-font-size-heading-5);
     line-height: 1.6;
     color: var(--color-text-secondary);
-    margin-block-end: calc(var(--grid-unit) * 6);
+    margin-block-end: var(--space-xl);
     max-width: var(--max-width-thin);
     margin-inline: auto;
   }
 
   .section-content {
     display: grid;
-    gap: calc(var(--grid-unit) * 4);
-    margin-block-end: calc(var(--grid-unit) * 6);
+    gap: var(--space-lg);
+    margin-block-end: var(--space-xl);
   }
 
   .post {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-lg);;
-    padding: calc(var(--grid-unit) * 3);
+    padding: var(--space-md);
     transition:
       transform var(--transition-duration-normal) ease,
       border-color var(--transition-duration-normal) ease;
@@ -133,7 +133,7 @@ const sortedPosts = posts
       font-family: var(--typography-font-family-primary);
       font-size: var(--typography-font-size-heading-5);
       font-weight: 700;
-      margin-block-end: calc(var(--grid-unit));
+      margin-block-end: var(--space-xxs);
       a {
         color: var(--color-text-primary);
         text-underline-offset: 3px;

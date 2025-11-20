@@ -48,7 +48,7 @@ const breadcrumbs = generateBreadcrumbs({ currentPath });
 
 <style lang="scss">
   .breadcrumb {
-    margin-block-end: calc(var(--grid-unit) * 2);
+    margin-block-end: var(--space-sm);
     ol {
       display: flex;
       flex-wrap: wrap;
@@ -57,7 +57,7 @@ const breadcrumbs = generateBreadcrumbs({ currentPath });
       padding: 0;
     }
     li,a {
-      margin-inline-end: var(--grid-unit);
+      margin-inline-end: var(--space-xxs);
     }
   }
 </style>
