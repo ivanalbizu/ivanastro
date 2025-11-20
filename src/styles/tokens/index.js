@@ -24,6 +24,15 @@ export const tokens = {
   'color.text.primary': 'black',
   'color.text.secondary': '#333',
   'color.white': 'white',
+  'space.lg': '2rem',
+  'space.md': '1.5rem',
+  'space.sm': '1rem',
+  'space.xl': '3rem',
+  'space.xs': '0.75rem',
+  'space.xxl': '4rem',
+  'space.xxs': '0.5rem',
+  'space.xxxl': '5rem',
+  'space.xxxs': '0.25rem',
   'transition.duration.fast': '0.1s',
   'transition.duration.normal': '0.2s',
   'transition.duration.slow': '0.3s',
@@ -392,6 +401,141 @@ export const meta = {
     id: 'color.white',
     $type: 'color',
     $value: 'white',
+  },
+  'space.lg': {
+    _original: {
+      $value: '2rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.lg',
+    $type: 'dimension',
+    $value: '2rem',
+  },
+  'space.md': {
+    _original: {
+      $value: '1.5rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.md',
+    $type: 'dimension',
+    $value: '1.5rem',
+  },
+  'space.sm': {
+    _original: {
+      $value: '1rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.sm',
+    $type: 'dimension',
+    $value: '1rem',
+  },
+  'space.xl': {
+    _original: {
+      $value: '3rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.xl',
+    $type: 'dimension',
+    $value: '3rem',
+  },
+  'space.xs': {
+    _original: {
+      $value: '0.75rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.xs',
+    $type: 'dimension',
+    $value: '0.75rem',
+  },
+  'space.xxl': {
+    _original: {
+      $value: '4rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.xxl',
+    $type: 'dimension',
+    $value: '4rem',
+  },
+  'space.xxs': {
+    _original: {
+      $value: '0.5rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.xxs',
+    $type: 'dimension',
+    $value: '0.5rem',
+  },
+  'space.xxxl': {
+    _original: {
+      $value: '5rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.xxxl',
+    $type: 'dimension',
+    $value: '5rem',
+  },
+  'space.xxxs': {
+    _original: {
+      $value: '0.25rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.xxxs',
+    $type: 'dimension',
+    $value: '0.25rem',
   },
   'transition.duration.fast': {
     _original: {
