@@ -15,6 +15,15 @@
   --color-background: var(--color-white);
   --color-black: #000000;
   --color-border: var(--color-gray-medium);
+  --color-btn-primary-bg: var(--color-interaction-default);
+  --color-btn-primary-border: var(--color-btn-primary-bg);
+  --color-btn-primary-fg: var(--color-white);
+  --color-btn-secondary-bg: #00000000;
+  --color-btn-secondary-border: var(--color-gray-medium);
+  --color-btn-secondary-fg: var(--color-black);
+  --color-btn-tertiary-bg: var(--color-black);
+  --color-btn-tertiary-border: var(--color-white);
+  --color-btn-tertiary-fg: var(--color-white);
   --color-gray-dark: #333333;
   --color-gray-light: #f5f5f5;
   --color-gray-medium: #666666;
@@ -65,6 +74,15 @@
   :root {
     --color-accent: #ff3333;
     --color-background: #0a0a0a;
+    --color-btn-primary-bg: var(--color-interaction-default);
+    --color-btn-primary-border: var(--color-interaction-default);
+    --color-btn-primary-fg: var(--color-white);
+    --color-btn-secondary-bg: #00000000;
+    --color-btn-secondary-border: var(--color-gray-medium);
+    --color-btn-secondary-fg: var(--color-white);
+    --color-btn-tertiary-bg: var(--color-gray-light);
+    --color-btn-tertiary-border: var(--color-gray-medium);
+    --color-btn-tertiary-fg: var(--color-black);
     --color-surface: #1a1a1a;
     --color-text-muted: #888888;
     --color-text-primary: #f5f5f5;
@@ -75,6 +93,15 @@
 [data-theme="dark"] {
   --color-accent: #ff3333;
   --color-background: #0a0a0a;
+  --color-btn-primary-bg: var(--color-interaction-default);
+  --color-btn-primary-border: var(--color-interaction-default);
+  --color-btn-primary-fg: var(--color-white);
+  --color-btn-secondary-bg: #00000000;
+  --color-btn-secondary-border: var(--color-gray-medium);
+  --color-btn-secondary-fg: var(--color-white);
+  --color-btn-tertiary-bg: var(--color-gray-light);
+  --color-btn-tertiary-border: var(--color-gray-medium);
+  --color-btn-tertiary-fg: var(--color-black);
   --color-surface: #1a1a1a;
   --color-text-muted: #888888;
   --color-text-primary: #f5f5f5;
@@ -93,6 +120,7 @@
   :root {
     --color-accent: color(display-p3 0.6352941176470588 0 0);
     --color-black: color(display-p3 0 0 0);
+    --color-btn-secondary-bg: color(display-p3 0 0 0 / 0);
     --color-gray-dark: color(display-p3 0.2 0.2 0.2);
     --color-gray-light: color(display-p3 0.9607843137254902 0.9607843137254902 0.9607843137254902);
     --color-gray-medium: color(display-p3 0.4 0.4 0.4);
@@ -104,6 +132,7 @@
     :root {
       --color-accent: color(display-p3 1 0.2 0.2);
       --color-background: color(display-p3 0.0392156862745098 0.0392156862745098 0.0392156862745098);
+      --color-btn-secondary-bg: color(display-p3 0 0 0 / 0);
       --color-surface: color(display-p3 0.10196078431372549 0.10196078431372549 0.10196078431372549);
       --color-text-muted: color(display-p3 0.5333333333333333 0.5333333333333333 0.5333333333333333);
       --color-text-primary: color(display-p3 0.9607843137254902 0.9607843137254902 0.9607843137254902);
@@ -114,6 +143,7 @@
   [data-theme="dark"] {
     --color-accent: color(display-p3 1 0.2 0.2);
     --color-background: color(display-p3 0.0392156862745098 0.0392156862745098 0.0392156862745098);
+    --color-btn-secondary-bg: color(display-p3 0 0 0 / 0);
     --color-surface: color(display-p3 0.10196078431372549 0.10196078431372549 0.10196078431372549);
     --color-text-muted: color(display-p3 0.5333333333333333 0.5333333333333333 0.5333333333333333);
     --color-text-primary: color(display-p3 0.9607843137254902 0.9607843137254902 0.9607843137254902);

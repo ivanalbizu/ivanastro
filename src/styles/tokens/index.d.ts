@@ -23,6 +23,15 @@ export declare const tokens: {
   'color.background': ParsedColorToken['$value'];
   'color.black': ParsedColorToken['$value'];
   'color.border': ParsedColorToken['$value'];
+  'color.btn.primary.bg': ParsedColorToken['$value'];
+  'color.btn.primary.border': ParsedColorToken['$value'];
+  'color.btn.primary.fg': ParsedColorToken['$value'];
+  'color.btn.secondary.bg': ParsedColorToken['$value'];
+  'color.btn.secondary.border': ParsedColorToken['$value'];
+  'color.btn.secondary.fg': ParsedColorToken['$value'];
+  'color.btn.tertiary.bg': ParsedColorToken['$value'];
+  'color.btn.tertiary.border': ParsedColorToken['$value'];
+  'color.btn.tertiary.fg': ParsedColorToken['$value'];
   'color.gray.dark': ParsedColorToken['$value'];
   'color.gray.light': ParsedColorToken['$value'];
   'color.gray.medium': ParsedColorToken['$value'];
@@ -80,6 +89,15 @@ export declare const meta: {
   'color.background': ParsedColorToken & { $extensions: { mode: typeof modes['color.background'] } };
   'color.black': ParsedColorToken;
   'color.border': ParsedColorToken;
+  'color.btn.primary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.primary.bg'] } };
+  'color.btn.primary.border': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.primary.border'] } };
+  'color.btn.primary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.primary.fg'] } };
+  'color.btn.secondary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.bg'] } };
+  'color.btn.secondary.border': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.border'] } };
+  'color.btn.secondary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.fg'] } };
+  'color.btn.tertiary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.bg'] } };
+  'color.btn.tertiary.border': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.border'] } };
+  'color.btn.tertiary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.fg'] } };
   'color.gray.dark': ParsedColorToken;
   'color.gray.light': ParsedColorToken;
   'color.gray.medium': ParsedColorToken;
@@ -131,6 +149,33 @@ export declare const modes: {
     dark: ParsedColorToken['$value'];
   };
   'color.background': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.btn.primary.bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.btn.primary.border': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.btn.primary.fg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.btn.secondary.bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.btn.secondary.border': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.btn.secondary.fg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.btn.tertiary.bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.btn.tertiary.border': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.btn.tertiary.fg': {
     dark: ParsedColorToken['$value'];
   };
   'color.surface': {

@@ -15,6 +15,15 @@ export const tokens = {
   'color.background': 'white',
   'color.black': 'black',
   'color.border': '#666',
+  'color.btn.primary.bg': '#0054e5',
+  'color.btn.primary.border': '#0054e5',
+  'color.btn.primary.fg': 'white',
+  'color.btn.secondary.bg': 'transparent',
+  'color.btn.secondary.border': '#666',
+  'color.btn.secondary.fg': 'black',
+  'color.btn.tertiary.bg': 'black',
+  'color.btn.tertiary.border': 'white',
+  'color.btn.tertiary.fg': 'white',
   'color.gray.dark': '#333',
   'color.gray.light': '#f5f5f5',
   'color.gray.medium': '#666',
@@ -231,6 +240,231 @@ export const meta = {
     id: 'color.border',
     $type: 'color',
     $value: '#666',
+  },
+  'color.btn.primary.bg': {
+    _original: {
+      $value: '{color.interaction.default}',
+      $extensions: {
+        mode: {
+          dark: '{color.interaction.default}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.primary.bg',
+    $type: 'color',
+    $value: '#0054e5',
+    $extensions: {
+      mode: {
+        dark: '#0054e5',
+      },
+    },
+  },
+  'color.btn.primary.border': {
+    _original: {
+      $value: '{color.btn.primary.bg}',
+      $extensions: {
+        mode: {
+          dark: '{color.interaction.default}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.primary.border',
+    $type: 'color',
+    $value: '#0054e5',
+    $extensions: {
+      mode: {
+        dark: '#0054e5',
+      },
+    },
+  },
+  'color.btn.primary.fg': {
+    _original: {
+      $value: '{color.white}',
+      $extensions: {
+        mode: {
+          dark: '{color.white}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.primary.fg',
+    $type: 'color',
+    $value: 'white',
+    $extensions: {
+      mode: {
+        dark: 'white',
+      },
+    },
+  },
+  'color.btn.secondary.bg': {
+    _original: {
+      $value: 'transparent',
+      $extensions: {
+        mode: {
+          dark: 'transparent',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.secondary.bg',
+    $type: 'color',
+    $value: 'transparent',
+    $extensions: {
+      mode: {
+        dark: 'transparent',
+      },
+    },
+  },
+  'color.btn.secondary.border': {
+    _original: {
+      $value: '{color.gray.medium}',
+      $extensions: {
+        mode: {
+          dark: '{color.gray.medium}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.secondary.border',
+    $type: 'color',
+    $value: '#666',
+    $extensions: {
+      mode: {
+        dark: '#666',
+      },
+    },
+  },
+  'color.btn.secondary.fg': {
+    _original: {
+      $value: '{color.black}',
+      $extensions: {
+        mode: {
+          dark: '{color.white}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.secondary.fg',
+    $type: 'color',
+    $value: 'black',
+    $extensions: {
+      mode: {
+        dark: 'white',
+      },
+    },
+  },
+  'color.btn.tertiary.bg': {
+    _original: {
+      $value: '{color.black}',
+      $extensions: {
+        mode: {
+          dark: '{color.gray.light}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.tertiary.bg',
+    $type: 'color',
+    $value: 'black',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
+  },
+  'color.btn.tertiary.border': {
+    _original: {
+      $value: '{color.white}',
+      $extensions: {
+        mode: {
+          dark: '{color.gray.medium}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.tertiary.border',
+    $type: 'color',
+    $value: 'white',
+    $extensions: {
+      mode: {
+        dark: '#666',
+      },
+    },
+  },
+  'color.btn.tertiary.fg': {
+    _original: {
+      $value: '{color.white}',
+      $extensions: {
+        mode: {
+          dark: '{color.black}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.tertiary.fg',
+    $type: 'color',
+    $value: 'white',
+    $extensions: {
+      mode: {
+        dark: 'black',
+      },
+    },
   },
   'color.gray.dark': {
     _original: {
@@ -971,6 +1205,33 @@ export const modes = {
   },
   'color.background': {
     dark: '#0a0a0a',
+  },
+  'color.btn.primary.bg': {
+    dark: '#0054e5',
+  },
+  'color.btn.primary.border': {
+    dark: '#0054e5',
+  },
+  'color.btn.primary.fg': {
+    dark: 'white',
+  },
+  'color.btn.secondary.bg': {
+    dark: 'transparent',
+  },
+  'color.btn.secondary.border': {
+    dark: '#666',
+  },
+  'color.btn.secondary.fg': {
+    dark: 'white',
+  },
+  'color.btn.tertiary.bg': {
+    dark: '#f5f5f5',
+  },
+  'color.btn.tertiary.border': {
+    dark: '#666',
+  },
+  'color.btn.tertiary.fg': {
+    dark: 'black',
   },
   'color.surface': {
     dark: '#1a1a1a',

@@ -47,3 +47,52 @@ color:
       $extensions:
         mode:
           dark: "#888888"
+  btn:
+    primary:
+      bg:
+        $value: "{color.interaction.default}"
+        $extensions:
+          mode:
+            dark: "{color.interaction.default}"
+      fg:
+        $value: "{color.white}"
+        $extensions:
+          mode:
+            dark: "{color.white}"
+      border:
+        $value: "{color.btn.primary.bg}"
+        $extensions:
+          mode:
+            dark: "{color.interaction.default}"
+    secondary:
+      bg:
+        $value: transparent
+        $extensions:
+          mode:
+            dark: transparent
+      fg:
+        $value: "{color.black}"
+        $extensions:
+          mode:
+            dark: "{color.white}"
+      border:
+        $value: "{color.gray.medium}"
+        $extensions:
+          mode:
+            dark: "{color.gray.medium}"
+    tertiary:
+      bg:
+        $value: "{color.black}"
+        $extensions:
+          mode:
+            dark: "{color.gray.light}"
+      fg:
+        $value: "{color.white}"
+        $extensions:
+          mode:
+            dark: "{color.black}"
+      border:
+        $value: "{color.white}"
+        $extensions:
+          mode:
+            dark: "{color.gray.medium}"
