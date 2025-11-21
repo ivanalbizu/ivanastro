@@ -1,12 +1,6 @@
 @import url(tokens/tokens.css);
 
 :root {
-  --max-width: 75rem;
-  --max-width-medium: 50rem;
-  --max-width-thin: 37.5rem;
-  --sidebar-width: 20rem;
-  --content-padding: var(--space-sm);
-
   --target-size: 44px;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -16,7 +10,7 @@
 }
 .zoomed {
   --typography-font-size-scale: 1.15;
-  --max-width: 125rem;
+  --max-width-default: 125rem;
   --max-width-thin: 62.5rem;
 }
 

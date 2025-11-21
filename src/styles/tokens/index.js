@@ -24,8 +24,13 @@ export const tokens = {
   'color.text.primary': 'black',
   'color.text.secondary': '#333',
   'color.white': 'white',
+  'max-width.default': '75rem',
+  'max-width.medium': '50rem',
+  'max-width.narrow': '20rem',
+  'max-width.thin': '37.5rem',
   'space.lg': '2rem',
   'space.md': '1.5rem',
+  'space.semantic.padding': '1rem',
   'space.sm': '1rem',
   'space.xl': '3rem',
   'space.xs': '0.75rem',
@@ -402,6 +407,66 @@ export const meta = {
     $type: 'color',
     $value: 'white',
   },
+  'max-width.default': {
+    _original: {
+      $value: '75rem',
+    },
+    _group: {
+      id: 'max-width',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'max-width.default',
+    $type: 'dimension',
+    $value: '75rem',
+  },
+  'max-width.medium': {
+    _original: {
+      $value: '50rem',
+    },
+    _group: {
+      id: 'max-width',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'max-width.medium',
+    $type: 'dimension',
+    $value: '50rem',
+  },
+  'max-width.narrow': {
+    _original: {
+      $value: '20rem',
+    },
+    _group: {
+      id: 'max-width',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'max-width.narrow',
+    $type: 'dimension',
+    $value: '20rem',
+  },
+  'max-width.thin': {
+    _original: {
+      $value: '37.5rem',
+    },
+    _group: {
+      id: 'max-width',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'max-width.thin',
+    $type: 'dimension',
+    $value: '37.5rem',
+  },
   'space.lg': {
     _original: {
       $value: '2rem',
@@ -431,6 +496,21 @@ export const meta = {
     id: 'space.md',
     $type: 'dimension',
     $value: '1.5rem',
+  },
+  'space.semantic.padding': {
+    _original: {
+      $value: '{space.sm}',
+    },
+    _group: {
+      id: 'space.semantic',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.semantic.padding',
+    $type: 'dimension',
+    $value: '1rem',
   },
   'space.sm': {
     _original: {

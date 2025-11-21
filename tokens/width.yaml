@@ -1,0 +1,10 @@
+max-width:
+  $type: dimension
+  default:
+    $value: 75rem
+  medium:
+    $value: 50rem
+  thin:
+    $value: 37.5rem
+  narrow:
+    $value: 20rem

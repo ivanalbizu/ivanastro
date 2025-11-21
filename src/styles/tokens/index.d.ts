@@ -32,8 +32,13 @@ export declare const tokens: {
   'color.text.primary': ParsedColorToken['$value'];
   'color.text.secondary': ParsedColorToken['$value'];
   'color.white': ParsedColorToken['$value'];
+  'max-width.default': ParsedDimensionToken['$value'];
+  'max-width.medium': ParsedDimensionToken['$value'];
+  'max-width.narrow': ParsedDimensionToken['$value'];
+  'max-width.thin': ParsedDimensionToken['$value'];
   'space.lg': ParsedDimensionToken['$value'];
   'space.md': ParsedDimensionToken['$value'];
+  'space.semantic.padding': ParsedDimensionToken['$value'];
   'space.sm': ParsedDimensionToken['$value'];
   'space.xl': ParsedDimensionToken['$value'];
   'space.xs': ParsedDimensionToken['$value'];
@@ -84,8 +89,13 @@ export declare const meta: {
   'color.text.primary': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.primary'] } };
   'color.text.secondary': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.secondary'] } };
   'color.white': ParsedColorToken;
+  'max-width.default': ParsedDimensionToken;
+  'max-width.medium': ParsedDimensionToken;
+  'max-width.narrow': ParsedDimensionToken;
+  'max-width.thin': ParsedDimensionToken;
   'space.lg': ParsedDimensionToken;
   'space.md': ParsedDimensionToken;
+  'space.semantic.padding': ParsedDimensionToken;
   'space.sm': ParsedDimensionToken;
   'space.xl': ParsedDimensionToken;
   'space.xs': ParsedDimensionToken;

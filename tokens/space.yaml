@@ -18,3 +18,6 @@ space:
     $value: 4rem
   xxxl:
     $value: 5rem
+  semantic:
+    padding:
+      $value: "{space.sm}"

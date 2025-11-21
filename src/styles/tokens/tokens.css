@@ -24,8 +24,13 @@
   --color-text-primary: var(--color-black);
   --color-text-secondary: var(--color-gray-dark);
   --color-white: #ffffff;
+  --max-width-default: 75rem;
+  --max-width-medium: 50rem;
+  --max-width-narrow: 20rem;
+  --max-width-thin: 37.5rem;
   --space-lg: 2rem;
   --space-md: 1.5rem;
+  --space-semantic-padding: var(--space-sm);
   --space-sm: 1rem;
   --space-xl: 3rem;
   --space-xs: 0.75rem;
