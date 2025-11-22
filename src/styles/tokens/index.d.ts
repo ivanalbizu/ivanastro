@@ -107,10 +107,10 @@ export declare const meta: {
   'color.text.primary': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.primary'] } };
   'color.text.secondary': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.secondary'] } };
   'color.white': ParsedColorToken;
-  'max-width.default': ParsedDimensionToken;
+  'max-width.default': ParsedDimensionToken & { $extensions: { mode: typeof modes['max-width.default'] } };
   'max-width.medium': ParsedDimensionToken;
   'max-width.narrow': ParsedDimensionToken;
-  'max-width.thin': ParsedDimensionToken;
+  'max-width.thin': ParsedDimensionToken & { $extensions: { mode: typeof modes['max-width.thin'] } };
   'space.lg': ParsedDimensionToken;
   'space.md': ParsedDimensionToken;
   'space.semantic.padding': ParsedDimensionToken;
@@ -141,7 +141,7 @@ export declare const meta: {
   'typography.font.size.paragraph.3': ParsedDimensionToken;
   'typography.font.size.paragraph.4': ParsedDimensionToken;
   'typography.font.size.paragraph.5': ParsedDimensionToken;
-  'typography.font.size.scale': ParsedNumberToken;
+  'typography.font.size.scale': ParsedNumberToken & { $extensions: { mode: typeof modes['typography.font.size.scale'] } };
 };
 
 export declare const modes: {
@@ -190,6 +190,12 @@ export declare const modes: {
   'color.text.secondary': {
     dark: ParsedColorToken['$value'];
   };
+  'max-width.default': {
+    zoomed: ParsedDimensionToken['$value'];
+  };
+  'max-width.thin': {
+    zoomed: ParsedDimensionToken['$value'];
+  };
   'transition.duration.fast': {
     reducedMotion: ParsedDurationToken['$value'];
   };
@@ -198,6 +204,9 @@ export declare const modes: {
   };
   'transition.duration.slow': {
     reducedMotion: ParsedDurationToken['$value'];
+  };
+  'typography.font.size.scale': {
+    zoomed: ParsedNumberToken['$value'];
   };
 };
 

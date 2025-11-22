@@ -44,3 +44,6 @@ typography:
       scale:
         $type: number
         $value: 1
+        $extensions:
+          mode:
+            zoomed: 1.15

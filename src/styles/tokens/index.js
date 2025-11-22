@@ -644,6 +644,11 @@ export const meta = {
   'max-width.default': {
     _original: {
       $value: '75rem',
+      $extensions: {
+        mode: {
+          zoomed: '125rem',
+        },
+      },
     },
     _group: {
       id: 'max-width',
@@ -655,6 +660,11 @@ export const meta = {
     id: 'max-width.default',
     $type: 'dimension',
     $value: '75rem',
+    $extensions: {
+      mode: {
+        zoomed: '125rem',
+      },
+    },
   },
   'max-width.medium': {
     _original: {
@@ -689,6 +699,11 @@ export const meta = {
   'max-width.thin': {
     _original: {
       $value: '37.5rem',
+      $extensions: {
+        mode: {
+          zoomed: '62.5rem',
+        },
+      },
     },
     _group: {
       id: 'max-width',
@@ -700,6 +715,11 @@ export const meta = {
     id: 'max-width.thin',
     $type: 'dimension',
     $value: '37.5rem',
+    $extensions: {
+      mode: {
+        zoomed: '62.5rem',
+      },
+    },
   },
   'space.lg': {
     _original: {
@@ -1185,6 +1205,11 @@ export const meta = {
     _original: {
       $type: 'number',
       $value: 1,
+      $extensions: {
+        mode: {
+          zoomed: 1.15,
+        },
+      },
     },
     _group: {
       id: 'typography.font.size',
@@ -1196,6 +1221,11 @@ export const meta = {
     id: 'typography.font.size.scale',
     $type: 'number',
     $value: 1,
+    $extensions: {
+      mode: {
+        zoomed: 1.15,
+      },
+    },
   },
 };
 
@@ -1245,6 +1275,12 @@ export const modes = {
   'color.text.secondary': {
     dark: '#b8b8b8',
   },
+  'max-width.default': {
+    zoomed: '125rem',
+  },
+  'max-width.thin': {
+    zoomed: '62.5rem',
+  },
   'transition.duration.fast': {
     reducedMotion: '0ms',
   },
@@ -1253,6 +1289,9 @@ export const modes = {
   },
   'transition.duration.slow': {
     reducedMotion: '0ms',
+  },
+  'typography.font.size.scale': {
+    zoomed: 1.15,
   },
 };
 

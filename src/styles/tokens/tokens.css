@@ -108,6 +108,12 @@
   --color-text-secondary: #b8b8b8;
 }
 
+.zoomed {
+  --max-width-default: 125rem;
+  --max-width-thin: 62.5rem;
+  --typography-font-size-scale: 1.15;
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root {
     --transition-duration-fast: 0ms;

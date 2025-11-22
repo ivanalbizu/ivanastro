@@ -8,11 +8,6 @@
     scroll-behavior: smooth;
   }
 }
-.zoomed {
-  --typography-font-size-scale: 1.15;
-  --max-width-default: 125rem;
-  --max-width-thin: 62.5rem;
-}
 
 *,
 *::before,
@@ -71,7 +66,9 @@ p {
   margin-block-end: var(--space-sm);
   font-size: var(--typography-font-size-paragraph-2);
 }
-
+:focus-visible {
+  outline-offset: 3px;
+}
 a {
   color: var(--color-interaction-default);
   text-underline-offset: 4px;
@@ -145,8 +142,6 @@ img {
   height: auto;
   border: var(--border-width-sm) solid var(--color-border);
   margin: var(--space-sm) 0;
-  display: block;
-  line-height: 2;
   min-height: 40px;
   text-align: center;
   display: block;
