@@ -9,7 +9,8 @@ export default {
     pluginCSS({
       modeSelectors: [
         { mode: "dark", selectors: ["@media (prefers-color-scheme: dark)", '[data-theme="dark"]'] },
-        { mode: "reducedMotion", selectors: ["@media (prefers-reduced-motion: reduce)"] }
+        { mode: "reducedMotion", selectors: ["@media (prefers-reduced-motion: reduce)"] },
+        { mode: "zoomed", selectors: [".zoomed"] }
       ],
     }),
     pluginJS()
