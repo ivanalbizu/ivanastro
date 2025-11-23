@@ -80,6 +80,12 @@ export declare const tokens: {
   'typography.font-weight.bolder': ParsedNumberToken['$value'];
   'typography.font-weight.lighter': ParsedNumberToken['$value'];
   'typography.font-weight.normal': ParsedNumberToken['$value'];
+  'typography.letter-spacing.lg': ParsedDimensionToken['$value'];
+  'typography.letter-spacing.md': ParsedDimensionToken['$value'];
+  'typography.letter-spacing.sm': ParsedDimensionToken['$value'];
+  'typography.letter-spacing.xl': ParsedDimensionToken['$value'];
+  'typography.letter-spacing.xs': ParsedDimensionToken['$value'];
+  'typography.letter-spacing.xxl': ParsedDimensionToken['$value'];
   'typography.line-height.lg': ParsedNumberToken['$value'];
   'typography.line-height.md': ParsedNumberToken['$value'];
   'typography.line-height.sm': ParsedNumberToken['$value'];
@@ -155,6 +161,12 @@ export declare const meta: {
   'typography.font-weight.bolder': ParsedNumberToken;
   'typography.font-weight.lighter': ParsedNumberToken;
   'typography.font-weight.normal': ParsedNumberToken;
+  'typography.letter-spacing.lg': ParsedDimensionToken;
+  'typography.letter-spacing.md': ParsedDimensionToken;
+  'typography.letter-spacing.sm': ParsedDimensionToken;
+  'typography.letter-spacing.xl': ParsedDimensionToken;
+  'typography.letter-spacing.xs': ParsedDimensionToken;
+  'typography.letter-spacing.xxl': ParsedDimensionToken;
   'typography.line-height.lg': ParsedNumberToken;
   'typography.line-height.md': ParsedNumberToken;
   'typography.line-height.sm': ParsedNumberToken;

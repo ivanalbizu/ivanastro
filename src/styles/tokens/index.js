@@ -72,6 +72,12 @@ export const tokens = {
   'typography.font-weight.bolder': 900,
   'typography.font-weight.lighter': 300,
   'typography.font-weight.normal': 400,
+  'typography.letter-spacing.lg': '0.05rem',
+  'typography.letter-spacing.md': '0.03rem',
+  'typography.letter-spacing.sm': '0.02rem',
+  'typography.letter-spacing.xl': '0.08rem',
+  'typography.letter-spacing.xs': '0.01rem',
+  'typography.letter-spacing.xxl': '0.1rem',
   'typography.line-height.lg': 1.6,
   'typography.line-height.md': 1.3,
   'typography.line-height.sm': 1.1,
@@ -1295,6 +1301,96 @@ export const meta = {
     id: 'typography.font-weight.normal',
     $type: 'number',
     $value: 400,
+  },
+  'typography.letter-spacing.lg': {
+    _original: {
+      $value: '0.05rem',
+    },
+    _group: {
+      id: 'typography.letter-spacing',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'typography.letter-spacing.lg',
+    $type: 'dimension',
+    $value: '0.05rem',
+  },
+  'typography.letter-spacing.md': {
+    _original: {
+      $value: '0.03rem',
+    },
+    _group: {
+      id: 'typography.letter-spacing',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'typography.letter-spacing.md',
+    $type: 'dimension',
+    $value: '0.03rem',
+  },
+  'typography.letter-spacing.sm': {
+    _original: {
+      $value: '0.02rem',
+    },
+    _group: {
+      id: 'typography.letter-spacing',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'typography.letter-spacing.sm',
+    $type: 'dimension',
+    $value: '0.02rem',
+  },
+  'typography.letter-spacing.xl': {
+    _original: {
+      $value: '0.08rem',
+    },
+    _group: {
+      id: 'typography.letter-spacing',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'typography.letter-spacing.xl',
+    $type: 'dimension',
+    $value: '0.08rem',
+  },
+  'typography.letter-spacing.xs': {
+    _original: {
+      $value: '0.01rem',
+    },
+    _group: {
+      id: 'typography.letter-spacing',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'typography.letter-spacing.xs',
+    $type: 'dimension',
+    $value: '0.01rem',
+  },
+  'typography.letter-spacing.xxl': {
+    _original: {
+      $value: '0.1rem',
+    },
+    _group: {
+      id: 'typography.letter-spacing',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'typography.letter-spacing.xxl',
+    $type: 'dimension',
+    $value: '0.1rem',
   },
   'typography.line-height.lg': {
     _original: {

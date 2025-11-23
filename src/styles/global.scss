@@ -43,7 +43,7 @@ h1 {
   font-size: var(--typography-font-size-heading-3);
   font-weight: var(--typography-font-weight-bold);
   line-height: var(--typography-line-height-sm);
-  letter-spacing: 0.05em;
+  letter-spacing: var(--typography-letter-spacing-lg);
 }
 
 h2 {
@@ -51,7 +51,7 @@ h2 {
   font-size: var(--typography-font-size-heading-4);
   font-weight: var(--typography-font-weight-bold);
   line-height: var(--typography-line-height-sm);
-  letter-spacing: 0.02em;
+  letter-spacing: var(--typography-letter-spacing-sm);
 }
 
 h3 {
@@ -59,7 +59,7 @@ h3 {
   font-size: var(--typography-font-size-heading-5);
   font-weight: var(--typography-font-weight-bold);
   line-height: var(--typography-line-height-md);
-  letter-spacing: 0.01em;
+  letter-spacing: var(--typography-letter-spacing-xs);
 }
 
 p {

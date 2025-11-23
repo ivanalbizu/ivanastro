@@ -276,7 +276,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     font-family: var(--typography-font-family-primary);
     font-weight: var(--typography-font-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: var(--typography-letter-spacing-md);
     color: var(--color-text-primary);
     padding: var(--space-xxxs) 0;
     transition:
@@ -461,7 +461,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     font-weight: var(--typography-font-weight-bold);
     font-size: var(--typography-font-size-heading-4);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: var(--typography-letter-spacing-xxl);
     color: var(--color-text-primary);
     text-decoration-color: transparent;
     text-underline-offset: 6px;
@@ -485,7 +485,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
   @media (min-width: 768px) {
     .nav-link {
       font-size: var(--typography-font-size-paragraph-2);
-      letter-spacing: 0.03em;
+      letter-spacing: var(--typography-letter-spacing-md);
       padding: var(--space-xxxs) var(--space-xxs);
       border-bottom: 0;
       &.active,

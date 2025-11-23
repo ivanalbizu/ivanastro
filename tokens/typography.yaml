@@ -68,3 +68,17 @@ typography:
       $value: 1.6
     xl:
       $value: 1.7
+  letter-spacing:
+    $type: dimension
+    xs:
+      $value: 0.01rem
+    sm:
+      $value: 0.02rem
+    md:
+      $value: 0.03rem
+    lg:
+      $value: 0.05rem
+    xl:
+      $value: 0.08rem
+    xxl:
+      $value: 0.1rem
