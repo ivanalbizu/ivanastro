@@ -101,23 +101,23 @@ const publishedTime = post.data.date
   .post-title {
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-3);
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-accent);
     letter-spacing: 0.03em;
-    line-height: var(--typography-font-line-height-sm);
+    line-height: var(--typography-line-height-sm);
     margin-block-end: var(--space-md);
   }
 
   .post-content {
     font-size: var(--typography-font-size-paragraph-2);
-    line-height: var(--typography-font-line-height-xl);
+    line-height: var(--typography-line-height-xl);
     margin-block-end: var(--space-xl);
   }
 
   .post-content :global(h1) {
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-3);
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text-primary);
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -128,7 +128,7 @@ const publishedTime = post.data.date
   .post-content :global(h2) {
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-4);
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text-primary);
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -139,7 +139,7 @@ const publishedTime = post.data.date
   .post-content :global(h3) {
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-5);
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text-primary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -231,7 +231,7 @@ const publishedTime = post.data.date
     padding: 2px 6px;
     border-radius: var(--border-radius-md);
     border: 1px solid var(--color-border);
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
   }
 
   .post-content :global(img) {
@@ -251,7 +251,7 @@ const publishedTime = post.data.date
   }
 
   .post-content :global(strong) {
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text-primary);
   }
 
@@ -276,7 +276,7 @@ const publishedTime = post.data.date
 
   .tags-label {
     font-family: var(--typography-font-family-primary);
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     font-size: var(--typography-font-size-paragraph-4);
     text-transform: uppercase;
     letter-spacing: 0.03em;

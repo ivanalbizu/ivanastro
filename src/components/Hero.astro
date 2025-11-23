@@ -49,18 +49,18 @@ import { config } from '../config';
   .hero-title {
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-2);
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    line-height: var(--typography-font-line-height-xs);
+    line-height: var(--typography-line-height-xs);
     margin-block-end: var(--space-sm);
   }
 
   .hero-subtitle {
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-5);
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -68,12 +68,12 @@ import { config } from '../config';
   }
 
   .hero-description {
-    font-size: var(--typography-font-size-paragraph-1);
-    line-height: var(--typography-font-line-height-lg);
-    color: var(--color-text-primary);
+    font-size: var(--typography-font-size-heading-5);
+    line-height: var(--typography-line-height-md);
+    color: var(--color-text-secondary);
+    margin-inline: auto;
     margin-block-end: var(--space-lg);
     max-width: var(--max-width-thin);
-    margin-inline: auto;
   }
 
   .hr {

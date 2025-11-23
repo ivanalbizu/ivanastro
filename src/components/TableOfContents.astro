@@ -90,7 +90,7 @@ const { headings } = Astro.props;
   .toc-title {
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-paragraph-1);
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -120,7 +120,7 @@ const { headings } = Astro.props;
       font-family: var(--typography-font-family-mono);
       font-size: var(--typography-font-size-paragraph-4);
       color: var(--color-text-muted);
-      font-weight: 700;
+      font-weight: var(--typography-font-weight-bold);
     }
   }
 
@@ -129,7 +129,7 @@ const { headings } = Astro.props;
     padding-left: var(--space-md);
     color: var(--color-text-primary);
     text-decoration-color: transparent;
-    line-height: var(--typography-font-line-height-lg);
+    line-height: var(--typography-line-height-lg);
     transition: all var(--transition-duration-normal) ease;
     &:hover,
     &:focus {
@@ -138,7 +138,7 @@ const { headings } = Astro.props;
 
     &.active {
       color: var(--color-interaction-default);
-      font-weight: 700;
+      font-weight: var(--typography-font-weight-bold);
       &::after {
         content: "•";
         position: absolute;

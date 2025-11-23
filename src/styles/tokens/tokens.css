@@ -54,11 +54,6 @@
   --typography-font-family-mono: monospace;
   --typography-font-family-primary: AtkinsonHyperlegible, -system-ui, sans-serif;
   --typography-font-family-secondary: AtkinsonHyperlegible, -system-ui, sans-serif;
-  --typography-font-line-height-lg: 1.6;
-  --typography-font-line-height-md: 1.3;
-  --typography-font-line-height-sm: 1.1;
-  --typography-font-line-height-xl: 1.7;
-  --typography-font-line-height-xs: 1;
   --typography-font-size-btn-default: calc(1.15rem * var(--typography-font-size-scale));
   --typography-font-size-btn-sm: calc(1rem * var(--typography-font-size-scale));
   --typography-font-size-heading-1: calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale));
@@ -73,6 +68,15 @@
   --typography-font-size-paragraph-4: calc(0.9rem * var(--typography-font-size-scale));
   --typography-font-size-paragraph-5: calc(0.85rem * var(--typography-font-size-scale));
   --typography-font-size-scale: 1;
+  --typography-font-weight-bold: 700;
+  --typography-font-weight-bolder: 900;
+  --typography-font-weight-lighter: 300;
+  --typography-font-weight-normal: 400;
+  --typography-line-height-lg: 1.6;
+  --typography-line-height-md: 1.3;
+  --typography-line-height-sm: 1.1;
+  --typography-line-height-xl: 1.7;
+  --typography-line-height-xs: 1;
 }
 
 @media (prefers-color-scheme: dark) {

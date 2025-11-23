@@ -50,29 +50,33 @@ export const tokens = {
   'transition.duration.fast': '0.1s',
   'transition.duration.normal': '0.2s',
   'transition.duration.slow': '0.3s',
-  'typography.font.family.body': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
-  'typography.font.family.mono': ['monospace'],
-  'typography.font.family.primary': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
-  'typography.font.family.secondary': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
-  'typography.font.line-height.lg': 1.6,
-  'typography.font.line-height.md': 1.3,
-  'typography.font.line-height.sm': 1.1,
-  'typography.font.line-height.xl': 1.7,
-  'typography.font.line-height.xs': 1,
-  'typography.font.size.btn.default': 'calc(1.15rem * var(--typography-font-size-scale))',
-  'typography.font.size.btn.sm': 'calc(1rem * var(--typography-font-size-scale))',
-  'typography.font.size.heading.1': 'calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale))',
-  'typography.font.size.heading.2': 'calc(clamp(1.5rem, 3vw + 1rem, 3rem) * var(--typography-font-size-scale))',
-  'typography.font.size.heading.3': 'calc(clamp(1.3rem, 2.5vw + 1rem, 2.5rem) * var(--typography-font-size-scale))',
-  'typography.font.size.heading.4': 'calc(clamp(1.2rem, 2.5vw + 1rem, 2rem) * var(--typography-font-size-scale))',
-  'typography.font.size.heading.5': 'calc(clamp(1.15rem, 2vw + 1rem, 1.4rem) * var(--typography-font-size-scale))',
-  'typography.font.size.heading.6': 'calc(clamp(1.125rem, 1.8vw + 1rem, 1.25rem) * var(--typography-font-size-scale))',
-  'typography.font.size.paragraph.1': 'calc(1.1rem * var(--typography-font-size-scale))',
-  'typography.font.size.paragraph.2': 'calc(1rem * var(--typography-font-size-scale))',
-  'typography.font.size.paragraph.3': 'calc(0.95rem * var(--typography-font-size-scale))',
-  'typography.font.size.paragraph.4': 'calc(0.9rem * var(--typography-font-size-scale))',
-  'typography.font.size.paragraph.5': 'calc(0.85rem * var(--typography-font-size-scale))',
-  'typography.font.size.scale': 1,
+  'typography.font-family.body': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
+  'typography.font-family.mono': ['monospace'],
+  'typography.font-family.primary': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
+  'typography.font-family.secondary': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
+  'typography.font-size.btn.default': 'calc(1.15rem * var(--typography-font-size-scale))',
+  'typography.font-size.btn.sm': 'calc(1rem * var(--typography-font-size-scale))',
+  'typography.font-size.heading.1': 'calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale))',
+  'typography.font-size.heading.2': 'calc(clamp(1.5rem, 3vw + 1rem, 3rem) * var(--typography-font-size-scale))',
+  'typography.font-size.heading.3': 'calc(clamp(1.3rem, 2.5vw + 1rem, 2.5rem) * var(--typography-font-size-scale))',
+  'typography.font-size.heading.4': 'calc(clamp(1.2rem, 2.5vw + 1rem, 2rem) * var(--typography-font-size-scale))',
+  'typography.font-size.heading.5': 'calc(clamp(1.15rem, 2vw + 1rem, 1.4rem) * var(--typography-font-size-scale))',
+  'typography.font-size.heading.6': 'calc(clamp(1.125rem, 1.8vw + 1rem, 1.25rem) * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.1': 'calc(1.1rem * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.2': 'calc(1rem * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.3': 'calc(0.95rem * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.4': 'calc(0.9rem * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.5': 'calc(0.85rem * var(--typography-font-size-scale))',
+  'typography.font-size.scale': 1,
+  'typography.font-weight.bold': 700,
+  'typography.font-weight.bolder': 900,
+  'typography.font-weight.lighter': 300,
+  'typography.font-weight.normal': 400,
+  'typography.line-height.lg': 1.6,
+  'typography.line-height.md': 1.3,
+  'typography.line-height.sm': 1.1,
+  'typography.line-height.xl': 1.7,
+  'typography.line-height.xs': 1,
 };
 
 export const meta = {
@@ -951,337 +955,262 @@ export const meta = {
       },
     },
   },
-  'typography.font.family.body': {
+  'typography.font-family.body': {
     _original: {
       $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
     },
     _group: {
-      id: 'typography.font.family',
+      id: 'typography.font-family',
       $extensions: {
         requiredModes: [],
       },
       $type: 'fontFamily',
     },
-    id: 'typography.font.family.body',
+    id: 'typography.font-family.body',
     $type: 'fontFamily',
     $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
   },
-  'typography.font.family.mono': {
+  'typography.font-family.mono': {
     _original: {
       $value: 'monospace',
     },
     _group: {
-      id: 'typography.font.family',
+      id: 'typography.font-family',
       $extensions: {
         requiredModes: [],
       },
       $type: 'fontFamily',
     },
-    id: 'typography.font.family.mono',
+    id: 'typography.font-family.mono',
     $type: 'fontFamily',
     $value: ['monospace'],
   },
-  'typography.font.family.primary': {
+  'typography.font-family.primary': {
     _original: {
       $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
     },
     _group: {
-      id: 'typography.font.family',
+      id: 'typography.font-family',
       $extensions: {
         requiredModes: [],
       },
       $type: 'fontFamily',
     },
-    id: 'typography.font.family.primary',
+    id: 'typography.font-family.primary',
     $type: 'fontFamily',
     $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
   },
-  'typography.font.family.secondary': {
+  'typography.font-family.secondary': {
     _original: {
       $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
     },
     _group: {
-      id: 'typography.font.family',
+      id: 'typography.font-family',
       $extensions: {
         requiredModes: [],
       },
       $type: 'fontFamily',
     },
-    id: 'typography.font.family.secondary',
+    id: 'typography.font-family.secondary',
     $type: 'fontFamily',
     $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
   },
-  'typography.font.line-height.lg': {
-    _original: {
-      $value: 1.6,
-    },
-    _group: {
-      id: 'typography.font.line-height',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'number',
-    },
-    id: 'typography.font.line-height.lg',
-    $type: 'number',
-    $value: 1.6,
-  },
-  'typography.font.line-height.md': {
-    _original: {
-      $value: 1.3,
-    },
-    _group: {
-      id: 'typography.font.line-height',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'number',
-    },
-    id: 'typography.font.line-height.md',
-    $type: 'number',
-    $value: 1.3,
-  },
-  'typography.font.line-height.sm': {
-    _original: {
-      $value: 1.1,
-    },
-    _group: {
-      id: 'typography.font.line-height',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'number',
-    },
-    id: 'typography.font.line-height.sm',
-    $type: 'number',
-    $value: 1.1,
-  },
-  'typography.font.line-height.xl': {
-    _original: {
-      $value: 1.7,
-    },
-    _group: {
-      id: 'typography.font.line-height',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'number',
-    },
-    id: 'typography.font.line-height.xl',
-    $type: 'number',
-    $value: 1.7,
-  },
-  'typography.font.line-height.xs': {
-    _original: {
-      $value: 1,
-    },
-    _group: {
-      id: 'typography.font.line-height',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'number',
-    },
-    id: 'typography.font.line-height.xs',
-    $type: 'number',
-    $value: 1,
-  },
-  'typography.font.size.btn.default': {
+  'typography.font-size.btn.default': {
     _original: {
       $value: 'calc(1.15rem * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.btn',
+      id: 'typography.font-size.btn',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.btn.default',
+    id: 'typography.font-size.btn.default',
     $type: 'dimension',
     $value: 'calc(1.15rem * var(--typography-font-size-scale))',
   },
-  'typography.font.size.btn.sm': {
+  'typography.font-size.btn.sm': {
     _original: {
       $value: 'calc(1rem * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.btn',
+      id: 'typography.font-size.btn',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.btn.sm',
+    id: 'typography.font-size.btn.sm',
     $type: 'dimension',
     $value: 'calc(1rem * var(--typography-font-size-scale))',
   },
-  'typography.font.size.heading.1': {
+  'typography.font-size.heading.1': {
     _original: {
       $value: 'calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.heading',
+      id: 'typography.font-size.heading',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.heading.1',
+    id: 'typography.font-size.heading.1',
     $type: 'dimension',
     $value: 'calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale))',
   },
-  'typography.font.size.heading.2': {
+  'typography.font-size.heading.2': {
     _original: {
       $value: 'calc(clamp(1.5rem, 3vw + 1rem, 3rem) * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.heading',
+      id: 'typography.font-size.heading',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.heading.2',
+    id: 'typography.font-size.heading.2',
     $type: 'dimension',
     $value: 'calc(clamp(1.5rem, 3vw + 1rem, 3rem) * var(--typography-font-size-scale))',
   },
-  'typography.font.size.heading.3': {
+  'typography.font-size.heading.3': {
     _original: {
       $value: 'calc(clamp(1.3rem, 2.5vw + 1rem, 2.5rem) * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.heading',
+      id: 'typography.font-size.heading',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.heading.3',
+    id: 'typography.font-size.heading.3',
     $type: 'dimension',
     $value: 'calc(clamp(1.3rem, 2.5vw + 1rem, 2.5rem) * var(--typography-font-size-scale))',
   },
-  'typography.font.size.heading.4': {
+  'typography.font-size.heading.4': {
     _original: {
       $value: 'calc(clamp(1.2rem, 2.5vw + 1rem, 2rem) * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.heading',
+      id: 'typography.font-size.heading',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.heading.4',
+    id: 'typography.font-size.heading.4',
     $type: 'dimension',
     $value: 'calc(clamp(1.2rem, 2.5vw + 1rem, 2rem) * var(--typography-font-size-scale))',
   },
-  'typography.font.size.heading.5': {
+  'typography.font-size.heading.5': {
     _original: {
       $value: 'calc(clamp(1.15rem, 2vw + 1rem, 1.4rem) * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.heading',
+      id: 'typography.font-size.heading',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.heading.5',
+    id: 'typography.font-size.heading.5',
     $type: 'dimension',
     $value: 'calc(clamp(1.15rem, 2vw + 1rem, 1.4rem) * var(--typography-font-size-scale))',
   },
-  'typography.font.size.heading.6': {
+  'typography.font-size.heading.6': {
     _original: {
       $value: 'calc(clamp(1.125rem, 1.8vw + 1rem, 1.25rem) * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.heading',
+      id: 'typography.font-size.heading',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.heading.6',
+    id: 'typography.font-size.heading.6',
     $type: 'dimension',
     $value: 'calc(clamp(1.125rem, 1.8vw + 1rem, 1.25rem) * var(--typography-font-size-scale))',
   },
-  'typography.font.size.paragraph.1': {
+  'typography.font-size.paragraph.1': {
     _original: {
       $value: 'calc(1.1rem * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.paragraph',
+      id: 'typography.font-size.paragraph',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.paragraph.1',
+    id: 'typography.font-size.paragraph.1',
     $type: 'dimension',
     $value: 'calc(1.1rem * var(--typography-font-size-scale))',
   },
-  'typography.font.size.paragraph.2': {
+  'typography.font-size.paragraph.2': {
     _original: {
       $value: 'calc(1rem * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.paragraph',
+      id: 'typography.font-size.paragraph',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.paragraph.2',
+    id: 'typography.font-size.paragraph.2',
     $type: 'dimension',
     $value: 'calc(1rem * var(--typography-font-size-scale))',
   },
-  'typography.font.size.paragraph.3': {
+  'typography.font-size.paragraph.3': {
     _original: {
       $value: 'calc(0.95rem * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.paragraph',
+      id: 'typography.font-size.paragraph',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.paragraph.3',
+    id: 'typography.font-size.paragraph.3',
     $type: 'dimension',
     $value: 'calc(0.95rem * var(--typography-font-size-scale))',
   },
-  'typography.font.size.paragraph.4': {
+  'typography.font-size.paragraph.4': {
     _original: {
       $value: 'calc(0.9rem * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.paragraph',
+      id: 'typography.font-size.paragraph',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.paragraph.4',
+    id: 'typography.font-size.paragraph.4',
     $type: 'dimension',
     $value: 'calc(0.9rem * var(--typography-font-size-scale))',
   },
-  'typography.font.size.paragraph.5': {
+  'typography.font-size.paragraph.5': {
     _original: {
       $value: 'calc(0.85rem * var(--typography-font-size-scale))',
     },
     _group: {
-      id: 'typography.font.size.paragraph',
+      id: 'typography.font-size.paragraph',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.paragraph.5',
+    id: 'typography.font-size.paragraph.5',
     $type: 'dimension',
     $value: 'calc(0.85rem * var(--typography-font-size-scale))',
   },
-  'typography.font.size.scale': {
+  'typography.font-size.scale': {
     _original: {
       $type: 'number',
       $value: 1,
@@ -1292,13 +1221,13 @@ export const meta = {
       },
     },
     _group: {
-      id: 'typography.font.size',
+      id: 'typography.font-size',
       $extensions: {
         requiredModes: [],
       },
       $type: 'dimension',
     },
-    id: 'typography.font.size.scale',
+    id: 'typography.font-size.scale',
     $type: 'number',
     $value: 1,
     $extensions: {
@@ -1306,6 +1235,141 @@ export const meta = {
         zoomed: 1.15,
       },
     },
+  },
+  'typography.font-weight.bold': {
+    _original: {
+      $value: 700,
+    },
+    _group: {
+      id: 'typography.font-weight',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.font-weight.bold',
+    $type: 'number',
+    $value: 700,
+  },
+  'typography.font-weight.bolder': {
+    _original: {
+      $value: 900,
+    },
+    _group: {
+      id: 'typography.font-weight',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.font-weight.bolder',
+    $type: 'number',
+    $value: 900,
+  },
+  'typography.font-weight.lighter': {
+    _original: {
+      $value: 300,
+    },
+    _group: {
+      id: 'typography.font-weight',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.font-weight.lighter',
+    $type: 'number',
+    $value: 300,
+  },
+  'typography.font-weight.normal': {
+    _original: {
+      $value: 400,
+    },
+    _group: {
+      id: 'typography.font-weight',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.font-weight.normal',
+    $type: 'number',
+    $value: 400,
+  },
+  'typography.line-height.lg': {
+    _original: {
+      $value: 1.6,
+    },
+    _group: {
+      id: 'typography.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.line-height.lg',
+    $type: 'number',
+    $value: 1.6,
+  },
+  'typography.line-height.md': {
+    _original: {
+      $value: 1.3,
+    },
+    _group: {
+      id: 'typography.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.line-height.md',
+    $type: 'number',
+    $value: 1.3,
+  },
+  'typography.line-height.sm': {
+    _original: {
+      $value: 1.1,
+    },
+    _group: {
+      id: 'typography.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.line-height.sm',
+    $type: 'number',
+    $value: 1.1,
+  },
+  'typography.line-height.xl': {
+    _original: {
+      $value: 1.7,
+    },
+    _group: {
+      id: 'typography.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.line-height.xl',
+    $type: 'number',
+    $value: 1.7,
+  },
+  'typography.line-height.xs': {
+    _original: {
+      $value: 1,
+    },
+    _group: {
+      id: 'typography.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.line-height.xs',
+    $type: 'number',
+    $value: 1,
   },
 };
 
@@ -1370,7 +1434,7 @@ export const modes = {
   'transition.duration.slow': {
     reducedMotion: '0ms',
   },
-  'typography.font.size.scale': {
+  'typography.font-size.scale': {
     zoomed: 1.15,
   },
 };
