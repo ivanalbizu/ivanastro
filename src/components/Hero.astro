@@ -3,15 +3,15 @@ import Button from "@components/Button.astro";
 
 import { config } from '../config';
 ---
-<section class="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">{config.title}</h1>
-    <h2 class="hero-subtitle">Maquetador web</h2>
-    <p class="hero-description">
+<section class="hero-wrap">
+  <div class="hero">
+    <h1 class="hero__title">{config.title}</h1>
+    <h2 class="hero__subtitle">Maquetador web</h2>
+    <p class="hero__description">
       Html, css, sass, javascript, astro, accesibilidad web.
     </p>
     <hr class="hr" />
-    <div class="hero-actions">
+    <div class="hero__actions">
       <div>
         <Button tag="a" variant="secondary" href="#latest-entries">Últimas entradas</Button>
       </div>
@@ -30,7 +30,7 @@ import { config } from '../config';
 </section>
 
 <style lang="scss">
-  .hero {
+  .hero-wrap {
     text-align: center;
     padding: var(--space-xxxl) var(--space-sm);
     background: linear-gradient(
@@ -40,40 +40,47 @@ import { config } from '../config';
     );
   }
 
-  .hero-content {
+  .hero {
     max-width: var(--max-width-medium);
     margin-inline: auto;
     padding: 0 var(--space-semantic-padding);
-  }
 
-  .hero-title {
-    font-family: var(--typography-font-family-primary);
-    font-size: var(--typography-font-size-heading-2);
-    font-weight: var(--typography-font-weight-bold);
-    color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: var(--typography-letter-spacing-xxl);
-    line-height: var(--typography-line-height-xs);
-    margin-block-end: var(--space-sm);
-  }
+    &__title {
+      font-family: var(--typography-font-family-primary);
+      font-size: var(--typography-font-size-heading-2);
+      font-weight: var(--typography-font-weight-bold);
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: var(--typography-letter-spacing-xxl);
+      line-height: var(--typography-line-height-xs);
+      margin-block-end: var(--space-sm);
+    }
 
-  .hero-subtitle {
-    font-family: var(--typography-font-family-primary);
-    font-size: var(--typography-font-size-heading-5);
-    font-weight: var(--typography-font-weight-bold);
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: var(--typography-letter-spacing-xxl);
-    margin-block-end: var(--space-md);
-  }
+    &__subtitle {
+      font-family: var(--typography-font-family-primary);
+      font-size: var(--typography-font-size-heading-5);
+      font-weight: var(--typography-font-weight-bold);
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: var(--typography-letter-spacing-xxl);
+      margin-block-end: var(--space-md);
+    }
 
-  .hero-description {
-    font-size: var(--typography-font-size-heading-5);
-    line-height: var(--typography-line-height-md);
-    color: var(--color-text-secondary);
-    margin-inline: auto;
-    margin-block-end: var(--space-lg);
-    max-width: var(--max-width-thin);
+    &__description {
+      font-size: var(--typography-font-size-heading-5);
+      line-height: var(--typography-line-height-md);
+      color: var(--color-text-secondary);
+      margin-inline: auto;
+      margin-block-end: var(--space-lg);
+      max-width: var(--max-width-thin);
+    }
+
+    &__actions {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 
   .hr {
@@ -82,12 +89,5 @@ import { config } from '../config';
     border: none;
     width: 150px;
     margin: 0 auto var(--space-lg);
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: var(--space-sm);
-    justify-content: center;
-    flex-wrap: wrap;
   }
 </style>
