@@ -95,90 +95,81 @@ const publishedTime = post.data.date
 
 <style lang="scss">
   .post-header {
-    margin-block-end: calc(var(--grid-unit) * 6);
+    margin-block-end: var(--space-xl);
   }
 
   .post-title {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-heading-3);
-    font-weight: 700;
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-heading-3);
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-accent);
-    letter-spacing: 0.03em;
-    line-height: 1.1;
-    margin-block-end: calc(var(--grid-unit) * 3);
-  }
-
-  .post-excerpt {
-    font-size: var(--fs-heading-6);
-    line-height: 1.5;
-    color: var(--color-text-secondary);
-    font-style: italic;
-    margin: 0;
+    letter-spacing: var(--typography-letter-spacing-md);
+    line-height: var(--typography-line-height-sm);
+    margin-block-end: var(--space-md);
   }
 
   .post-content {
-    font-size: var(--fs-paragraph-2);
-    line-height: 1.7;
-    margin-block-end: calc(var(--grid-unit) * 6);
+    font-size: var(--typography-font-size-paragraph-2);
+    line-height: var(--typography-line-height-xl);
+    margin-block-end: var(--space-xl);
   }
 
   .post-content :global(h1) {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-heading-3);
-    font-weight: 700;
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-heading-3);
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text-primary);
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-block-start: calc(var(--grid-unit) * 6);
-    margin-block-end: calc(var(--grid-unit) * 3);
+    letter-spacing: var(--typography-letter-spacing-xxl);
+    margin-block-start: var(--space-xl);
+    margin-block-end: var(--space-md);
   }
 
   .post-content :global(h2) {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-heading-4);
-    font-weight: 700;
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-heading-4);
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text-primary);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-block-start: calc(var(--grid-unit) * 6);
-    margin-block-end: calc(var(--grid-unit) * 3);
+    letter-spacing: var(--typography-letter-spacing-md);
+    margin-block-start: var(--space-xl);
+    margin-block-end: var(--space-md);
   }
 
   .post-content :global(h3) {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-heading-5);
-    font-weight: 700;
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-heading-5);
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text-primary);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-block-start: calc(var(--grid-unit) * 4);
-    margin-block-end: calc(var(--grid-unit) * 2);
+    letter-spacing: var(--typography-letter-spacing-xl);
+    margin-block-start: var(--space-lg);
+    margin-block-end: var(--space-sm);
   }
 
   .post-content :global(p) {
-    margin-block-end: calc(var(--grid-unit) * 3);
+    margin-block-end: var(--space-md);
   }
 
   .post-content :global(blockquote) {
     border-left: var(--border-width-lg) solid var(--color-accent);
-    padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 3);
-    margin: calc(var(--grid-unit) * 4) 0;
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-lg) 0;
     background-color: var(--color-surface);
     font-style: italic;
-    font-size: var(--fs-paragraph-1);
+    font-size: var(--typography-font-size-paragraph-1);
     color: var(--color-text-secondary);
   }
 
   .post-content :global(pre) {
-    background-color: #000000;
-    color: #ffffff;
-    padding: calc(var(--grid-unit) * 3);
-    margin: calc(var(--grid-unit) * 4) 0;
+    background-color: var(--color-white);
+    color: var(--color-white);
+    padding: var(--space-md);
+    margin: var(--space-lg) 0;
     border-radius: var(--border-radius-lg);;
     overflow-x: auto;
-    font-family: var(--font-mono);
-    font-size: var(--fs-paragraph-4);
-    line-height: 1.5;
+    font-family: var(--typography-font-family-mono);
+    font-size: var(--typography-font-size-paragraph-4);
   }
 
   .post-content :global(pre code) {
@@ -189,14 +180,11 @@ const publishedTime = post.data.date
     font-size: inherit;
   }
 
-  /* Custom Prism syntax highlighting for German flag colors */
-  /* CSS selectors like h1 - use gold */
   .post-content :global(.token.selector),
   .post-content :global(.token.tag) {
     color: #ffd700 !important;
   }
 
-  /* CSS properties and functions - use red */
   .post-content :global(.token.property),
   .post-content :global(.token.class-name),
   .post-content :global(.token.function) {
@@ -225,46 +213,45 @@ const publishedTime = post.data.date
     color: #66d9ef !important;
   }
 
-  /* Reset default Prism styles and apply our theme */
   .post-content :global(pre[class*="language-"]) {
-    background: #000000 !important;
-    color: #ffffff !important;
+    background: var(--color-black) !important;
+    color: var(--color-white) !important;
   }
 
   .post-content :global(code[class*="language-"]) {
-    background: #000000 !important;
-    color: #ffffff !important;
+    background: var(--color-black) !important;
+    color: var(--color-white) !important;
   }
 
   .post-content :global(code) {
-    font-family: var(--font-mono);
-    font-size: var(--fs-paragraph-4);
+    font-family: var(--typography-font-family-mono);
+    font-size: var(--typography-font-size-paragraph-4);
     background-color: var(--color-surface);
     color: var(--color-accent);
     padding: 2px 6px;
     border-radius: var(--border-radius-md);
-    border: 1px solid var(--color-border);
-    font-weight: 700;
+    border: var(--border-width-sm) solid var(--color-border);
+    font-weight: var(--typography-font-weight-bold);
   }
 
   .post-content :global(img) {
     border: var(--border-width-md) solid var(--color-border);
-    margin: calc(var(--grid-unit) * 4) 0;
+    margin: var(--space-lg) 0;
     border-radius: var(--border-radius-md);
   }
 
   .post-content :global(ul),
   .post-content :global(ol) {
-    margin-block-end: calc(var(--grid-unit) * 3);
-    padding-left: calc(var(--grid-unit) * 3);
+    margin-block-end: var(--space-md);
+    padding-left: var(--space-md);
   }
 
   .post-content :global(li) {
-    margin-block-end: calc(var(--grid-unit) / 2);
+    margin-block-end: var(--space-xxxs);
   }
 
   .post-content :global(strong) {
-    font-weight: 700;
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-text-primary);
   }
 
@@ -276,23 +263,23 @@ const publishedTime = post.data.date
     height: 2px;
     background-color: var(--color-accent);
     border: none;
-    margin: calc(var(--grid-unit) * 4) 0;
+    margin: var(--space-lg) 0;
   }
 
   .post-footer {
-    border-top: 1px solid var(--color-border);
-    padding-top: calc(var(--grid-unit) * 3);
+    border-top: var(--border-width-sm) solid var(--color-border);
+    padding-top: var(--space-md);
     display: flex;
     flex-direction: column;
-    gap: calc(var(--grid-unit) * 3);
+    gap: var(--space-md);
   }
 
   .tags-label {
-    font-family: var(--font-family-primary);
-    font-weight: 700;
-    font-size: var(--fs-paragraph-4);
+    font-family: var(--typography-font-family-primary);
+    font-weight: var(--typography-font-weight-bold);
+    font-size: var(--typography-font-size-paragraph-4);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: var(--typography-letter-spacing-md);
     color: var(--color-text-primary);
   }
 </style>

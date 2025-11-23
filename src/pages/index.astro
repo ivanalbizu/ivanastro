@@ -91,49 +91,49 @@ const sortedPosts = posts
 
 <style lang="scss">
   .container {
-    padding: calc(var(--grid-unit) * 8) 0;
+    padding: var(--space-xxl) 0;
   }
 
   .section-title {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-heading-3);
-    font-weight: 700;
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-heading-3);
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-accent);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-block-end: calc(var(--grid-unit) * 2);
+    letter-spacing: var(--typography-letter-spacing-md);
+    margin-block-end: var(--space-sm);
     text-align: center;
   }
 
   .section-subtitle {
     text-align: center;
-    font-size: var(--fs-heading-5);
-    line-height: 1.6;
+    font-size: var(--typography-font-size-heading-5);
+    line-height: var(--typography-line-height-lg);
     color: var(--color-text-secondary);
-    margin-block-end: calc(var(--grid-unit) * 6);
+    margin-block-end: var(--space-xl);
     max-width: var(--max-width-thin);
     margin-inline: auto;
   }
 
   .section-content {
     display: grid;
-    gap: calc(var(--grid-unit) * 4);
-    margin-block-end: calc(var(--grid-unit) * 6);
+    gap: var(--space-lg);
+    margin-block-end: var(--space-xl);
   }
 
   .post {
     background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
+    border: var(--border-width-sm) solid var(--color-border);
     border-radius: var(--border-radius-lg);;
-    padding: calc(var(--grid-unit) * 3);
+    padding: var(--space-md);
     transition:
       transform var(--transition-duration-normal) ease,
       border-color var(--transition-duration-normal) ease;
     &__title {
-      font-family: var(--font-family-primary);
-      font-size: var(--fs-heading-5);
-      font-weight: 700;
-      margin-block-end: calc(var(--grid-unit));
+      font-family: var(--typography-font-family-primary);
+      font-size: var(--typography-font-size-heading-5);
+      font-weight: var(--typography-font-weight-bold);
+      margin-block-end: var(--space-xxs);
       a {
         color: var(--color-text-primary);
         text-underline-offset: 3px;

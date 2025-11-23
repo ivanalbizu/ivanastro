@@ -7,7 +7,7 @@ const { base = "" } = Astro.site
   : { base: "" };
 
 const { pathname } = Astro.url;
-const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
+const pathSegment = pathname.slice(1).replace(/\/$/, "");
 ---
 
 <header class="site-header">
@@ -87,8 +87,8 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
             <a
               href={base + "blog"}
               class:list={["nav-link", pathSegment == "blog" ? "active" : ""]}
-              aria-current={pathSegment == 'blog' ? 'page' : null}
-              >Blog</a>
+              aria-current={pathSegment == "blog" ? "page" : null}>Blog</a
+            >
           </li>
           <li>
             <a
@@ -97,8 +97,9 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
                 "nav-link",
                 pathSegment == "categorias" ? "active" : "",
               ]}
-              aria-current={pathSegment == 'categorias' ? 'page' : null}
-              >Categorías</a>
+              aria-current={pathSegment == "categorias" ? "page" : null}
+              >Categorías</a
+            >
           </li>
           <li>
             <a
@@ -107,8 +108,9 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
                 "nav-link",
                 pathSegment == "sobre-mi" ? "active" : "",
               ]}
-              aria-current={pathSegment == 'sobre-mi' ? 'page' : null}
-              >Sobre mí</a>
+              aria-current={pathSegment == "sobre-mi" ? "page" : null}
+              >Sobre mí</a
+            >
           </li>
           <li>
             <a
@@ -117,8 +119,8 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
                 "nav-link",
                 pathSegment == "curriculum" ? "active" : "",
               ]}
-              aria-current={pathSegment == 'curriculum' ? 'page' : null}
-              >CV</a>
+              aria-current={pathSegment == "curriculum" ? "page" : null}>CV</a
+            >
           </li>
         </ul>
       </nav>
@@ -126,36 +128,16 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
       <div class="mobile-controls">
         <Button tag="button" variant="link" size="sm" id="theme-toggle">
           <svg
-            class="sun-icon"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"
-            ></circle>
-            <path
-              d="M12 1v6m0 6v6m11-7h-6m-6 0H1"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"></path>
-          </svg>
-          <svg
-            class="moon-icon"
-            width="20"
-            height="20"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
             <path
-              d="M21 12.79A9 9 0 1 1 11.21 3 A7 7 0 0 0 21 12.79z"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linejoin="round"></path>
+              fill="currentColor"
+              d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5l1.43 1.43L4.93 20.5L3.5 19.07zm-6.18 2.43L11.41 5L9.97 6l.42-1.7L9 3.24l1.75-.12l.58-1.65L12 3.1l1.73.03l-1.35 1.13zm-3.3 3.61l-1.16-.73l-1.12.78l.34-1.32l-1.09-.83l1.36-.09l.45-1.29l.51 1.27l1.36.03l-1.05.87zM19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58l2.77-1.15l-.24 3.35zm4.33-2.7l1.15-2.77l2.2 2.54zm1.15-4.96l-1.14-2.78l3.34.24zM9.63 18.93l2.77 1.15l-2.53 2.19z"
+            ></path>
           </svg>
           <span class="visually-hidden"
             >Activar / Desactivar el modo oscuro</span
@@ -252,33 +234,33 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
   .site-header {
     border-bottom: var(--border-width-md) solid var(--color-border);
     background-color: var(--color-surface);
-    padding: var(--grid-unit) 0;
+    padding-block: var(--space-xxs);
     position: sticky;
     top: 0;
     z-index: 100;
   }
 
   .header-content {
-    max-width: var(--max-width);
+    max-width: var(--max-width-default);
     margin-inline: auto;
     display: grid;
     grid-template-columns: auto auto 1fr;
     justify-content: space-between;
     align-items: center;
-    gap: calc(var(--grid-unit) * 2);
-    padding: 0 var(--content-padding);
+    gap: var(--space-sm);
+    padding: 0 var(--space-semantic-padding);
   }
 
   .site-title a {
     display: flex;
-    min-height: var(--target-size);
     align-items: center;
-    font-family: var(--font-family-primary);
-    font-weight: 700;
+    min-height: var(--target-size);
+    font-family: var(--typography-font-family-primary);
+    font-weight: var(--typography-font-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: var(--typography-letter-spacing-md);
     color: var(--color-text-primary);
-    padding: calc(var(--grid-unit) / 2) 0;
+    padding-block: var(--space-xxxs);
     transition:
       color var(--transition-duration-normal) ease,
       text-decoration var(--transition-duration-normal) ease;
@@ -297,7 +279,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
   .header-controls {
     display: flex;
     align-items: center;
-    gap: var(--grid-unit);
+    gap: var(--space-xxs);
     justify-self: end;
   }
 
@@ -307,7 +289,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     left: 0;
     right: 0;
     bottom: 0;
-    padding-inline: calc(var(--grid-unit) * 2);
+    padding-inline: var(--space-sm);
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     opacity: 0;
@@ -324,31 +306,30 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
 
   .search-container {
     max-width: var(--max-width-medium);
-    margin: calc(var(--grid-unit) * 5) auto calc(var(--grid-unit) * 3) auto;
+    margin: var(--space-lg) auto var(--space-md);
   }
 
   .search-header {
     display: flex;
     align-items: center;
-    gap: calc(var(--grid-unit) * 2);
+    gap: var(--space-sm);
     background: var(--color-background);
     border: var(--border-width-md) solid var(--color-border);
     border-radius: var(--border-radius-lg);
-    padding: calc(var(--grid-unit) * 3);
-    margin-block-end: calc(var(--grid-unit) * 5);
+    padding: var(--space-md);
   }
 
   .search-input {
     flex: 1;
-    font-family: var(--font-body);
-    font-size: var(--fs-heading-6);
+    font-family: var(--typography-font-family-body);
+    font-size: var(--typography-font-size-heading-6);
     color: var(--color-text-primary);
-    padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 3);
-    max-width: calc(100% - var(--target-size) - (var(--grid-unit) * 2));
+    padding: var(--space-sm);
+    max-width: calc(100% - var(--target-size) - var(--space-sm));
   }
 
   .search-input::placeholder {
-    color: var(--color-medium-gray);
+    color: var(--color-gray-medium);
   }
 
   .search-results {
@@ -358,39 +339,25 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     min-height: 40vh;
     overflow-y: auto;
     background: var(--color-background);
-    border-radius: var(--border-radius-lg);;
-    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    border: var(--border-width-sm) solid var(--color-border);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 2.5)
-      calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 2.5);
+    padding: var(--space-md);
     &:empty {
       display: none;
     }
   }
 
   :global(.search-result + .search-result) {
-    margin-block-start: calc(var(--grid-unit) * 3);
-  }
-
-  /* Dark mode search category styles */
-  :global([data-theme="dark"]) .search-category {
-    background-color: var(--color-surface);
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-border);
-  }
-
-  :global([data-theme="dark"]) .search-category:hover {
-    background-color: var(--color-interaction-default);
-    color: white;
-    border-color: var(--color-interaction-default);
+    margin-block-start: var(--space-md);
   }
 
   :global([data-theme="dark"]) .search-input {
-    color: var(--color-black);
+    //color: var(--color-black);
   }
 
   .search-no-results {
-    padding: calc(var(--grid-unit) * 10) calc(var(--grid-unit) * 6);
+    padding: var(--space-xxxl) var(--space-xl);
     text-align: center;
   }
 
@@ -398,7 +365,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     color: var(--color-text-muted);
     font-style: italic;
     margin: 0;
-    font-size: var(--fs-paragraph-1);
+    font-size: var(--typography-font-size-paragraph-1);
   }
 
   .nav-list {
@@ -406,14 +373,14 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     list-style-type: "";
     margin: 0;
     padding: 0;
-    gap: var(--grid-unit);
+    gap: var(--space-xxs);
     li {
       margin-block-end: 0;
     }
   }
 
   .close-menu {
-    margin: calc(var(--grid-unit) * 2);
+    margin: var(--space-sm);
   }
   @media (min-width: 768px) {
     .nav-list {
@@ -427,7 +394,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
   .mobile-controls {
     display: flex;
     align-items: center;
-    gap: calc(var(--grid-unit));
+    gap: var(--space-xxs);
     .btn {
       min-height: var(--target-size);
     }
@@ -440,7 +407,7 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
       left: 0;
       right: 0;
       bottom: 0;
-      padding: var(--grid-unit);
+      padding: var(--space-xxs);
       background-color: var(--color-background);
       z-index: 99;
       transform: translateX(-100%);
@@ -462,26 +429,20 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     }
   }
 
-  .mobile-nav-list {
-    list-style-type: "";
-    margin: 0;
-    padding: calc(var(--grid-unit) * 4) 0;
-  }
-
   .nav-link {
     display: flex;
     align-items: center;
-    padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 4);
-    font-family: var(--font-family-primary);
-    font-weight: 700;
-    font-size: var(--fs-heading-4);
+    padding: var(--space-md) var(--space-lg);
+    font-family: var(--typography-font-family-primary);
+    font-weight: var(--typography-font-weight-bold);
+    font-size: var(--typography-font-size-heading-4);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: var(--typography-letter-spacing-xxl);
     color: var(--color-text-primary);
     text-decoration-color: transparent;
     text-underline-offset: 6px;
     text-decoration-thickness: 2px;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: var(--border-width-sm) solid var(--color-border);
     min-height: var(--target-size);
     transition:
       color var(--transition-duration-normal) ease,
@@ -499,9 +460,9 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
 
   @media (min-width: 768px) {
     .nav-link {
-      font-size: var(--fs-paragraph-2);
-      letter-spacing: 0.03em;
-      padding: calc(var(--grid-unit) / 2) calc(var(--grid-unit));
+      font-size: var(--typography-font-size-paragraph-2);
+      letter-spacing: var(--typography-letter-spacing-md);
+      padding: var(--space-xxxs) var(--space-xxs);
       border-bottom: 0;
       &.active,
       &:hover,
@@ -514,22 +475,18 @@ const pathSegment = (pathname.slice(1)).replace(/\/$/, '');
     .header-content {
       display: flex;
       flex-wrap: wrap;
-      gap: calc(var(--grid-unit) * 2);
-      padding: 0 var(--content-padding);
+      gap: var(--space-sm);
+      padding: 0 var(--space-semantic-padding);
     }
     .mobile-only {
       display: none !important;
     }
-    .search-container {
-      margin: calc(var(--grid-unit) * 10) auto calc(var(--grid-unit) * 4) auto;
-    }
     .search-results {
-      padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 4)
-        calc(var(--grid-unit) * 4) calc(var(--grid-unit) * 4);
+      padding: var(--space-md) var(--space-lg) var(--space-lg) var(--space-lg);
       &-header {
-        padding: calc(var(--grid-unit) * 3) calc(var(--grid-unit) * 4);
-        margin: calc(var(--grid-unit) * -3) calc(var(--grid-unit) * -4)
-          calc(var(--grid-unit) * 3) calc(var(--grid-unit) * -4);
+        padding: var(--space-md) var(--space-lg);
+        margin: calc(var(--space-md) * -1) calc(var(--space-lg) * -1)
+          var(--space-md) calc(var(--space-lg) * -1);
       }
     }
   }

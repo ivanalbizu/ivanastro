@@ -114,12 +114,12 @@ const { categoria } = Astro.params;
   .posts-list {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--grid-unit) * 6);
+    gap: var(--space-xl);
   }
 
   .post-item {
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: calc(var(--grid-unit) * 4);
+    border-bottom: var(--border-width-sm) solid var(--color-border);
+    padding-bottom: var(--space-lg);
     &:last-child {
       border-bottom: none;
       padding-bottom: 0;
@@ -127,10 +127,10 @@ const { categoria } = Astro.params;
   }
 
   .post-title {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-heading-4);
-    font-weight: 700;
-    margin-block-end: calc(var(--grid-unit) * 2);
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-heading-4);
+    font-weight: var(--typography-font-weight-bold);
+    margin-block-end: var(--space-sm);
     a {
       color: var(--color-text-primary);
       text-underline-offset: 3px;
@@ -142,47 +142,9 @@ const { categoria } = Astro.params;
     }
   }
 
-  .post-categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: calc(var(--grid-unit) / 2);
-  }
-
-  .category {
-    background-color: var(--color-text-primary);
-    color: white;
-    padding: calc(var(--grid-unit) / 4) calc(var(--grid-unit) / 2);
-    font-size: var(--fs-paragraph-5);
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    border-radius: var(--border-radius-sm);
-  }
-
-  /* Dark mode category styles */
-  :global([data-theme="dark"]) .category {
-    background-color: var(--color-surface);
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-border);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .category {
-      background-color: var(--color-surface);
-      color: var(--color-text-primary);
-      border: 1px solid var(--color-border);
-    }
-  }
-
-  .post-excerpt {
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-    margin-block-end: calc(var(--grid-unit) * 2);
-    font-size: var(--fs-paragraph-1);
-  }
-
   .no-posts {
     text-align: center;
-    padding: calc(var(--grid-unit) * 6);
+    padding: var(--space-xl);
     color: var(--color-text-muted);
     font-style: italic;
   }
@@ -191,6 +153,6 @@ const { categoria } = Astro.params;
     background-color: var(--color-surface);
     padding: 2px 4px;
     border-radius: var(--border-radius-sm);
-    font-family: var(--font-mono);
+    font-family: var(--typography-font-family-mono);
   }
 </style>

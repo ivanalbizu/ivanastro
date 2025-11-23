@@ -2,7 +2,6 @@
 import type { HTMLTag } from 'astro/types';
 import Button from "@components/Button.astro";
 
-
 import { getCollection } from "astro:content";
 
 export interface Props {
@@ -75,25 +74,25 @@ const sortedCategories = Object.entries(categoryMap)
   .counter {
     display: flex;
     flex-direction: column;
-    line-height: 1.4;
+    line-height: var(--typography-line-height-md);
     &__top {
       text-transform: uppercase;
     }
     &__bottom {
       font-size: 0.85em;
       color: var(--color-text-muted);
-      line-height: 1;
+      line-height: var(--typography-line-height-xs);
     }
   }
   .categories-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: calc(var(--grid-unit) * 2);
+    gap: var(--space-sm);
   }
 
   .no-categories {
     text-align: center;
-    padding: calc(var(--grid-unit) * 6);
+    padding: var(--space-xl);
     color: var(--color-text-muted);
   }
 

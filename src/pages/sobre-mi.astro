@@ -60,14 +60,14 @@ const pageDescription = `Saber más de ${author.name}`;
 <style>
   .author-section {
     text-align: center;
-    margin-block-end: calc(var(--grid-unit) * 10);
-    padding: calc(var(--grid-unit) * 6) calc(var(--grid-unit) * 4);
+    margin-block-end: var(--space-xxxl);
+    padding: var(--space-xl) var(--space-lg);
     background-color: var(--color-surface);
-    border-radius: calc(var(--grid-unit));
+    border-radius: var(--space-xxs);
   }
 
   .author-avatar {
-    margin-block-end: calc(var(--grid-unit) * 3);
+    margin-block-end: var(--space-md);
   }
 
   .author-avatar img {
@@ -87,59 +87,55 @@ const pageDescription = `Saber más de ${author.name}`;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-medium-gray);
+    color: var(--color-gray-medium);
     margin: 0 auto;
   }
 
   .author-name {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-heading-3);
-    font-weight: 700;
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-heading-3);
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-accent);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-block-end: calc(var(--grid-unit) * 2);
+    letter-spacing: var(--typography-letter-spacing-md);
+    margin-block-end: var(--space-sm);
   }
 
   .author-bio {
-    font-size: var(--fs-heading-6);
-    line-height: 1.6;
+    font-size: var(--typography-font-size-heading-6);
+    line-height: var(--typography-line-height-lg);
     color: var(--color-text-secondary);
     max-width: var(--max-width-thin);
-    margin: 0 auto calc(var(--grid-unit) * 4);
-  }
-
-  .content-section {
-    line-height: 1.7;
+    margin: 0 auto var(--space-lg);
   }
 
   .content-section h2 {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-heading-4);
-    font-weight: 700;
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-heading-4);
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-accent);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-block-start: calc(var(--grid-unit) * 6);
-    margin-block-end: calc(var(--grid-unit) * 3);
+    letter-spacing: var(--typography-letter-spacing-md);
+    margin-block-start: var(--space-xl);
+    margin-block-end: var(--space-md);
   }
 
   .content-section p {
-    font-size: var(--fs-heading-6);
-    line-height: 1.6;
+    font-size: var(--typography-font-size-heading-6);
+    line-height: var(--typography-line-height-lg);
     color: var(--color-text-primary);
-    margin-block-end: calc(var(--grid-unit) * 3);
+    margin-block-end: var(--space-md);
   }
 
   .content-section ul {
-    margin: calc(var(--grid-unit) * 2) 0;
-    padding-left: calc(var(--grid-unit) * 3);
+    margin: var(--space-sm) 0;
+    padding-left: var(--space-md);
   }
 
   .content-section li {
-    margin-block-end: calc(var(--grid-unit) * 2);
-    font-size: var(--fs-heading-6);
-    line-height: 1.6;
+    margin-block-end: var(--space-sm);
+    font-size: var(--typography-font-size-heading-6);
+    line-height: var(--typography-line-height-lg);
   }
 
   .content-section strong {
@@ -148,11 +144,11 @@ const pageDescription = `Saber más de ${author.name}`;
 
   @media (max-width: 768px) {
     .author-section {
-      padding: calc(var(--grid-unit) * 4) calc(var(--grid-unit) * 3);
+      padding: var(--space-lg) var(--space-md);
     }
 
     .author-bio {
-      font-size: var(--fs-heading-6);
+      font-size: var(--typography-font-size-heading-6);
     }
 
     .author-avatar img {
@@ -167,7 +163,7 @@ const pageDescription = `Saber más de ${author.name}`;
 
     .content-section p,
     .content-section li {
-      font-size: var(--fs-paragraph-2);
+      font-size: var(--typography-font-size-paragraph-2);
     }
   }
 </style>

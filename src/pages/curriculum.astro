@@ -212,7 +212,7 @@ const pageDescription =
       "left"
       "right";
     gap: 48px 32px;
-    margin-block-end: calc(var(--grid-unit) * 2);
+    margin-block-end: var(--space-sm);
 
     @media (min-width: 768px) {
       grid-template-columns: 1fr 3fr;
@@ -246,25 +246,25 @@ const pageDescription =
     h4,
     h5,
     h6 {
-      margin-block-end: var(--grid-unit);
+      margin-block-end: var(--space-xxs);
     }
     h4,
     h5,
     h6 {
-      font-size: var(--fs-paragraph-2);
+      font-size: var(--typography-font-size-paragraph-2);
     }
   }
 
   .social-links {
     display: grid;
-    gap: var(--grid-unit);
+    gap: var(--space-xxs);
     svg {
       width: 24px;
       height: 24px;
     }
     a {
       display: flex;
-      gap: calc(var(--grid-unit) * 0.5);
+      gap: var(--space-xxxs);
     }
 
     @media (min-width: 768px) {
@@ -273,7 +273,7 @@ const pageDescription =
   }
 
   .experience {
-    border-bottom: var(--border-width-md) solid var(--color-light-gray);
+    border-bottom: var(--border-width-md) solid var(--color-gray-light);
     margin-block-end: 26px;
 
     @media (min-width: 768px) {
@@ -305,7 +305,7 @@ const pageDescription =
     li {
       position: relative;
       &:not(:last-of-type) {
-        margin-block-end: calc(var(--grid-unit) * 3);
+        margin-block-end: var(--space-md);
       }
       &::before,
       &::after {

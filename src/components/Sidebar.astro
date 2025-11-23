@@ -92,10 +92,10 @@ const categories = [
   .sidebar-content {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--grid-unit) * 4);
-    padding: calc(var(--grid-unit) * 3);
+    gap: var(--space-lg);
+    padding: var(--space-md);
     background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
+    border: var(--border-width-sm) solid var(--color-border);
     border-radius: var(--border-radius-md);
     top: 86px;
     @media (min-width: 1024px) {
@@ -104,15 +104,15 @@ const categories = [
   }
 
   .section-title {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-paragraph-1);
-    font-weight: 700;
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-paragraph-1);
+    font-weight: var(--typography-font-weight-bold);
     color: var(--color-accent);
-    margin-block-end: calc(var(--grid-unit) * 1.5);
+    margin-block-end: var(--space-xs);
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: var(--typography-letter-spacing-md);
     border-bottom: var(--border-width-md) solid var(--color-accent);
-    padding-bottom: calc(var(--grid-unit) / 2);
+    padding-bottom: var(--space-xxxs);
   }
 
   .post-list {
@@ -121,7 +121,7 @@ const categories = [
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: calc(var(--grid-unit) * 1.5);
+    gap: var(--space-xs);
   }
 
   .category-list {
@@ -130,18 +130,18 @@ const categories = [
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: calc(var(--grid-unit) / 2);
+    gap: var(--space-xxxs);
   }
 
   .post-item {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--grid-unit) / 2);
+    gap: var(--space-xxxs);
   }
 
   .post-link {
-    font-weight: 400;
-    line-height: 1.3;
+    font-weight: var(--typography-font-weight-normal);
+    line-height: var(--typography-line-height-md);
     color: var(--color-text-primary);
     &:hover,
     &:focus {
@@ -150,9 +150,9 @@ const categories = [
   }
 
   .post-date {
-    font-size: var(--fs-paragraph-5);
+    font-size: var(--typography-font-size-paragraph-5);
     color: var(--color-text-muted);
-    font-family: var(--font-mono);
+    font-family: var(--typography-font-family-mono);
   }
 
   .category-item {

@@ -1,0 +1,23 @@
+space:
+  $type: dimension
+  xxxs:
+    $value: 0.25rem
+  xxs:
+    $value: 0.5rem
+  xs:
+    $value: 0.75rem
+  sm:
+    $value: 1rem
+  md:
+    $value: 1.5rem
+  lg:
+    $value: 2rem
+  xl:
+    $value: 3rem
+  xxl:
+    $value: 4rem
+  xxxl:
+    $value: 5rem
+  semantic:
+    padding:
+      $value: "{space.sm}"

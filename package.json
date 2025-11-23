@@ -13,7 +13,9 @@
     "format": "prettier --write .",
     "generate-screenshots": "node generate-screenshots.js",
     "test:features": "playwright test",
-    "matter": "node .scripts/matter.cjs"
+    "matter": "node .scripts/matter.cjs",
+    "build:tokens": "npx co build",
+    "build:tokens:watch": "npx co build --watch"
   },
   "author": "@ivanalbizu",
   "license": "MIT",
@@ -41,6 +43,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
+    "@cobalt-ui/cli": "^1.12.0",
+    "@cobalt-ui/plugin-css": "^1.7.5",
+    "@cobalt-ui/plugin-js": "^1.4.4",
     "@playwright/test": "^1.54.1",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",

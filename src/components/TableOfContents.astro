@@ -9,11 +9,11 @@ const { headings } = Astro.props;
 ---
 
 {headings.length > 0 && (
-  <nav class="table-of-contents">
-    <h2 class="toc-title">Índice de contenidos</h2>
-    <ol class="toc-list">
+  <nav class="toc">
+    <h2 class="toc__title">Índice de contenidos</h2>
+    <ol class="toc__list">
       {headings.map(heading => (
-        <li class={`toc-item toc-level-${heading.depth}`}>
+        <li class={`toc__item toc-level-${heading.depth}`}>
           <a href={`#${heading.slug}`} class="toc-link">
             {heading.text}
           </a>
@@ -79,57 +79,57 @@ const { headings } = Astro.props;
 </script>
 
 <style lang="scss">
-  .table-of-contents {
+  .toc {
     background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-lg);;
-    padding: calc(var(--grid-unit) * 2);
-    margin-block-end: calc(var(--grid-unit) * 4);
-  }
+    border: var(--border-width-sm) solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-sm);
+    margin-block-end: var(--space-lg);
 
-  .toc-title {
-    font-family: var(--font-family-primary);
-    font-size: var(--fs-paragraph-1);
-    font-weight: 700;
-    color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-block-end: calc(var(--grid-unit) * 2);
-    padding-bottom: calc(var(--grid-unit));
-    border-bottom: var(--border-width-md) solid var(--color-accent);
-  }
-
-  .toc-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: "";
-    counter-reset: toc-counter;
-    :last-child {
-      margin-block-end: 0;
+    &__title {
+      font-family: var(--typography-font-family-primary);
+      font-size: var(--typography-font-size-paragraph-1);
+      font-weight: var(--typography-font-weight-bold);
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: var(--typography-letter-spacing-md);
+      margin-block-end: var(--space-sm);
+      padding-bottom: var(--space-xxs);
+      border-bottom: var(--border-width-md) solid var(--color-accent);
     }
-  }
 
-  .toc-item {
-    margin-block-end: calc(var(--grid-unit));
-    counter-increment: toc-counter;
-    position: relative;
-    &::before {
-      content: counter(toc-counter) ".";
-      position: absolute;
-      left: 0;
-      font-family: var(--font-mono);
-      font-size: var(--fs-paragraph-4);
-      color: var(--color-text-muted);
-      font-weight: 700;
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style-type: "";
+      counter-reset: toc-counter;
+      :last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    &__item {
+      margin-block-end: var(--space-xxs);
+      counter-increment: toc-counter;
+      position: relative;
+      &::before {
+        content: counter(toc-counter) ".";
+        position: absolute;
+        left: 0;
+        font-family: var(--typography-font-family-mono);
+        font-size: var(--typography-font-size-paragraph-4);
+        color: var(--color-text-muted);
+        font-weight: var(--typography-font-weight-bold);
+      }
     }
   }
 
   .toc-link {
     display: block;
-    padding-left: calc(var(--grid-unit) * 3);
+    padding-left: var(--space-md);
     color: var(--color-text-primary);
     text-decoration-color: transparent;
-    line-height: 1.6;
+    line-height: var(--typography-line-height-lg);
     transition: all var(--transition-duration-normal) ease;
     &:hover,
     &:focus {
@@ -138,7 +138,7 @@ const { headings } = Astro.props;
 
     &.active {
       color: var(--color-interaction-default);
-      font-weight: 700;
+      font-weight: var(--typography-font-weight-bold);
       &::after {
         content: "•";
         position: absolute;
@@ -149,9 +149,9 @@ const { headings } = Astro.props;
   }
 
   .toc-level-3 {
-    margin-left: calc(var(--grid-unit) * 2);
+    margin-inline-start: var(--space-sm);
     .toc-link {
-      font-size: var(--fs-paragraph-3);
+      font-size: var(--typography-font-size-paragraph-3);
       color: var(--color-text-secondary);
       &:hover,
       &:focus {
@@ -161,8 +161,8 @@ const { headings } = Astro.props;
   }
 
   @media (min-width: 768px) {
-    .table-of-contents {
-      padding: calc(var(--grid-unit) * 3);
+    .toc {
+      padding: var(--space-md);
     }
   }
 </style>

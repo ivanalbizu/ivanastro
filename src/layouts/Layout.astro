@@ -39,14 +39,14 @@ const {
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <style is:inline>
       @font-face {
-        font-family: "Atkinson Hyperlegible";
+        font-family: "AtkinsonHyperlegible";
         src: url('/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.woff2') format('woff2');
-        font-weight: normal;
+        font-weight: 400;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
-        font-family: "Atkinson Hyperlegible";
+        font-family: "AtkinsonHyperlegible";
         src: url('/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.woff2') format('woff2');
         font-weight: 700;
         font-style: normal;
@@ -141,15 +141,15 @@ const {
 
   .main-content {
     flex: 1;
-    width: min(var(--max-width), 100%);
+    width: min(var(--max-width-default), 100%);
     margin-inline: auto;
-    padding: calc(var(--grid-unit) * 3) var(--content-padding);
+    padding: var(--space-md) var(--space-semantic-padding);
   }
 
   .main-content.with-sidebar {
     display: grid;
     grid-template-columns: 1fr;
-    gap: calc(var(--grid-unit) * 4);
+    gap: var(--space-lg);
   }
 
   .content {
@@ -158,7 +158,7 @@ const {
 
   @media (min-width: 1024px) {
     .main-content.with-sidebar {
-      grid-template-columns: 1fr var(--sidebar-width);
+      grid-template-columns: 1fr var(--max-width-narrow);
     }
   }
 </style>
