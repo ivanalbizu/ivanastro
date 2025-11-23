@@ -54,6 +54,11 @@
   --typography-font-family-mono: monospace;
   --typography-font-family-primary: AtkinsonHyperlegible, -system-ui, sans-serif;
   --typography-font-family-secondary: AtkinsonHyperlegible, -system-ui, sans-serif;
+  --typography-font-line-height-lg: 1.6;
+  --typography-font-line-height-md: 1.3;
+  --typography-font-line-height-sm: 1.1;
+  --typography-font-line-height-xl: 1.7;
+  --typography-font-line-height-xs: 1;
   --typography-font-size-btn-default: calc(1.15rem * var(--typography-font-size-scale));
   --typography-font-size-btn-sm: calc(1rem * var(--typography-font-size-scale));
   --typography-font-size-heading-1: calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale));

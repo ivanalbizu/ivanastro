@@ -104,13 +104,13 @@ const publishedTime = post.data.date
     font-weight: 700;
     color: var(--color-accent);
     letter-spacing: 0.03em;
-    line-height: 1.1;
+    line-height: var(--typography-font-line-height-sm);
     margin-block-end: var(--space-md);
   }
 
   .post-content {
     font-size: var(--typography-font-size-paragraph-2);
-    line-height: 1.7;
+    line-height: var(--typography-font-line-height-xl);
     margin-block-end: var(--space-xl);
   }
 
@@ -162,8 +162,8 @@ const publishedTime = post.data.date
   }
 
   .post-content :global(pre) {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--color-white);
+    color: var(--color-white);
     padding: var(--space-md);
     margin: var(--space-lg) 0;
     border-radius: var(--border-radius-lg);;
@@ -180,14 +180,11 @@ const publishedTime = post.data.date
     font-size: inherit;
   }
 
-  /* Custom Prism syntax highlighting for German flag colors */
-  /* CSS selectors like h1 - use gold */
   .post-content :global(.token.selector),
   .post-content :global(.token.tag) {
     color: #ffd700 !important;
   }
 
-  /* CSS properties and functions - use red */
   .post-content :global(.token.property),
   .post-content :global(.token.class-name),
   .post-content :global(.token.function) {
@@ -216,15 +213,14 @@ const publishedTime = post.data.date
     color: #66d9ef !important;
   }
 
-  /* Reset default Prism styles and apply our theme */
   .post-content :global(pre[class*="language-"]) {
-    background: #000000 !important;
-    color: #ffffff !important;
+    background: var(--color-black) !important;
+    color: var(--color-white) !important;
   }
 
   .post-content :global(code[class*="language-"]) {
-    background: #000000 !important;
-    color: #ffffff !important;
+    background: var(--color-black) !important;
+    color: var(--color-white) !important;
   }
 
   .post-content :global(code) {

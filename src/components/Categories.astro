@@ -74,14 +74,14 @@ const sortedCategories = Object.entries(categoryMap)
   .counter {
     display: flex;
     flex-direction: column;
-    line-height: 1.3;
+    line-height: var(--typography-font-line-height-md);
     &__top {
       text-transform: uppercase;
     }
     &__bottom {
       font-size: 0.85em;
       color: var(--color-text-muted);
-      line-height: 1;
+      line-height: var(--typography-font-line-height-xs);
     }
   }
   .categories-grid {

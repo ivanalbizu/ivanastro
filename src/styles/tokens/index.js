@@ -54,6 +54,11 @@ export const tokens = {
   'typography.font.family.mono': ['monospace'],
   'typography.font.family.primary': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
   'typography.font.family.secondary': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
+  'typography.font.line-height.lg': 1.6,
+  'typography.font.line-height.md': 1.3,
+  'typography.font.line-height.sm': 1.1,
+  'typography.font.line-height.xl': 1.7,
+  'typography.font.line-height.xs': 1,
   'typography.font.size.btn.default': 'calc(1.15rem * var(--typography-font-size-scale))',
   'typography.font.size.btn.sm': 'calc(1rem * var(--typography-font-size-scale))',
   'typography.font.size.heading.1': 'calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale))',
@@ -1005,6 +1010,81 @@ export const meta = {
     id: 'typography.font.family.secondary',
     $type: 'fontFamily',
     $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
+  },
+  'typography.font.line-height.lg': {
+    _original: {
+      $value: 1.6,
+    },
+    _group: {
+      id: 'typography.font.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.font.line-height.lg',
+    $type: 'number',
+    $value: 1.6,
+  },
+  'typography.font.line-height.md': {
+    _original: {
+      $value: 1.3,
+    },
+    _group: {
+      id: 'typography.font.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.font.line-height.md',
+    $type: 'number',
+    $value: 1.3,
+  },
+  'typography.font.line-height.sm': {
+    _original: {
+      $value: 1.1,
+    },
+    _group: {
+      id: 'typography.font.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.font.line-height.sm',
+    $type: 'number',
+    $value: 1.1,
+  },
+  'typography.font.line-height.xl': {
+    _original: {
+      $value: 1.7,
+    },
+    _group: {
+      id: 'typography.font.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.font.line-height.xl',
+    $type: 'number',
+    $value: 1.7,
+  },
+  'typography.font.line-height.xs': {
+    _original: {
+      $value: 1,
+    },
+    _group: {
+      id: 'typography.font.line-height',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'number',
+    },
+    id: 'typography.font.line-height.xs',
+    $type: 'number',
+    $value: 1,
   },
   'typography.font.size.btn.default': {
     _original: {

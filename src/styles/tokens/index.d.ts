@@ -62,6 +62,11 @@ export declare const tokens: {
   'typography.font.family.mono': ParsedFontFamilyToken['$value'];
   'typography.font.family.primary': ParsedFontFamilyToken['$value'];
   'typography.font.family.secondary': ParsedFontFamilyToken['$value'];
+  'typography.font.line-height.lg': ParsedNumberToken['$value'];
+  'typography.font.line-height.md': ParsedNumberToken['$value'];
+  'typography.font.line-height.sm': ParsedNumberToken['$value'];
+  'typography.font.line-height.xl': ParsedNumberToken['$value'];
+  'typography.font.line-height.xs': ParsedNumberToken['$value'];
   'typography.font.size.btn.default': ParsedDimensionToken['$value'];
   'typography.font.size.btn.sm': ParsedDimensionToken['$value'];
   'typography.font.size.heading.1': ParsedDimensionToken['$value'];
@@ -128,6 +133,11 @@ export declare const meta: {
   'typography.font.family.mono': ParsedFontFamilyToken;
   'typography.font.family.primary': ParsedFontFamilyToken;
   'typography.font.family.secondary': ParsedFontFamilyToken;
+  'typography.font.line-height.lg': ParsedNumberToken;
+  'typography.font.line-height.md': ParsedNumberToken;
+  'typography.font.line-height.sm': ParsedNumberToken;
+  'typography.font.line-height.xl': ParsedNumberToken;
+  'typography.font.line-height.xs': ParsedNumberToken;
   'typography.font.size.btn.default': ParsedDimensionToken;
   'typography.font.size.btn.sm': ParsedDimensionToken;
   'typography.font.size.heading.1': ParsedDimensionToken;
