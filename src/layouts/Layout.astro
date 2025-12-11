@@ -40,14 +40,16 @@ const {
     <style is:inline>
       @font-face {
         font-family: "AtkinsonHyperlegible";
-        src: url('/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+        src: url("/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.woff2")
+          format("woff2");
         font-weight: 400;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
         font-family: "AtkinsonHyperlegible";
-        src: url('/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+        src: url("/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.woff2")
+          format("woff2");
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -115,7 +117,11 @@ const {
   </head>
   <body class="body">
     <Header />
-    <main class="main-content" class:list={{ "with-sidebar": showSidebar }} id="main-content">
+    <main
+      class="main-content"
+      class:list={{ "with-sidebar": showSidebar }}
+      id="main-content"
+    >
       <div class="content">
         <Breadcrumbs currentPath={currentPath} title={title} />
         <slot />
