@@ -97,7 +97,7 @@ const { page } = Astro.props;
   }
 
   .post-item {
-    border-bottom: var(--border-width-sm) solid var(--color-border);
+    border-bottom: var(--border-width-sm) solid var(--color-theme-border-default);
     padding-bottom: var(--space-lg);
     &:last-child {
       border-bottom: none;
@@ -111,12 +111,12 @@ const { page } = Astro.props;
     font-weight: var(--typography-font-weight-bold);
     margin-block-end: var(--space-sm);
     a {
-      color: var(--color-text-primary);
+      color: var(--color-theme-text-primary);
       text-underline-offset: 3px;
       transition: color var(--transition-duration-normal) ease;
       &:hover,
       &:focus {
-        color: var(--color-interaction-default);
+        color: var(--color-brand-interactive);
       }
     }
   }
@@ -124,11 +124,11 @@ const { page } = Astro.props;
   .no-posts {
     text-align: center;
     padding: var(--space-xl);
-    color: var(--color-text-muted);
+    color: var(--color-theme-text-muted);
   }
 
   .no-posts code {
-    background-color: var(--color-surface);
+    background-color: var(--color-theme-background-surface);
     padding: 2px 4px;
     border-radius: var(--border-radius-sm);
     font-family: var(--typography-font-family-mono);

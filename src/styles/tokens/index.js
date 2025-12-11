@@ -11,28 +11,50 @@ export const tokens = {
   'border.width.lg': '4px',
   'border.width.md': '2px',
   'border.width.sm': '1px',
-  'color.accent': '#a20000',
-  'color.background': 'white',
-  'color.black': 'black',
-  'color.border': '#666',
+  'color.black': '#000000',
+  'color.brand.interactive': '#0054e5',
+  'color.brand.interactive-dark': '#0054e5',
+  'color.brand.primary': '#a20000',
+  'color.btn.link.bg': 'transparent',
+  'color.btn.link.border': 'transparent',
+  'color.btn.link.fg': '#000000',
+  'color.btn.link.hover.fg': '#0054e5',
   'color.btn.primary.bg': '#0054e5',
   'color.btn.primary.border': '#0054e5',
-  'color.btn.primary.fg': 'white',
+  'color.btn.primary.fg': '#FFFFFF',
+  'color.btn.primary.hover.bg': 'transparent',
+  'color.btn.primary.hover.border': '#0054e5',
+  'color.btn.primary.hover.fg': '#0054e5',
   'color.btn.secondary.bg': 'transparent',
-  'color.btn.secondary.border': '#666',
-  'color.btn.secondary.fg': 'black',
-  'color.btn.tertiary.bg': 'black',
-  'color.btn.tertiary.border': 'white',
-  'color.btn.tertiary.fg': 'white',
-  'color.gray.dark': '#333',
+  'color.btn.secondary.border': '#666666',
+  'color.btn.secondary.fg': '#000000',
+  'color.btn.secondary.hover.bg': '#000000',
+  'color.btn.secondary.hover.border': '#000000',
+  'color.btn.secondary.hover.fg': '#FFFFFF',
+  'color.btn.tertiary.bg': '#000000',
+  'color.btn.tertiary.border': '#000000',
+  'color.btn.tertiary.fg': '#FFFFFF',
+  'color.btn.tertiary.hover.bg': '#f5f5f5',
+  'color.btn.tertiary.hover.border': '#000000',
+  'color.btn.tertiary.hover.fg': '#000000',
+  'color.gray.100': '#f5f5f5',
+  'color.gray.300': '#b8b8b8',
+  'color.gray.500': '#888888',
+  'color.gray.600': '#666666',
+  'color.gray.700': '#333333',
+  'color.gray.800': '#1a1a1a',
+  'color.gray.900': '#0a0a0a',
+  'color.gray.dark': '#333333',
   'color.gray.light': '#f5f5f5',
-  'color.gray.medium': '#666',
-  'color.interaction.default': '#0054e5',
-  'color.surface': '#f5f5f5',
-  'color.text.muted': '#666',
-  'color.text.primary': 'black',
-  'color.text.secondary': '#333',
-  'color.white': 'white',
+  'color.gray.medium': '#666666',
+  'color.theme.background.default': '#FFFFFF',
+  'color.theme.background.surface': '#f5f5f5',
+  'color.theme.border.default': '#666666',
+  'color.theme.border.light': '#f5f5f5',
+  'color.theme.text.muted': '#666666',
+  'color.theme.text.primary': '#000000',
+  'color.theme.text.secondary': '#333333',
+  'color.white': '#FFFFFF',
   'max-width.default': '75rem',
   'max-width.medium': '50rem',
   'max-width.narrow': '20rem',
@@ -176,59 +198,9 @@ export const meta = {
     $type: 'dimension',
     $value: '1px',
   },
-  'color.accent': {
-    _original: {
-      $value: '#a20000',
-      $extensions: {
-        mode: {
-          dark: '#ff3333',
-        },
-      },
-    },
-    _group: {
-      id: 'color',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.accent',
-    $type: 'color',
-    $value: '#a20000',
-    $extensions: {
-      mode: {
-        dark: '#ff3333',
-      },
-    },
-  },
-  'color.background': {
-    _original: {
-      $value: '{color.white}',
-      $extensions: {
-        mode: {
-          dark: '#0a0a0a',
-        },
-      },
-    },
-    _group: {
-      id: 'color',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.background',
-    $type: 'color',
-    $value: 'white',
-    $extensions: {
-      mode: {
-        dark: '#0a0a0a',
-      },
-    },
-  },
   'color.black': {
     _original: {
-      $value: 'black',
+      $value: '#000000',
     },
     _group: {
       id: 'color',
@@ -239,29 +211,119 @@ export const meta = {
     },
     id: 'color.black',
     $type: 'color',
-    $value: 'black',
+    $value: '#000000',
   },
-  'color.border': {
+  'color.brand.interactive': {
     _original: {
-      $value: '{color.gray.medium}',
+      $value: '#0054e5',
     },
     _group: {
-      id: 'color',
+      id: 'color.brand',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.border',
+    id: 'color.brand.interactive',
     $type: 'color',
-    $value: '#666',
+    $value: '#0054e5',
+  },
+  'color.brand.interactive-dark': {
+    _original: {
+      $value: '{color.brand.interactive}',
+    },
+    _group: {
+      id: 'color.brand',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.brand.interactive-dark',
+    $type: 'color',
+    $value: '#0054e5',
+  },
+  'color.brand.primary': {
+    _original: {
+      $value: '#a20000',
+    },
+    _group: {
+      id: 'color.brand',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.brand.primary',
+    $type: 'color',
+    $value: '#a20000',
+  },
+  'color.btn.link.bg': {
+    _original: {
+      $value: 'transparent',
+    },
+    _group: {
+      id: 'color.btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.link.bg',
+    $type: 'color',
+    $value: 'transparent',
+  },
+  'color.btn.link.border': {
+    _original: {
+      $value: 'transparent',
+    },
+    _group: {
+      id: 'color.btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.link.border',
+    $type: 'color',
+    $value: 'transparent',
+  },
+  'color.btn.link.fg': {
+    _original: {
+      $value: '{color.theme.text.primary}',
+    },
+    _group: {
+      id: 'color.btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.link.fg',
+    $type: 'color',
+    $value: '#000000',
+  },
+  'color.btn.link.hover.fg': {
+    _original: {
+      $value: '{color.brand.interactive}',
+    },
+    _group: {
+      id: 'color.btn.link.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.link.hover.fg',
+    $type: 'color',
+    $value: '#0054e5',
   },
   'color.btn.primary.bg': {
     _original: {
-      $value: '{color.interaction.default}',
+      $value: '{color.brand.interactive}',
       $extensions: {
         mode: {
-          dark: '{color.interaction.default}',
+          dark: '{color.brand.interactive-dark}',
         },
       },
     },
@@ -286,7 +348,7 @@ export const meta = {
       $value: '{color.btn.primary.bg}',
       $extensions: {
         mode: {
-          dark: '{color.interaction.default}',
+          dark: '{color.brand.interactive-dark}',
         },
       },
     },
@@ -324,12 +386,57 @@ export const meta = {
     },
     id: 'color.btn.primary.fg',
     $type: 'color',
-    $value: 'white',
+    $value: '#FFFFFF',
     $extensions: {
       mode: {
-        dark: 'white',
+        dark: '#FFFFFF',
       },
     },
+  },
+  'color.btn.primary.hover.bg': {
+    _original: {
+      $value: 'transparent',
+    },
+    _group: {
+      id: 'color.btn.primary.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.primary.hover.bg',
+    $type: 'color',
+    $value: 'transparent',
+  },
+  'color.btn.primary.hover.border': {
+    _original: {
+      $value: '{color.btn.primary.border}',
+    },
+    _group: {
+      id: 'color.btn.primary.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.primary.hover.border',
+    $type: 'color',
+    $value: '#0054e5',
+  },
+  'color.btn.primary.hover.fg': {
+    _original: {
+      $value: '{color.btn.primary.bg}',
+    },
+    _group: {
+      id: 'color.btn.primary.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.primary.hover.fg',
+    $type: 'color',
+    $value: '#0054e5',
   },
   'color.btn.secondary.bg': {
     _original: {
@@ -358,10 +465,10 @@ export const meta = {
   },
   'color.btn.secondary.border': {
     _original: {
-      $value: '{color.gray.medium}',
+      $value: '{color.theme.border.default}',
       $extensions: {
         mode: {
-          dark: '{color.gray.medium}',
+          dark: '{color.gray.600}',
         },
       },
     },
@@ -374,16 +481,16 @@ export const meta = {
     },
     id: 'color.btn.secondary.border',
     $type: 'color',
-    $value: '#666',
+    $value: '#666666',
     $extensions: {
       mode: {
-        dark: '#666',
+        dark: '#666666',
       },
     },
   },
   'color.btn.secondary.fg': {
     _original: {
-      $value: '{color.black}',
+      $value: '{color.theme.text.primary}',
       $extensions: {
         mode: {
           dark: '{color.white}',
@@ -399,19 +506,74 @@ export const meta = {
     },
     id: 'color.btn.secondary.fg',
     $type: 'color',
-    $value: 'black',
+    $value: '#000000',
     $extensions: {
       mode: {
-        dark: 'white',
+        dark: '#FFFFFF',
+      },
+    },
+  },
+  'color.btn.secondary.hover.bg': {
+    _original: {
+      $value: '{color.theme.text.primary}',
+    },
+    _group: {
+      id: 'color.btn.secondary.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.secondary.hover.bg',
+    $type: 'color',
+    $value: '#000000',
+  },
+  'color.btn.secondary.hover.border': {
+    _original: {
+      $value: '{color.theme.text.primary}',
+    },
+    _group: {
+      id: 'color.btn.secondary.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.secondary.hover.border',
+    $type: 'color',
+    $value: '#000000',
+  },
+  'color.btn.secondary.hover.fg': {
+    _original: {
+      $value: '{color.white}',
+      $extensions: {
+        mode: {
+          dark: '{color.gray.900}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.secondary.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.secondary.hover.fg',
+    $type: 'color',
+    $value: '#FFFFFF',
+    $extensions: {
+      mode: {
+        dark: '#0a0a0a',
       },
     },
   },
   'color.btn.tertiary.bg': {
     _original: {
-      $value: '{color.black}',
+      $value: '{color.theme.text.primary}',
       $extensions: {
         mode: {
-          dark: '{color.gray.light}',
+          dark: '{color.gray.100}',
         },
       },
     },
@@ -424,7 +586,7 @@ export const meta = {
     },
     id: 'color.btn.tertiary.bg',
     $type: 'color',
-    $value: 'black',
+    $value: '#000000',
     $extensions: {
       mode: {
         dark: '#f5f5f5',
@@ -433,10 +595,10 @@ export const meta = {
   },
   'color.btn.tertiary.border': {
     _original: {
-      $value: '{color.white}',
+      $value: '{color.theme.text.primary}',
       $extensions: {
         mode: {
-          dark: '{color.gray.medium}',
+          dark: '{color.gray.100}',
         },
       },
     },
@@ -449,16 +611,16 @@ export const meta = {
     },
     id: 'color.btn.tertiary.border',
     $type: 'color',
-    $value: 'white',
+    $value: '#000000',
     $extensions: {
       mode: {
-        dark: '#666',
+        dark: '#f5f5f5',
       },
     },
   },
   'color.btn.tertiary.fg': {
     _original: {
-      $value: '{color.white}',
+      $value: '{color.theme.background.default}',
       $extensions: {
         mode: {
           dark: '{color.black}',
@@ -474,16 +636,176 @@ export const meta = {
     },
     id: 'color.btn.tertiary.fg',
     $type: 'color',
-    $value: 'white',
+    $value: '#FFFFFF',
     $extensions: {
       mode: {
-        dark: 'black',
+        dark: '#000000',
       },
     },
   },
+  'color.btn.tertiary.hover.bg': {
+    _original: {
+      $value: '{color.gray.100}',
+      $extensions: {
+        mode: {
+          dark: '{color.gray.900}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.btn.tertiary.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.tertiary.hover.bg',
+    $type: 'color',
+    $value: '#f5f5f5',
+    $extensions: {
+      mode: {
+        dark: '#0a0a0a',
+      },
+    },
+  },
+  'color.btn.tertiary.hover.border': {
+    _original: {
+      $value: '{color.btn.tertiary.border}',
+    },
+    _group: {
+      id: 'color.btn.tertiary.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.tertiary.hover.border',
+    $type: 'color',
+    $value: '#000000',
+  },
+  'color.btn.tertiary.hover.fg': {
+    _original: {
+      $value: '{color.theme.text.primary}',
+    },
+    _group: {
+      id: 'color.btn.tertiary.hover',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.btn.tertiary.hover.fg',
+    $type: 'color',
+    $value: '#000000',
+  },
+  'color.gray.100': {
+    _original: {
+      $value: '#f5f5f5',
+    },
+    _group: {
+      id: 'color.gray',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.gray.100',
+    $type: 'color',
+    $value: '#f5f5f5',
+  },
+  'color.gray.300': {
+    _original: {
+      $value: '#b8b8b8',
+    },
+    _group: {
+      id: 'color.gray',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.gray.300',
+    $type: 'color',
+    $value: '#b8b8b8',
+  },
+  'color.gray.500': {
+    _original: {
+      $value: '#888888',
+    },
+    _group: {
+      id: 'color.gray',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.gray.500',
+    $type: 'color',
+    $value: '#888888',
+  },
+  'color.gray.600': {
+    _original: {
+      $value: '#666666',
+    },
+    _group: {
+      id: 'color.gray',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.gray.600',
+    $type: 'color',
+    $value: '#666666',
+  },
+  'color.gray.700': {
+    _original: {
+      $value: '#333333',
+    },
+    _group: {
+      id: 'color.gray',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.gray.700',
+    $type: 'color',
+    $value: '#333333',
+  },
+  'color.gray.800': {
+    _original: {
+      $value: '#1a1a1a',
+    },
+    _group: {
+      id: 'color.gray',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.gray.800',
+    $type: 'color',
+    $value: '#1a1a1a',
+  },
+  'color.gray.900': {
+    _original: {
+      $value: '#0a0a0a',
+    },
+    _group: {
+      id: 'color.gray',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.gray.900',
+    $type: 'color',
+    $value: '#0a0a0a',
+  },
   'color.gray.dark': {
     _original: {
-      $value: '#333',
+      $value: '#333333',
     },
     _group: {
       id: 'color.gray',
@@ -494,7 +816,7 @@ export const meta = {
     },
     id: 'color.gray.dark',
     $type: 'color',
-    $value: '#333',
+    $value: '#333333',
   },
   'color.gray.light': {
     _original: {
@@ -513,7 +835,7 @@ export const meta = {
   },
   'color.gray.medium': {
     _original: {
-      $value: '#666',
+      $value: '#666666',
     },
     _group: {
       id: 'color.gray',
@@ -524,40 +846,50 @@ export const meta = {
     },
     id: 'color.gray.medium',
     $type: 'color',
-    $value: '#666',
+    $value: '#666666',
   },
-  'color.interaction.default': {
+  'color.theme.background.default': {
     _original: {
-      $value: '#0054e5',
-    },
-    _group: {
-      id: 'color.interaction',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.interaction.default',
-    $type: 'color',
-    $value: '#0054e5',
-  },
-  'color.surface': {
-    _original: {
-      $value: '{color.gray.light}',
+      $value: '{color.white}',
       $extensions: {
         mode: {
-          dark: '#1a1a1a',
+          dark: '{color.gray.900}',
         },
       },
     },
     _group: {
-      id: 'color',
+      id: 'color.theme.background',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.surface',
+    id: 'color.theme.background.default',
+    $type: 'color',
+    $value: '#FFFFFF',
+    $extensions: {
+      mode: {
+        dark: '#0a0a0a',
+      },
+    },
+  },
+  'color.theme.background.surface': {
+    _original: {
+      $value: '{color.gray.100}',
+      $extensions: {
+        mode: {
+          dark: '{color.gray.800}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.theme.background',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.theme.background.surface',
     $type: 'color',
     $value: '#f5f5f5',
     $extensions: {
@@ -566,75 +898,125 @@ export const meta = {
       },
     },
   },
-  'color.text.muted': {
+  'color.theme.border.default': {
     _original: {
-      $value: '{color.gray.medium}',
+      $value: '{color.gray.600}',
       $extensions: {
         mode: {
-          dark: '#888888',
+          dark: '{color.gray.600}',
         },
       },
     },
     _group: {
-      id: 'color.text',
+      id: 'color.theme.border',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.text.muted',
+    id: 'color.theme.border.default',
     $type: 'color',
-    $value: '#666',
+    $value: '#666666',
     $extensions: {
       mode: {
-        dark: '#888888',
+        dark: '#666666',
       },
     },
   },
-  'color.text.primary': {
+  'color.theme.border.light': {
     _original: {
-      $value: '{color.black}',
+      $value: '{color.gray.100}',
       $extensions: {
         mode: {
-          dark: '#f5f5f5',
+          dark: '{color.gray.100}',
         },
       },
     },
     _group: {
-      id: 'color.text',
+      id: 'color.theme.border',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.text.primary',
+    id: 'color.theme.border.light',
     $type: 'color',
-    $value: 'black',
+    $value: '#f5f5f5',
     $extensions: {
       mode: {
         dark: '#f5f5f5',
       },
     },
   },
-  'color.text.secondary': {
+  'color.theme.text.muted': {
     _original: {
-      $value: '{color.gray.dark}',
+      $value: '{color.gray.600}',
       $extensions: {
         mode: {
-          dark: '#b8b8b8',
+          dark: '{color.gray.500}',
         },
       },
     },
     _group: {
-      id: 'color.text',
+      id: 'color.theme.text',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.text.secondary',
+    id: 'color.theme.text.muted',
     $type: 'color',
-    $value: '#333',
+    $value: '#666666',
+    $extensions: {
+      mode: {
+        dark: '#888888',
+      },
+    },
+  },
+  'color.theme.text.primary': {
+    _original: {
+      $value: '{color.black}',
+      $extensions: {
+        mode: {
+          dark: '{color.gray.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.theme.text',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.theme.text.primary',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
+  },
+  'color.theme.text.secondary': {
+    _original: {
+      $value: '{color.gray.700}',
+      $extensions: {
+        mode: {
+          dark: '{color.gray.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.theme.text',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.theme.text.secondary',
+    $type: 'color',
+    $value: '#333333',
     $extensions: {
       mode: {
         dark: '#b8b8b8',
@@ -643,7 +1025,7 @@ export const meta = {
   },
   'color.white': {
     _original: {
-      $value: 'white',
+      $value: '#FFFFFF',
     },
     _group: {
       id: 'color',
@@ -654,7 +1036,7 @@ export const meta = {
     },
     id: 'color.white',
     $type: 'color',
-    $value: 'white',
+    $value: '#FFFFFF',
   },
   'max-width.default': {
     _original: {
@@ -1470,12 +1852,6 @@ export const meta = {
 };
 
 export const modes = {
-  'color.accent': {
-    dark: '#ff3333',
-  },
-  'color.background': {
-    dark: '#0a0a0a',
-  },
   'color.btn.primary.bg': {
     dark: '#0054e5',
   },
@@ -1483,36 +1859,51 @@ export const modes = {
     dark: '#0054e5',
   },
   'color.btn.primary.fg': {
-    dark: 'white',
+    dark: '#FFFFFF',
   },
   'color.btn.secondary.bg': {
     dark: 'transparent',
   },
   'color.btn.secondary.border': {
-    dark: '#666',
+    dark: '#666666',
   },
   'color.btn.secondary.fg': {
-    dark: 'white',
+    dark: '#FFFFFF',
+  },
+  'color.btn.secondary.hover.fg': {
+    dark: '#0a0a0a',
   },
   'color.btn.tertiary.bg': {
     dark: '#f5f5f5',
   },
   'color.btn.tertiary.border': {
-    dark: '#666',
-  },
-  'color.btn.tertiary.fg': {
-    dark: 'black',
-  },
-  'color.surface': {
-    dark: '#1a1a1a',
-  },
-  'color.text.muted': {
-    dark: '#888888',
-  },
-  'color.text.primary': {
     dark: '#f5f5f5',
   },
-  'color.text.secondary': {
+  'color.btn.tertiary.fg': {
+    dark: '#000000',
+  },
+  'color.btn.tertiary.hover.bg': {
+    dark: '#0a0a0a',
+  },
+  'color.theme.background.default': {
+    dark: '#0a0a0a',
+  },
+  'color.theme.background.surface': {
+    dark: '#1a1a1a',
+  },
+  'color.theme.border.default': {
+    dark: '#666666',
+  },
+  'color.theme.border.light': {
+    dark: '#f5f5f5',
+  },
+  'color.theme.text.muted': {
+    dark: '#888888',
+  },
+  'color.theme.text.primary': {
+    dark: '#f5f5f5',
+  },
+  'color.theme.text.secondary': {
     dark: '#b8b8b8',
   },
   'max-width.default': {

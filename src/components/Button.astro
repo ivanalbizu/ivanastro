@@ -104,13 +104,14 @@ const { classes, ...attributes } = allAttributes;
     &.active,
     &:hover,
     &:focus {
-      background-color: transparent;
-      color: var(--color-interaction-default);
+      background-color: var(--color-btn-primary-hover-bg);
+      color: var(--color-btn-primary-hover-fg);
+      border-color: var(--color-btn-primary-hover-border);
     }
 
     &--link {
       background-color: transparent;
-      color: var(--color-text-primary);
+      color: var(--color-theme-text-primary);
       border: var(--border-width-md) solid transparent;
       &.active,
       &:hover,
@@ -127,8 +128,9 @@ const { classes, ...attributes } = allAttributes;
       &.active,
       &:hover,
       &:focus {
-        background-color: var(--color-text-primary);
-        color: var(--color-background);
+        background-color: var(--color-btn-secondary-hover-bg);
+        color: var(--color-btn-secondary-hover-fg);
+        border-color: var(--color-btn-secondary-hover-border);
       }
     }
 
@@ -139,7 +141,9 @@ const { classes, ...attributes } = allAttributes;
       &.active,
       &:hover,
       &:focus {
-        color: var(--color-text-primary);
+        background-color: var(--color-btn-tertiary-hover-bg);
+        color: var(--color-btn-tertiary-hover-fg);
+        border-color: var(--color-btn-tertiary-hover-border);
       }
     }
 
