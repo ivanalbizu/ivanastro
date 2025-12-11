@@ -1,59 +1,85 @@
 color:
   $type: color
   white:
-    $value: white
+    $value: "#FFFFFF"
   black:
-    $value: black
+    $value: "#000000"
   gray:
     light:
       $value: "#f5f5f5"
     medium:
-      $value: "#666"
+      $value: "#666666"
     dark:
-      $value: "#333"
-  accent:
-    $value: "#a20000"
-    $extensions:
-      mode:
-        dark: "#ff3333"
-  interaction:
-    default:
-      $value: "#0054e5"
-  border:
-    $value: "{color.gray.medium}"
-  background:
-    $value: "{color.white}"
-    $extensions:
-      mode:
-        dark: "#0a0a0a"
-  surface:
-    $value: "{color.gray.light}"
-    $extensions:
-      mode:
-        dark: "#1a1a1a"
-  text:
+      $value: "#333333"
+    100:
+      $value: "#f5f5f5"
+    300:
+      $value: "#b8b8b8" # Tu gris secundario oscuro
+    500:
+      $value: "#888888" # Tu gris muted oscuro
+    600:
+      $value: "#666666" # Tu gris medium
+    700:
+      $value: "#333333" # Tu gris dark
+    800:
+      $value: "#1a1a1a"
+    900:
+      $value: "#0a0a0a"
+  brand:
     primary:
-      $value: "{color.black}"
-      $extensions:
-        mode:
-          dark: "#f5f5f5"
-    secondary:
-      $value: "{color.gray.dark}"
-      $extensions:
-        mode:
-          dark: "#b8b8b8"
-    muted:
-      $value: "{color.gray.medium}"
-      $extensions:
-        mode:
-          dark: "#888888"
+      $value: "#a20000"
+    interactive:
+      $value: "#0054e5"
+    interactive-dark:
+      $value: "{color.brand.interactive}"
+  # --- 2. SEMÁNTICOS (Theme/Roles) ---
+  # Tokens que usan primitivos y definen roles de UI, cambiando con el tema.
+  theme:
+    background:
+      default:
+        $value: "{color.white}"
+        $extensions:
+          mode:
+            dark: "{color.gray.900}"
+      surface:
+        $value: "{color.gray.100}"
+        $extensions:
+          mode:
+            dark: "{color.gray.800}"
+    text:
+      primary:
+        $value: "{color.black}"
+        $extensions:
+          mode:
+            dark: "{color.gray.100}"
+      secondary:
+        $value: "{color.gray.700}"
+        $extensions:
+          mode:
+            dark: "{color.gray.300}"
+      muted:
+        $value: "{color.gray.600}"
+        $extensions:
+          mode:
+            dark: "{color.gray.500}"
+    border:
+      default:
+        $value: "{color.gray.600}"
+        $extensions:
+          mode:
+            dark: "{color.gray.600}"
+      light:
+        $value: "{color.gray.100}"
+        $extensions:
+          mode:
+            dark: "{color.gray.100}"
   btn:
     primary:
       bg:
-        $value: "{color.interaction.default}"
+        $value: "{color.brand.interactive}"
         $extensions:
           mode:
-            dark: "{color.interaction.default}"
+            dark: "{color.brand.interactive-dark}"
       fg:
         $value: "{color.white}"
         $extensions:
@@ -63,7 +89,14 @@ color:
         $value: "{color.btn.primary.bg}"
         $extensions:
           mode:
-            dark: "{color.interaction.default}"
+            dark: "{color.brand.interactive-dark}"
+      hover:
+        bg:
+          $value: "transparent"
+        fg:
+          $value: "{color.btn.primary.bg}"
+        border:
+          $value: "{color.btn.primary.border}"
     secondary:
       bg:
         $value: transparent
@@ -71,28 +104,61 @@ color:
           mode:
             dark: transparent
       fg:
-        $value: "{color.black}"
+        $value: "{color.theme.text.primary}"
         $extensions:
           mode:
             dark: "{color.white}"
       border:
-        $value: "{color.gray.medium}"
+        $value: "{color.theme.border.default}"
         $extensions:
           mode:
-            dark: "{color.gray.medium}"
+            dark: "{color.gray.600}"
+      hover:
+        bg:
+          $value: "{color.theme.text.primary}"
+        fg:
+          $value: "{color.white}"
+          $extensions:
+            mode:
+              dark: "{color.gray.900}"
+        border:
+          $value: "{color.theme.text.primary}"
     tertiary:
       bg:
-        $value: "{color.black}"
+        $value: "{color.theme.text.primary}"
         $extensions:
           mode:
-            dark: "{color.gray.light}"
+            dark: "{color.gray.100}"
       fg:
-        $value: "{color.white}"
+        $value: "{color.theme.background.default}"
         $extensions:
           mode:
             dark: "{color.black}"
       border:
-        $value: "{color.white}"
+        $value: "{color.theme.text.primary}"
         $extensions:
           mode:
-            dark: "{color.gray.medium}"
+            dark: "{color.gray.100}"
+      hover:
+        bg:
+          $value: "{color.gray.100}" # gris muy claro
+          $extensions:
+            mode:
+              dark: "{color.gray.900}" # gris oscuro en dark mode
+        fg:
+          $value: "{color.theme.text.primary}"
+        border:
+          $value: "{color.btn.tertiary.border}"
+    link:
+      bg:
+        $value: "transparent"
+      fg:
+        $value: "{color.theme.text.primary}"
+      border:
+        $value: "transparent"
+      # Estados Interactivos
+      hover:
+        # Añadimos un subrayado o un ligero cambio de color para feedback visual
+        fg:
+          $value: "{color.brand.interactive}" # Usar el color interactivo de la marca en hover
+
