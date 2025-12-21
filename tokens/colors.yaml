@@ -5,16 +5,14 @@ color:
   black:
     $value: "#000000"
   gray:
-    light:
-      $value: "#f5f5f5"
-    medium:
-      $value: "#666666"
-    dark:
-      $value: "#333333"
     100:
       $value: "#f5f5f5"
+    200:
+      $value: "#e5e5e5"
     300:
       $value: "#b8b8b8" # Tu gris secundario oscuro
+    400:
+      $value: "#999999"
     500:
       $value: "#888888" # Tu gris muted oscuro
     600:
@@ -25,6 +23,15 @@ color:
       $value: "#1a1a1a"
     900:
       $value: "#0a0a0a"
+  feedback:
+    success:
+      $value: "#28a745"
+    warning:
+      $value: "#ffc107"
+    error:
+      $value: "#dc3545"
+    info:
+      $value: "#17a2b8"
   brand:
     primary:
       $value: "#a20000"
@@ -73,6 +80,19 @@ color:
         $extensions:
           mode:
             dark: "{color.gray.100}"
+    status:
+      error-text:
+        $value: "{color.feedback.error}"
+      success-bg:
+        $value: "#d4edda"
+        $extensions:
+          mode:
+            dark: "#1b5e20"
+    state:
+      disabled:
+        $value: "{color.gray.300}"
+      focus:
+        $value: "{color.brand.interactive}"
   btn:
     primary:
       bg:
@@ -109,7 +129,7 @@ color:
           mode:
             dark: "{color.white}"
       border:
-        $value: "{color.theme.border.default}"
+        $value: "{color.theme.text.primary}"
         $extensions:
           mode:
             dark: "{color.gray.600}"
