@@ -160,6 +160,22 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
           </svg>
           <span class="visually-hidden">Cambiar tamaño de letra</span>
         </Button>
+        <Button tag="a" variant="link" size="sm" href="/token-editor">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m9 7h-6v13h-2v-6h-2v6H9V9H3V7h18z"
+            ></path>
+          </svg>
+          <span class="visually-hidden">Cambiar colores de la web</span>
+        </Button>
+
         <Button tag="button" variant="link" size="sm" id="search-toggle">
           <svg
             width="24"
@@ -232,7 +248,8 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
 
 <style lang="scss">
   .site-header {
-    border-bottom: var(--border-width-md) solid var(--color-theme-border-default);
+    border-bottom: var(--border-width-md) solid
+      var(--color-theme-border-default);
     background-color: var(--color-theme-background-surface);
     padding-block: var(--space-xxs);
     position: sticky;
@@ -445,7 +462,8 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     text-decoration-color: transparent;
     text-underline-offset: 6px;
     text-decoration-thickness: 2px;
-    border-bottom: var(--border-width-sm) solid var(--color-theme-border-default);
+    border-bottom: var(--border-width-sm) solid
+      var(--color-theme-border-default);
     min-height: var(--target-size);
     transition:
       color var(--transition-duration-normal) ease,

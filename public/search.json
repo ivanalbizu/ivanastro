@@ -721,6 +721,18 @@
     "image_alt": "Nested CSS Container"
   },
   {
+    "title": "Nueva web con Astro",
+    "slug": "nueva-web-con-astro",
+    "description": "Migración de web desde Nuxt hacía Astro manteniendo la valoración 100 de Lighthouse y añadiendo funcionalidades de paginación, filtrado por categorías y cambio de tamaño de tipografía",
+    "published": true,
+    "categories": [
+      "astro"
+    ],
+    "date": "2025-09-30 14:30:00",
+    "image": "../../assets/images/nueva-web-con-astro.png",
+    "image_alt": "Nueva web con Astro"
+  },
+  {
     "title": "Obtener diferentes url de imagen destacada de Wordpress",
     "slug": "obtener-diferentes-url-imagen-destacada-wordpress",
     "published": true,
@@ -1084,7 +1096,7 @@
     "title": "Wp Rest Api - habilitar filtro de Custom Fields",
     "slug": "wp-rest-api-habilitar-filtro-de-custom-fields",
     "published": true,
-    "description": "Habilitar nuevos campos a la Rest API creada con el plugin WP Rest API cuyos campos son creados en Wordpress con plugin Advanded Custom Fields (ACF)",
+    "description": "Habilitar nuevos campos a la Rest API creada con el plugin WP Rest API cuyos campos son creados en Wordpress con plugin Advanced Custom Fields (ACF)",
     "categories": [
       "angularJS",
       "php",

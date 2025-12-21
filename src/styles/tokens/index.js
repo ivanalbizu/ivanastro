@@ -26,7 +26,7 @@ export const tokens = {
   'color.btn.primary.hover.border': '#0054e5',
   'color.btn.primary.hover.fg': '#0054e5',
   'color.btn.secondary.bg': 'transparent',
-  'color.btn.secondary.border': '#666666',
+  'color.btn.secondary.border': '#000000',
   'color.btn.secondary.fg': '#000000',
   'color.btn.secondary.hover.bg': '#000000',
   'color.btn.secondary.hover.border': '#000000',
@@ -37,20 +37,27 @@ export const tokens = {
   'color.btn.tertiary.hover.bg': '#f5f5f5',
   'color.btn.tertiary.hover.border': '#000000',
   'color.btn.tertiary.hover.fg': '#000000',
+  'color.feedback.error': '#dc3545',
+  'color.feedback.info': '#17a2b8',
+  'color.feedback.success': '#28a745',
+  'color.feedback.warning': '#ffc107',
   'color.gray.100': '#f5f5f5',
+  'color.gray.200': '#e5e5e5',
   'color.gray.300': '#b8b8b8',
+  'color.gray.400': '#999999',
   'color.gray.500': '#888888',
   'color.gray.600': '#666666',
   'color.gray.700': '#333333',
   'color.gray.800': '#1a1a1a',
   'color.gray.900': '#0a0a0a',
-  'color.gray.dark': '#333333',
-  'color.gray.light': '#f5f5f5',
-  'color.gray.medium': '#666666',
   'color.theme.background.default': '#FFFFFF',
   'color.theme.background.surface': '#f5f5f5',
   'color.theme.border.default': '#666666',
   'color.theme.border.light': '#f5f5f5',
+  'color.theme.state.disabled': '#b8b8b8',
+  'color.theme.state.focus': '#0054e5',
+  'color.theme.status.error-text': '#dc3545',
+  'color.theme.status.success-bg': '#d4edda',
   'color.theme.text.muted': '#666666',
   'color.theme.text.primary': '#000000',
   'color.theme.text.secondary': '#333333',
@@ -465,7 +472,7 @@ export const meta = {
   },
   'color.btn.secondary.border': {
     _original: {
-      $value: '{color.theme.border.default}',
+      $value: '{color.theme.text.primary}',
       $extensions: {
         mode: {
           dark: '{color.gray.600}',
@@ -481,7 +488,7 @@ export const meta = {
     },
     id: 'color.btn.secondary.border',
     $type: 'color',
-    $value: '#666666',
+    $value: '#000000',
     $extensions: {
       mode: {
         dark: '#666666',
@@ -698,6 +705,66 @@ export const meta = {
     $type: 'color',
     $value: '#000000',
   },
+  'color.feedback.error': {
+    _original: {
+      $value: '#dc3545',
+    },
+    _group: {
+      id: 'color.feedback',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.error',
+    $type: 'color',
+    $value: '#dc3545',
+  },
+  'color.feedback.info': {
+    _original: {
+      $value: '#17a2b8',
+    },
+    _group: {
+      id: 'color.feedback',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.info',
+    $type: 'color',
+    $value: '#17a2b8',
+  },
+  'color.feedback.success': {
+    _original: {
+      $value: '#28a745',
+    },
+    _group: {
+      id: 'color.feedback',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.success',
+    $type: 'color',
+    $value: '#28a745',
+  },
+  'color.feedback.warning': {
+    _original: {
+      $value: '#ffc107',
+    },
+    _group: {
+      id: 'color.feedback',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.warning',
+    $type: 'color',
+    $value: '#ffc107',
+  },
   'color.gray.100': {
     _original: {
       $value: '#f5f5f5',
@@ -713,6 +780,21 @@ export const meta = {
     $type: 'color',
     $value: '#f5f5f5',
   },
+  'color.gray.200': {
+    _original: {
+      $value: '#e5e5e5',
+    },
+    _group: {
+      id: 'color.gray',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.gray.200',
+    $type: 'color',
+    $value: '#e5e5e5',
+  },
   'color.gray.300': {
     _original: {
       $value: '#b8b8b8',
@@ -727,6 +809,21 @@ export const meta = {
     id: 'color.gray.300',
     $type: 'color',
     $value: '#b8b8b8',
+  },
+  'color.gray.400': {
+    _original: {
+      $value: '#999999',
+    },
+    _group: {
+      id: 'color.gray',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.gray.400',
+    $type: 'color',
+    $value: '#999999',
   },
   'color.gray.500': {
     _original: {
@@ -802,51 +899,6 @@ export const meta = {
     id: 'color.gray.900',
     $type: 'color',
     $value: '#0a0a0a',
-  },
-  'color.gray.dark': {
-    _original: {
-      $value: '#333333',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.dark',
-    $type: 'color',
-    $value: '#333333',
-  },
-  'color.gray.light': {
-    _original: {
-      $value: '#f5f5f5',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.light',
-    $type: 'color',
-    $value: '#f5f5f5',
-  },
-  'color.gray.medium': {
-    _original: {
-      $value: '#666666',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.medium',
-    $type: 'color',
-    $value: '#666666',
   },
   'color.theme.background.default': {
     _original: {
@@ -945,6 +997,76 @@ export const meta = {
     $extensions: {
       mode: {
         dark: '#f5f5f5',
+      },
+    },
+  },
+  'color.theme.state.disabled': {
+    _original: {
+      $value: '{color.gray.300}',
+    },
+    _group: {
+      id: 'color.theme.state',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.theme.state.disabled',
+    $type: 'color',
+    $value: '#b8b8b8',
+  },
+  'color.theme.state.focus': {
+    _original: {
+      $value: '{color.brand.interactive}',
+    },
+    _group: {
+      id: 'color.theme.state',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.theme.state.focus',
+    $type: 'color',
+    $value: '#0054e5',
+  },
+  'color.theme.status.error-text': {
+    _original: {
+      $value: '{color.feedback.error}',
+    },
+    _group: {
+      id: 'color.theme.status',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.theme.status.error-text',
+    $type: 'color',
+    $value: '#dc3545',
+  },
+  'color.theme.status.success-bg': {
+    _original: {
+      $value: '#d4edda',
+      $extensions: {
+        mode: {
+          dark: '#1b5e20',
+        },
+      },
+    },
+    _group: {
+      id: 'color.theme.status',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.theme.status.success-bg',
+    $type: 'color',
+    $value: '#d4edda',
+    $extensions: {
+      mode: {
+        dark: '#1b5e20',
       },
     },
   },
@@ -1896,6 +2018,9 @@ export const modes = {
   },
   'color.theme.border.light': {
     dark: '#f5f5f5',
+  },
+  'color.theme.status.success-bg': {
+    dark: '#1b5e20',
   },
   'color.theme.text.muted': {
     dark: '#888888',

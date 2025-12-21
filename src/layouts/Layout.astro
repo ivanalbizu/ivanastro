@@ -65,58 +65,55 @@ const {
       canonical={canonical}
     />
     <ClientRouter />
-    <script is:inline>
-      const applyTheme = (isDark) => {
-        document.documentElement.classList.toggle("dark", isDark);
-        document.documentElement.setAttribute(
-          "data-theme",
-          isDark ? "dark" : "light",
-        );
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-      };
 
-      const getThemePreference = () => {
-        return (
-          localStorage.getItem("theme") ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light")
-        );
-      };
+    <!-- Theme Toggle Script - Versión optimizada -->
+    <script is:inline type="module">
+      // Importar el sistema de theme toggle desde archivo externo
+      import '/src/assets/js/theme-toggle.js';
+    </script>
 
-      const initializeTheme = () => {
-        const isDark = getThemePreference() === "dark";
-        applyTheme(isDark);
-      };
+    <!-- Token System Integration -->
+    <script is:inline type="module">
+      import { TokenStyleManager } from '/src/assets/js/token-system.js';
 
-      initializeTheme();
+      let styleManager = null;
 
-      const attachThemeToggle = () => {
-        const toggleButton = document.getElementById("theme-toggle");
-        if (!toggleButton) return;
+      function initTokenManager() {
+        console.log('🎨 Initializing Token Manager...');
+        if (!styleManager) {
+          styleManager = new TokenStyleManager();
+        } else {
+          styleManager.refresh();
+        }
+      }
 
-        toggleButton.addEventListener("click", () => {
-          const isDark = !document.documentElement.classList.contains("dark");
-          applyTheme(isDark);
-        });
-      };
+      // Aplicar en carga inicial (antes de que se renderice la página)
+      if (document.readyState === 'loading') {
+        // Si el DOM aún está cargando, esperar a DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', initTokenManager);
+      } else {
+        // Si el DOM ya está listo, aplicar inmediatamente
+        initTokenManager();
+      }
 
-      document.addEventListener("astro:after-swap", () => {
-        initializeTheme();
-        attachThemeToggle();
+      // View Transitions - Aplicar después de cada transición
+      document.addEventListener('astro:after-swap', () => {
+        console.log('🔄 View transition completed, refreshing tokens...');
+        initTokenManager();
       });
 
-      document.addEventListener(
-        "astro:page-load",
-        () => {
-          attachThemeToggle();
-        },
-        { once: true },
-      );
+      // Page Load - Primera carga con View Transitions habilitadas
+      document.addEventListener('astro:page-load', () => {
+        console.log('📄 Page loaded, ensuring tokens are applied...');
+        initTokenManager();
+      });
+
+      // Exponer el manager globalmente para debugging
+      window.__tokenManager = () => styleManager;
     </script>
   </head>
-  <body class="body">
-    <Header />
+  <body>
+    <Header />    
     <main
       class="main-content"
       class:list={{ "with-sidebar": showSidebar }}
@@ -139,12 +136,6 @@ const {
 </html>
 
 <style lang="scss">
-  .body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
   .main-content {
     flex: 1;
     width: min(var(--max-width-default), 100%);
