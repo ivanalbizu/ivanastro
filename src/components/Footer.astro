@@ -20,8 +20,8 @@ const currentYear = new Date().getFullYear();
 
 <style lang="scss">
   .footer {
-    background-color: var(--color-surface);
-    border-top: var(--border-width-md) solid var(--color-border);
+    background-color: var(--color-theme-background-surface);
+    border-top: var(--border-width-md) solid var(--color-theme-border-default);
     margin-block-start: auto;
     padding-block: var(--space-lg);
   }
@@ -47,14 +47,14 @@ const currentYear = new Date().getFullYear();
   .theme-credit {
     margin: 0;
     font-size: var(--typography-font-size-paragraph-4);
-    color: var(--color-text-muted);
+    color: var(--color-theme-text-muted);
   }
 
   .theme-credit a {
-    color: var(--color-interaction-default);
+    color: var(--color-brand-interactive);
     &:hover,
     &:focus {
-      color: var(--color-text-primary);
+      color: var(--color-theme-text-primary);
     }
   }
 </style>

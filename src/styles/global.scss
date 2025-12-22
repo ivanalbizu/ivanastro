@@ -21,20 +21,22 @@ html {
   font-family: var(--typography-font-family-body);
   font-size: var(--typography-font-size-paragraph-2);
   line-height: var(--typography-line-height-xl);
-  color: var(--color-text-primary);
-  background-color: var(--color-background);
+  color: var(--color-theme-text-primary);
+  background-color: var(--color-theme-background-default);
 }
 
 body {
-  min-height: 100vh;
   font-size: var(--typography-font-size-paragraph-2);
   font-weight: var(--typography-font-weight-normal);
   line-height: var(--typography-line-height-xl);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: var(--typography-font-weight-bold);
-  color: var(--color-accent);
+  color: var(--color-brand-primary);
   margin-block-end: var(--space-sm);
 }
 
@@ -70,7 +72,7 @@ p {
   outline-offset: 3px;
 }
 a {
-  color: var(--color-interaction-default);
+  color: var(--color-brand-interactive);
   text-underline-offset: 4px;
   transition: color var(--transition-duration-normal) ease;
 }
@@ -81,7 +83,7 @@ a:not([class]) {
 
 a:hover,
 a:focus {
-  color: var(--color-text-primary);
+  color: var(--color-theme-text-primary);
   text-decoration: underline;
 }
 
@@ -105,26 +107,26 @@ li {
 }
 
 blockquote {
-  border-left: 4px solid var(--color-border);
+  border-left: 4px solid var(--color-theme-border-default);
   padding: var(--space-sm) var(--space-md);
   margin: var(--space-md) 0;
-  background-color: var(--color-surface);
+  background-color: var(--color-theme-background-surface);
   font-style: italic;
 }
 
 code {
   font-family: var(--typography-font-family-mono);
   font-size: var(--typography-font-size-paragraph-4);
-  background-color: var(--color-surface);
+  background-color: var(--color-theme-background-surface);
   padding: 2px 4px;
   border-radius: var(--border-radius-sm);
-  border: var(--border-width-sm) solid var(--color-border);
+  border: var(--border-width-sm) solid var(--color-theme-border-default);
 }
 
 pre {
   font-family: var(--typography-font-family-mono);
-  background-color: var(--color-surface);
-  border: var(--border-width-sm) solid var(--color-border);
+  background-color: var(--color-theme-background-surface);
+  border: var(--border-width-sm) solid var(--color-theme-border-default);
   padding: var(--space-sm);
   margin: var(--space-md) 0;
   overflow-x: auto;
@@ -140,7 +142,7 @@ pre code {
 img {
   max-width: 100%;
   height: auto;
-  border: var(--border-width-sm) solid var(--color-border);
+  border: var(--border-width-sm) solid var(--color-theme-border-default);
   margin: var(--space-sm) 0;
   min-height: 40px;
   text-align: center;
@@ -155,14 +157,14 @@ img::before {
   left: 0;
   height: calc(100% + 10px);
   width: 100%;
-  background-color: var(--color-gray-light);
+  background-color: var(--color-theme-text-primary);
   border-radius: var(--border-radius-md);
 }
 img::after {
   content: "🖼️ Imagen rota " attr(alt);
   display: block;
   font-size: var(--typography-font-size-paragraph-2);
-  color: var(--color-gray-dark);
+  color: var(--color-theme-text-secondary);
   position: absolute;
   top: 5px;
   left: 0;
@@ -179,7 +181,7 @@ picture {
 figcaption {
   font-style: italic;
   font-size: var(--typography-font-size-paragraph-4);
-  color: var(--color-text-muted);
+  color: var(--color-theme-text-muted);
   text-align: center;
   margin-block-start: var(--space-xxxs);
 }
@@ -187,7 +189,7 @@ figcaption {
 hr {
   border: none;
   height: 4px;
-  background-color: var(--color-accent);
+  background-color: var(--color-brand-primary);
   margin: var(--space-lg) 0;
 }
 
@@ -200,7 +202,7 @@ hr {
 }
 
 .text-muted {
-  color: var(--color-text-muted);
+  color: var(--color-theme-text-muted);
 }
 
 .visually-hidden {

@@ -98,7 +98,7 @@ const sortedPosts = posts
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-3);
     font-weight: var(--typography-font-weight-bold);
-    color: var(--color-accent);
+    color: var(--color-brand-primary);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-md);
     margin-block-end: var(--space-sm);
@@ -109,7 +109,7 @@ const sortedPosts = posts
     text-align: center;
     font-size: var(--typography-font-size-heading-5);
     line-height: var(--typography-line-height-lg);
-    color: var(--color-text-secondary);
+    color: var(--color-theme-text-secondary);
     margin-block-end: var(--space-xl);
     max-width: var(--max-width-thin);
     margin-inline: auto;
@@ -122,8 +122,8 @@ const sortedPosts = posts
   }
 
   .post {
-    background-color: var(--color-surface);
-    border: var(--border-width-sm) solid var(--color-border);
+    background-color: var(--color-theme-background-surface);
+    border: var(--border-width-sm) solid var(--color-theme-border-default);
     border-radius: var(--border-radius-lg);;
     padding: var(--space-md);
     transition:
@@ -135,11 +135,11 @@ const sortedPosts = posts
       font-weight: var(--typography-font-weight-bold);
       margin-block-end: var(--space-xxs);
       a {
-        color: var(--color-text-primary);
+        color: var(--color-theme-text-primary);
         text-underline-offset: 3px;
         &:hover,
         &:focus {
-          color: var(--color-interaction-default);
+          color: var(--color-brand-interactive);
         }
       }
     }

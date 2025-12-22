@@ -40,14 +40,16 @@ const {
     <style is:inline>
       @font-face {
         font-family: "AtkinsonHyperlegible";
-        src: url('/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+        src: url("/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.woff2")
+          format("woff2");
         font-weight: 400;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
         font-family: "AtkinsonHyperlegible";
-        src: url('/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+        src: url("/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Bold.woff2")
+          format("woff2");
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -63,59 +65,56 @@ const {
       canonical={canonical}
     />
     <ClientRouter />
-    <script is:inline>
-      const applyTheme = (isDark) => {
-        document.documentElement.classList.toggle("dark", isDark);
-        document.documentElement.setAttribute(
-          "data-theme",
-          isDark ? "dark" : "light",
-        );
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-      };
 
-      const getThemePreference = () => {
-        return (
-          localStorage.getItem("theme") ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light")
-        );
-      };
+    <!-- Theme Toggle Script - Versión optimizada con tipos -->
+    <script>
+      // @ts-nocheck - Deshabilitar verificación de tipos en este script inline
+      import { TokenStyleManager } from '../assets/js/token-system.js';
+      import '../assets/js/theme-toggle.js';
 
-      const initializeTheme = () => {
-        const isDark = getThemePreference() === "dark";
-        applyTheme(isDark);
-      };
+      let styleManager: any = null;
 
-      initializeTheme();
+      function initTokenManager(): void {
+        console.log('🎨 Initializing Token Manager...');
+        if (!styleManager) {
+          styleManager = new TokenStyleManager();
+        } else {
+          styleManager.refresh();
+        }
+      }
 
-      const attachThemeToggle = () => {
-        const toggleButton = document.getElementById("theme-toggle");
-        if (!toggleButton) return;
+      // Aplicar en carga inicial (antes de que se renderice la página)
+      if (document.readyState === 'loading') {
+        // Si el DOM aún está cargando, esperar a DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', initTokenManager);
+      } else {
+        // Si el DOM ya está listo, aplicar inmediatamente
+        initTokenManager();
+      }
 
-        toggleButton.addEventListener("click", () => {
-          const isDark = !document.documentElement.classList.contains("dark");
-          applyTheme(isDark);
-        });
-      };
-
-      document.addEventListener("astro:after-swap", () => {
-        initializeTheme();
-        attachThemeToggle();
+      // View Transitions - Aplicar después de cada transición
+      document.addEventListener('astro:after-swap', () => {
+        console.log('🔄 View transition completed, refreshing tokens...');
+        initTokenManager();
       });
 
-      document.addEventListener(
-        "astro:page-load",
-        () => {
-          attachThemeToggle();
-        },
-        { once: true },
-      );
+      // Page Load - Primera carga con View Transitions habilitadas
+      document.addEventListener('astro:page-load', () => {
+        console.log('📄 Page loaded, ensuring tokens are applied...');
+        initTokenManager();
+      });
+
+      // Exponer el manager globalmente para debugging
+      window.__tokenManager = () => styleManager;
     </script>
   </head>
-  <body class="body">
-    <Header />
-    <main class="main-content" class:list={{ "with-sidebar": showSidebar }} id="main-content">
+  <body>
+    <Header />    
+    <main
+      class="main-content"
+      class:list={{ "with-sidebar": showSidebar }}
+      id="main-content"
+    >
       <div class="content">
         <Breadcrumbs currentPath={currentPath} title={title} />
         <slot />
@@ -133,12 +132,6 @@ const {
 </html>
 
 <style lang="scss">
-  .body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
   .main-content {
     flex: 1;
     width: min(var(--max-width-default), 100%);

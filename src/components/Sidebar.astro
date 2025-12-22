@@ -94,8 +94,8 @@ const categories = [
     flex-direction: column;
     gap: var(--space-lg);
     padding: var(--space-md);
-    background-color: var(--color-surface);
-    border: var(--border-width-sm) solid var(--color-border);
+    background-color: var(--color-theme-background-surface);
+    border: var(--border-width-sm) solid var(--color-theme-border-default);
     border-radius: var(--border-radius-md);
     top: 86px;
     @media (min-width: 1024px) {
@@ -107,11 +107,11 @@ const categories = [
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-paragraph-1);
     font-weight: var(--typography-font-weight-bold);
-    color: var(--color-accent);
+    color: var(--color-brand-primary);
     margin-block-end: var(--space-xs);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-md);
-    border-bottom: var(--border-width-md) solid var(--color-accent);
+    border-bottom: var(--border-width-md) solid var(--color-brand-primary);
     padding-bottom: var(--space-xxxs);
   }
 
@@ -142,16 +142,16 @@ const categories = [
   .post-link {
     font-weight: var(--typography-font-weight-normal);
     line-height: var(--typography-line-height-md);
-    color: var(--color-text-primary);
+    color: var(--color-theme-text-primary);
     &:hover,
     &:focus {
-      color: var(--color-interaction-default);
+      color: var(--color-brand-interactive);
     }
   }
 
   .post-date {
     font-size: var(--typography-font-size-paragraph-5);
-    color: var(--color-text-muted);
+    color: var(--color-theme-text-muted);
     font-family: var(--typography-font-family-mono);
   }
 

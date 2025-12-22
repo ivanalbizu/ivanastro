@@ -19,27 +19,56 @@ export declare const tokens: {
   'border.width.lg': ParsedDimensionToken['$value'];
   'border.width.md': ParsedDimensionToken['$value'];
   'border.width.sm': ParsedDimensionToken['$value'];
-  'color.accent': ParsedColorToken['$value'];
-  'color.background': ParsedColorToken['$value'];
   'color.black': ParsedColorToken['$value'];
-  'color.border': ParsedColorToken['$value'];
+  'color.brand.interactive': ParsedColorToken['$value'];
+  'color.brand.interactive-dark': ParsedColorToken['$value'];
+  'color.brand.primary': ParsedColorToken['$value'];
+  'color.btn.link.bg': ParsedColorToken['$value'];
+  'color.btn.link.border': ParsedColorToken['$value'];
+  'color.btn.link.fg': ParsedColorToken['$value'];
+  'color.btn.link.hover.fg': ParsedColorToken['$value'];
   'color.btn.primary.bg': ParsedColorToken['$value'];
   'color.btn.primary.border': ParsedColorToken['$value'];
   'color.btn.primary.fg': ParsedColorToken['$value'];
+  'color.btn.primary.hover.bg': ParsedColorToken['$value'];
+  'color.btn.primary.hover.border': ParsedColorToken['$value'];
+  'color.btn.primary.hover.fg': ParsedColorToken['$value'];
   'color.btn.secondary.bg': ParsedColorToken['$value'];
   'color.btn.secondary.border': ParsedColorToken['$value'];
   'color.btn.secondary.fg': ParsedColorToken['$value'];
+  'color.btn.secondary.hover.bg': ParsedColorToken['$value'];
+  'color.btn.secondary.hover.border': ParsedColorToken['$value'];
+  'color.btn.secondary.hover.fg': ParsedColorToken['$value'];
   'color.btn.tertiary.bg': ParsedColorToken['$value'];
   'color.btn.tertiary.border': ParsedColorToken['$value'];
   'color.btn.tertiary.fg': ParsedColorToken['$value'];
-  'color.gray.dark': ParsedColorToken['$value'];
-  'color.gray.light': ParsedColorToken['$value'];
-  'color.gray.medium': ParsedColorToken['$value'];
-  'color.interaction.default': ParsedColorToken['$value'];
-  'color.surface': ParsedColorToken['$value'];
-  'color.text.muted': ParsedColorToken['$value'];
-  'color.text.primary': ParsedColorToken['$value'];
-  'color.text.secondary': ParsedColorToken['$value'];
+  'color.btn.tertiary.hover.bg': ParsedColorToken['$value'];
+  'color.btn.tertiary.hover.border': ParsedColorToken['$value'];
+  'color.btn.tertiary.hover.fg': ParsedColorToken['$value'];
+  'color.feedback.error': ParsedColorToken['$value'];
+  'color.feedback.info': ParsedColorToken['$value'];
+  'color.feedback.success': ParsedColorToken['$value'];
+  'color.feedback.warning': ParsedColorToken['$value'];
+  'color.gray.100': ParsedColorToken['$value'];
+  'color.gray.200': ParsedColorToken['$value'];
+  'color.gray.300': ParsedColorToken['$value'];
+  'color.gray.400': ParsedColorToken['$value'];
+  'color.gray.500': ParsedColorToken['$value'];
+  'color.gray.600': ParsedColorToken['$value'];
+  'color.gray.700': ParsedColorToken['$value'];
+  'color.gray.800': ParsedColorToken['$value'];
+  'color.gray.900': ParsedColorToken['$value'];
+  'color.theme.background.default': ParsedColorToken['$value'];
+  'color.theme.background.surface': ParsedColorToken['$value'];
+  'color.theme.border.default': ParsedColorToken['$value'];
+  'color.theme.border.light': ParsedColorToken['$value'];
+  'color.theme.state.disabled': ParsedColorToken['$value'];
+  'color.theme.state.focus': ParsedColorToken['$value'];
+  'color.theme.status.error-text': ParsedColorToken['$value'];
+  'color.theme.status.success-bg': ParsedColorToken['$value'];
+  'color.theme.text.muted': ParsedColorToken['$value'];
+  'color.theme.text.primary': ParsedColorToken['$value'];
+  'color.theme.text.secondary': ParsedColorToken['$value'];
   'color.white': ParsedColorToken['$value'];
   'max-width.default': ParsedDimensionToken['$value'];
   'max-width.medium': ParsedDimensionToken['$value'];
@@ -100,27 +129,56 @@ export declare const meta: {
   'border.width.lg': ParsedDimensionToken;
   'border.width.md': ParsedDimensionToken;
   'border.width.sm': ParsedDimensionToken;
-  'color.accent': ParsedColorToken & { $extensions: { mode: typeof modes['color.accent'] } };
-  'color.background': ParsedColorToken & { $extensions: { mode: typeof modes['color.background'] } };
   'color.black': ParsedColorToken;
-  'color.border': ParsedColorToken;
+  'color.brand.interactive': ParsedColorToken;
+  'color.brand.interactive-dark': ParsedColorToken;
+  'color.brand.primary': ParsedColorToken;
+  'color.btn.link.bg': ParsedColorToken;
+  'color.btn.link.border': ParsedColorToken;
+  'color.btn.link.fg': ParsedColorToken;
+  'color.btn.link.hover.fg': ParsedColorToken;
   'color.btn.primary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.primary.bg'] } };
   'color.btn.primary.border': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.primary.border'] } };
   'color.btn.primary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.primary.fg'] } };
+  'color.btn.primary.hover.bg': ParsedColorToken;
+  'color.btn.primary.hover.border': ParsedColorToken;
+  'color.btn.primary.hover.fg': ParsedColorToken;
   'color.btn.secondary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.bg'] } };
   'color.btn.secondary.border': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.border'] } };
   'color.btn.secondary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.fg'] } };
+  'color.btn.secondary.hover.bg': ParsedColorToken;
+  'color.btn.secondary.hover.border': ParsedColorToken;
+  'color.btn.secondary.hover.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.hover.fg'] } };
   'color.btn.tertiary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.bg'] } };
   'color.btn.tertiary.border': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.border'] } };
   'color.btn.tertiary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.fg'] } };
-  'color.gray.dark': ParsedColorToken;
-  'color.gray.light': ParsedColorToken;
-  'color.gray.medium': ParsedColorToken;
-  'color.interaction.default': ParsedColorToken;
-  'color.surface': ParsedColorToken & { $extensions: { mode: typeof modes['color.surface'] } };
-  'color.text.muted': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.muted'] } };
-  'color.text.primary': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.primary'] } };
-  'color.text.secondary': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.secondary'] } };
+  'color.btn.tertiary.hover.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.hover.bg'] } };
+  'color.btn.tertiary.hover.border': ParsedColorToken;
+  'color.btn.tertiary.hover.fg': ParsedColorToken;
+  'color.feedback.error': ParsedColorToken;
+  'color.feedback.info': ParsedColorToken;
+  'color.feedback.success': ParsedColorToken;
+  'color.feedback.warning': ParsedColorToken;
+  'color.gray.100': ParsedColorToken;
+  'color.gray.200': ParsedColorToken;
+  'color.gray.300': ParsedColorToken;
+  'color.gray.400': ParsedColorToken;
+  'color.gray.500': ParsedColorToken;
+  'color.gray.600': ParsedColorToken;
+  'color.gray.700': ParsedColorToken;
+  'color.gray.800': ParsedColorToken;
+  'color.gray.900': ParsedColorToken;
+  'color.theme.background.default': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.background.default'] } };
+  'color.theme.background.surface': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.background.surface'] } };
+  'color.theme.border.default': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.border.default'] } };
+  'color.theme.border.light': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.border.light'] } };
+  'color.theme.state.disabled': ParsedColorToken;
+  'color.theme.state.focus': ParsedColorToken;
+  'color.theme.status.error-text': ParsedColorToken;
+  'color.theme.status.success-bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.status.success-bg'] } };
+  'color.theme.text.muted': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.text.muted'] } };
+  'color.theme.text.primary': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.text.primary'] } };
+  'color.theme.text.secondary': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.text.secondary'] } };
   'color.white': ParsedColorToken;
   'max-width.default': ParsedDimensionToken & { $extensions: { mode: typeof modes['max-width.default'] } };
   'max-width.medium': ParsedDimensionToken;
@@ -175,12 +233,6 @@ export declare const meta: {
 };
 
 export declare const modes: {
-  'color.accent': {
-    dark: ParsedColorToken['$value'];
-  };
-  'color.background': {
-    dark: ParsedColorToken['$value'];
-  };
   'color.btn.primary.bg': {
     dark: ParsedColorToken['$value'];
   };
@@ -199,6 +251,9 @@ export declare const modes: {
   'color.btn.secondary.fg': {
     dark: ParsedColorToken['$value'];
   };
+  'color.btn.secondary.hover.fg': {
+    dark: ParsedColorToken['$value'];
+  };
   'color.btn.tertiary.bg': {
     dark: ParsedColorToken['$value'];
   };
@@ -208,16 +263,31 @@ export declare const modes: {
   'color.btn.tertiary.fg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.surface': {
+  'color.btn.tertiary.hover.bg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.text.muted': {
+  'color.theme.background.default': {
     dark: ParsedColorToken['$value'];
   };
-  'color.text.primary': {
+  'color.theme.background.surface': {
     dark: ParsedColorToken['$value'];
   };
-  'color.text.secondary': {
+  'color.theme.border.default': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.theme.border.light': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.theme.status.success-bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.theme.text.muted': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.theme.text.primary': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.theme.text.secondary': {
     dark: ParsedColorToken['$value'];
   };
   'max-width.default': {

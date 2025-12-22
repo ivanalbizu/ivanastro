@@ -80,8 +80,8 @@ const { headings } = Astro.props;
 
 <style lang="scss">
   .toc {
-    background-color: var(--color-surface);
-    border: var(--border-width-sm) solid var(--color-border);
+    background-color: var(--color-theme-background-surface);
+    border: var(--border-width-sm) solid var(--color-theme-border-default);
     border-radius: var(--border-radius-lg);
     padding: var(--space-sm);
     margin-block-end: var(--space-lg);
@@ -90,12 +90,12 @@ const { headings } = Astro.props;
       font-family: var(--typography-font-family-primary);
       font-size: var(--typography-font-size-paragraph-1);
       font-weight: var(--typography-font-weight-bold);
-      color: var(--color-accent);
+      color: var(--color-brand-primary);
       text-transform: uppercase;
       letter-spacing: var(--typography-letter-spacing-md);
       margin-block-end: var(--space-sm);
       padding-bottom: var(--space-xxs);
-      border-bottom: var(--border-width-md) solid var(--color-accent);
+      border-bottom: var(--border-width-md) solid var(--color-brand-primary);
     }
 
     &__list {
@@ -118,7 +118,7 @@ const { headings } = Astro.props;
         left: 0;
         font-family: var(--typography-font-family-mono);
         font-size: var(--typography-font-size-paragraph-4);
-        color: var(--color-text-muted);
+        color: var(--color-theme-text-muted);
         font-weight: var(--typography-font-weight-bold);
       }
     }
@@ -127,23 +127,23 @@ const { headings } = Astro.props;
   .toc-link {
     display: block;
     padding-left: var(--space-md);
-    color: var(--color-text-primary);
+    color: var(--color-theme-text-primary);
     text-decoration-color: transparent;
     line-height: var(--typography-line-height-lg);
     transition: all var(--transition-duration-normal) ease;
     &:hover,
     &:focus {
-      color: var(--color-interaction-default);
+      color: var(--color-brand-interactive);
     }
 
     &.active {
-      color: var(--color-interaction-default);
+      color: var(--color-brand-interactive);
       font-weight: var(--typography-font-weight-bold);
       &::after {
         content: "•";
         position: absolute;
         right: 0;
-        color: var(--color-interaction-default);
+        color: var(--color-brand-interactive);
       }
     }
   }
@@ -152,10 +152,10 @@ const { headings } = Astro.props;
     margin-inline-start: var(--space-sm);
     .toc-link {
       font-size: var(--typography-font-size-paragraph-3);
-      color: var(--color-text-secondary);
+      color: var(--color-theme-text-secondary);
       &:hover,
       &:focus {
-        color: var(--color-interaction-default);
+        color: var(--color-brand-interactive);
       }
     }
   }

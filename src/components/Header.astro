@@ -160,6 +160,22 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
           </svg>
           <span class="visually-hidden">Cambiar tamaño de letra</span>
         </Button>
+        <Button tag="a" variant="link" size="sm" href="/token-editor">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              fill="currentColor"
+              d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m9 7h-6v13h-2v-6h-2v6H9V9H3V7h18z"
+            ></path>
+          </svg>
+          <span class="visually-hidden">Cambiar colores de la web</span>
+        </Button>
+
         <Button tag="button" variant="link" size="sm" id="search-toggle">
           <svg
             width="24"
@@ -198,6 +214,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
         id="search-input"
         placeholder="Buscar artículos..."
         autocomplete="off"
+        aria-label="Introduce términos a buscar"
       />
       <Button tag="button" variant="link" size="sm" id="search-close">
         <svg
@@ -224,6 +241,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     id="search-results"
     role="region"
     aria-live="polite"
+    aria-label="Buscar artículos"
   >
   </div>
 </search>
@@ -232,8 +250,9 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
 
 <style lang="scss">
   .site-header {
-    border-bottom: var(--border-width-md) solid var(--color-border);
-    background-color: var(--color-surface);
+    border-bottom: var(--border-width-md) solid
+      var(--color-theme-border-default);
+    background-color: var(--color-theme-background-surface);
     padding-block: var(--space-xxs);
     position: sticky;
     top: 0;
@@ -259,7 +278,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     font-weight: var(--typography-font-weight-bold);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-md);
-    color: var(--color-text-primary);
+    color: var(--color-theme-text-primary);
     padding-block: var(--space-xxxs);
     transition:
       color var(--transition-duration-normal) ease,
@@ -271,7 +290,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     &.active,
     &:hover,
     &:focus {
-      color: var(--color-interaction-default);
+      color: var(--color-brand-interactive);
       text-decoration-color: revert;
     }
   }
@@ -313,8 +332,8 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    background: var(--color-background);
-    border: var(--border-width-md) solid var(--color-border);
+    background: var(--color-theme-background-default);
+    border: var(--border-width-md) solid var(--color-theme-border-default);
     border-radius: var(--border-radius-lg);
     padding: var(--space-md);
   }
@@ -323,13 +342,16 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     flex: 1;
     font-family: var(--typography-font-family-body);
     font-size: var(--typography-font-size-heading-6);
-    color: var(--color-text-primary);
+    color: var(--color-theme-text-primary);
+    background: var(--color-theme-background-default);
+    border-radius: var(--border-radius-md);
+    border: var(--border-width-md) solid var(--color-theme-border-default);
     padding: var(--space-sm);
     max-width: calc(100% - var(--target-size) - var(--space-sm));
   }
 
   .search-input::placeholder {
-    color: var(--color-gray-medium);
+    color: var(--color-theme-text-muted);
   }
 
   .search-results {
@@ -338,9 +360,9 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     max-height: 70vh;
     min-height: 40vh;
     overflow-y: auto;
-    background: var(--color-background);
+    background: var(--color-theme-background-default);
     border-radius: var(--border-radius-lg);
-    border: var(--border-width-sm) solid var(--color-border);
+    border: var(--border-width-sm) solid var(--color-theme-border-default);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: var(--space-md);
     &:empty {
@@ -362,7 +384,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
   }
 
   .search-no-results p {
-    color: var(--color-text-muted);
+    color: var(--color-theme-text-muted);
     font-style: italic;
     margin: 0;
     font-size: var(--typography-font-size-paragraph-1);
@@ -408,7 +430,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
       right: 0;
       bottom: 0;
       padding: var(--space-xxs);
-      background-color: var(--color-background);
+      background-color: var(--color-theme-background-default);
       z-index: 99;
       transform: translateX(-100%);
       transition:
@@ -438,11 +460,12 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     font-size: var(--typography-font-size-heading-4);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-xxl);
-    color: var(--color-text-primary);
+    color: var(--color-theme-text-primary);
     text-decoration-color: transparent;
     text-underline-offset: 6px;
     text-decoration-thickness: 2px;
-    border-bottom: var(--border-width-sm) solid var(--color-border);
+    border-bottom: var(--border-width-sm) solid
+      var(--color-theme-border-default);
     min-height: var(--target-size);
     transition:
       color var(--transition-duration-normal) ease,
@@ -450,8 +473,8 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     &.active,
     &:hover,
     &:focus {
-      color: var(--color-interaction-default);
-      background-color: var(--color-surface);
+      color: var(--color-brand-interactive);
+      background-color: var(--color-theme-background-surface);
     }
     &.active {
       pointer-events: none;
@@ -467,7 +490,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
       &.active,
       &:hover,
       &:focus {
-        color: var(--color-interaction-default);
+        color: var(--color-brand-interactive);
         text-decoration-color: revert;
         background-color: transparent;
       }
