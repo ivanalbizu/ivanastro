@@ -66,19 +66,15 @@ const {
     />
     <ClientRouter />
 
-    <!-- Theme Toggle Script - Versión optimizada -->
-    <script is:inline type="module">
-      // Importar el sistema de theme toggle desde archivo externo
-      import '/src/assets/js/theme-toggle.js';
-    </script>
+    <!-- Theme Toggle Script - Versión optimizada con tipos -->
+    <script>
+      // @ts-nocheck - Deshabilitar verificación de tipos en este script inline
+      import { TokenStyleManager } from '../assets/js/token-system.js';
+      import '../assets/js/theme-toggle.js';
 
-    <!-- Token System Integration -->
-    <script is:inline type="module">
-      import { TokenStyleManager } from '/src/assets/js/token-system.js';
+      let styleManager: any = null;
 
-      let styleManager = null;
-
-      function initTokenManager() {
+      function initTokenManager(): void {
         console.log('🎨 Initializing Token Manager...');
         if (!styleManager) {
           styleManager = new TokenStyleManager();

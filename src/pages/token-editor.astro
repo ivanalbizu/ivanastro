@@ -41,14 +41,15 @@ const pageDescription =
   </div>
 
   <!-- js-yaml solo en esta página -->
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 
-  <script is:inline type="module">
-    import { TokenEditor } from '/src/assets/js/token-system.js';
+  <script>
+    // @ts-nocheck - Deshabilitar verificación de tipos en este script inline
+    import { TokenEditor } from '../assets/js/token-system.js';
 
-    let editor = null;
+    let editor: any = null;
 
-    function initEditor() {
+    function initEditor(): void {
       // Si ya existe un editor, no crear otro
       if (editor) {
         console.log('✅ Editor already initialized');
@@ -74,7 +75,7 @@ const pageDescription =
         window.__tokenEditor = () => editor;
         
         console.log('✅ Token Editor initialized successfully');
-      } catch (error) {
+      } catch (error: any) {
         console.error('❌ Error initializing Token Editor:', error);
         
         // Mostrar error en la UI
@@ -83,15 +84,15 @@ const pageDescription =
           container.innerHTML = `
             <div class="error-message">
               <h3>❌ Error al cargar el editor</h3>
-              <p>${error.message}</p>
-              <p>Asegúrate de que el archivo <code>/tokens/colors.yaml</code> existe y es válido.</p>
+              <p>${error?.message || 'Unknown error'}</p>
+              <p>Asegúrate de que el archivo <code>/tokens/colors.yaml</code> existe en <code>public/tokens/colors.yaml</code>.</p>
             </div>
           `;
         }
       }
     }
 
-    function handlePageLoad() {
+    function handlePageLoad(): void {
       const isEditorPage = window.location.pathname.includes('token-editor');
       
       if (isEditorPage) {
@@ -101,7 +102,7 @@ const pageDescription =
       } else {
         // Limpiar editor si cambiamos de página
         editor = null;
-        window.__tokenEditor = null;
+        window.__tokenEditor = undefined;
         console.log('📄 Left Token Editor page');
       }
     }
@@ -119,7 +120,7 @@ const pageDescription =
     
     document.addEventListener('astro:after-swap', () => {
       editor = null; // Reset editor
-      window.__tokenEditor = null;
+      window.__tokenEditor = undefined;
       handlePageLoad();
     });
 
