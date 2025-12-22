@@ -1,262 +1,302 @@
 const base = `${import.meta.env.BASE_URL || ""}`;
 
-function trapFocus(element: HTMLElement, moveFocused: boolean) {
-  focusableEls = element.querySelectorAll(
-    'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])',
-  );
-  firstFocusableEl = focusableEls[0];
-  lastFocusableEl = focusableEls[focusableEls.length - 1];
-  const KEYCODE_TAB = 9;
-
-  if (moveFocused) focusableEls[1].focus();
-
-  element.addEventListener("keydown", function (event) {
-    const isTabPressed = event.key === "Tab" || event.keyCode === KEYCODE_TAB;
-
-    if (!isTabPressed) {
-      return;
-    }
-
-    if (event.shiftKey) {
-      if (document.activeElement === firstFocusableEl) {
-        lastFocusableEl.focus();
-        event.preventDefault();
-      }
-    } else {
-      if (document.activeElement === lastFocusableEl) {
-        firstFocusableEl.focus();
-        event.preventDefault();
-      }
-    }
-  });
+// Tipos para mejorar el type safety
+interface SearchPost {
+  title: string;
+  description: string;
+  categories?: string[];
+  slug: string;
+  date: string;
 }
 
-// Hamburger menu functionality
-function initHamburgerMenu() {
-  const HAM_TOGGLE = document.getElementById(
-    "hamburger-toggle",
-  ) as HTMLElement;
-  const MENU = document.getElementById("main-navigation") as HTMLElement;
-  const HAM_CLOSE = document.getElementById("close-menu") as HTMLElement;
-  const BODY = document.body;
+// Cache de elementos DOM
+const DOM = {
+  get hamburgerToggle() { return document.getElementById("hamburger-toggle") as HTMLElement; },
+  get mainNavigation() { return document.getElementById("main-navigation") as HTMLElement; },
+  get closeMenu() { return document.getElementById("close-menu") as HTMLElement; },
+  get searchOverlay() { return document.getElementById("search-overlay") as HTMLElement; },
+  get searchInput() { return document.getElementById("search-input") as HTMLInputElement; },
+  get searchResults() { return document.getElementById("search-results") as HTMLElement; },
+  get searchToggle() { return document.getElementById("search-toggle"); },
+  get searchClose() { return document.getElementById("search-close"); },
+  get fontSize() { return document.getElementById("font-size"); },
+  get body() { return document.body; },
+  get html() { return document.documentElement; }
+};
 
-  if (!HAM_TOGGLE || !MENU) return;
+// Estado global
+let searchData: SearchPost[] = [];
 
-  window
-    .matchMedia("(width <= 768px)")
-    .addEventListener("change", function (event) {
-      BODY.classList.add("is-resizing");
-      setTimeout(() => {
-        BODY.classList.remove("is-resizing");
-      }, 300);
-    });
+// Utilidad: Trap focus para accesibilidad
+let currentTrapHandler: ((event: KeyboardEvent) => void) | null = null;
+let currentTrapElement: HTMLElement | null = null;
 
-  HAM_TOGGLE.addEventListener("click", () => {
-    const isOpen = MENU.classList.contains("active");
+function trapFocus(element: HTMLElement, moveFocused: boolean = false): void {
+  // Remover el handler anterior si existe
+  if (currentTrapHandler && currentTrapElement) {
+    currentTrapElement.removeEventListener("keydown", currentTrapHandler);
+  }
 
-    if (isOpen) {
-      MENU.classList.remove("active");
-      HAM_TOGGLE.setAttribute("aria-expanded", "false");
-      BODY.style.overflow = "";
+  const focusableEls = element.querySelectorAll<HTMLElement>(
+    'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])'
+  );
+  
+  if (focusableEls.length === 0) return;
+  
+  const firstFocusableEl = focusableEls[0];
+  const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+  if (moveFocused && focusableEls[1]) {
+    focusableEls[1].focus();
+  }
+
+  const handleKeydown = (event: KeyboardEvent) => {
+    if (event.key !== "Tab") return;
+
+    // Actualizar elementos focusables en cada Tab para capturar cambios dinámicos
+    const currentFocusable = element.querySelectorAll<HTMLElement>(
+      'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])'
+    );
+    
+    if (currentFocusable.length === 0) return;
+    
+    const first = currentFocusable[0];
+    const last = currentFocusable[currentFocusable.length - 1];
+
+    if (event.shiftKey) {
+      if (document.activeElement === first) {
+        last.focus();
+        event.preventDefault();
+      }
     } else {
-      MENU.classList.add("active");
-      HAM_TOGGLE.setAttribute("aria-expanded", "true");
-      BODY.style.overflow = "hidden";
-      trapFocus(MENU, true);
+      if (document.activeElement === last) {
+        first.focus();
+        event.preventDefault();
+      }
     }
+  };
+
+  // Guardar referencias para poder remover el handler después
+  currentTrapHandler = handleKeydown;
+  currentTrapElement = element;
+  
+  element.addEventListener("keydown", handleKeydown);
+}
+
+// Hamburger menu
+function initHamburgerMenu(): void {
+  const { hamburgerToggle, mainNavigation, closeMenu, body } = DOM;
+  
+  if (!hamburgerToggle || !mainNavigation) return;
+
+  // Manejar resize con debounce visual
+  const mediaQuery = window.matchMedia("(width <= 768px)");
+  mediaQuery.addEventListener("change", () => {
+    body.classList.add("is-resizing");
+    setTimeout(() => body.classList.remove("is-resizing"), 300);
   });
 
-  HAM_CLOSE.addEventListener("click", () => {
-    MENU.classList.remove("active");
-    HAM_TOGGLE.setAttribute("aria-expanded", "false");
-    BODY.style.overflow = "";
+  const toggleMenu = (open: boolean) => {
+    mainNavigation.classList.toggle("active", open);
+    hamburgerToggle.setAttribute("aria-expanded", String(open));
+    body.style.overflow = open ? "hidden" : "";
+    
+    if (open) {
+      trapFocus(mainNavigation, true);
+    }
+  };
+
+  hamburgerToggle.addEventListener("click", () => {
+    toggleMenu(!mainNavigation.classList.contains("active"));
   });
 
-  const mobileNavLinks = MENU.querySelectorAll(".nav-link");
-  mobileNavLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      MENU.classList.remove("active");
-      HAM_TOGGLE.setAttribute("aria-expanded", "false");
-      BODY.style.overflow = "";
-    });
+  closeMenu?.addEventListener("click", () => toggleMenu(false));
+
+  // Cerrar al hacer clic en un link
+  mainNavigation.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => toggleMenu(false));
   });
 
-  // Close menu on escape key
+  // Cerrar con Escape
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && MENU.classList.contains("active")) {
-      MENU.classList.remove("active");
-      HAM_TOGGLE.setAttribute("aria-expanded", "false");
-      BODY.style.overflow = "";
+    if (event.key === "Escape" && mainNavigation.classList.contains("active")) {
+      toggleMenu(false);
     }
   });
 }
 
 // Search functionality
-let searchData: any[] = [],
-  searchOverlay: HTMLElement,
-  searchInput: HTMLInputElement,
-  searchResults: HTMLElement,
-  focusableEls: NodeListOf<HTMLElement>,
-  firstFocusableEl: HTMLElement,
-  lastFocusableEl: HTMLElement;
-const htmlRoot = document.documentElement as HTMLElement;
-
-async function initSearch() {
+async function initSearch(): Promise<void> {
+  const { searchOverlay, searchInput, searchToggle, searchClose, fontSize } = DOM;
+  
+  // Cargar datos de búsqueda
   try {
-    const response = await fetch(base + "search.json");
+    const response = await fetch(`${base}search.json`);
     searchData = await response.json();
   } catch (error) {
     console.error("Failed to load search data:", error);
   }
 
-  searchOverlay = document.getElementById("search-overlay") as HTMLElement;
-  searchInput = document.getElementById("search-input") as HTMLInputElement;
-  searchResults = document.getElementById("search-results") as HTMLElement;
-
   // Event listeners
-  document
-    .getElementById("search-toggle")
-    ?.addEventListener("click", openSearch);
-  document
-    .getElementById("search-close")
-    ?.addEventListener("click", closeSearch);
-  searchInput?.addEventListener("input", handleSearch);
-  // Close on escape key
+  searchToggle?.addEventListener("click", openSearch);
+  searchClose?.addEventListener("click", closeSearch);
+  searchInput?.addEventListener("input", debounce(handleSearch, 150));
+  fontSize?.addEventListener("click", handleFontSize);
+
+  // Cerrar con Escape
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && searchOverlay?.classList.contains("active")) {
       closeSearch();
     }
   });
-  document.getElementById("font-size")?.addEventListener("click", handleFontSize);
 
-  // Close on overlay click
-  searchOverlay?.addEventListener("click", (event: Event) => {
+  // Cerrar al hacer clic fuera
+  searchOverlay?.addEventListener("click", (event) => {
     if (event.target === searchOverlay) {
       closeSearch();
     }
   });
 }
 
-function openSearch() {
+function openSearch(): void {
+  const { searchOverlay, searchInput, body } = DOM;
+  
   searchOverlay?.classList.add("active");
-  document.body.style.overflow = "hidden";
-  trapFocus(searchOverlay, false);
+  body.style.overflow = "hidden";
+  trapFocus(searchOverlay);
   setTimeout(() => searchInput?.focus(), 100);
 }
 
-function closeSearch() {
+function closeSearch(): void {
+  const { searchOverlay, searchInput, searchResults, body } = DOM;
+  
   searchOverlay?.classList.remove("active");
-  document.body.style.overflow = "";
+  body.style.overflow = "";
   if (searchInput) searchInput.value = "";
   if (searchResults) searchResults.innerHTML = "";
 }
 
-function handleSearch(event: Event) {
+function handleSearch(event: Event): void {
+  const { searchResults, searchOverlay } = DOM;
   const target = event.target as HTMLInputElement;
   const query = target.value.toLowerCase().trim();
 
   if (query.length < 2) {
     if (searchResults) searchResults.innerHTML = "";
-    trapFocus(searchOverlay, false);
+    trapFocus(searchOverlay);
     return;
   }
 
   const results = searchData
-    .filter(
-      (post: any) =>
-        post.title.toLowerCase().includes(query) ||
-        post.description.toLowerCase().includes(query) ||
-        (post.categories &&
-          post.categories.some((cat: string) =>
-            cat.toLowerCase().includes(query),
-          )),
+    .filter((post) => 
+      post.title.toLowerCase().includes(query) ||
+      post.description.toLowerCase().includes(query) ||
+      post.categories?.some((cat) => cat.toLowerCase().includes(query))
     )
     .slice(0, 10);
-  
+
   displayResults(results, query);
-  trapFocus(searchOverlay, false);
+  trapFocus(searchOverlay);
 }
 
-function displayResults(results: any[], query: string) {
+function displayResults(results: SearchPost[], query: string): void {
+  const { searchResults } = DOM;
+  if (!searchResults) return;
+
   if (results.length === 0) {
-    if (searchResults) {
-      searchResults.innerHTML = `
-        <div class="search-no-results">
-          <p>No se han encontrado artículos para la búsqueda "${query}"</p>
-        </div>
-      `;
-    }
+    searchResults.innerHTML = `
+      <div class="search-no-results">
+        <p>No se han encontrado artículos para la búsqueda "${escapeHtml(query)}"</p>
+      </div>
+    `;
     return;
   }
 
-  const resultsHTML = results
-    .map(
-      (post: any) => `
+  const resultsHTML = results.map((post) => `
     <article class="search-result">
       <h3 class="search-result-title">
-        <a href="${base}blog/${post.slug}">${post.title}</a>
+        <a href="${base}blog/${post.slug}">${escapeHtml(post.title)}</a>
       </h3>
-      <time class="search-result-date">${new Date(
-        post.date,
-      ).toLocaleDateString("es-ES", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      })}</time>
-      ${post.description ? `<p class="search-result-excerpt">${post.description}</p>` : ""}
-      ${post.categories
-          ? `
+      <time class="search-result-date">${formatDate(post.date)}</time>
+      ${post.description ? `<p class="search-result-excerpt">${escapeHtml(post.description)}</p>` : ""}
+      ${post.categories ? `
         <div class="search-result-categories">
-          ${post.categories.map((cat: string) => `<a href="${base}categorias/${cat}"><span class="visually-hidden">Ver publicaciones sobre </span>${cat}</a>`).join(" ")}
+          ${post.categories.map((cat) => 
+            `<a href="${base}categorias/${cat}"><span class="visually-hidden">Ver publicaciones sobre </span>${escapeHtml(cat)}</a>`
+          ).join(" ")}
         </div>
-      `
-          : ""
-        }
+      ` : ""}
     </article>
-  `,
-    )
-    .join("");
+  `).join("");
 
-  if (searchResults) {
-    searchResults.innerHTML = `
-      <div class="search-results-header">
-        <p>Encontrado ${results.length} artículo${results.length === 1 ? "" : "s"} para la búsqueda "${query}"</p>
-      </div>
-      ${resultsHTML}
-    `;
-  }
+  searchResults.innerHTML = `
+    <div class="search-results-header">
+      <p>Encontrado${results.length === 1 ? "" : "s"} ${results.length} artículo${results.length === 1 ? "" : "s"} para la búsqueda "${escapeHtml(query)}"</p>
+    </div>
+    ${resultsHTML}
+  `;
 }
 
-function initZoomed() {
+// Font size (zoom)
+function initZoomed(): void {
   if (getZoomedPreference()) {
-    htmlRoot.classList.add("zoomed");
+    DOM.html.classList.add("zoomed");
   }
-};
-
-function getZoomedPreference() {
-  return localStorage.getItem("zoomed") == "true" || false;
-};
-
-function handleFontSize() {
-  htmlRoot.classList.toggle("zoomed");
-  localStorage.setItem("zoomed", htmlRoot.classList.contains("zoomed") ? 'true' : 'false');
 }
 
-// Initialize when DOM is loaded
-function init() {
+function getZoomedPreference(): boolean {
+  try {
+    return localStorage.getItem("zoomed") === "true";
+  } catch {
+    return false;
+  }
+}
+
+function handleFontSize(): void {
+  const { html } = DOM;
+  html.classList.toggle("zoomed");
+  
+  try {
+    localStorage.setItem("zoomed", html.classList.contains("zoomed") ? "true" : "false");
+  } catch (error) {
+    console.warn("Could not save zoom preference:", error);
+  }
+}
+
+// Utilidades
+function debounce<T extends (...args: any[]) => void>(
+  func: T,
+  wait: number
+): (...args: Parameters<T>) => void {
+  let timeout: ReturnType<typeof setTimeout>;
+  
+  return function(...args: Parameters<T>) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), wait);
+  };
+}
+
+function escapeHtml(text: string): string {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function formatDate(dateString: string): string {
+  return new Date(dateString).toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+// Inicialización
+function init(): void {
   initHamburgerMenu();
-  initSearch();  
+  initSearch();
   initZoomed();
-};
+}
 
-document.addEventListener("astro:after-swap", () => {
-  init();
-});
-
-document.addEventListener(
-  "astro:page-load",
-  () => {
-    init();
-  },
-  { once: true },
-);
+// Eventos de Astro
+document.addEventListener("astro:after-swap", init);
+document.addEventListener("astro:page-load", init, { once: true });

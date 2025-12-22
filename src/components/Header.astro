@@ -214,6 +214,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
         id="search-input"
         placeholder="Buscar artículos..."
         autocomplete="off"
+        aria-label="Introduce términos a buscar"
       />
       <Button tag="button" variant="link" size="sm" id="search-close">
         <svg
@@ -240,6 +241,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     id="search-results"
     role="region"
     aria-live="polite"
+    aria-label="Buscar artículos"
   >
   </div>
 </search>
