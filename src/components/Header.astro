@@ -251,8 +251,8 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
 <style lang="scss">
   .site-header {
     border-bottom: var(--border-width-md) solid
-      var(--color-theme-border-default);
-    background-color: var(--color-theme-background-surface);
+      var(--color-border-default);
+    background-color: var(--color-surface-elevated);
     padding-block: var(--space-xxs);
     position: sticky;
     top: 0;
@@ -278,7 +278,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     font-weight: var(--typography-font-weight-bold);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-md);
-    color: var(--color-theme-text-primary);
+    color: var(--color-text-default);
     padding-block: var(--space-xxxs);
     transition:
       color var(--transition-duration-normal) ease,
@@ -290,7 +290,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     &.active,
     &:hover,
     &:focus {
-      color: var(--color-brand-interactive);
+      color: var(--color-interactive-default);
       text-decoration-color: revert;
     }
   }
@@ -332,8 +332,8 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    background: var(--color-theme-background-default);
-    border: var(--border-width-md) solid var(--color-theme-border-default);
+    background: var(--color-surface-page);
+    border: var(--border-width-md) solid var(--color-border-default);
     border-radius: var(--border-radius-lg);
     padding: var(--space-md);
   }
@@ -342,16 +342,16 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     flex: 1;
     font-family: var(--typography-font-family-body);
     font-size: var(--typography-font-size-heading-6);
-    color: var(--color-theme-text-primary);
-    background: var(--color-theme-background-default);
+    color: var(--color-text-default);
+    background: var(--color-surface-page);
     border-radius: var(--border-radius-md);
-    border: var(--border-width-md) solid var(--color-theme-border-default);
+    border: var(--border-width-md) solid var(--color-border-default);
     padding: var(--space-sm);
     max-width: calc(100% - var(--target-size) - var(--space-sm));
   }
 
   .search-input::placeholder {
-    color: var(--color-theme-text-muted);
+    color: var(--color-text-muted);
   }
 
   .search-results {
@@ -360,9 +360,9 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     max-height: 70vh;
     min-height: 40vh;
     overflow-y: auto;
-    background: var(--color-theme-background-default);
+    background: var(--color-surface-page);
     border-radius: var(--border-radius-lg);
-    border: var(--border-width-sm) solid var(--color-theme-border-default);
+    border: var(--border-width-sm) solid var(--color-border-default);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: var(--space-md);
     &:empty {
@@ -375,7 +375,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
   }
 
   :global([data-theme="dark"]) .search-input {
-    //color: var(--color-black);
+    //color: var(--color-neutral-1000);
   }
 
   .search-no-results {
@@ -384,7 +384,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
   }
 
   .search-no-results p {
-    color: var(--color-theme-text-muted);
+    color: var(--color-text-muted);
     font-style: italic;
     margin: 0;
     font-size: var(--typography-font-size-paragraph-1);
@@ -430,7 +430,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
       right: 0;
       bottom: 0;
       padding: var(--space-xxs);
-      background-color: var(--color-theme-background-default);
+      background-color: var(--color-surface-page);
       z-index: 99;
       transform: translateX(-100%);
       transition:
@@ -460,12 +460,12 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     font-size: var(--typography-font-size-heading-4);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-xxl);
-    color: var(--color-theme-text-primary);
+    color: var(--color-text-default);
     text-decoration-color: transparent;
     text-underline-offset: 6px;
     text-decoration-thickness: 2px;
     border-bottom: var(--border-width-sm) solid
-      var(--color-theme-border-default);
+      var(--color-border-default);
     min-height: var(--target-size);
     transition:
       color var(--transition-duration-normal) ease,
@@ -473,8 +473,8 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
     &.active,
     &:hover,
     &:focus {
-      color: var(--color-brand-interactive);
-      background-color: var(--color-theme-background-surface);
+      color: var(--color-interactive-default);
+      background-color: var(--color-surface-elevated);
     }
     &.active {
       pointer-events: none;
@@ -490,7 +490,7 @@ const pathSegment = pathname.slice(1).replace(/\/$/, "");
       &.active,
       &:hover,
       &:focus {
-        color: var(--color-brand-interactive);
+        color: var(--color-interactive-default);
         text-decoration-color: revert;
         background-color: transparent;
       }

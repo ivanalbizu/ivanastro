@@ -1,0 +1,168 @@
+# =============================================================================
+# TOKENS SEMÁNTICOS DE COLOR
+# =============================================================================
+# Tokens con significado contextual que referencian primitivos.
+# Estos tokens SÍ pueden usarse en componentes y estilos globales.
+# Definen roles de UI y cambian automáticamente con el tema (dark mode).
+# =============================================================================
+
+color:
+  $type: color
+
+  # ---------------------------------------------------------------------------
+  # BRAND
+  # Colores de marca para identidad visual
+  # ---------------------------------------------------------------------------
+  brand:
+    primary:
+      $value: "{color.red.600}"
+    primary-hover:
+      $value: "{color.red.700}"
+    accent:
+      $value: "{color.blue.500}"
+    accent-hover:
+      $value: "{color.blue.600}"
+
+  # ---------------------------------------------------------------------------
+  # SUPERFICIES
+  # Fondos de página, cards, modales, etc.
+  # ---------------------------------------------------------------------------
+  surface:
+    page:
+      $value: "{color.neutral.0}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.900}"
+    elevated:
+      $value: "{color.neutral.100}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.800}"
+    overlay:
+      $value: "{color.neutral.0}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.800}"
+    inverse:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.0}"
+
+  # ---------------------------------------------------------------------------
+  # TEXTO
+  # Jerarquía de colores para contenido textual
+  # ---------------------------------------------------------------------------
+  text:
+    default:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.100}"
+    secondary:
+      $value: "{color.neutral.700}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.300}"
+    muted:
+      $value: "{color.neutral.600}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.500}"
+    inverse:
+      $value: "{color.neutral.0}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.1000}"
+    brand:
+      $value: "{color.brand.primary}"
+    link:
+      $value: "{color.brand.accent}"
+    link-hover:
+      $value: "{color.text.default}"
+
+  # ---------------------------------------------------------------------------
+  # BORDES
+  # Diferentes intensidades para separadores y contenedores
+  # ---------------------------------------------------------------------------
+  border:
+    default:
+      $value: "{color.neutral.600}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.600}"
+    subtle:
+      $value: "{color.neutral.200}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.700}"
+    strong:
+      $value: "{color.neutral.700}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.400}"
+
+  # ---------------------------------------------------------------------------
+  # ESTADOS INTERACTIVOS
+  # Para elementos que responden a la interacción del usuario
+  # ---------------------------------------------------------------------------
+  interactive:
+    default:
+      $value: "{color.brand.accent}"
+    hover:
+      $value: "{color.brand.accent-hover}"
+    focus:
+      $value: "{color.brand.accent}"
+    disabled:
+      $value: "{color.neutral.300}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.600}"
+    active:
+      $value: "{color.blue.600}"
+
+  # ---------------------------------------------------------------------------
+  # FEEDBACK
+  # Estados de comunicación: éxito, advertencia, error, información
+  # ---------------------------------------------------------------------------
+  feedback:
+    success:
+      fg:
+        $value: "{color.green.500}"
+      bg:
+        $value: "{color.green.50}"
+        $extensions:
+          mode:
+            dark: "{color.green.800}"
+      border:
+        $value: "{color.green.500}"
+    warning:
+      fg:
+        $value: "{color.yellow.600}"
+      bg:
+        $value: "{color.yellow.50}"
+        $extensions:
+          mode:
+            dark: "{color.yellow.800}"
+      border:
+        $value: "{color.yellow.500}"
+    error:
+      fg:
+        $value: "{color.red-feedback.500}"
+      bg:
+        $value: "{color.red-feedback.50}"
+        $extensions:
+          mode:
+            dark: "{color.red-feedback.700}"
+      border:
+        $value: "{color.red-feedback.500}"
+    info:
+      fg:
+        $value: "{color.cyan.500}"
+      bg:
+        $value: "{color.cyan.50}"
+        $extensions:
+          mode:
+            dark: "{color.cyan.800}"
+      border:
+        $value: "{color.cyan.500}"

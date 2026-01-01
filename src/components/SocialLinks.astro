@@ -10,7 +10,7 @@ import { config } from "../config";
 				<a
 					href={item.href}
 					target="_blank"
-					rel="noopener"
+					rel="noopener noreferrer"
 					class="social-link"
 				>
 					<span class="visually-hidden">Abrir cuenta de {item.label} en nueva ventana</span>
@@ -82,13 +82,13 @@ import { config } from "../config";
 		justify-content: center;
 		width: var(--target-size);
 		height: var(--target-size);
-		background-color: var(--color-theme-text-primary);
-		color: var(--color-theme-background-default);
+		background-color: var(--color-text-default);
+		color: var(--color-surface-page);
 		border-radius: var(--border-radius-md);
 		transition: all var(--transition-duration-normal) ease;
 		&:hover,
 		&:focus {
-			background-color: var(--color-brand-interactive);
+			background-color: var(--color-interactive-default);
 			text-decoration-color: transparent;
 		}
 		svg {

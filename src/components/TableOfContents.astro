@@ -80,8 +80,8 @@ const { headings } = Astro.props;
 
 <style lang="scss">
   .toc {
-    background-color: var(--color-theme-background-surface);
-    border: var(--border-width-sm) solid var(--color-theme-border-default);
+    background-color: var(--color-surface-elevated);
+    border: var(--border-width-sm) solid var(--color-border-default);
     border-radius: var(--border-radius-lg);
     padding: var(--space-sm);
     margin-block-end: var(--space-lg);
@@ -118,7 +118,7 @@ const { headings } = Astro.props;
         left: 0;
         font-family: var(--typography-font-family-mono);
         font-size: var(--typography-font-size-paragraph-4);
-        color: var(--color-theme-text-muted);
+        color: var(--color-text-muted);
         font-weight: var(--typography-font-weight-bold);
       }
     }
@@ -127,23 +127,23 @@ const { headings } = Astro.props;
   .toc-link {
     display: block;
     padding-left: var(--space-md);
-    color: var(--color-theme-text-primary);
+    color: var(--color-text-default);
     text-decoration-color: transparent;
     line-height: var(--typography-line-height-lg);
     transition: all var(--transition-duration-normal) ease;
     &:hover,
     &:focus {
-      color: var(--color-brand-interactive);
+      color: var(--color-interactive-default);
     }
 
     &.active {
-      color: var(--color-brand-interactive);
+      color: var(--color-interactive-default);
       font-weight: var(--typography-font-weight-bold);
       &::after {
         content: "•";
         position: absolute;
         right: 0;
-        color: var(--color-brand-interactive);
+        color: var(--color-interactive-default);
       }
     }
   }
@@ -152,10 +152,10 @@ const { headings } = Astro.props;
     margin-inline-start: var(--space-sm);
     .toc-link {
       font-size: var(--typography-font-size-paragraph-3);
-      color: var(--color-theme-text-secondary);
+      color: var(--color-text-secondary);
       &:hover,
       &:focus {
-        color: var(--color-brand-interactive);
+        color: var(--color-interactive-default);
       }
     }
   }
