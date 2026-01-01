@@ -22,21 +22,20 @@ const sortedPosts = posts
 ---
 
 <Layout
-  title="Maquetador web"
-  description="Maquetador web. Puedes ver publicaciones sobre html, css, sass, javascript, webgl, astro, wordpress, java, android."
+  title="Iván Albizu | Desarrollador Web Frontend & Maquetador"
+  description="Portfolio y Blog técnico de Iván Albizu. Tutoriales y artículos sobre HTML, CSS, JavaScript, Astro, WebGL y desarrollo web moderno."
   showSidebar={false}
 >
   <Hero />
 
   <section class="container" id="latest-entries">
-    <h2 class="section-title">Últimas entradas</h2>
+    <h2 class="section-title">Últimas publicaciones</h2>
     <p class="section-subtitle">
-      Entradas principalmente sobre html, css, scss, webgl, vue, accesibilidad
-      web.
+      Explora mis artículos recientes sobre desarrollo frontend, webgl, accesibilidad y rendimiento web.
     </p>
     {
       sortedPosts.length > 0 && (
-        <div class="section-content">
+        <div class="section-content section-content--posts">
           {sortedPosts.map((post) => (
             <article class="post">
               <h3 class="post__title">
@@ -46,6 +45,7 @@ const sortedPosts = posts
                   {post.data.title}
                 </a>
               </h3>
+              <p class="post__description">{post.data.description}</p>
 
               <PostMeta frontmatter={post.data} showExcerpt={false} />
             </article>
@@ -55,7 +55,7 @@ const sortedPosts = posts
     }
     <div class="section-footer">
       <Button tag="a" variant="secondary" size="sm" href={`${base}blog`}
-        >Ir al Blog</Button
+        >Leer más artículos</Button
       >
     </div>
   </section>
@@ -119,6 +119,9 @@ const sortedPosts = posts
     display: grid;
     gap: var(--space-lg);
     margin-block-end: var(--space-xl);
+    &--posts {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
   }
 
   .post {

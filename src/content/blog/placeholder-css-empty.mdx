@@ -1,35 +1,46 @@
 ---
-title: Placeholder con selector :empty
+title: "Skeleton Loading con CSS: Dominando el selector :empty"
 slug: placeholder-css-empty
 published: true
-description: Uso del pseudo selector CSS :empty para etiquetas sin contenido
+description: "Aprende a crear Skeleton Screens (pantallas de carga) ligeras y reutilizables usando únicamente CSS y el selector :empty. Mejora la UX y el CLS de tu web."
 categories:
   - css
   - pildoritas
+  - ux
 date: '2022-01-19 09:10:00'
 image: ../../assets/images/placeholder-css-empty.jpg
 image_alt: Placeholder con selector :empty
 ---
 
-Maquetación de un elemento usando pseudo selector `:empty`, útil para usar como placeholder hasta que el contenido sea cargado, como por ejemplo vía API o usarlo como relleno mientras se maqueta.
+¿Alguna vez has notado cómo sitios como LinkedIn o YouTube muestran una estructura gris antes de cargar el contenido real? Esta técnica se conoce como **Skeleton Screen** y es fundamental para mejorar la percepción de velocidad y evitar saltos de diseño (CLS).
 
-Lo más interesante aquí es que los estilos a `:empty` sólo aplican cuando la etiqueta no tenga ningún contenido texto u otras etiquetas, con un sólo espacio el selector no aplica.
+En este artículo, vamos a crear un componente de carga reutilizable utilizando **CSS puro**, aprovechando la potencia del pseudo-selector `:empty` y las **Custom Properties**.
 
-He aprovechado las custom properties de CSS para hacer el pintado de gradientes convenientemente definidos y posicionados.
+## ¿Qué es el selector :empty?
 
-* El primero para formar un degradado a todo el bloque
-* El segundo para la primera forma rectangular
-* El tercero para el círculo
-* El cuarto para la última forma junto al círculo
+El selector `:empty` es una herramienta muy útil que permite aplicar estilos a un elemento **solo cuando no tiene hijos** (ni elementos HTML, ni texto, ni siquiera espacios en blanco).
 
-Mi idea es que sea reutilizable, actualizando sólo estos valores.
+Esto lo hace perfecto para estados de carga:
+1.  Si el contenedor está vacío -> Muestra el Skeleton.
+2.  En cuanto inyectas contenido (vía JS/API) -> El Skeleton desaparece automáticamente y se muestran los estilos normales.
 
-* `--color: rgb(199, 199, 199);`
-* `--width: 100%;`
-* `--width-line: 250px;`
-* `--height-rectangle: 150px;`
-* `--height-line: 24px;`
-* `--gutter: 10px;`
+## Dibujando con CSS Gradients
+
+Para evitar ensuciar el HTML con `divs` vacíos para simular las barras y círculos, usaremos `background-image` con múltiples gradientes.
+
+He diseñado este ejemplo para que sea altamente configurable mediante **Variables CSS**:
+
+*   `--color`: El color base del esqueleto.
+*   `--height-rectangle`: Altura del bloque principal (imagen destacada).
+*   `--height-line`: Altura de las líneas de texto/avatar.
+
+La magia ocurre combinando 4 capas de fondo:
+1.  **Brillo:** Un gradiente lineal con transparencia para simular profundidad o brillo.
+2.  **Rectángulo principal:** Simula una imagen o banner.
+3.  **Círculo:** Un `radial-gradient` para simular un avatar.
+4.  **Línea de texto:** Un bloque rectangular junto al círculo.
+
+Aquí tienes el código completo:
 
 ```scss
 .card__content:empty {

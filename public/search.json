@@ -1,15 +1,15 @@
 [
   {
-    "title": "Anchor Positioning y animation-timeline",
+    "title": "Dominando CSS: Anchor Positioning y Animation Timeline",
     "slug": "anchor-positioning-y-animation-timeline",
-    "description": "Como posicionar elementos anclados a puntos de referencia que están en sitios diferentes del DOM",
+    "description": "Aprende a posicionar elementos sin JavaScript usando Anchor Positioning y crea animaciones al hacer scroll con Animation Timeline. Guía con ejemplos prácticos.",
     "published": true,
     "categories": [
       "css"
     ],
     "date": "2023-12-30 22:00:00",
     "image": "../../assets/images/anchor-positioning-y-animation-timeline.png",
-    "image_alt": "anchor positioning y animation-timeline"
+    "image_alt": "Ejemplo de Anchor Positioning y Animation Timeline en CSS"
   },
   {
     "title": "Angular consumiendo de AEMET",
@@ -269,6 +269,19 @@
     "date": "2014-02-13 15:10:00"
   },
   {
+    "title": "Actualizaciones en Main: Migración y Nuevas Funcionalidades (PR #1 y #2)",
+    "slug": "cambios-en-rama-main",
+    "description": "Resumen de los cambios integrados en la rama main a través de los Pull Requests #1 y #2: Migración a Astro y rediseño del Header con mejoras de accesibilidad.",
+    "published": false,
+    "categories": [
+      "astro",
+      "javascript",
+      "css",
+      "accesibilidad"
+    ],
+    "date": "2025-10-01 12:00:00"
+  },
+  {
     "title": "Clip-path banner con dat.GUI para debug",
     "slug": "clip-path-banner-dat-gui",
     "description": "Mosaico de imágenes realizada con display grid y clip-path y dat.GUI para poder hacer debug entre diferentes valores CSS",
@@ -397,9 +410,9 @@
     "image_alt": "CSS Houdini paintWorklet animacion cursor estilo pulse"
   },
   {
-    "title": "Cursor Blend Mode",
+    "title": "Cursor Blend Mode: Efectos creativos",
     "slug": "cursor-blend-mode",
-    "description": "Animación de cursor en evento mousemove aplicando blend-mode a imágenes y elementos html",
+    "description": "Tutorial sobre cómo crear un cursor personalizado con efectos de mezcla (blend-mode). Incluye análisis de rendimiento sobre la creación de estelas en el DOM.",
     "published": true,
     "categories": [
       "javascript",
@@ -407,12 +420,12 @@
     ],
     "date": "2022-08-31 22:10:00",
     "image": "../../assets/images/cursor-blend-mode.jpg",
-    "image_alt": "Cursor Blend Mode"
+    "image_alt": "Cursor personalizado con efecto mix-blend-mode"
   },
   {
-    "title": "Custom select nativo experimental",
+    "title": "Custom Select Nativo: El Fin de los Hacks con <selectmenu>",
     "slug": "custom-select-nativo",
-    "description": "Posibilidad de customizar la apariencia de la etiqueta select de manera nativa",
+    "description": "Exploramos la API experimental <selectmenu> para crear selectores personalizados usando solo HTML y CSS. Una mirada al futuro de los formularios web sin JavaScript.",
     "published": true,
     "categories": [
       "css",
@@ -594,6 +607,22 @@
     "image_alt": "Mejora responsive mediante función clamp() de CSS"
   },
   {
+    "title": "Implementando Design Tokens con Cobalt en Astro",
+    "slug": "implementando-design-tokens-con-cobalt-en-astro",
+    "description": "Cómo migrar de valores hardcodeados a un sistema de diseño escalable utilizando Design Tokens generados con Cobalt y crear una página interactiva para editarlos",
+    "published": true,
+    "categories": [
+      "astro",
+      "design-tokens",
+      "cobalt",
+      "css",
+      "design-system"
+    ],
+    "date": "2025-10-01 13:00:00",
+    "image": "../../assets/images/implementando-design-tokens-con-cobalt-en-astro.svg",
+    "image_alt": "Implementación de Design Tokens con Cobalt en Astro"
+  },
+  {
     "title": "Instalación de GIT en Windows",
     "slug": "instalacion-de-git-en-windows",
     "description": "Paso a paso para la instalación de control de versiones GIT en equipo Windows",
@@ -615,16 +644,18 @@
     "date": "2014-10-28 15:10:00"
   },
   {
-    "title": "Uso de Intersection Observer en Angular",
+    "title": "Intersection Observer en Angular: Directivas y ScrollIntoView",
     "slug": "intersection-observer-en-angular",
     "published": true,
-    "description": "Ejemplo de uso de Intersection Observer en Angular mediante una Directiva para mostrar elementos en pantalla con la API ScrollIntoView",
+    "description": "Aprende a implementar Intersection Observer en Angular mediante Directivas. Optimiza el rendimiento detectando elementos visibles y usando ScrollIntoView.",
     "categories": [
-      "javascript"
+      "javascript",
+      "angular",
+      "performance"
     ],
     "date": "2022-04-15 17:30:00",
     "image": "../../assets/images/intersection-observer-en-angular.png",
-    "image_alt": "Uso de Intersection Observer en Angular"
+    "image_alt": "Directiva Angular con Intersection Observer"
   },
   {
     "title": "Landing usando Display Grid y Position Sticky",
@@ -721,16 +752,16 @@
     "image_alt": "Nested CSS Container"
   },
   {
-    "title": "Nueva web con Astro",
+    "title": "Nueva web con Astro: Migración desde Nuxt y 100 en Lighthouse",
     "slug": "nueva-web-con-astro",
-    "description": "Migración de web desde Nuxt hacía Astro manteniendo la valoración 100 de Lighthouse y añadiendo funcionalidades de paginación, filtrado por categorías y cambio de tamaño de tipografía",
-    "published": true,
+    "description": "Descubre cómo logré no perder puntuación de 100 en Lighthouse migrando de Nuxt a Astro. Mejoras en SEO, rendimiento y nuevas funcionalidades como paginación y filtros.",
+    "date": "2025-09-30 14:30:00",
     "categories": [
       "astro"
     ],
-    "date": "2025-09-30 14:30:00",
     "image": "../../assets/images/nueva-web-con-astro.png",
-    "image_alt": "Nueva web con Astro"
+    "image_alt": "Nueva web con Astro y puntuación perfecta en Lighthouse",
+    "published": true
   },
   {
     "title": "Obtener diferentes url de imagen destacada de Wordpress",
@@ -782,13 +813,14 @@
     "date": "2014-11-19 15:10:00"
   },
   {
-    "title": "Placeholder con selector :empty",
+    "title": "Skeleton Loading con CSS: Dominando el selector :empty",
     "slug": "placeholder-css-empty",
     "published": true,
-    "description": "Uso del pseudo selector CSS :empty para etiquetas sin contenido",
+    "description": "Aprende a crear Skeleton Screens (pantallas de carga) ligeras y reutilizables usando únicamente CSS y el selector :empty. Mejora la UX y el CLS de tu web.",
     "categories": [
       "css",
-      "pildoritas"
+      "pildoritas",
+      "ux"
     ],
     "date": "2022-01-19 09:10:00",
     "image": "../../assets/images/placeholder-css-empty.jpg",
@@ -839,16 +871,17 @@
     "date": "2014-03-02 15:10:00"
   },
   {
-    "title": "Mejorar accesibilidad web usando unidades CSS apropiadas",
+    "title": "Accesibilidad Web: Unidades Relativas vs Absolutas en CSS",
     "slug": "relative-vs-absolute-css-unit",
-    "description": "Permitir que el usuario de la web puede reescalar el tamaño de la tipografía sin afectar al resto de elementos usando unidades CSS apropiadas",
+    "description": "Descubre por qué usar unidades relativas como REM mejora la accesibilidad web permitiendo a los usuarios escalar la tipografía sin romper el diseño.",
     "published": true,
     "categories": [
-      "css"
+      "css",
+      "accesibilidad"
     ],
     "date": "2022-10-15 22:45:00",
     "image": "../../assets/images/relative-vs-absolute-css-unit.png",
-    "image_alt": "relative vs absolute css unit"
+    "image_alt": "Comparación de unidades CSS relativas y absolutas para accesibilidad"
   },
   {
     "title": "Rest Android con Retrofit, Slim php y RedBean",
@@ -863,17 +896,17 @@
     "date": "2015-04-19 15:10:00"
   },
   {
-    "title": "Scroll timeline linked animations",
+    "title": "CSS Scroll-Linked Animations: @scroll-timeline (Legacy)",
     "slug": "scroll-timeline-linked-animations",
     "published": true,
-    "description": "Ejemplos de uso de nueva media de CSS @scroll-timeline para aplicar animaciones CSS en función del Scroll de la página",
+    "description": "Exploración de la propuesta experimental @scroll-timeline para vincular animaciones CSS al scroll. Nota: La especificación ha evolucionado a animation-timeline.",
     "categories": [
       "css",
       "pildoritas"
     ],
     "date": "2022-01-31 17:50:00",
     "image": "../../assets/images/scroll-timeline-linked-animations.jpg",
-    "image_alt": "Scroll timeline linked animations"
+    "image_alt": "Gráfico de animación vinculada al scroll"
   },
   {
     "title": "Slides usando Blend Mode y Document Fragment",
@@ -901,9 +934,9 @@
     "date": "2014-10-31 15:10:00"
   },
   {
-    "title": "Storybook con componente web nativo",
+    "title": "Storybook con Web Components Nativos: Guía de Integración",
     "slug": "storybook-componente-web-nativo",
-    "description": "Añadir Componentes Web nativo a framework storybook para creación de stories útil para testing, pruebas de diseño",
+    "description": "Tutorial paso a paso para integrar Web Components nativos (Vanilla JS) en Storybook. Aprende a crear stories, configurar controles y documentar tus componentes.",
     "published": true,
     "categories": [
       "javascript",
@@ -912,7 +945,7 @@
     ],
     "date": "2022-08-13 17:30:00",
     "image": "../../assets/images/storybook-con-componente-web-nativo.png",
-    "image_alt": "Storybook con componente web nativo"
+    "image_alt": "Interfaz de Storybook mostrando Web Components nativos"
   },
   {
     "title": "Superposción de imágenes para comparar con Javascript",
@@ -929,26 +962,29 @@
     "image_alt": "Superposción de imágenes para comprar con Javascript"
   },
   {
-    "title": "Componente icono para angular mediante SVG Sprites Symbols",
+    "title": "Iconos SVG en Angular: Componente Reutilizable con Sprites",
     "slug": "svg-sprite-symbol-angular",
     "published": true,
-    "description": "Creación de componente Angular para pintado de SVG que permita ajustes de ancho / alto / color mediante un fichero SVG linkado mediante símbolo",
+    "description": "Aprende a crear un componente de iconos en Angular optimizado usando SVG Sprites y Symbols. Mejora el rendimiento y la personalización de tus iconos.",
     "categories": [
-      "javascript"
+      "javascript",
+      "angular",
+      "svg"
     ],
     "date": "2022-04-17 19:30:00",
     "image": "../../assets/images/svg-sprite-symbol-angular.png",
-    "image_alt": "Componente icono para angular mediante SVG Sprites Symbols"
+    "image_alt": "Componente de icono Angular usando SVG Sprites"
   },
   {
-    "title": "Tab Web component con Slots",
+    "title": "Tabs con Web Components Nativos: Dominando Slots y Shadow DOM",
     "slug": "tab-slots-web-component",
-    "description": "Crear un Componente Web para sistemas de Tabs con algunas propiedades customizables",
+    "description": "Aprende a construir un sistema de pestañas (Tabs) reutilizable con Web Components nativos. Tutorial avanzado sobre Slots, Custom Events y Shadow DOM.",
     "published": true,
     "categories": [
       "javascript",
       "html",
-      "css"
+      "css",
+      "web-components"
     ],
     "date": "2022-01-11 19:30:00",
     "image": "../../assets/images/tab-web-component-con-slots.png",
@@ -1012,28 +1048,31 @@
     "date": "2015-01-14 15:10:00"
   },
   {
-    "title": "Componente Web con Partículas en lienzo Canvas",
+    "title": "Web Component de Partículas con Canvas: Animaciones Nativas",
     "slug": "webcomponent-canvas-particles",
-    "description": "Uso del contexto 2d de Canvas para crear animación de partículas dentro de un WebComponent con atributos editables desde HTML",
+    "description": "Aprende a crear un Web Component nativo que renderiza partículas interactivas usando HTML5 Canvas. Tutorial paso a paso para encapsular animaciones de alto rendimiento con JavaScript.",
     "published": true,
     "categories": [
       "javascript",
       "html",
-      "css"
+      "css",
+      "web-components",
+      "canvas"
     ],
     "date": "2022-01-19 17:40:00",
     "image": "../../assets/images/webcomponent-canvas-particles.png",
     "image_alt": "Componente Web con Partículas en lienzo Canvas"
   },
   {
-    "title": "Webcomponent para tooltip notification",
+    "title": "Web Components Nativos: Crea un Tooltip de Notificación Interactivo",
     "slug": "webcomponent-tooltip-notification",
-    "description": "Crear un Webcomponent para mostrar notificaciones personalizadas por atributos",
+    "description": "Guía paso a paso para construir un Web Component de notificación (Tooltip) usando JavaScript nativo. Aprende sobre Shadow DOM, atributos reactivos y eventos.",
     "published": true,
     "categories": [
       "javascript",
       "html",
-      "css"
+      "css",
+      "web-components"
     ],
     "date": "2022-01-02 13:30:00",
     "image": "../../assets/images/webcomponent-para-tooltip-notification.png",
@@ -1080,17 +1119,17 @@
     "image_alt": "Animación de slideshow usando WebGL con librería curtainsJS"
   },
   {
-    "title": "Integración de SwiperJS con librería curtainsJS",
+    "title": "WebGL y SwiperJS: Animaciones Avanzadas con CurtainsJS",
     "slug": "webgl-swiperjs-curtainsjs",
     "published": true,
-    "description": "Animaciones de imágenes con librería SwiperJS y librería curtainsJS para realizar animaciones avanzadas con WebGL",
+    "description": "Tutorial para integrar SwiperJS con CurtainsJS. Crea sliders con efectos WebGL de alto rendimiento, distorsiones y transiciones fluidas.",
     "categories": [
       "javascript",
       "webgl"
     ],
     "date": "2022-12-05 21:30:00",
     "image": "../../assets/images/webgl-swiperjs-curtainsjs.jpg",
-    "image_alt": "Integración de SwiperJS con librería curtainsJS"
+    "image_alt": "Slider con efectos WebGL usando SwiperJS y CurtainsJS"
   },
   {
     "title": "Wp Rest Api - habilitar filtro de Custom Fields",

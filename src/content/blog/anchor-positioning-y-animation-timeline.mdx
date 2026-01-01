@@ -1,14 +1,30 @@
 ---
-title: "Anchor Positioning y animation-timeline"
+title: "Dominando CSS: Anchor Positioning y Animation Timeline"
 slug: "anchor-positioning-y-animation-timeline"
-description: "Como posicionar elementos anclados a puntos de referencia que están en sitios diferentes del DOM"
+description: "Aprende a posicionar elementos sin JavaScript usando Anchor Positioning y crea animaciones al hacer scroll con Animation Timeline. Guía con ejemplos prácticos."
 published: true
 categories:
   - css
 date: '2023-12-30 22:00:00'
 image: ../../assets/images/anchor-positioning-y-animation-timeline.png
-image_alt: anchor positioning y animation-timeline
+image_alt: "Ejemplo de Anchor Positioning y Animation Timeline en CSS"
 ---
+
+El ecosistema de CSS está evolucionando rápidamente, introduciendo herramientas nativas que antes requerían complejas soluciones de JavaScript. En este artículo exploramos dos de las características más potentes: **Anchor Positioning** y **Scroll-driven Animations**.
+
+## Resumen de Capacidades: ¿Por qué usar estas nuevas APIs?
+
+### CSS Anchor Positioning
+Esta especificación resuelve un problema histórico: posicionar un elemento relativo a otro sin depender de la estructura del DOM.
+*   **Independencia del DOM:** Permite conectar elementos visualmente aunque estén en contenedores HTML completamente separados.
+*   **Rendimiento:** Elimina la necesidad de cálculos de posición en JavaScript (adiós a listeners de `resize` o `scroll` costosos).
+*   **Semántica:** Mantiene el HTML limpio, permitiendo que los popups o tooltips vivan en la capa superior (`top-layer`) sin hacks de `z-index`.
+
+### Scroll-driven Animations (`animation-timeline`)
+Permite vincular el progreso de una animación CSS directamente al desplazamiento de una barra de scroll.
+*   **Optimización:** Al ejecutarse en el hilo del compositor, estas animaciones no bloquean el hilo principal, garantizando 60fps incluso con JavaScript pesado ejecutándose.
+*   **Simplicidad:** Reemplaza la necesidad de `IntersectionObserver` para efectos de "aparición al hacer scroll".
+*   **Control:** Ofrece funciones como `view()` para animar según la visibilidad del elemento en el viewport.
 
 ## CSS Anchor Positioning
 
@@ -65,7 +81,7 @@ chrome://flags/#enable-experimental-web-platform-features
 
 Un recurso bastante bueno en el que se ve toda la potencia de esta nueva <a href="https://blog.logrocket.com/use-css-anchor-positioning/" target="_blank" rel="noopener">Feature CSS Anchor Positioning</a> es el siguiente.
 
-## Animation Timeline
+## Animation Timeline: Animaciones al hacer Scroll
 
 Quería darle una vuelta a lo anterior y hacer una cosa que hice con Javascript en otro proyecto.
 

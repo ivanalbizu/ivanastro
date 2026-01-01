@@ -1,33 +1,53 @@
 ---
-title: Mejorar accesibilidad web usando unidades CSS apropiadas
+title: "Accesibilidad Web: Unidades Relativas vs Absolutas en CSS"
 slug: relative-vs-absolute-css-unit
-description: Permitir que el usuario de la web puede reescalar el tamaño de la tipografía sin afectar al resto de elementos usando unidades CSS apropiadas
+description: "Descubre por qué usar unidades relativas como REM mejora la accesibilidad web permitiendo a los usuarios escalar la tipografía sin romper el diseño."
 published: true
 categories:
   - css
+  - accesibilidad
 date: '2022-10-15 22:45:00'
 image: ../../assets/images/relative-vs-absolute-css-unit.png
-image_alt: relative vs absolute css unit
+image_alt: "Comparación de unidades CSS relativas y absolutas para accesibilidad"
 ---
 
 import Codepen from '../../components/Codepen.astro'
 
-Llevo tiempo usando la unidad de medida REM. Con el paso del tiempo me voy dando cuenta que no lo estaba usando siempre correctamente. Normalmente venía usándolo para tipofragías, margin y paddings
+La accesibilidad web no es una "feature" opcional, es un derecho de los usuarios. Uno de los aspectos más críticos y a menudo olvidados es la capacidad del usuario para ajustar el tamaño del texto según sus necesidades visuales.
 
-El usuario de la web puede tener configurado en su dispositivo un aumento (o disminución) del tamaño de la tipografía
+## El problema de las unidades absolutas (PX)
 
-No estableciendo la unidad de medida para tipografías en valores fijos (px, pt, cm...) le permiteremos al usuario que pueda personalizar el tamaño de la fuente. Yo particularmente prefiero usar REM frente a EM ya que con REM el valor relativo de partida siempre será la raiz (&lt;html&gt;), con EM será el elemento padre (en cascada) que tenga definida el tamaño de tipografía pudiéndose obtener valores relativos no esperados
+Durante mucho tiempo, el estándar fue diseñar en píxeles (`px`). Sin embargo, definir `font-size: 16px` en tu CSS es una barrera de accesibilidad. Si un usuario con visión reducida configura su navegador para tener un tamaño de fuente base de `24px`, tu regla de `16px` sobrescribirá su preferencia, obligándole a esforzarse para leer o usar el zoom de la página.
 
-Pero volviendo al inicio de esta entrada, ¿porque estaba usando mal los REMs?. Porque lo usaba para paddings y margins. Si el usuario tiene aplicado aumento de tipofrafía también afecta a estos atributos. Esto quiere decir que aumenta los espaciados, y en el caso de los paddings resta espacio para los contenidos: textos, imágenes, iconos...
+## La solución: Unidades Relativas (REM y EM)
 
-Mejor con un ejemplo:
+Para respetar la configuración del usuario, debemos usar unidades relativas:
+
+*   **REM (Root EM):** Relativo al tamaño de fuente del elemento raíz (`<html>`). Si el navegador está en 16px, `1rem = 16px`. Si el usuario lo sube a 24px, `1rem = 24px`.
+*   **EM:** Relativo al tamaño de fuente de su elemento padre.
+
+Personalmente prefiero **REM** frente a EM para tipografía, ya que evita el efecto cascada donde los tamaños se multiplican inesperadamente si anidas elementos.
+
+## El dilema del espaciado: ¿REM o PX para márgenes?
+
+Llevo tiempo usando la unidad de medida REM para todo: tipografías, márgenes y paddings. Con el paso del tiempo me he dado cuenta de que quizás no sea siempre la mejor estrategia para los espaciados.
+
+Si definimos `padding: 2rem` en un contenedor, y el usuario duplica su tamaño de fuente por necesidad visual, ese padding también se duplica. Esto puede provocar que el espacio útil para el contenido se reduzca drásticamente, especialmente en móviles, rompiendo la maquetación o forzando demasiado scroll.
+
+### Ejemplo práctico
+
+En el siguiente ejemplo puedes ver tres enfoques:
+1.  **Todo en REM:** El espaciado crece con la fuente.
+2.  **Espaciado en PX:** El texto crece, pero el contenedor mantiene su espacio (más contenido visible).
+3.  **Híbrido (min/clamp):** Una combinación para controlar el crecimiento excesivo.
 
 <Codepen id="LYmaZyb" defaultTab="result" name={frontmatter.title} height="700" />
 
-Si usas Chrome, una manera rápida de cambiar el tamaño de la tipo es: chrome://settings/appearance
+Si usas Chrome, puedes probarlo cambiando el tamaño de fuente en `chrome://settings/appearance`.
 
-Puedes ver tres casos. En todos usamos la tipografía con REM para que pueda escalarse por el usuario. En el primer caso los padding, margins y border-width están con REM. En el segundo caso están fijados con PX. Y en el tercer caso una combinación de las anteriores min(XXpx, XXrem) para que si el usuario hace disminuir la tipografía no queda una tipografía muy pequeña con espaciados grandes. Esto ya lo dejo que investigues con otras combinaciones, como clamp()
+## Conclusión: Un equilibrio necesario
 
-Haciendo memoria, tampoco lo hice mal. En los últimos proyectos usaba clamp() con combinación de PX y VW :)
-
-Otro caso que puede requerir una pensada es la unidad de medida a usar en las @media, pero esto te lo dejo para tí, que has leído todo y llegado al final :)
+No hay una bala de plata, pero mi recomendación actual para maximizar la accesibilidad sin destruir el diseño es:
+1.  **Tipografía:** Siempre en **REM**. Es innegociable para la accesibilidad.
+2.  **Media Queries:** Usar **EM** suele ser más robusto para que el layout cambie si el usuario aumenta el texto, no solo si cambia el ancho de ventana.
+3.  **Espaciados (Padding/Margin):** Evalúa si quieres que crezcan. A veces `px` es aceptable para mantener la estructura, o funciones modernas como `clamp()` para tener lo mejor de los dos mundos.
