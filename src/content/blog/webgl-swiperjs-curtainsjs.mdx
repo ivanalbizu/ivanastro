@@ -1,17 +1,35 @@
 ---
-title: Integración de SwiperJS con librería curtainsJS
+title: "WebGL y SwiperJS: Animaciones Avanzadas con CurtainsJS"
 slug: webgl-swiperjs-curtainsjs
 published: true
-description: Animaciones de imágenes con librería SwiperJS y librería curtainsJS para realizar animaciones avanzadas con WebGL
+description: "Tutorial para integrar SwiperJS con CurtainsJS. Crea sliders con efectos WebGL de alto rendimiento, distorsiones y transiciones fluidas."
 categories:
   - javascript
   - webgl
 date: "2022-12-05 21:30:00"
 image: ../../assets/images/webgl-swiperjs-curtainsjs.jpg
-image_alt: Integración de SwiperJS con librería curtainsJS
+image_alt: "Slider con efectos WebGL usando SwiperJS y CurtainsJS"
 ---
 
 Hace unos dos años estuve haciendo cosas con WebGL usando la librería <a href="https://www.curtainsjs.com/" target="_blank" rel="noopener">CurtainsJS</a> y hoy vuelvo a retomarlo basándome en una de las entradas: <a href="/blog/webgl-slideshow/">WebGL Slideshow</a>. Voy a omitir mucho código ya que muchas cosas son una réplica, haré hincapié en cosas que sean diferentes, todas relacionadas con la integración de la librería <a href="https://swiperjs.com/" target="_blank" rel="noopener">swiperjs</a> y curtainsjs
+
+## Potencia Visual: CurtainsJS y SwiperJS
+
+Antes de entrar en el código, repasemos por qué esta combinación es tan potente para crear experiencias web inmersivas.
+
+### CurtainsJS: WebGL simplificado
+Esta librería ligera permite convertir elementos HTML (imágenes, vídeos, canvas) en planos WebGL interactivos.
+*   **Sincronización DOM-WebGL:** Mapea automáticamente la posición y tamaño de los elementos HTML al canvas WebGL.
+*   **Shaders Personalizados:** Permite escribir Vertex y Fragment shaders para crear distorsiones, transiciones líquidas y efectos de post-procesado.
+*   **Rendimiento:** Aprovecha la aceleración por GPU para animaciones fluidas que serían imposibles solo con CSS.
+
+### SwiperJS: El estándar en Sliders
+Es probablemente la librería de carruseles táctiles más moderna y robusta.
+*   **Agnóstica:** Funciona con Vanilla JS, React, Vue, Angular, etc.
+*   **Modular:** Carga solo lo que necesitas (Navegación, Paginación, A11y).
+*   **Experiencia Nativa:** Ofrece una sensación táctil 1:1 similar a las aplicaciones nativas móviles.
+
+Combinarlas nos permite tener la lógica de navegación robusta de Swiper con los efectos visuales de alto impacto de CurtainsJS.
 
 ## HTML para canvas WebGL
 

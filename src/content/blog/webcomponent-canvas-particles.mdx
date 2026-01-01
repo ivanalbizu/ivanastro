@@ -1,26 +1,32 @@
 ---
-title: Componente Web con Partículas en lienzo Canvas
+title: "Web Component de Partículas con Canvas: Animaciones Nativas"
 slug: webcomponent-canvas-particles
-description: Uso del contexto 2d de Canvas para crear animación de partículas dentro de un WebComponent con atributos editables desde HTML
+description: "Aprende a crear un Web Component nativo que renderiza partículas interactivas usando HTML5 Canvas. Tutorial paso a paso para encapsular animaciones de alto rendimiento con JavaScript."
 published: true
 categories:
   - javascript
   - html
   - css
+  - web-components
+  - canvas
 date: '2022-01-19 17:40:00'
 image: ../../assets/images/webcomponent-canvas-particles.png
 image_alt: Componente Web con Partículas en lienzo Canvas
 ---
 
-Antes de empezar a escribir, recomendar un canal de youtube de Frank https://www.youtube.com/channel/UCEqc149iR-ALYkGM6TG-7vQ, que contiene muchos e interesantes vídeos sobre Canvas sin librerías, con javascript nativo. Están muy bien explicados desde 0 y aumentando complejidad
+Las animaciones con partículas son un recurso visual potente para dar vida a una interfaz. En este artículo, combinaremos la potencia del **HTML5 Canvas API** con la encapsulación de los **Web Components** para crear un elemento reutilizable `<canvas-draw>` que puedes integrar en cualquier proyecto web sin depender de frameworks externos.
+
+Antes de entrar en código, quiero recomendar el canal de YouTube de Frank's Laboratory. Contiene excelentes tutoriales sobre Canvas con JavaScript nativo, explicados desde cero y aumentando en complejidad. Es una fuente de inspiración genial para este tipo de efectos.
 
 import Codepen from '../../components/Codepen.astro'
 
 <Codepen id="LYzvxqz" defaultTab="result" name={frontmatter.title} />
 
-## Arrancar proyecto con ParcelJS
+## 1. Configuración del Entorno (Opcional)
 
-Sobre la raiz del proyecto, con ParcelJS instalado (Yo tengo instalada la versión 1.12.5)
+Para desarrollar este componente de forma aislada, utilizaremos **ParcelJS** como empaquetador rápido, aunque el código final del componente es JavaScript puro (Vanilla) y funciona en cualquier entorno.
+
+Si quieres seguir el ejemplo localmente:
 
 ```sh
 parcel index.html

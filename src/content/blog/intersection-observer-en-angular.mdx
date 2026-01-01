@@ -1,25 +1,44 @@
 ---
-title: Uso de Intersection Observer en Angular
+title: "Intersection Observer en Angular: Directivas y ScrollIntoView"
 slug: intersection-observer-en-angular
 published: true
-description: Ejemplo de uso de Intersection Observer en Angular mediante una Directiva para mostrar elementos en pantalla con la API ScrollIntoView
+description: "Aprende a implementar Intersection Observer en Angular mediante Directivas. Optimiza el rendimiento detectando elementos visibles y usando ScrollIntoView."
 categories:
   - javascript
+  - angular
+  - performance
 date: "2022-04-15 17:30:00"
 image: ../../assets/images/intersection-observer-en-angular.png
-image_alt: Uso de Intersection Observer en Angular
+image_alt: "Directiva Angular con Intersection Observer"
 ---
 
-Estoy haciendo cursos de Angular, aún no he llegado a temas de Directivas, pero tenía una idea que quería probar 😃. Se trata de una Directiva que usa la Api ScrollIntoView. He añadido unos botones a modo de paginación para que detecte cajas fuera de un contenedor y las introduzca en pantalla
+La API **Intersection Observer** ha cambiado la forma en que detectamos la visibilidad de los elementos en la web. Antes, dependíamos de costosos listeners en el evento `scroll` que disparaban cálculos de layout constantemente, afectando el rendimiento.
+
+## ¿Por qué usar Intersection Observer?
+
+Esta API nativa del navegador ofrece beneficios claros:
+1.  **Rendimiento:** La detección ocurre fuera del hilo principal de JavaScript, liberando recursos.
+2.  **Asincronía:** No bloquea la renderización mientras calcula intersecciones.
+3.  **Simplicidad:** Elimina la necesidad de matemáticas complejas para calcular posiciones relativas al viewport.
+
+## Implementación en Angular: Directivas
+
+En este experimento, he creado una **Directiva de Angular** que utiliza esta API para detectar elementos dentro de un contenedor y aplicar `scrollIntoView` para navegar entre ellos. Es una forma declarativa y reutilizable de encapsular este comportamiento.
 
 <iframe src="https://codesandbox.io/embed/inspiring-maxwell-hoybwv?fontsize=14&hidenavigation=1&theme=dark&view=editor"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="inspiring-maxwell-hoybwv"
+     title="Angular Directive ScrollIntoView Example"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-No recomiendo usarlo tal cual ya que para tamaños de pantalla reducidos podría darse el caso que no cupiera en pantalla y en ese caso no funciona el scrollIntoView. Al menos necesita un elemento al completo dentro de la caja
+### Notas sobre la implementación
+
+Aunque el ejemplo es funcional, hay consideraciones importantes:
+*   **ScrollIntoView:** Esta API es muy útil, pero en pantallas pequeñas puede comportarse de forma inesperada si el elemento es más grande que el viewport.
+*   **Responsividad:** Asegúrate de que el contenedor y los elementos tengan dimensiones controladas para evitar saltos bruscos.
+
+Enlaces al código:
 
 <a href="https://github.com/ivanalbizu/angular-directive-scrollintoview" target="_blank" rel="noopener">Código en GitHub</a>
 

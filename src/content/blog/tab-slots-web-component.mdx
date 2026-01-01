@@ -1,28 +1,29 @@
 ---
-title: Tab Web component con Slots
+title: "Tabs con Web Components Nativos: Dominando Slots y Shadow DOM"
 slug: tab-slots-web-component
-description: Crear un Componente Web para sistemas de Tabs con algunas propiedades customizables
+description: "Aprende a construir un sistema de pestañas (Tabs) reutilizable con Web Components nativos. Tutorial avanzado sobre Slots, Custom Events y Shadow DOM."
 published: true
 categories:
   - javascript
   - html
   - css
+  - web-components
 date: '2022-01-11 19:30:00'
 image: ../../assets/images/tab-web-component-con-slots.png
 image_alt: Tab Web component con Slots
 ---
 
-He creado un componente web para seguir aprendiendo. Mi anterior entrada iba sobre un <a href="/blog/webcomponent-tooltip-notification/">componente web para añadir tooltips</a>. En este caso he querido añadir un poco de más de complejidad e interacción
+Los **Web Components** nos permiten crear elementos de interfaz encapsulados y reutilizables sin depender de frameworks. En este tutorial, vamos a elevar el nivel respecto a mi artículo anterior sobre <a href="/blog/webcomponent-tooltip-notification/">Tooltips con Web Components</a>, creando un sistema de **Tabs (Pestañas)** totalmente interactivo.
 
-He ido aprendiendo poco a poco, algunas cosas he dudado, así que si lees la entrada completa, o pruebas el código, y ves algo que sea mejorable, estaría encantado que me escribieras. En el footer puedes encontrar diferentes maneras de contactarme :)
+Exploraremos conceptos clave como **Slots** para la inyección de contenido, **Shadow DOM** para el aislamiento de estilos y **Custom Events** para la comunicación entre componentes padres e hijos.
 
 import Codepen from '../../components/Codepen.astro'
 
+## 1. Configuración del Entorno
 <Codepen id="abLQJxv" defaultTab="result" name={frontmatter.title} />
 
 ## Arrancar proyecto con ParcelJS
-
-Sobre la raiz del proyecto, con ParcelJS instalado (Yo tengo instalada la versión 1.12.5)
+Para desarrollar este componente, utilizaremos **ParcelJS** como empaquetador, aunque el código final es JavaScript nativo compatible con cualquier entorno.
 
 ```sh
 parcel index.html

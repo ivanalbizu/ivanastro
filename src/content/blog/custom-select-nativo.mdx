@@ -1,7 +1,7 @@
 ---
-title: Custom select nativo experimental
+title: "Custom Select Nativo: El Fin de los Hacks con <selectmenu>"
 slug: custom-select-nativo
-description: Posibilidad de customizar la apariencia de la etiqueta select de manera nativa
+description: "Exploramos la API experimental <selectmenu> para crear selectores personalizados usando solo HTML y CSS. Una mirada al futuro de los formularios web sin JavaScript."
 published: true
 categories:
   - css
@@ -11,27 +11,36 @@ image: ../../assets/images/custom-select-nativo.png
 image_alt: Custom select nativo
 ---
 
-## Custom select nativo (experimental)
+El "Santo Grial" de la maquetación web siempre ha sido poder estilar completamente un `<select>` nativo sin recurrir a librerías de JavaScript complejas o hacks imposibles. Parece mentira que, después de tantos años, la etiqueta `<select>` siga siendo tan resistente a CSS.
 
-De momento no está disponible, sólo se puede probar usando Canary (Edge o Chrome) y habilitando los flags experimentales:
+Afortunadamente, el futuro se ve prometedor gracias a la iniciativa de **Open UI** y la nueva etiqueta experimental `<selectmenu>`.
 
-* edge://flags/#enable-experimental-web-platform-features.
-* chrome://flags/#enable-experimental-web-platform-features.
+import Codepen from '../../components/Codepen.astro'
 
-Ojalá algún día llegue a todos los navegadores, parece mentira que para las etiquetas <code>&lt;select&gt;</code> no pasara el tiempo, siguen sin poder customizarse sin ningún <code>hack</code> mediante javascript
+<Codepen id="YzrEoXO" defaultTab="result" name={frontmatter.title} />
 
-Se puede obtener más información en el siguiente enlace: <a href="https://open-ui.org/" target="_blank" rel="noopener">https://open-ui.org/</a>
+## ⚠️ Funcionalidad Experimental
 
-## Etiquetas de custom select nativo
+Actualmente, esta característica no es estándar y su soporte es limitado. Para probarla, necesitas usar versiones **Canary** de Chrome o Edge y habilitar las siguientes flags:
 
-Mirando el código, se puede observar que aparecen dos nuevas etiquetas:
+1.  Ve a `chrome://flags` o `edge://flags`.
+2.  Busca y habilita **#enable-experimental-web-platform-features**.
+3.  Reinicia el navegador.
 
-* &lt;selectmenu&gt;: etiqueta contenedora de todo.
-* &lt;popup&gt;: etiquetas contenedoras de los &lt;option&gt;.
+Puedes leer más sobre la propuesta oficial en <a href="https://open-ui.org/" target="_blank" rel="noopener">Open UI</a>.
 
-## Atributos de custom select nativo
+## La Nueva Estructura: `<selectmenu>`
 
-Aparecen nuevos atributos relacionados con la activación del selector desplegable y de la opción seleccionada
+La propuesta introduce nuevas etiquetas y conceptos para separar la lógica del estilo:
+
+*   `<selectmenu>`: El contenedor principal que reemplaza al antiguo `<select>`.
+*   **Slots y Parts**: Permiten inyectar y estilar partes específicas del componente (el botón, el listado, las opciones).
+
+### Personalizando el Botón y el Listado
+
+A diferencia del `<select>` tradicional, aquí tenemos acceso directo al DOM del botón disparador y del contenedor de opciones (popup/listbox) mediante atributos `slot` y `behavior`.
+
+#### El Botón
 
 ```html
 <div slot="button" behavior="button">

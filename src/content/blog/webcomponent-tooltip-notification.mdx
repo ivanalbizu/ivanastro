@@ -1,24 +1,31 @@
 ---
-title: Webcomponent para tooltip notification
+title: "Web Components Nativos: Crea un Tooltip de Notificación Interactivo"
 slug: webcomponent-tooltip-notification
-description: Crear un Webcomponent para mostrar notificaciones personalizadas por atributos
+description: "Guía paso a paso para construir un Web Component de notificación (Tooltip) usando JavaScript nativo. Aprende sobre Shadow DOM, atributos reactivos y eventos."
 published: true
 categories:
   - javascript
   - html
   - css
+  - web-components
 date: '2022-01-02 13:30:00'
 image: ../../assets/images/webcomponent-para-tooltip-notification.png
 image_alt: Webcomponent para tooltip notification
 ---
 
-A raíz entrada anterior, <a href="/blog/custom-select-nativo/">Custom select nativo experimental</a>, quise investigar un poco más sobre como funcionan y como se pueden crear los <code>Webcomponents</code>, la verdad que he quedado maravillado. Como se crean y como se usan me parece super fácil, y su potencia es brutal: definir tus propias etiquetas y dar su propia funcionalidad y customización. No voy a criticar frameworks JS como <code>vue</code>, <code>react</code> o <code>angular</code>, ya que son bastante interesantes, pero realmente aprenderlos y usarlos ya te deja un poco dentro de su propio funcionamiento y en alguna medida limitado a ese framework. Con Webcomponets es todo javascript nativo, sin tener esa atadura, sin preocuparte tanto por posibles migraciones a otros frameworks ni sus actualizaciones
+Los **Web Components** han revolucionado la forma en que construimos interfaces web, permitiéndonos crear etiquetas HTML personalizadas, encapsuladas y reutilizables sin depender de frameworks externos.
 
-El ejemplo que aquí pongo, se trata de mi primer contacto, por lo que puede que muchas cosas sean mejorables e incluso alguna cosa no sea del todo fina. Lo he realizado todo nativo, sin ninguna libreria como <a href="https://lit.dev/" target="_blank" rel="noopener">Lit</a> ni <a href="https://stenciljs.com/" target="_blank" rel="noopener">stencilJS</a>, pero que quiero investigar, ya que ayudan bastante, pero claro, antes quiero conocer un poco más que son aquellas cosas que estas librerias simplifican para luego, quizá, poder valorar las librerías
+A raíz de mi entrada anterior sobre <a href="/blog/custom-select-nativo/">Custom select nativo experimental</a>, decidí profundizar en el estándar de Web Components. La capacidad de definir tus propias etiquetas con funcionalidad y estilos aislados (Shadow DOM) es increíblemente potente. A diferencia de frameworks como Vue, React o Angular, los Web Components son **JavaScript nativo**, lo que garantiza una mayor longevidad y portabilidad de tu código.
 
-## Arrancar proyecto con ParcelJS
+En este tutorial, crearemos un componente `<tooltip-notify>`, un tooltip de notificaciones totalmente funcional, sin librerías como Lit o StencilJS, para entender las bases de la tecnología.
 
-Sobre la raiz del proyecto, con ParcelJS instalado (Yo tengo instalada la versión 1.12.5)
+import Codepen from '../../components/Codepen.astro'
+
+<Codepen id="abLYbRL" defaultTab="result" name={frontmatter.title} />
+
+## 1. Configuración del Entorno con ParcelJS
+
+Para facilitar el desarrollo y la recarga en caliente, usaremos ParcelJS, aunque el código final funciona en cualquier navegador moderno.
 
 ```sh
 parcel index.html

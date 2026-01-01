@@ -1,7 +1,7 @@
 ---
-title: Storybook con componente web nativo
+title: "Storybook con Web Components Nativos: Guía de Integración"
 slug: storybook-componente-web-nativo
-description: Añadir Componentes Web nativo a framework storybook para creación de stories útil para testing, pruebas de diseño
+description: "Tutorial paso a paso para integrar Web Components nativos (Vanilla JS) en Storybook. Aprende a crear stories, configurar controles y documentar tus componentes."
 published: true
 categories:
   - javascript
@@ -9,14 +9,14 @@ categories:
   - css
 date: "2022-08-13 17:30:00"
 image: ../../assets/images/storybook-con-componente-web-nativo.png
-image_alt: Storybook con componente web nativo
+image_alt: "Interfaz de Storybook mostrando Web Components nativos"
 ---
 
 Hace unos meses estuve creando Componentes web nativos sin frameworks ni librerías y llevaba tiempo queriendo llevarlo a storybook para aprenderlo. El framework empecé a usarlo hace unas semanas para un proyecto Angular y me está encantando
 
 Dejo un <a href="../../experimentos/storybook/">enlace donde puede verse el resultado final</a> :)
 
-## Creación de proyecto
+## Configuración inicial: Creación del proyecto Storybook
 
 Iniciar proyecto indicando el flag <code>--type html</code>
 
@@ -26,7 +26,7 @@ npx storybook init --type html
 
 Es necesario tener ya un proyecto. Si aún no existe puedes iniciarlo con <code>npm init</code> para que el generador de storybook pueda escribir en el <code>package.json</code> todas las dependencias y script
 
-## Estructura de proyecto en storybook
+## Estructura de archivos en Storybook para HTML
 
 La estructura puede ser personalizada al gusto, aunque el scaffolding es similar a muchos otros proyectos
 
@@ -36,7 +36,7 @@ El scaffolding de storybook, por lo que he podido ver en proyectos del tipo <cod
 
 Los ficheros para la creación de stories tiene que terminar con el siguiente nombre <code>.stories.js</code>
 
-La instalación se genera con datos de ejemplo: ficheros de estilos CSS, componentes, recursos estáticos en <code>src/stories/assets</code> y fichero Readme. Estos ficheros son de ejemplo que se pueden eliminar. Los componentes creados de ejemplo para proyecto tipo HTML no son WebComponents nativos que se genera mediante clases que extiendan de <code>HTMLElement</code> y por tanto no se define la etiqueta <code>customElements.define("mi-componente", MiComponente)</code>. Lo que se hace en los Componentes de ejemplo es el tradicional <code>.createElement()</code>
+La instalación se genera con datos de ejemplo: ficheros de estilos CSS, componentes, recursos estáticos en <code>src/stories/assets</code> y fichero Readme. Estos ficheros son de ejemplo que se pueden eliminar. Es importante notar que los componentes de ejemplo generados para HTML **no son Web Components nativos** (no extienden de <code>HTMLElement</code> ni usan <code>customElements.define</code>), sino que utilizan <code>document.createElement()</code> o strings simples.
 
 ### Ficheros de configuración de storybook
 
@@ -45,9 +45,9 @@ En la raiz del proyecto se crea una carpeta <code>.storybook</code> que por defe
 * <code>main.js</code>: contiene configuraciones. Por defecto indica las ruta de las stories y ficheros .mdx, así como los <code>addons</code> instalados
 * <code>preview.js</code>: para la configuración de <code>actions</code> y <code>controls</code> del previsualizador de stories
 
-Hasta aquí lo básico, no hay que tocar mucho. En mi caso eliminé los ejemplos, ajuste de rutas a las stories y añadido un nuevo <a href="https://github.com/ljcl/storybook-addon-cssprops" target="_blank" rel="noopener">addons de Custom Properties de CSS</a> para que se pueda personalizar las stories mediante variables CSS
+Hasta aquí lo básico, no hay que tocar mucho. En mi caso eliminé los ejemplos, ajusté las rutas a las stories y añadí un nuevo <a href="https://github.com/ljcl/storybook-addon-cssprops" target="_blank" rel="noopener">addon de Custom Properties de CSS</a> para que se puedan personalizar las stories mediante variables CSS.
 
-## Creación de stories con Web Components en storybook
+## Creación de Stories con Web Components Nativos
 
 ### Ubicación de los Web Components
 

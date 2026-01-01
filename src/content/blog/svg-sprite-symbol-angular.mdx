@@ -1,29 +1,33 @@
 ---
-title: Componente icono para angular mediante SVG Sprites Symbols
+title: "Iconos SVG en Angular: Componente Reutilizable con Sprites"
 slug: svg-sprite-symbol-angular
 published: true
-description: Creación de componente Angular para pintado de SVG que permita ajustes de ancho / alto / color mediante un fichero SVG linkado mediante símbolo
+description: "Aprende a crear un componente de iconos en Angular optimizado usando SVG Sprites y Symbols. Mejora el rendimiento y la personalización de tus iconos."
 categories:
   - javascript
+  - angular
+  - svg
 date: "2022-04-17 19:30:00"
 image: ../../assets/images/svg-sprite-symbol-angular.png
-image_alt: Componente icono para angular mediante SVG Sprites Symbols
+image_alt: "Componente de icono Angular usando SVG Sprites"
 ---
+
+El uso de iconos SVG inline puede ensuciar el HTML, y cargar cada icono como una imagen individual genera demasiadas peticiones HTTP. La técnica de **SVG Sprites** combinada con el elemento `<symbol>` es una de las formas más eficientes de gestionar sistemas de iconos en la web.
+
+En este artículo, crearemos un componente Angular reutilizable que consume un sprite SVG, permitiendo personalizar fácilmente el tamaño y el color.
 
 <iframe src="https://codesandbox.io/embed/kind-cloud-kmfru7?fontsize=14&hidenavigation=1&theme=dark&view=editor"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="kind-cloud-kmfru7"
+     title="Angular SVG Icon Component Example"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-## Librería usada
+## 1. Generación del Sprite SVG
 
-Usando como dependencia de desarrollo la librería https://www.npmjs.com/package/svg-sprite
+Para automatizar la creación del sprite (un único archivo `.svg` que contiene todos tus iconos), utilizaremos la librería <a href="https://www.npmjs.com/package/svg-sprite" target="_blank" rel="noopener">svg-sprite</a>.
 
-## Definición de tarea script para generación de SVG sprite
-
-Añadiendo script para la generación de SVG partiendo de ficheros SVG independientes:
+Añadimos el siguiente script en nuestro `package.json`. Este comando toma todos los archivos `.svg` de `src/assets/icons/` y genera un sprite de símbolos en `src/assets/sprites/`.
 
 ```json
 "scripts": {

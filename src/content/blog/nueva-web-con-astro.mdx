@@ -1,26 +1,37 @@
 ---
-title: "Nueva web con Astro"
+title: "Nueva web con Astro: Migración desde Nuxt y 100 en Lighthouse"
 slug: "nueva-web-con-astro"
-description: "Migración de web desde Nuxt hacía Astro manteniendo la valoración 100 de Lighthouse y añadiendo funcionalidades de paginación, filtrado por categorías y cambio de tamaño de tipografía"
-published: true
+description: "Descubre cómo logré no perder puntuación de 100 en Lighthouse migrando de Nuxt a Astro. Mejoras en SEO, rendimiento y nuevas funcionalidades como paginación y filtros."
+date: "2025-09-30 14:30:00"
 categories:
   - astro
-date: '2025-09-30 14:30:00'
-image: ../../assets/images/nueva-web-con-astro.png
-image_alt: Nueva web con Astro
+image: "../../assets/images/nueva-web-con-astro.png"
+image_alt: "Nueva web con Astro y puntuación perfecta en Lighthouse"
+published: true
 ---
 
-## Punto de partida
+Recientemente he completado la migración de mi sitio web personal desde **Nuxt** hacia **Astro**. El objetivo principal de este cambio era mejorar drásticamente el rendimiento, simplificar la arquitectura del proyecto y, sobre todo, alcanzar la máxima puntuación en las métricas de **Core Web Vitals**.
 
-Después de muchos años con la web construida con Vue y Nuxt tenía que tomar la decisión de actualizar la web desde Vue 2 y Nuxt 2 a versiones más modernas o buscar alternativas. Decidí usar Astro aprovechando que llevo más de dos años usandolo diariamente.
+En este artículo detallo por qué elegí Astro, las diferencias clave con Nuxt y las nuevas funcionalidades que he implementado en el proceso.
 
-## Objetivo migrar a Astro
+## ¿Por qué migrar de Nuxt a Astro? Ventajas y Mejoras
 
-Usar Astro.
+Aunque Nuxt es un framework excelente para aplicaciones web complejas (SPAs) y renderizado híbrido, para un sitio centrado en contenido como este, Astro ofrece ventajas estructurales significativas.
 
-Sólo "necesitaba" mover los contenidos README y que nada dejará de funcionar y, sobre todo, no perder todo lo bueno que tenía en la web anterior: puntuación de 100 en Lighthouse y posicionamiento de algunas páginas en Google.
+### 1. Arquitectura de Islas (Islands Architecture)
+La diferencia más notable es cómo Astro gestiona el JavaScript.
+*   **En Nuxt:** Por defecto, la aplicación se hidrata completamente en el cliente (SPA hydration), lo que implica descargar y ejecutar el bundle de Vue para toda la página, incluso para partes estáticas.
+*   **En Astro:** Se utiliza la **Arquitectura de Islas**. El HTML se genera estáticamente en el servidor (SSG). Solo se envía JavaScript al navegador para los componentes que explícitamente requieren interactividad (como un buscador o un menú móvil). El resto de la página es HTML y CSS puro.
 
-No será la versión final, ya que quiero darle otra vuelta a estilos visuales que aún no me convencen y dar muchas más funcionalidades que permitan al usuario interactuar y personalizar la web a su gusto.
+### 2. Rendimiento: Objetivo Lighthouse 100
+Gracias a la estrategia de "Zero JS by default" (Cero JavaScript por defecto), conseguir una puntuación de **100 en Lighthouse** es mucho más accesible con Astro.
+*   **Menor TBT (Total Blocking Time):** Al no haber hidratación masiva, el hilo principal del navegador queda libre casi de inmediato.
+*   **Carga más rápida:** El peso de la página se reduce drásticamente al eliminar librerías de framework innecesarias en el cliente.
+
+### 3. Agnosticismo de UI
+Con Astro, no estoy atado a un solo framework de UI. Aunque vengo de Vue/Nuxt, Astro me permite integrar componentes de React, Svelte o Preact en el mismo proyecto si fuera necesario, sin penalizar el rendimiento global.
+
+## Nuevas Funcionalidades Implementadas
 
 Principales features usadas:
 
@@ -32,3 +43,24 @@ Principales features usadas:
 - Animación en aplicación de múltiples páginas (MPA).
 - Preconfiguración de Playwright.
 - Mantener el Lighthouse rating en 100.
+
+Aprovechando la reescritura del código, he añadido características que mejoran la experiencia de usuario (UX) y la accesibilidad:
+
+### Paginación Nativa y Eficiente
+Astro maneja la paginación de colecciones de contenido (`content collections`) de manera nativa. Esto me ha permitido estructurar el blog para navegar por el historial de publicaciones de forma rápida, generando páginas estáticas para cada tramo de la paginación.
+
+### Filtrado por Categorías
+He implementado un sistema de filtrado robusto. Al ser un sitio estático, las páginas de categorías (como `/categories/astro` o `/categories/javascript`) se generan en tiempo de construcción (build time). Esto significa que son instantáneas para el usuario y perfectamente indexables para los motores de búsqueda, mejorando el SEO long-tail.
+
+### Accesibilidad: Tipografía Ajustable
+Pensando en la accesibilidad web, he añadido una funcionalidad en el header que permite a los usuarios ajustar el tamaño de la fuente.
+*   Utiliza unidades relativas (`rem`) en todo el CSS.
+*   Persiste la preferencia del usuario.
+*   Mejora la legibilidad sin romper la maquetación del sitio.
+
+## Conclusión
+
+La migración a Astro ha supuesto un salto de calidad en términos de **Performance** y **DX (Developer Experience)**. Mantener el sitio es ahora más sencillo gracias a la estructura de archivos de Astro y el soporte para Markdown/MDX, y la velocidad de carga es instantánea.
+
+Si gestionas un blog, portfolio o sitio de documentación y te preocupa el SEO y la velocidad, Astro es, hoy por hoy, la mejor alternativa frente a frameworks de SPA tradicionales.
+
