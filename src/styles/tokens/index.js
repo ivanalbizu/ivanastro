@@ -11,57 +11,146 @@ export const tokens = {
   'border.width.lg': '4px',
   'border.width.md': '2px',
   'border.width.sm': '1px',
-  'color.black': '#000000',
-  'color.brand.interactive': '#0054e5',
-  'color.brand.interactive-dark': '#0054e5',
+  'btn.focus.ring': '#1e40af',
+  'btn.focus.ring-offset': '#ffffff',
+  'btn.link.active-bg': 'transparent',
+  'btn.link.active-border': 'transparent',
+  'btn.link.active-fg': '#1e3a8a',
+  'btn.link.bg': 'transparent',
+  'btn.link.border': 'transparent',
+  'btn.link.fg': '#000000',
+  'btn.link.hover-bg': 'transparent',
+  'btn.link.hover-border': 'transparent',
+  'btn.link.hover-fg': '#1e40af',
+  'btn.primary.active-bg': '#1e3a8a',
+  'btn.primary.active-border': '#1e3a8a',
+  'btn.primary.active-fg': '#ffffff',
+  'btn.primary.bg': '#1e40af',
+  'btn.primary.border': '#1e40af',
+  'btn.primary.fg': '#ffffff',
+  'btn.primary.hover-bg': 'transparent',
+  'btn.primary.hover-border': '#1e40af',
+  'btn.primary.hover-fg': '#1e40af',
+  'btn.secondary.active-bg': '#1a1a1a',
+  'btn.secondary.active-border': '#1a1a1a',
+  'btn.secondary.active-fg': '#ffffff',
+  'btn.secondary.bg': 'transparent',
+  'btn.secondary.border': '#000000',
+  'btn.secondary.fg': '#000000',
+  'btn.secondary.hover-bg': '#000000',
+  'btn.secondary.hover-border': '#000000',
+  'btn.secondary.hover-fg': '#ffffff',
+  'btn.tertiary.active-bg': '#1a1a1a',
+  'btn.tertiary.active-border': '#1a1a1a',
+  'btn.tertiary.active-fg': '#ffffff',
+  'btn.tertiary.bg': '#000000',
+  'btn.tertiary.border': '#000000',
+  'btn.tertiary.fg': '#ffffff',
+  'btn.tertiary.hover-bg': 'transparent',
+  'btn.tertiary.hover-border': '#000000',
+  'btn.tertiary.hover-fg': '#000000',
+  'color.blue.50': '#eff6ff',
+  'color.blue.100': '#dbeafe',
+  'color.blue.200': '#bfdbfe',
+  'color.blue.300': '#93c5fd',
+  'color.blue.400': '#60a5fa',
+  'color.blue.500': '#0054e5',
+  'color.blue.600': '#0044b8',
+  'color.blue.700': '#1d4ed8',
+  'color.blue.800': '#1e40af',
+  'color.blue.900': '#1e3a8a',
+  'color.border.default': '#666666',
+  'color.border.strong': '#333333',
+  'color.border.subtle': '#e5e5e5',
+  'color.brand.accent': '#0054e5',
+  'color.brand.accent-hover': '#0044b8',
   'color.brand.primary': '#a20000',
-  'color.btn.link.bg': 'transparent',
-  'color.btn.link.border': 'transparent',
-  'color.btn.link.fg': '#000000',
-  'color.btn.link.hover.fg': '#0054e5',
-  'color.btn.primary.bg': '#0054e5',
-  'color.btn.primary.border': '#0054e5',
-  'color.btn.primary.fg': '#FFFFFF',
-  'color.btn.primary.hover.bg': 'transparent',
-  'color.btn.primary.hover.border': '#0054e5',
-  'color.btn.primary.hover.fg': '#0054e5',
-  'color.btn.secondary.bg': 'transparent',
-  'color.btn.secondary.border': '#000000',
-  'color.btn.secondary.fg': '#000000',
-  'color.btn.secondary.hover.bg': '#000000',
-  'color.btn.secondary.hover.border': '#000000',
-  'color.btn.secondary.hover.fg': '#FFFFFF',
-  'color.btn.tertiary.bg': '#000000',
-  'color.btn.tertiary.border': '#000000',
-  'color.btn.tertiary.fg': '#FFFFFF',
-  'color.btn.tertiary.hover.bg': '#f5f5f5',
-  'color.btn.tertiary.hover.border': '#000000',
-  'color.btn.tertiary.hover.fg': '#000000',
-  'color.feedback.error': '#dc3545',
-  'color.feedback.info': '#17a2b8',
-  'color.feedback.success': '#28a745',
-  'color.feedback.warning': '#ffc107',
-  'color.gray.100': '#f5f5f5',
-  'color.gray.200': '#e5e5e5',
-  'color.gray.300': '#b8b8b8',
-  'color.gray.400': '#999999',
-  'color.gray.500': '#888888',
-  'color.gray.600': '#666666',
-  'color.gray.700': '#333333',
-  'color.gray.800': '#1a1a1a',
-  'color.gray.900': '#0a0a0a',
-  'color.theme.background.default': '#FFFFFF',
-  'color.theme.background.surface': '#f5f5f5',
-  'color.theme.border.default': '#666666',
-  'color.theme.border.light': '#f5f5f5',
-  'color.theme.state.disabled': '#b8b8b8',
-  'color.theme.state.focus': '#0054e5',
-  'color.theme.status.error-text': '#dc3545',
-  'color.theme.status.success-bg': '#d4edda',
-  'color.theme.text.muted': '#666666',
-  'color.theme.text.primary': '#000000',
-  'color.theme.text.secondary': '#333333',
-  'color.white': '#FFFFFF',
+  'color.brand.primary-hover': '#c13127',
+  'color.cyan.50': '#ecfeff',
+  'color.cyan.100': '#cffafe',
+  'color.cyan.200': '#a5f3fc',
+  'color.cyan.300': '#67e8f9',
+  'color.cyan.400': '#22d3ee',
+  'color.cyan.500': '#17a2b8',
+  'color.cyan.600': '#0891b2',
+  'color.cyan.700': '#0e7490',
+  'color.cyan.800': '#155e75',
+  'color.cyan.900': '#164e63',
+  'color.feedback.error.bg': '#fef2f2',
+  'color.feedback.error.border': '#dc3545',
+  'color.feedback.error.fg': '#dc3545',
+  'color.feedback.info.bg': '#ecfeff',
+  'color.feedback.info.border': '#17a2b8',
+  'color.feedback.info.fg': '#17a2b8',
+  'color.feedback.success.bg': '#d4edda',
+  'color.feedback.success.border': '#28a745',
+  'color.feedback.success.fg': '#28a745',
+  'color.feedback.warning.bg': '#fff8e1',
+  'color.feedback.warning.border': '#ffc107',
+  'color.feedback.warning.fg': '#e8a100',
+  'color.green.50': '#d4edda',
+  'color.green.100': '#dcfce7',
+  'color.green.200': '#bbf7d0',
+  'color.green.300': '#86efac',
+  'color.green.400': '#4ade80',
+  'color.green.500': '#28a745',
+  'color.green.600': '#16a34a',
+  'color.green.700': '#15803d',
+  'color.green.800': '#1b5e20',
+  'color.green.900': '#14532d',
+  'color.interactive.active': '#0044b8',
+  'color.interactive.default': '#0054e5',
+  'color.interactive.disabled': '#b8b8b8',
+  'color.interactive.focus': '#0054e5',
+  'color.interactive.hover': '#0044b8',
+  'color.neutral.0': '#ffffff',
+  'color.neutral.50': '#fafafa',
+  'color.neutral.100': '#f5f5f5',
+  'color.neutral.200': '#e5e5e5',
+  'color.neutral.300': '#b8b8b8',
+  'color.neutral.400': '#999999',
+  'color.neutral.500': '#888888',
+  'color.neutral.600': '#666666',
+  'color.neutral.700': '#333333',
+  'color.neutral.800': '#1a1a1a',
+  'color.neutral.900': '#0a0a0a',
+  'color.neutral.1000': '#000000',
+  'color.red-feedback.50': '#fef2f2',
+  'color.red-feedback.100': '#fee2e2',
+  'color.red-feedback.500': '#dc3545',
+  'color.red-feedback.600': '#b91c1c',
+  'color.red-feedback.700': '#991b1b',
+  'color.red.50': '#fef2f2',
+  'color.red.100': '#fee2e2',
+  'color.red.200': '#fecaca',
+  'color.red.300': '#fca5a5',
+  'color.red.400': '#f87171',
+  'color.red.500': '#dc2626',
+  'color.red.600': '#a20000',
+  'color.red.700': '#c13127',
+  'color.red.800': '#991b1b',
+  'color.red.900': '#7f1d1d',
+  'color.surface.elevated': '#f5f5f5',
+  'color.surface.inverse': '#000000',
+  'color.surface.overlay': '#ffffff',
+  'color.surface.page': '#ffffff',
+  'color.text.brand': '#a20000',
+  'color.text.default': '#000000',
+  'color.text.inverse': '#ffffff',
+  'color.text.link': '#0054e5',
+  'color.text.link-hover': '#000000',
+  'color.text.muted': '#666666',
+  'color.text.secondary': '#333333',
+  'color.yellow.50': '#fff8e1',
+  'color.yellow.100': '#fef3c7',
+  'color.yellow.200': '#fde68a',
+  'color.yellow.300': '#fcd34d',
+  'color.yellow.400': '#fbbf24',
+  'color.yellow.500': '#ffc107',
+  'color.yellow.600': '#e8a100',
+  'color.yellow.700': '#b45309',
+  'color.yellow.800': '#92400e',
+  'color.yellow.900': '#78350f',
   'max-width.default': '75rem',
   'max-width.medium': '50rem',
   'max-width.narrow': '20rem',
@@ -205,39 +294,1124 @@ export const meta = {
     $type: 'dimension',
     $value: '1px',
   },
-  'color.black': {
+  'btn.focus.ring': {
     _original: {
-      $value: '#000000',
+      $value: '{color.blue.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.blue.300}',
+        },
+      },
     },
     _group: {
-      id: 'color',
+      id: 'btn.focus',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.black',
+    id: 'btn.focus.ring',
+    $type: 'color',
+    $value: '#1e40af',
+    $extensions: {
+      mode: {
+        dark: '#93c5fd',
+      },
+    },
+  },
+  'btn.focus.ring-offset': {
+    _original: {
+      $value: '{color.surface.page}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.900}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.focus',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.focus.ring-offset',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#0a0a0a',
+      },
+    },
+  },
+  'btn.link.active-bg': {
+    _original: {
+      $value: 'transparent',
+    },
+    _group: {
+      id: 'btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.link.active-bg',
+    $type: 'color',
+    $value: 'transparent',
+  },
+  'btn.link.active-border': {
+    _original: {
+      $value: 'transparent',
+    },
+    _group: {
+      id: 'btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.link.active-border',
+    $type: 'color',
+    $value: 'transparent',
+  },
+  'btn.link.active-fg': {
+    _original: {
+      $value: '{color.blue.900}',
+      $extensions: {
+        mode: {
+          dark: '{color.blue.200}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.link.active-fg',
+    $type: 'color',
+    $value: '#1e3a8a',
+    $extensions: {
+      mode: {
+        dark: '#bfdbfe',
+      },
+    },
+  },
+  'btn.link.bg': {
+    _original: {
+      $value: 'transparent',
+    },
+    _group: {
+      id: 'btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.link.bg',
+    $type: 'color',
+    $value: 'transparent',
+  },
+  'btn.link.border': {
+    _original: {
+      $value: 'transparent',
+    },
+    _group: {
+      id: 'btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.link.border',
+    $type: 'color',
+    $value: 'transparent',
+  },
+  'btn.link.fg': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.link.fg',
     $type: 'color',
     $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
   },
-  'color.brand.interactive': {
+  'btn.link.hover-bg': {
+    _original: {
+      $value: 'transparent',
+    },
+    _group: {
+      id: 'btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.link.hover-bg',
+    $type: 'color',
+    $value: 'transparent',
+  },
+  'btn.link.hover-border': {
+    _original: {
+      $value: 'transparent',
+    },
+    _group: {
+      id: 'btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.link.hover-border',
+    $type: 'color',
+    $value: 'transparent',
+  },
+  'btn.link.hover-fg': {
+    _original: {
+      $value: '{color.blue.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.blue.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.link',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.link.hover-fg',
+    $type: 'color',
+    $value: '#1e40af',
+    $extensions: {
+      mode: {
+        dark: '#93c5fd',
+      },
+    },
+  },
+  'btn.primary.active-bg': {
+    _original: {
+      $value: '{color.blue.900}',
+      $extensions: {
+        mode: {
+          dark: '{color.blue.200}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.primary.active-bg',
+    $type: 'color',
+    $value: '#1e3a8a',
+    $extensions: {
+      mode: {
+        dark: '#bfdbfe',
+      },
+    },
+  },
+  'btn.primary.active-border': {
+    _original: {
+      $value: '{color.blue.900}',
+      $extensions: {
+        mode: {
+          dark: '{color.blue.200}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.primary.active-border',
+    $type: 'color',
+    $value: '#1e3a8a',
+    $extensions: {
+      mode: {
+        dark: '#bfdbfe',
+      },
+    },
+  },
+  'btn.primary.active-fg': {
+    _original: {
+      $value: '{color.neutral.0}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.1000}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.primary.active-fg',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#000000',
+      },
+    },
+  },
+  'btn.primary.bg': {
+    _original: {
+      $value: '{color.blue.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.blue.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.primary.bg',
+    $type: 'color',
+    $value: '#1e40af',
+    $extensions: {
+      mode: {
+        dark: '#93c5fd',
+      },
+    },
+  },
+  'btn.primary.border': {
+    _original: {
+      $value: '{color.blue.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.blue.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.primary.border',
+    $type: 'color',
+    $value: '#1e40af',
+    $extensions: {
+      mode: {
+        dark: '#93c5fd',
+      },
+    },
+  },
+  'btn.primary.fg': {
+    _original: {
+      $value: '{color.neutral.0}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.1000}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.primary.fg',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#000000',
+      },
+    },
+  },
+  'btn.primary.hover-bg': {
+    _original: {
+      $value: 'transparent',
+      $extensions: {
+        mode: {
+          dark: 'transparent',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.primary.hover-bg',
+    $type: 'color',
+    $value: 'transparent',
+    $extensions: {
+      mode: {
+        dark: 'transparent',
+      },
+    },
+  },
+  'btn.primary.hover-border': {
+    _original: {
+      $value: '{color.blue.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.blue.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.primary.hover-border',
+    $type: 'color',
+    $value: '#1e40af',
+    $extensions: {
+      mode: {
+        dark: '#93c5fd',
+      },
+    },
+  },
+  'btn.primary.hover-fg': {
+    _original: {
+      $value: '{color.blue.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.blue.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.primary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.primary.hover-fg',
+    $type: 'color',
+    $value: '#1e40af',
+    $extensions: {
+      mode: {
+        dark: '#93c5fd',
+      },
+    },
+  },
+  'btn.secondary.active-bg': {
+    _original: {
+      $value: '{color.neutral.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.200}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.secondary.active-bg',
+    $type: 'color',
+    $value: '#1a1a1a',
+    $extensions: {
+      mode: {
+        dark: '#e5e5e5',
+      },
+    },
+  },
+  'btn.secondary.active-border': {
+    _original: {
+      $value: '{color.neutral.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.200}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.secondary.active-border',
+    $type: 'color',
+    $value: '#1a1a1a',
+    $extensions: {
+      mode: {
+        dark: '#e5e5e5',
+      },
+    },
+  },
+  'btn.secondary.active-fg': {
+    _original: {
+      $value: '{color.neutral.0}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.900}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.secondary.active-fg',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#0a0a0a',
+      },
+    },
+  },
+  'btn.secondary.bg': {
+    _original: {
+      $value: 'transparent',
+      $extensions: {
+        mode: {
+          dark: 'transparent',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.secondary.bg',
+    $type: 'color',
+    $value: 'transparent',
+    $extensions: {
+      mode: {
+        dark: 'transparent',
+      },
+    },
+  },
+  'btn.secondary.border': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.secondary.border',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#b8b8b8',
+      },
+    },
+  },
+  'btn.secondary.fg': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.secondary.fg',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
+  },
+  'btn.secondary.hover-bg': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.secondary.hover-bg',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
+  },
+  'btn.secondary.hover-border': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.secondary.hover-border',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
+  },
+  'btn.secondary.hover-fg': {
+    _original: {
+      $value: '{color.neutral.0}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.900}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.secondary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.secondary.hover-fg',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#0a0a0a',
+      },
+    },
+  },
+  'btn.tertiary.active-bg': {
+    _original: {
+      $value: '{color.neutral.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.tertiary.active-bg',
+    $type: 'color',
+    $value: '#1a1a1a',
+    $extensions: {
+      mode: {
+        dark: '#b8b8b8',
+      },
+    },
+  },
+  'btn.tertiary.active-border': {
+    _original: {
+      $value: '{color.neutral.800}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.tertiary.active-border',
+    $type: 'color',
+    $value: '#1a1a1a',
+    $extensions: {
+      mode: {
+        dark: '#b8b8b8',
+      },
+    },
+  },
+  'btn.tertiary.active-fg': {
+    _original: {
+      $value: '{color.neutral.0}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.900}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.tertiary.active-fg',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#0a0a0a',
+      },
+    },
+  },
+  'btn.tertiary.bg': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.tertiary.bg',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
+  },
+  'btn.tertiary.border': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.tertiary.border',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
+  },
+  'btn.tertiary.fg': {
+    _original: {
+      $value: '{color.neutral.0}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.1000}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.tertiary.fg',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#000000',
+      },
+    },
+  },
+  'btn.tertiary.hover-bg': {
+    _original: {
+      $value: 'transparent',
+      $extensions: {
+        mode: {
+          dark: 'transparent',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.tertiary.hover-bg',
+    $type: 'color',
+    $value: 'transparent',
+    $extensions: {
+      mode: {
+        dark: 'transparent',
+      },
+    },
+  },
+  'btn.tertiary.hover-border': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.tertiary.hover-border',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
+  },
+  'btn.tertiary.hover-fg': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'btn.tertiary',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'btn.tertiary.hover-fg',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#f5f5f5',
+      },
+    },
+  },
+  'color.blue.50': {
+    _original: {
+      $value: '#eff6ff',
+    },
+    _group: {
+      id: 'color.blue',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.blue.50',
+    $type: 'color',
+    $value: '#eff6ff',
+  },
+  'color.blue.100': {
+    _original: {
+      $value: '#dbeafe',
+    },
+    _group: {
+      id: 'color.blue',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.blue.100',
+    $type: 'color',
+    $value: '#dbeafe',
+  },
+  'color.blue.200': {
+    _original: {
+      $value: '#bfdbfe',
+    },
+    _group: {
+      id: 'color.blue',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.blue.200',
+    $type: 'color',
+    $value: '#bfdbfe',
+  },
+  'color.blue.300': {
+    _original: {
+      $value: '#93c5fd',
+    },
+    _group: {
+      id: 'color.blue',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.blue.300',
+    $type: 'color',
+    $value: '#93c5fd',
+  },
+  'color.blue.400': {
+    _original: {
+      $value: '#60a5fa',
+    },
+    _group: {
+      id: 'color.blue',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.blue.400',
+    $type: 'color',
+    $value: '#60a5fa',
+  },
+  'color.blue.500': {
     _original: {
       $value: '#0054e5',
     },
     _group: {
-      id: 'color.brand',
+      id: 'color.blue',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.brand.interactive',
+    id: 'color.blue.500',
     $type: 'color',
     $value: '#0054e5',
   },
-  'color.brand.interactive-dark': {
+  'color.blue.600': {
     _original: {
-      $value: '{color.brand.interactive}',
+      $value: '#0044b8',
+    },
+    _group: {
+      id: 'color.blue',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.blue.600',
+    $type: 'color',
+    $value: '#0044b8',
+  },
+  'color.blue.700': {
+    _original: {
+      $value: '#1d4ed8',
+    },
+    _group: {
+      id: 'color.blue',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.blue.700',
+    $type: 'color',
+    $value: '#1d4ed8',
+  },
+  'color.blue.800': {
+    _original: {
+      $value: '#1e40af',
+    },
+    _group: {
+      id: 'color.blue',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.blue.800',
+    $type: 'color',
+    $value: '#1e40af',
+  },
+  'color.blue.900': {
+    _original: {
+      $value: '#1e3a8a',
+    },
+    _group: {
+      id: 'color.blue',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.blue.900',
+    $type: 'color',
+    $value: '#1e3a8a',
+  },
+  'color.border.default': {
+    _original: {
+      $value: '{color.neutral.600}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.600}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.border',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.border.default',
+    $type: 'color',
+    $value: '#666666',
+    $extensions: {
+      mode: {
+        dark: '#666666',
+      },
+    },
+  },
+  'color.border.strong': {
+    _original: {
+      $value: '{color.neutral.700}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.400}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.border',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.border.strong',
+    $type: 'color',
+    $value: '#333333',
+    $extensions: {
+      mode: {
+        dark: '#999999',
+      },
+    },
+  },
+  'color.border.subtle': {
+    _original: {
+      $value: '{color.neutral.200}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.700}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.border',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.border.subtle',
+    $type: 'color',
+    $value: '#e5e5e5',
+    $extensions: {
+      mode: {
+        dark: '#333333',
+      },
+    },
+  },
+  'color.brand.accent': {
+    _original: {
+      $value: '{color.blue.500}',
     },
     _group: {
       id: 'color.brand',
@@ -246,13 +1420,28 @@ export const meta = {
       },
       $type: 'color',
     },
-    id: 'color.brand.interactive-dark',
+    id: 'color.brand.accent',
     $type: 'color',
     $value: '#0054e5',
   },
+  'color.brand.accent-hover': {
+    _original: {
+      $value: '{color.blue.600}',
+    },
+    _group: {
+      id: 'color.brand',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.brand.accent-hover',
+    $type: 'color',
+    $value: '#0044b8',
+  },
   'color.brand.primary': {
     _original: {
-      $value: '#a20000',
+      $value: '{color.red.600}',
     },
     _group: {
       id: 'color.brand',
@@ -265,803 +1454,298 @@ export const meta = {
     $type: 'color',
     $value: '#a20000',
   },
-  'color.btn.link.bg': {
+  'color.brand.primary-hover': {
     _original: {
-      $value: 'transparent',
+      $value: '{color.red.700}',
     },
     _group: {
-      id: 'color.btn.link',
+      id: 'color.brand',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.btn.link.bg',
+    id: 'color.brand.primary-hover',
     $type: 'color',
-    $value: 'transparent',
+    $value: '#c13127',
   },
-  'color.btn.link.border': {
+  'color.cyan.50': {
     _original: {
-      $value: 'transparent',
+      $value: '#ecfeff',
     },
     _group: {
-      id: 'color.btn.link',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.btn.link.border',
+    id: 'color.cyan.50',
     $type: 'color',
-    $value: 'transparent',
+    $value: '#ecfeff',
   },
-  'color.btn.link.fg': {
+  'color.cyan.100': {
     _original: {
-      $value: '{color.theme.text.primary}',
+      $value: '#cffafe',
     },
     _group: {
-      id: 'color.btn.link',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.btn.link.fg',
+    id: 'color.cyan.100',
     $type: 'color',
-    $value: '#000000',
+    $value: '#cffafe',
   },
-  'color.btn.link.hover.fg': {
+  'color.cyan.200': {
     _original: {
-      $value: '{color.brand.interactive}',
+      $value: '#a5f3fc',
     },
     _group: {
-      id: 'color.btn.link.hover',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.btn.link.hover.fg',
+    id: 'color.cyan.200',
     $type: 'color',
-    $value: '#0054e5',
+    $value: '#a5f3fc',
   },
-  'color.btn.primary.bg': {
+  'color.cyan.300': {
     _original: {
-      $value: '{color.brand.interactive}',
-      $extensions: {
-        mode: {
-          dark: '{color.brand.interactive-dark}',
-        },
-      },
+      $value: '#67e8f9',
     },
     _group: {
-      id: 'color.btn.primary',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.btn.primary.bg',
+    id: 'color.cyan.300',
     $type: 'color',
-    $value: '#0054e5',
-    $extensions: {
-      mode: {
-        dark: '#0054e5',
-      },
-    },
+    $value: '#67e8f9',
   },
-  'color.btn.primary.border': {
+  'color.cyan.400': {
     _original: {
-      $value: '{color.btn.primary.bg}',
-      $extensions: {
-        mode: {
-          dark: '{color.brand.interactive-dark}',
-        },
-      },
+      $value: '#22d3ee',
     },
     _group: {
-      id: 'color.btn.primary',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.btn.primary.border',
+    id: 'color.cyan.400',
     $type: 'color',
-    $value: '#0054e5',
-    $extensions: {
-      mode: {
-        dark: '#0054e5',
-      },
-    },
+    $value: '#22d3ee',
   },
-  'color.btn.primary.fg': {
-    _original: {
-      $value: '{color.white}',
-      $extensions: {
-        mode: {
-          dark: '{color.white}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.btn.primary',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.primary.fg',
-    $type: 'color',
-    $value: '#FFFFFF',
-    $extensions: {
-      mode: {
-        dark: '#FFFFFF',
-      },
-    },
-  },
-  'color.btn.primary.hover.bg': {
-    _original: {
-      $value: 'transparent',
-    },
-    _group: {
-      id: 'color.btn.primary.hover',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.primary.hover.bg',
-    $type: 'color',
-    $value: 'transparent',
-  },
-  'color.btn.primary.hover.border': {
-    _original: {
-      $value: '{color.btn.primary.border}',
-    },
-    _group: {
-      id: 'color.btn.primary.hover',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.primary.hover.border',
-    $type: 'color',
-    $value: '#0054e5',
-  },
-  'color.btn.primary.hover.fg': {
-    _original: {
-      $value: '{color.btn.primary.bg}',
-    },
-    _group: {
-      id: 'color.btn.primary.hover',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.primary.hover.fg',
-    $type: 'color',
-    $value: '#0054e5',
-  },
-  'color.btn.secondary.bg': {
-    _original: {
-      $value: 'transparent',
-      $extensions: {
-        mode: {
-          dark: 'transparent',
-        },
-      },
-    },
-    _group: {
-      id: 'color.btn.secondary',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.secondary.bg',
-    $type: 'color',
-    $value: 'transparent',
-    $extensions: {
-      mode: {
-        dark: 'transparent',
-      },
-    },
-  },
-  'color.btn.secondary.border': {
-    _original: {
-      $value: '{color.theme.text.primary}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.600}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.btn.secondary',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.secondary.border',
-    $type: 'color',
-    $value: '#000000',
-    $extensions: {
-      mode: {
-        dark: '#666666',
-      },
-    },
-  },
-  'color.btn.secondary.fg': {
-    _original: {
-      $value: '{color.theme.text.primary}',
-      $extensions: {
-        mode: {
-          dark: '{color.white}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.btn.secondary',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.secondary.fg',
-    $type: 'color',
-    $value: '#000000',
-    $extensions: {
-      mode: {
-        dark: '#FFFFFF',
-      },
-    },
-  },
-  'color.btn.secondary.hover.bg': {
-    _original: {
-      $value: '{color.theme.text.primary}',
-    },
-    _group: {
-      id: 'color.btn.secondary.hover',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.secondary.hover.bg',
-    $type: 'color',
-    $value: '#000000',
-  },
-  'color.btn.secondary.hover.border': {
-    _original: {
-      $value: '{color.theme.text.primary}',
-    },
-    _group: {
-      id: 'color.btn.secondary.hover',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.secondary.hover.border',
-    $type: 'color',
-    $value: '#000000',
-  },
-  'color.btn.secondary.hover.fg': {
-    _original: {
-      $value: '{color.white}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.900}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.btn.secondary.hover',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.secondary.hover.fg',
-    $type: 'color',
-    $value: '#FFFFFF',
-    $extensions: {
-      mode: {
-        dark: '#0a0a0a',
-      },
-    },
-  },
-  'color.btn.tertiary.bg': {
-    _original: {
-      $value: '{color.theme.text.primary}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.100}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.btn.tertiary',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.tertiary.bg',
-    $type: 'color',
-    $value: '#000000',
-    $extensions: {
-      mode: {
-        dark: '#f5f5f5',
-      },
-    },
-  },
-  'color.btn.tertiary.border': {
-    _original: {
-      $value: '{color.theme.text.primary}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.100}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.btn.tertiary',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.tertiary.border',
-    $type: 'color',
-    $value: '#000000',
-    $extensions: {
-      mode: {
-        dark: '#f5f5f5',
-      },
-    },
-  },
-  'color.btn.tertiary.fg': {
-    _original: {
-      $value: '{color.theme.background.default}',
-      $extensions: {
-        mode: {
-          dark: '{color.black}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.btn.tertiary',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.tertiary.fg',
-    $type: 'color',
-    $value: '#FFFFFF',
-    $extensions: {
-      mode: {
-        dark: '#000000',
-      },
-    },
-  },
-  'color.btn.tertiary.hover.bg': {
-    _original: {
-      $value: '{color.gray.100}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.900}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.btn.tertiary.hover',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.tertiary.hover.bg',
-    $type: 'color',
-    $value: '#f5f5f5',
-    $extensions: {
-      mode: {
-        dark: '#0a0a0a',
-      },
-    },
-  },
-  'color.btn.tertiary.hover.border': {
-    _original: {
-      $value: '{color.btn.tertiary.border}',
-    },
-    _group: {
-      id: 'color.btn.tertiary.hover',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.tertiary.hover.border',
-    $type: 'color',
-    $value: '#000000',
-  },
-  'color.btn.tertiary.hover.fg': {
-    _original: {
-      $value: '{color.theme.text.primary}',
-    },
-    _group: {
-      id: 'color.btn.tertiary.hover',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.btn.tertiary.hover.fg',
-    $type: 'color',
-    $value: '#000000',
-  },
-  'color.feedback.error': {
-    _original: {
-      $value: '#dc3545',
-    },
-    _group: {
-      id: 'color.feedback',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.feedback.error',
-    $type: 'color',
-    $value: '#dc3545',
-  },
-  'color.feedback.info': {
+  'color.cyan.500': {
     _original: {
       $value: '#17a2b8',
     },
     _group: {
-      id: 'color.feedback',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.feedback.info',
+    id: 'color.cyan.500',
     $type: 'color',
     $value: '#17a2b8',
   },
-  'color.feedback.success': {
+  'color.cyan.600': {
     _original: {
-      $value: '#28a745',
+      $value: '#0891b2',
     },
     _group: {
-      id: 'color.feedback',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.feedback.success',
+    id: 'color.cyan.600',
     $type: 'color',
-    $value: '#28a745',
+    $value: '#0891b2',
   },
-  'color.feedback.warning': {
+  'color.cyan.700': {
     _original: {
-      $value: '#ffc107',
+      $value: '#0e7490',
     },
     _group: {
-      id: 'color.feedback',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.feedback.warning',
+    id: 'color.cyan.700',
     $type: 'color',
-    $value: '#ffc107',
+    $value: '#0e7490',
   },
-  'color.gray.100': {
+  'color.cyan.800': {
     _original: {
-      $value: '#f5f5f5',
+      $value: '#155e75',
     },
     _group: {
-      id: 'color.gray',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.gray.100',
+    id: 'color.cyan.800',
     $type: 'color',
-    $value: '#f5f5f5',
+    $value: '#155e75',
   },
-  'color.gray.200': {
+  'color.cyan.900': {
     _original: {
-      $value: '#e5e5e5',
+      $value: '#164e63',
     },
     _group: {
-      id: 'color.gray',
+      id: 'color.cyan',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.gray.200',
+    id: 'color.cyan.900',
     $type: 'color',
-    $value: '#e5e5e5',
+    $value: '#164e63',
   },
-  'color.gray.300': {
+  'color.feedback.error.bg': {
     _original: {
-      $value: '#b8b8b8',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.300',
-    $type: 'color',
-    $value: '#b8b8b8',
-  },
-  'color.gray.400': {
-    _original: {
-      $value: '#999999',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.400',
-    $type: 'color',
-    $value: '#999999',
-  },
-  'color.gray.500': {
-    _original: {
-      $value: '#888888',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.500',
-    $type: 'color',
-    $value: '#888888',
-  },
-  'color.gray.600': {
-    _original: {
-      $value: '#666666',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.600',
-    $type: 'color',
-    $value: '#666666',
-  },
-  'color.gray.700': {
-    _original: {
-      $value: '#333333',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.700',
-    $type: 'color',
-    $value: '#333333',
-  },
-  'color.gray.800': {
-    _original: {
-      $value: '#1a1a1a',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.800',
-    $type: 'color',
-    $value: '#1a1a1a',
-  },
-  'color.gray.900': {
-    _original: {
-      $value: '#0a0a0a',
-    },
-    _group: {
-      id: 'color.gray',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.gray.900',
-    $type: 'color',
-    $value: '#0a0a0a',
-  },
-  'color.theme.background.default': {
-    _original: {
-      $value: '{color.white}',
+      $value: '{color.red-feedback.50}',
       $extensions: {
         mode: {
-          dark: '{color.gray.900}',
+          dark: '{color.red-feedback.700}',
         },
       },
     },
     _group: {
-      id: 'color.theme.background',
+      id: 'color.feedback.error',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.theme.background.default',
+    id: 'color.feedback.error.bg',
     $type: 'color',
-    $value: '#FFFFFF',
+    $value: '#fef2f2',
     $extensions: {
       mode: {
-        dark: '#0a0a0a',
+        dark: '#991b1b',
       },
     },
   },
-  'color.theme.background.surface': {
+  'color.feedback.error.border': {
     _original: {
-      $value: '{color.gray.100}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.800}',
-        },
-      },
+      $value: '{color.red-feedback.500}',
     },
     _group: {
-      id: 'color.theme.background',
+      id: 'color.feedback.error',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.theme.background.surface',
-    $type: 'color',
-    $value: '#f5f5f5',
-    $extensions: {
-      mode: {
-        dark: '#1a1a1a',
-      },
-    },
-  },
-  'color.theme.border.default': {
-    _original: {
-      $value: '{color.gray.600}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.600}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.theme.border',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.theme.border.default',
-    $type: 'color',
-    $value: '#666666',
-    $extensions: {
-      mode: {
-        dark: '#666666',
-      },
-    },
-  },
-  'color.theme.border.light': {
-    _original: {
-      $value: '{color.gray.100}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.100}',
-        },
-      },
-    },
-    _group: {
-      id: 'color.theme.border',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.theme.border.light',
-    $type: 'color',
-    $value: '#f5f5f5',
-    $extensions: {
-      mode: {
-        dark: '#f5f5f5',
-      },
-    },
-  },
-  'color.theme.state.disabled': {
-    _original: {
-      $value: '{color.gray.300}',
-    },
-    _group: {
-      id: 'color.theme.state',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.theme.state.disabled',
-    $type: 'color',
-    $value: '#b8b8b8',
-  },
-  'color.theme.state.focus': {
-    _original: {
-      $value: '{color.brand.interactive}',
-    },
-    _group: {
-      id: 'color.theme.state',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.theme.state.focus',
-    $type: 'color',
-    $value: '#0054e5',
-  },
-  'color.theme.status.error-text': {
-    _original: {
-      $value: '{color.feedback.error}',
-    },
-    _group: {
-      id: 'color.theme.status',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'color',
-    },
-    id: 'color.theme.status.error-text',
+    id: 'color.feedback.error.border',
     $type: 'color',
     $value: '#dc3545',
   },
-  'color.theme.status.success-bg': {
+  'color.feedback.error.fg': {
     _original: {
-      $value: '#d4edda',
-      $extensions: {
-        mode: {
-          dark: '#1b5e20',
-        },
-      },
+      $value: '{color.red-feedback.500}',
     },
     _group: {
-      id: 'color.theme.status',
+      id: 'color.feedback.error',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.theme.status.success-bg',
+    id: 'color.feedback.error.fg',
+    $type: 'color',
+    $value: '#dc3545',
+  },
+  'color.feedback.info.bg': {
+    _original: {
+      $value: '{color.cyan.50}',
+      $extensions: {
+        mode: {
+          dark: '{color.cyan.800}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.feedback.info',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.info.bg',
+    $type: 'color',
+    $value: '#ecfeff',
+    $extensions: {
+      mode: {
+        dark: '#155e75',
+      },
+    },
+  },
+  'color.feedback.info.border': {
+    _original: {
+      $value: '{color.cyan.500}',
+    },
+    _group: {
+      id: 'color.feedback.info',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.info.border',
+    $type: 'color',
+    $value: '#17a2b8',
+  },
+  'color.feedback.info.fg': {
+    _original: {
+      $value: '{color.cyan.500}',
+    },
+    _group: {
+      id: 'color.feedback.info',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.info.fg',
+    $type: 'color',
+    $value: '#17a2b8',
+  },
+  'color.feedback.success.bg': {
+    _original: {
+      $value: '{color.green.50}',
+      $extensions: {
+        mode: {
+          dark: '{color.green.800}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.feedback.success',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.success.bg',
     $type: 'color',
     $value: '#d4edda',
     $extensions: {
@@ -1070,48 +1754,863 @@ export const meta = {
       },
     },
   },
-  'color.theme.text.muted': {
+  'color.feedback.success.border': {
     _original: {
-      $value: '{color.gray.600}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.500}',
-        },
-      },
+      $value: '{color.green.500}',
     },
     _group: {
-      id: 'color.theme.text',
+      id: 'color.feedback.success',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.theme.text.muted',
+    id: 'color.feedback.success.border',
     $type: 'color',
-    $value: '#666666',
+    $value: '#28a745',
+  },
+  'color.feedback.success.fg': {
+    _original: {
+      $value: '{color.green.500}',
+    },
+    _group: {
+      id: 'color.feedback.success',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.success.fg',
+    $type: 'color',
+    $value: '#28a745',
+  },
+  'color.feedback.warning.bg': {
+    _original: {
+      $value: '{color.yellow.50}',
+      $extensions: {
+        mode: {
+          dark: '{color.yellow.800}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.feedback.warning',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.warning.bg',
+    $type: 'color',
+    $value: '#fff8e1',
     $extensions: {
       mode: {
-        dark: '#888888',
+        dark: '#92400e',
       },
     },
   },
-  'color.theme.text.primary': {
+  'color.feedback.warning.border': {
     _original: {
-      $value: '{color.black}',
-      $extensions: {
-        mode: {
-          dark: '{color.gray.100}',
-        },
-      },
+      $value: '{color.yellow.500}',
     },
     _group: {
-      id: 'color.theme.text',
+      id: 'color.feedback.warning',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.theme.text.primary',
+    id: 'color.feedback.warning.border',
+    $type: 'color',
+    $value: '#ffc107',
+  },
+  'color.feedback.warning.fg': {
+    _original: {
+      $value: '{color.yellow.600}',
+    },
+    _group: {
+      id: 'color.feedback.warning',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.feedback.warning.fg',
+    $type: 'color',
+    $value: '#e8a100',
+  },
+  'color.green.50': {
+    _original: {
+      $value: '#d4edda',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.50',
+    $type: 'color',
+    $value: '#d4edda',
+  },
+  'color.green.100': {
+    _original: {
+      $value: '#dcfce7',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.100',
+    $type: 'color',
+    $value: '#dcfce7',
+  },
+  'color.green.200': {
+    _original: {
+      $value: '#bbf7d0',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.200',
+    $type: 'color',
+    $value: '#bbf7d0',
+  },
+  'color.green.300': {
+    _original: {
+      $value: '#86efac',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.300',
+    $type: 'color',
+    $value: '#86efac',
+  },
+  'color.green.400': {
+    _original: {
+      $value: '#4ade80',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.400',
+    $type: 'color',
+    $value: '#4ade80',
+  },
+  'color.green.500': {
+    _original: {
+      $value: '#28a745',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.500',
+    $type: 'color',
+    $value: '#28a745',
+  },
+  'color.green.600': {
+    _original: {
+      $value: '#16a34a',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.600',
+    $type: 'color',
+    $value: '#16a34a',
+  },
+  'color.green.700': {
+    _original: {
+      $value: '#15803d',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.700',
+    $type: 'color',
+    $value: '#15803d',
+  },
+  'color.green.800': {
+    _original: {
+      $value: '#1b5e20',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.800',
+    $type: 'color',
+    $value: '#1b5e20',
+  },
+  'color.green.900': {
+    _original: {
+      $value: '#14532d',
+    },
+    _group: {
+      id: 'color.green',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.green.900',
+    $type: 'color',
+    $value: '#14532d',
+  },
+  'color.interactive.active': {
+    _original: {
+      $value: '{color.blue.600}',
+    },
+    _group: {
+      id: 'color.interactive',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.interactive.active',
+    $type: 'color',
+    $value: '#0044b8',
+  },
+  'color.interactive.default': {
+    _original: {
+      $value: '{color.brand.accent}',
+    },
+    _group: {
+      id: 'color.interactive',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.interactive.default',
+    $type: 'color',
+    $value: '#0054e5',
+  },
+  'color.interactive.disabled': {
+    _original: {
+      $value: '{color.neutral.300}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.600}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.interactive',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.interactive.disabled',
+    $type: 'color',
+    $value: '#b8b8b8',
+    $extensions: {
+      mode: {
+        dark: '#666666',
+      },
+    },
+  },
+  'color.interactive.focus': {
+    _original: {
+      $value: '{color.brand.accent}',
+    },
+    _group: {
+      id: 'color.interactive',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.interactive.focus',
+    $type: 'color',
+    $value: '#0054e5',
+  },
+  'color.interactive.hover': {
+    _original: {
+      $value: '{color.brand.accent-hover}',
+    },
+    _group: {
+      id: 'color.interactive',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.interactive.hover',
+    $type: 'color',
+    $value: '#0044b8',
+  },
+  'color.neutral.0': {
+    _original: {
+      $value: '#ffffff',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.0',
+    $type: 'color',
+    $value: '#ffffff',
+  },
+  'color.neutral.50': {
+    _original: {
+      $value: '#fafafa',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.50',
+    $type: 'color',
+    $value: '#fafafa',
+  },
+  'color.neutral.100': {
+    _original: {
+      $value: '#f5f5f5',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.100',
+    $type: 'color',
+    $value: '#f5f5f5',
+  },
+  'color.neutral.200': {
+    _original: {
+      $value: '#e5e5e5',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.200',
+    $type: 'color',
+    $value: '#e5e5e5',
+  },
+  'color.neutral.300': {
+    _original: {
+      $value: '#b8b8b8',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.300',
+    $type: 'color',
+    $value: '#b8b8b8',
+  },
+  'color.neutral.400': {
+    _original: {
+      $value: '#999999',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.400',
+    $type: 'color',
+    $value: '#999999',
+  },
+  'color.neutral.500': {
+    _original: {
+      $value: '#888888',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.500',
+    $type: 'color',
+    $value: '#888888',
+  },
+  'color.neutral.600': {
+    _original: {
+      $value: '#666666',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.600',
+    $type: 'color',
+    $value: '#666666',
+  },
+  'color.neutral.700': {
+    _original: {
+      $value: '#333333',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.700',
+    $type: 'color',
+    $value: '#333333',
+  },
+  'color.neutral.800': {
+    _original: {
+      $value: '#1a1a1a',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.800',
+    $type: 'color',
+    $value: '#1a1a1a',
+  },
+  'color.neutral.900': {
+    _original: {
+      $value: '#0a0a0a',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.900',
+    $type: 'color',
+    $value: '#0a0a0a',
+  },
+  'color.neutral.1000': {
+    _original: {
+      $value: '#000000',
+    },
+    _group: {
+      id: 'color.neutral',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.neutral.1000',
+    $type: 'color',
+    $value: '#000000',
+  },
+  'color.red-feedback.50': {
+    _original: {
+      $value: '#fef2f2',
+    },
+    _group: {
+      id: 'color.red-feedback',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red-feedback.50',
+    $type: 'color',
+    $value: '#fef2f2',
+  },
+  'color.red-feedback.100': {
+    _original: {
+      $value: '#fee2e2',
+    },
+    _group: {
+      id: 'color.red-feedback',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red-feedback.100',
+    $type: 'color',
+    $value: '#fee2e2',
+  },
+  'color.red-feedback.500': {
+    _original: {
+      $value: '#dc3545',
+    },
+    _group: {
+      id: 'color.red-feedback',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red-feedback.500',
+    $type: 'color',
+    $value: '#dc3545',
+  },
+  'color.red-feedback.600': {
+    _original: {
+      $value: '#b91c1c',
+    },
+    _group: {
+      id: 'color.red-feedback',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red-feedback.600',
+    $type: 'color',
+    $value: '#b91c1c',
+  },
+  'color.red-feedback.700': {
+    _original: {
+      $value: '#991b1b',
+    },
+    _group: {
+      id: 'color.red-feedback',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red-feedback.700',
+    $type: 'color',
+    $value: '#991b1b',
+  },
+  'color.red.50': {
+    _original: {
+      $value: '#fef2f2',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.50',
+    $type: 'color',
+    $value: '#fef2f2',
+  },
+  'color.red.100': {
+    _original: {
+      $value: '#fee2e2',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.100',
+    $type: 'color',
+    $value: '#fee2e2',
+  },
+  'color.red.200': {
+    _original: {
+      $value: '#fecaca',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.200',
+    $type: 'color',
+    $value: '#fecaca',
+  },
+  'color.red.300': {
+    _original: {
+      $value: '#fca5a5',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.300',
+    $type: 'color',
+    $value: '#fca5a5',
+  },
+  'color.red.400': {
+    _original: {
+      $value: '#f87171',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.400',
+    $type: 'color',
+    $value: '#f87171',
+  },
+  'color.red.500': {
+    _original: {
+      $value: '#dc2626',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.500',
+    $type: 'color',
+    $value: '#dc2626',
+  },
+  'color.red.600': {
+    _original: {
+      $value: '#a20000',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.600',
+    $type: 'color',
+    $value: '#a20000',
+  },
+  'color.red.700': {
+    _original: {
+      $value: '#c13127',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.700',
+    $type: 'color',
+    $value: '#c13127',
+  },
+  'color.red.800': {
+    _original: {
+      $value: '#991b1b',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.800',
+    $type: 'color',
+    $value: '#991b1b',
+  },
+  'color.red.900': {
+    _original: {
+      $value: '#7f1d1d',
+    },
+    _group: {
+      id: 'color.red',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.red.900',
+    $type: 'color',
+    $value: '#7f1d1d',
+  },
+  'color.surface.elevated': {
+    _original: {
+      $value: '{color.neutral.100}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.800}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.surface',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.surface.elevated',
+    $type: 'color',
+    $value: '#f5f5f5',
+    $extensions: {
+      mode: {
+        dark: '#1a1a1a',
+      },
+    },
+  },
+  'color.surface.inverse': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.0}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.surface',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.surface.inverse',
+    $type: 'color',
+    $value: '#000000',
+    $extensions: {
+      mode: {
+        dark: '#ffffff',
+      },
+    },
+  },
+  'color.surface.overlay': {
+    _original: {
+      $value: '{color.neutral.0}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.800}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.surface',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.surface.overlay',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#1a1a1a',
+      },
+    },
+  },
+  'color.surface.page': {
+    _original: {
+      $value: '{color.neutral.0}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.900}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.surface',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.surface.page',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#0a0a0a',
+      },
+    },
+  },
+  'color.text.brand': {
+    _original: {
+      $value: '{color.brand.primary}',
+    },
+    _group: {
+      id: 'color.text',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.text.brand',
+    $type: 'color',
+    $value: '#a20000',
+  },
+  'color.text.default': {
+    _original: {
+      $value: '{color.neutral.1000}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.100}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.text',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.text.default',
     $type: 'color',
     $value: '#000000',
     $extensions: {
@@ -1120,23 +2619,103 @@ export const meta = {
       },
     },
   },
-  'color.theme.text.secondary': {
+  'color.text.inverse': {
     _original: {
-      $value: '{color.gray.700}',
+      $value: '{color.neutral.0}',
       $extensions: {
         mode: {
-          dark: '{color.gray.300}',
+          dark: '{color.neutral.1000}',
         },
       },
     },
     _group: {
-      id: 'color.theme.text',
+      id: 'color.text',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.theme.text.secondary',
+    id: 'color.text.inverse',
+    $type: 'color',
+    $value: '#ffffff',
+    $extensions: {
+      mode: {
+        dark: '#000000',
+      },
+    },
+  },
+  'color.text.link': {
+    _original: {
+      $value: '{color.brand.accent}',
+    },
+    _group: {
+      id: 'color.text',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.text.link',
+    $type: 'color',
+    $value: '#0054e5',
+  },
+  'color.text.link-hover': {
+    _original: {
+      $value: '{color.text.default}',
+    },
+    _group: {
+      id: 'color.text',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.text.link-hover',
+    $type: 'color',
+    $value: '#000000',
+  },
+  'color.text.muted': {
+    _original: {
+      $value: '{color.neutral.600}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.500}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.text',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.text.muted',
+    $type: 'color',
+    $value: '#666666',
+    $extensions: {
+      mode: {
+        dark: '#888888',
+      },
+    },
+  },
+  'color.text.secondary': {
+    _original: {
+      $value: '{color.neutral.700}',
+      $extensions: {
+        mode: {
+          dark: '{color.neutral.300}',
+        },
+      },
+    },
+    _group: {
+      id: 'color.text',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.text.secondary',
     $type: 'color',
     $value: '#333333',
     $extensions: {
@@ -1145,20 +2724,155 @@ export const meta = {
       },
     },
   },
-  'color.white': {
+  'color.yellow.50': {
     _original: {
-      $value: '#FFFFFF',
+      $value: '#fff8e1',
     },
     _group: {
-      id: 'color',
+      id: 'color.yellow',
       $extensions: {
         requiredModes: [],
       },
       $type: 'color',
     },
-    id: 'color.white',
+    id: 'color.yellow.50',
     $type: 'color',
-    $value: '#FFFFFF',
+    $value: '#fff8e1',
+  },
+  'color.yellow.100': {
+    _original: {
+      $value: '#fef3c7',
+    },
+    _group: {
+      id: 'color.yellow',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.yellow.100',
+    $type: 'color',
+    $value: '#fef3c7',
+  },
+  'color.yellow.200': {
+    _original: {
+      $value: '#fde68a',
+    },
+    _group: {
+      id: 'color.yellow',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.yellow.200',
+    $type: 'color',
+    $value: '#fde68a',
+  },
+  'color.yellow.300': {
+    _original: {
+      $value: '#fcd34d',
+    },
+    _group: {
+      id: 'color.yellow',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.yellow.300',
+    $type: 'color',
+    $value: '#fcd34d',
+  },
+  'color.yellow.400': {
+    _original: {
+      $value: '#fbbf24',
+    },
+    _group: {
+      id: 'color.yellow',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.yellow.400',
+    $type: 'color',
+    $value: '#fbbf24',
+  },
+  'color.yellow.500': {
+    _original: {
+      $value: '#ffc107',
+    },
+    _group: {
+      id: 'color.yellow',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.yellow.500',
+    $type: 'color',
+    $value: '#ffc107',
+  },
+  'color.yellow.600': {
+    _original: {
+      $value: '#e8a100',
+    },
+    _group: {
+      id: 'color.yellow',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.yellow.600',
+    $type: 'color',
+    $value: '#e8a100',
+  },
+  'color.yellow.700': {
+    _original: {
+      $value: '#b45309',
+    },
+    _group: {
+      id: 'color.yellow',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.yellow.700',
+    $type: 'color',
+    $value: '#b45309',
+  },
+  'color.yellow.800': {
+    _original: {
+      $value: '#92400e',
+    },
+    _group: {
+      id: 'color.yellow',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.yellow.800',
+    $type: 'color',
+    $value: '#92400e',
+  },
+  'color.yellow.900': {
+    _original: {
+      $value: '#78350f',
+    },
+    _group: {
+      id: 'color.yellow',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'color',
+    },
+    id: 'color.yellow.900',
+    $type: 'color',
+    $value: '#78350f',
   },
   'max-width.default': {
     _original: {
@@ -1974,61 +3688,148 @@ export const meta = {
 };
 
 export const modes = {
-  'color.btn.primary.bg': {
-    dark: '#0054e5',
+  'btn.focus.ring': {
+    dark: '#93c5fd',
   },
-  'color.btn.primary.border': {
-    dark: '#0054e5',
-  },
-  'color.btn.primary.fg': {
-    dark: '#FFFFFF',
-  },
-  'color.btn.secondary.bg': {
-    dark: 'transparent',
-  },
-  'color.btn.secondary.border': {
-    dark: '#666666',
-  },
-  'color.btn.secondary.fg': {
-    dark: '#FFFFFF',
-  },
-  'color.btn.secondary.hover.fg': {
+  'btn.focus.ring-offset': {
     dark: '#0a0a0a',
   },
-  'color.btn.tertiary.bg': {
+  'btn.link.active-fg': {
+    dark: '#bfdbfe',
+  },
+  'btn.link.fg': {
     dark: '#f5f5f5',
   },
-  'color.btn.tertiary.border': {
-    dark: '#f5f5f5',
+  'btn.link.hover-fg': {
+    dark: '#93c5fd',
   },
-  'color.btn.tertiary.fg': {
+  'btn.primary.active-bg': {
+    dark: '#bfdbfe',
+  },
+  'btn.primary.active-border': {
+    dark: '#bfdbfe',
+  },
+  'btn.primary.active-fg': {
     dark: '#000000',
   },
-  'color.btn.tertiary.hover.bg': {
+  'btn.primary.bg': {
+    dark: '#93c5fd',
+  },
+  'btn.primary.border': {
+    dark: '#93c5fd',
+  },
+  'btn.primary.fg': {
+    dark: '#000000',
+  },
+  'btn.primary.hover-bg': {
+    dark: 'transparent',
+  },
+  'btn.primary.hover-border': {
+    dark: '#93c5fd',
+  },
+  'btn.primary.hover-fg': {
+    dark: '#93c5fd',
+  },
+  'btn.secondary.active-bg': {
+    dark: '#e5e5e5',
+  },
+  'btn.secondary.active-border': {
+    dark: '#e5e5e5',
+  },
+  'btn.secondary.active-fg': {
     dark: '#0a0a0a',
   },
-  'color.theme.background.default': {
+  'btn.secondary.bg': {
+    dark: 'transparent',
+  },
+  'btn.secondary.border': {
+    dark: '#b8b8b8',
+  },
+  'btn.secondary.fg': {
+    dark: '#f5f5f5',
+  },
+  'btn.secondary.hover-bg': {
+    dark: '#f5f5f5',
+  },
+  'btn.secondary.hover-border': {
+    dark: '#f5f5f5',
+  },
+  'btn.secondary.hover-fg': {
     dark: '#0a0a0a',
   },
-  'color.theme.background.surface': {
-    dark: '#1a1a1a',
+  'btn.tertiary.active-bg': {
+    dark: '#b8b8b8',
   },
-  'color.theme.border.default': {
+  'btn.tertiary.active-border': {
+    dark: '#b8b8b8',
+  },
+  'btn.tertiary.active-fg': {
+    dark: '#0a0a0a',
+  },
+  'btn.tertiary.bg': {
+    dark: '#f5f5f5',
+  },
+  'btn.tertiary.border': {
+    dark: '#f5f5f5',
+  },
+  'btn.tertiary.fg': {
+    dark: '#000000',
+  },
+  'btn.tertiary.hover-bg': {
+    dark: 'transparent',
+  },
+  'btn.tertiary.hover-border': {
+    dark: '#f5f5f5',
+  },
+  'btn.tertiary.hover-fg': {
+    dark: '#f5f5f5',
+  },
+  'color.border.default': {
     dark: '#666666',
   },
-  'color.theme.border.light': {
-    dark: '#f5f5f5',
+  'color.border.strong': {
+    dark: '#999999',
   },
-  'color.theme.status.success-bg': {
+  'color.border.subtle': {
+    dark: '#333333',
+  },
+  'color.feedback.error.bg': {
+    dark: '#991b1b',
+  },
+  'color.feedback.info.bg': {
+    dark: '#155e75',
+  },
+  'color.feedback.success.bg': {
     dark: '#1b5e20',
   },
-  'color.theme.text.muted': {
-    dark: '#888888',
+  'color.feedback.warning.bg': {
+    dark: '#92400e',
   },
-  'color.theme.text.primary': {
+  'color.interactive.disabled': {
+    dark: '#666666',
+  },
+  'color.surface.elevated': {
+    dark: '#1a1a1a',
+  },
+  'color.surface.inverse': {
+    dark: '#ffffff',
+  },
+  'color.surface.overlay': {
+    dark: '#1a1a1a',
+  },
+  'color.surface.page': {
+    dark: '#0a0a0a',
+  },
+  'color.text.default': {
     dark: '#f5f5f5',
   },
-  'color.theme.text.secondary': {
+  'color.text.inverse': {
+    dark: '#000000',
+  },
+  'color.text.muted': {
+    dark: '#888888',
+  },
+  'color.text.secondary': {
     dark: '#b8b8b8',
   },
   'max-width.default': {

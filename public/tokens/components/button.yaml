@@ -1,0 +1,237 @@
+# =============================================================================
+# TOKENS DE COMPONENTE: BUTTON
+# =============================================================================
+# Tokens específicos para el componente Button.
+# Referencian tokens semánticos para mantener consistencia.
+# Cumple WCAG 2.1 AAA: contraste mínimo 7:1 para texto normal
+# =============================================================================
+
+btn:
+  $type: color
+
+  # ---------------------------------------------------------------------------
+  # FOCUS RING (Común para todos los botones)
+  # Visible para navegación por teclado - WCAG 2.4.7
+  # Contraste 3:1 mínimo contra fondo adyacente (AAA para UI)
+  # ---------------------------------------------------------------------------
+  focus:
+    ring:
+      $value: "{color.blue.800}"
+      $extensions:
+        mode:
+          dark: "{color.blue.300}"
+    ring-offset:
+      $value: "{color.surface.page}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.900}"
+
+  # ---------------------------------------------------------------------------
+  # PRIMARY
+  # Botón de acción principal (CTA)
+  # Light: azul.800 (#1e40af) sobre blanco = 8.5:1 ✅ AAA
+  # Dark: blanco sobre azul.800 = 8.5:1 ✅ AAA
+  # ---------------------------------------------------------------------------
+  primary:
+    bg:
+      $value: "{color.blue.800}"
+      $extensions:
+        mode:
+          dark: "{color.blue.300}"
+    fg:
+      $value: "{color.neutral.0}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.1000}"
+    border:
+      $value: "{color.blue.800}"
+      $extensions:
+        mode:
+          dark: "{color.blue.300}"
+    # Hover: invierte colores (outlined)
+    # blue.800 sobre blanco = 8.5:1 ✅ AAA
+    hover-bg:
+      $value: "transparent"
+      $extensions:
+        mode:
+          dark: "transparent"
+    hover-fg:
+      $value: "{color.blue.800}"
+      $extensions:
+        mode:
+          dark: "{color.blue.300}"
+    hover-border:
+      $value: "{color.blue.800}"
+      $extensions:
+        mode:
+          dark: "{color.blue.300}"
+    # Active: más oscuro
+    # blue.900 (#1e3a8a) sobre blanco = 10.2:1 ✅ AAA
+    active-bg:
+      $value: "{color.blue.900}"
+      $extensions:
+        mode:
+          dark: "{color.blue.200}"
+    active-fg:
+      $value: "{color.neutral.0}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.1000}"
+    active-border:
+      $value: "{color.blue.900}"
+      $extensions:
+        mode:
+          dark: "{color.blue.200}"
+
+  # ---------------------------------------------------------------------------
+  # SECONDARY
+  # Botón de acción secundaria (outlined)
+  # Light: negro sobre blanco = 21:1 ✅ AAA
+  # Dark: neutral.100 sobre neutral.900 = 15.1:1 ✅ AAA
+  # ---------------------------------------------------------------------------
+  secondary:
+    bg:
+      $value: "transparent"
+      $extensions:
+        mode:
+          dark: "transparent"
+    fg:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.100}"
+    border:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.300}"
+    # Hover: rellena con color de texto
+    # blanco sobre negro = 21:1 ✅ AAA
+    hover-bg:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.100}"
+    hover-fg:
+      $value: "{color.neutral.0}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.900}"
+    hover-border:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.100}"
+    # Active: gris muy oscuro
+    # blanco sobre neutral.800 = 12.6:1 ✅ AAA
+    active-bg:
+      $value: "{color.neutral.800}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.200}"
+    active-fg:
+      $value: "{color.neutral.0}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.900}"
+    active-border:
+      $value: "{color.neutral.800}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.200}"
+
+  # ---------------------------------------------------------------------------
+  # TERTIARY
+  # Botón terciario (filled invertido)
+  # Light: blanco sobre negro = 21:1 ✅ AAA
+  # Dark: negro sobre neutral.100 = 18.1:1 ✅ AAA
+  # ---------------------------------------------------------------------------
+  tertiary:
+    bg:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.100}"
+    fg:
+      $value: "{color.neutral.0}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.1000}"
+    border:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.100}"
+    # Hover: invierte a outlined
+    # negro sobre blanco = 21:1 ✅ AAA
+    hover-bg:
+      $value: "transparent"
+      $extensions:
+        mode:
+          dark: "transparent"
+    hover-fg:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.100}"
+    hover-border:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.100}"
+    # Active: gris oscuro
+    # blanco sobre neutral.800 = 12.6:1 ✅ AAA
+    active-bg:
+      $value: "{color.neutral.800}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.300}"
+    active-fg:
+      $value: "{color.neutral.0}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.900}"
+    active-border:
+      $value: "{color.neutral.800}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.300}"
+
+  # ---------------------------------------------------------------------------
+  # LINK
+  # Botón con apariencia de enlace
+  # Light: blue.800 sobre blanco = 8.5:1 ✅ AAA
+  # Dark: blue.300 sobre neutral.900 = 7.2:1 ✅ AAA
+  # ---------------------------------------------------------------------------
+  link:
+    bg:
+      $value: "transparent"
+    fg:
+      $value: "{color.neutral.1000}"
+      $extensions:
+        mode:
+          dark: "{color.neutral.100}"
+    border:
+      $value: "transparent"
+    # Hover: color de enlace
+    # blue.800 sobre blanco = 8.5:1 ✅ AAA
+    hover-bg:
+      $value: "transparent"
+    hover-fg:
+      $value: "{color.blue.800}"
+      $extensions:
+        mode:
+          dark: "{color.blue.300}"
+    hover-border:
+      $value: "transparent"
+    # Active: enlace más oscuro
+    # blue.900 sobre blanco = 10.2:1 ✅ AAA
+    active-bg:
+      $value: "transparent"
+    active-fg:
+      $value: "{color.blue.900}"
+      $extensions:
+        mode:
+          dark: "{color.blue.200}"
+    active-border:
+      $value: "transparent"

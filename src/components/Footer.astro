@@ -11,7 +11,7 @@ const currentYear = new Date().getFullYear();
         {currentYear} {config.author.name}.
       </p>
       <p class="theme-credit">
-        Powered by <a href="https://astro.build" target="_blank" rel="noopener">Astro <span class="visually-hidden"> en nueva ventana</span></a>
+        Powered by <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro <span class="visually-hidden"> en nueva ventana</span></a>
       </p>
     </div>
     <SocialLinks />
@@ -20,8 +20,8 @@ const currentYear = new Date().getFullYear();
 
 <style lang="scss">
   .footer {
-    background-color: var(--color-theme-background-surface);
-    border-top: var(--border-width-md) solid var(--color-theme-border-default);
+    background-color: var(--color-surface-elevated);
+    border-top: var(--border-width-md) solid var(--color-border-default);
     margin-block-start: auto;
     padding-block: var(--space-lg);
   }
@@ -47,14 +47,14 @@ const currentYear = new Date().getFullYear();
   .theme-credit {
     margin: 0;
     font-size: var(--typography-font-size-paragraph-4);
-    color: var(--color-theme-text-muted);
+    color: var(--color-text-muted);
   }
 
   .theme-credit a {
-    color: var(--color-brand-interactive);
+    color: var(--color-interactive-default);
     &:hover,
     &:focus {
-      color: var(--color-theme-text-primary);
+      color: var(--color-text-default);
     }
   }
 </style>

@@ -118,7 +118,7 @@ const { categoria } = Astro.params;
   }
 
   .post-item {
-    border-bottom: var(--border-width-sm) solid var(--color-theme-border-default);
+    border-bottom: var(--border-width-sm) solid var(--color-border-default);
     padding-bottom: var(--space-lg);
     &:last-child {
       border-bottom: none;
@@ -132,12 +132,12 @@ const { categoria } = Astro.params;
     font-weight: var(--typography-font-weight-bold);
     margin-block-end: var(--space-sm);
     a {
-      color: var(--color-theme-text-primary);
+      color: var(--color-text-default);
       text-underline-offset: 3px;
       transition: color var(--transition-duration-normal) ease;
       &:hover,
       &:focus {
-        color: var(--color-brand-interactive);
+        color: var(--color-interactive-default);
       }
     }
   }
@@ -145,12 +145,12 @@ const { categoria } = Astro.params;
   .no-posts {
     text-align: center;
     padding: var(--space-xl);
-    color: var(--color-theme-text-muted);
+    color: var(--color-text-muted);
     font-style: italic;
   }
 
   .no-posts code {
-    background-color: var(--color-theme-background-surface);
+    background-color: var(--color-surface-elevated);
     padding: 2px 4px;
     border-radius: var(--border-radius-sm);
     font-family: var(--typography-font-family-mono);

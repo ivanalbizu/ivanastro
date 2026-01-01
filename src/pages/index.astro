@@ -109,7 +109,7 @@ const sortedPosts = posts
     text-align: center;
     font-size: var(--typography-font-size-heading-5);
     line-height: var(--typography-line-height-lg);
-    color: var(--color-theme-text-secondary);
+    color: var(--color-text-secondary);
     margin-block-end: var(--space-xl);
     max-width: var(--max-width-thin);
     margin-inline: auto;
@@ -125,8 +125,8 @@ const sortedPosts = posts
   }
 
   .post {
-    background-color: var(--color-theme-background-surface);
-    border: var(--border-width-sm) solid var(--color-theme-border-default);
+    background-color: var(--color-surface-elevated);
+    border: var(--border-width-sm) solid var(--color-border-default);
     border-radius: var(--border-radius-lg);;
     padding: var(--space-md);
     transition:
@@ -138,11 +138,11 @@ const sortedPosts = posts
       font-weight: var(--typography-font-weight-bold);
       margin-block-end: var(--space-xxs);
       a {
-        color: var(--color-theme-text-primary);
+        color: var(--color-text-default);
         text-underline-offset: 3px;
         &:hover,
         &:focus {
-          color: var(--color-brand-interactive);
+          color: var(--color-interactive-default);
         }
       }
     }

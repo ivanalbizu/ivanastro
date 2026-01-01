@@ -87,66 +87,123 @@ const { classes, ...attributes } = allAttributes;
     border-radius: var(--border-radius-md);
     border-width: var(--border-width-md);
     border-style: solid;
-    text-decoration-color: transparent;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: var(--space-xxs);
     text-align: left;
+    cursor: pointer;
     transition:
       color var(--transition-duration-slow) ease,
-      background var(--transition-duration-slow) ease,
-      border var(--transition-duration-slow) ease;
+      background-color var(--transition-duration-slow) ease,
+      border-color var(--transition-duration-slow) ease,
+      box-shadow var(--transition-duration-slow) ease;
 
-    //default is primary
-    background-color: var(--color-btn-primary-bg);
-    color: var(--color-btn-primary-fg);
-    border-color: var(--color-btn-primary-border);
-    &.active,
-    &:hover,
-    &:focus {
-      background-color: var(--color-btn-primary-hover-bg);
-      color: var(--color-btn-primary-hover-fg);
-      border-color: var(--color-btn-primary-hover-border);
+    // =========================================================================
+    // FOCUS VISIBLE - Accesibilidad teclado (WCAG 2.4.7)
+    // =========================================================================
+    &:focus-visible {
+      outline: 3px solid var(--btn-focus-ring);
+      outline-offset: 2px;
     }
 
+    // =========================================================================
+    // PRIMARY (default)
+    // =========================================================================
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-fg);
+    border-color: var(--btn-primary-border);
+
+    &:hover {
+      background-color: var(--btn-primary-hover-bg);
+      color: var(--btn-primary-hover-fg);
+      border-color: var(--btn-primary-hover-border);
+    }
+
+    &:active,
+    &.active {
+      background-color: var(--btn-primary-active-bg);
+      color: var(--btn-primary-active-fg);
+      border-color: var(--btn-primary-active-border);
+    }
+
+    // =========================================================================
+    // LINK
+    // =========================================================================
     &--link {
-      background-color: transparent;
-      color: var(--color-theme-text-primary);
-      border: var(--border-width-md) solid transparent;
-      &.active,
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        //color: var(--color-background);
+      background-color: var(--btn-link-bg);
+      color: var(--btn-link-fg);
+      border-color: var(--btn-link-border);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 4px;
+      transition:
+        color var(--transition-duration-slow) ease,
+        text-decoration-color var(--transition-duration-slow) ease;
+
+      &:hover {
+        background-color: var(--btn-link-hover-bg);
+        color: var(--btn-link-hover-fg);
+        border-color: var(--btn-link-hover-border);
+        text-decoration-color: currentColor;
+      }
+
+      &:active,
+      &.active {
+        background-color: var(--btn-link-active-bg);
+        color: var(--btn-link-active-fg);
+        border-color: var(--btn-link-active-border);
+        text-decoration-color: currentColor;
       }
     }
 
+    // =========================================================================
+    // SECONDARY
+    // =========================================================================
     &--secondary {
-      background-color: var(--color-btn-secondary-bg);
-      color: var(--color-btn-secondary-fg);
-      border-color: var(--color-btn-secondary-border);
-      &.active,
-      &:hover,
-      &:focus {
-        background-color: var(--color-btn-secondary-hover-bg);
-        color: var(--color-btn-secondary-hover-fg);
-        border-color: var(--color-btn-secondary-hover-border);
+      background-color: var(--btn-secondary-bg);
+      color: var(--btn-secondary-fg);
+      border-color: var(--btn-secondary-border);
+
+      &:hover {
+        background-color: var(--btn-secondary-hover-bg);
+        color: var(--btn-secondary-hover-fg);
+        border-color: var(--btn-secondary-hover-border);
+      }
+
+      &:active,
+      &.active {
+        background-color: var(--btn-secondary-active-bg);
+        color: var(--btn-secondary-active-fg);
+        border-color: var(--btn-secondary-active-border);
       }
     }
 
+    // =========================================================================
+    // TERTIARY
+    // =========================================================================
     &--tertiary {
-      background-color: var(--color-btn-tertiary-bg);
-      color: var(--color-btn-tertiary-fg);
-      border-color: var(--color-btn-tertiary-border);
-      &.active,
-      &:hover,
-      &:focus {
-        background-color: var(--color-btn-tertiary-hover-bg);
-        color: var(--color-btn-tertiary-hover-fg);
-        border-color: var(--color-btn-tertiary-hover-border);
+      background-color: var(--btn-tertiary-bg);
+      color: var(--btn-tertiary-fg);
+      border-color: var(--btn-tertiary-border);
+
+      &:hover {
+        background-color: var(--btn-tertiary-hover-bg);
+        color: var(--btn-tertiary-hover-fg);
+        border-color: var(--btn-tertiary-hover-border);
+      }
+
+      &:active,
+      &.active {
+        background-color: var(--btn-tertiary-active-bg);
+        color: var(--btn-tertiary-active-fg);
+        border-color: var(--btn-tertiary-active-border);
       }
     }
 
+    // =========================================================================
+    // SIZES
+    // =========================================================================
     &--sm {
       padding: var(--space-xxxs) var(--space-xxs);
       font-size: var(--typography-font-size-btn-sm);
@@ -155,14 +212,22 @@ const { classes, ...attributes } = allAttributes;
       min-height: 34px;
     }
 
+    // =========================================================================
+    // DISABLED
+    // =========================================================================
     &--disabled {
       opacity: 0.4;
       pointer-events: none;
+      cursor: not-allowed;
     }
 
+    // =========================================================================
+    // INNER ELEMENTS
+    // =========================================================================
     &__icon {
       align-self: start;
     }
+
     &__chevron {
       margin-left: auto;
       display: flex;

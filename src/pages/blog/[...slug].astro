@@ -118,7 +118,7 @@ const publishedTime = post.data.date
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-3);
     font-weight: var(--typography-font-weight-bold);
-    color: var(--color-theme-text-primary);
+    color: var(--color-text-default);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-xxl);
     margin-block-start: var(--space-xl);
@@ -129,7 +129,7 @@ const publishedTime = post.data.date
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-4);
     font-weight: var(--typography-font-weight-bold);
-    color: var(--color-theme-text-primary);
+    color: var(--color-text-default);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-md);
     margin-block-start: var(--space-xl);
@@ -140,7 +140,7 @@ const publishedTime = post.data.date
     font-family: var(--typography-font-family-primary);
     font-size: var(--typography-font-size-heading-5);
     font-weight: var(--typography-font-weight-bold);
-    color: var(--color-theme-text-primary);
+    color: var(--color-text-default);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-xl);
     margin-block-start: var(--space-lg);
@@ -155,15 +155,15 @@ const publishedTime = post.data.date
     border-left: var(--border-width-lg) solid var(--color-brand-primary);
     padding: var(--space-sm) var(--space-md);
     margin: var(--space-lg) 0;
-    background-color: var(--color-theme-background-surface);
+    background-color: var(--color-surface-elevated);
     font-style: italic;
     font-size: var(--typography-font-size-paragraph-1);
-    color: var(--color-theme-text-secondary);
+    color: var(--color-text-secondary);
   }
 
   .post-content :global(pre) {
-    background-color: var(--color-white);
-    color: var(--color-white);
+    background-color: var(--color-neutral-0);
+    color: var(--color-neutral-0);
     padding: var(--space-md);
     margin: var(--space-lg) 0;
     border-radius: var(--border-radius-lg);;
@@ -214,28 +214,28 @@ const publishedTime = post.data.date
   }
 
   .post-content :global(pre[class*="language-"]) {
-    background: var(--color-black) !important;
-    color: var(--color-white) !important;
+    background: var(--color-neutral-1000) !important;
+    color: var(--color-neutral-0) !important;
   }
 
   .post-content :global(code[class*="language-"]) {
-    background: var(--color-black) !important;
-    color: var(--color-white) !important;
+    background: var(--color-neutral-1000) !important;
+    color: var(--color-neutral-0) !important;
   }
 
   .post-content :global(code) {
     font-family: var(--typography-font-family-mono);
     font-size: var(--typography-font-size-paragraph-4);
-    background-color: var(--color-theme-background-surface);
+    background-color: var(--color-surface-elevated);
     color: var(--color-brand-primary);
     padding: 2px 6px;
     border-radius: var(--border-radius-md);
-    border: var(--border-width-sm) solid var(--color-theme-border-default);
+    border: var(--border-width-sm) solid var(--color-border-default);
     font-weight: var(--typography-font-weight-bold);
   }
 
   .post-content :global(img) {
-    border: var(--border-width-md) solid var(--color-theme-border-default);
+    border: var(--border-width-md) solid var(--color-border-default);
     margin: var(--space-lg) 0;
     border-radius: var(--border-radius-md);
   }
@@ -252,7 +252,7 @@ const publishedTime = post.data.date
 
   .post-content :global(strong) {
     font-weight: var(--typography-font-weight-bold);
-    color: var(--color-theme-text-primary);
+    color: var(--color-text-default);
   }
 
   .post-content :global(em) {
@@ -267,7 +267,7 @@ const publishedTime = post.data.date
   }
 
   .post-footer {
-    border-top: var(--border-width-sm) solid var(--color-theme-border-default);
+    border-top: var(--border-width-sm) solid var(--color-border-default);
     padding-top: var(--space-md);
     display: flex;
     flex-direction: column;
@@ -280,6 +280,6 @@ const publishedTime = post.data.date
     font-size: var(--typography-font-size-paragraph-4);
     text-transform: uppercase;
     letter-spacing: var(--typography-letter-spacing-md);
-    color: var(--color-theme-text-primary);
+    color: var(--color-text-default);
   }
 </style>

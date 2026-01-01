@@ -209,10 +209,10 @@ class TokenEditor {
 
   async loadTokens() {
     try {
-      const yamlText = await this._fetchTokensFile();
-      this._initialTokens = jsyaml.load(yamlText);
+      const combinedTokens = await this._fetchAndCombineTokens();
+      this._initialTokens = combinedTokens;
       this._currentTokens = this._loadStoredTokens() || this._cloneTokens(this._initialTokens);
-      
+
       this.render();
       this._styleManager.applyStoredTokens();
     } catch (error) {
@@ -220,12 +220,51 @@ class TokenEditor {
     }
   }
 
-  async _fetchTokensFile() {
-    const response = await fetch('/tokens/colors.yaml');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+  async _fetchAndCombineTokens() {
+    // Cargar los 3 archivos de tokens en paralelo
+    const tokenFiles = [
+      '/tokens/primitives/colors.yaml',
+      '/tokens/semantic/colors.yaml',
+      '/tokens/components/button.yaml'
+    ];
+
+    const responses = await Promise.all(
+      tokenFiles.map(async (file) => {
+        const response = await fetch(file);
+        if (!response.ok) {
+          throw new Error(`HTTP error loading ${file}: ${response.status}`);
+        }
+        return response.text();
+      })
+    );
+
+    // Parsear cada archivo YAML
+    const [primitives, semantic, components] = responses.map(yaml => jsyaml.load(yaml));
+
+    // Combinar en una estructura unificada
+    // Los primitivos van primero, luego semánticos sobrescriben/añaden, luego componentes
+    return this._deepMerge(
+      this._deepMerge(primitives, semantic),
+      components
+    );
+  }
+
+  _deepMerge(target, source) {
+    const result = { ...target };
+
+    for (const key of Object.keys(source)) {
+      if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+        if (target[key] && typeof target[key] === 'object') {
+          result[key] = this._deepMerge(target[key], source[key]);
+        } else {
+          result[key] = { ...source[key] };
+        }
+      } else {
+        result[key] = source[key];
+      }
     }
-    return response.text();
+
+    return result;
   }
 
   _loadStoredTokens() {
@@ -243,23 +282,54 @@ class TokenEditor {
   }
 
   _handleLoadError(error) {
-    console.error("Error loading or parsing colors.yaml:", error);
+    console.error("Error loading or parsing token files:", error);
     this._container.innerHTML = `
       <div style="color: #dc3545; padding: 20px; background: #fee; border-radius: 8px; border: 1px solid #fecaca;">
-        <strong>Error:</strong> Could not load tokens. Check the console for details and ensure 
-        <code>/tokens/colors.yaml</code> exists.
+        <strong>Error:</strong> Could not load tokens. Check the console for details and ensure
+        the following files exist in <code>public/tokens/</code>:
+        <ul style="margin-top: 10px; margin-bottom: 0;">
+          <li><code>primitives/colors.yaml</code></li>
+          <li><code>semantic/colors.yaml</code></li>
+          <li><code>components/button.yaml</code></li>
+        </ul>
       </div>
     `;
   }
 
   render() {
-    if (!this._currentTokens?.color) {
-      console.error('No color tokens found');
-      return;
-    }
-    
     this._container.innerHTML = '';
-    this._traverseTokens(this._currentTokens.color, 'color', this._container);
+
+    // Renderizar tokens de color
+    if (this._currentTokens?.color) {
+      const colorSection = document.createElement('div');
+      colorSection.className = 'token-category';
+
+      const colorTitle = document.createElement('h2');
+      colorTitle.className = 'token-category__title';
+      colorTitle.textContent = 'Color Tokens';
+      colorSection.appendChild(colorTitle);
+
+      this._traverseTokens(this._currentTokens.color, 'color', colorSection);
+      this._container.appendChild(colorSection);
+    }
+
+    // Renderizar tokens de botón
+    if (this._currentTokens?.btn) {
+      const btnSection = document.createElement('div');
+      btnSection.className = 'token-category';
+
+      const btnTitle = document.createElement('h2');
+      btnTitle.className = 'token-category__title';
+      btnTitle.textContent = 'Button Tokens';
+      btnSection.appendChild(btnTitle);
+
+      this._traverseTokens(this._currentTokens.btn, 'btn', btnSection);
+      this._container.appendChild(btnSection);
+    }
+
+    if (!this._currentTokens?.color && !this._currentTokens?.btn) {
+      console.error('No color or button tokens found');
+    }
   }
 
   _traverseTokens(obj, path, parentElement) {
@@ -621,6 +691,9 @@ class TokenEditor {
     if (this._currentTokens?.color) {
       this._traverseTokens(this._currentTokens.color, 'color', pipContainer);
     }
+    if (this._currentTokens?.btn) {
+      this._traverseTokens(this._currentTokens.btn, 'btn', pipContainer);
+    }
   }
 
   _notifyPipWindows() {
@@ -631,6 +704,9 @@ class TokenEditor {
         pipContainer.innerHTML = '';
         if (this._currentTokens?.color) {
           this._traverseTokens(this._currentTokens.color, 'color', pipContainer);
+        }
+        if (this._currentTokens?.btn) {
+          this._traverseTokens(this._currentTokens.btn, 'btn', pipContainer);
         }
       }
     }

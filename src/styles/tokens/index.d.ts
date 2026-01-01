@@ -19,57 +19,146 @@ export declare const tokens: {
   'border.width.lg': ParsedDimensionToken['$value'];
   'border.width.md': ParsedDimensionToken['$value'];
   'border.width.sm': ParsedDimensionToken['$value'];
-  'color.black': ParsedColorToken['$value'];
-  'color.brand.interactive': ParsedColorToken['$value'];
-  'color.brand.interactive-dark': ParsedColorToken['$value'];
+  'btn.focus.ring': ParsedColorToken['$value'];
+  'btn.focus.ring-offset': ParsedColorToken['$value'];
+  'btn.link.active-bg': ParsedColorToken['$value'];
+  'btn.link.active-border': ParsedColorToken['$value'];
+  'btn.link.active-fg': ParsedColorToken['$value'];
+  'btn.link.bg': ParsedColorToken['$value'];
+  'btn.link.border': ParsedColorToken['$value'];
+  'btn.link.fg': ParsedColorToken['$value'];
+  'btn.link.hover-bg': ParsedColorToken['$value'];
+  'btn.link.hover-border': ParsedColorToken['$value'];
+  'btn.link.hover-fg': ParsedColorToken['$value'];
+  'btn.primary.active-bg': ParsedColorToken['$value'];
+  'btn.primary.active-border': ParsedColorToken['$value'];
+  'btn.primary.active-fg': ParsedColorToken['$value'];
+  'btn.primary.bg': ParsedColorToken['$value'];
+  'btn.primary.border': ParsedColorToken['$value'];
+  'btn.primary.fg': ParsedColorToken['$value'];
+  'btn.primary.hover-bg': ParsedColorToken['$value'];
+  'btn.primary.hover-border': ParsedColorToken['$value'];
+  'btn.primary.hover-fg': ParsedColorToken['$value'];
+  'btn.secondary.active-bg': ParsedColorToken['$value'];
+  'btn.secondary.active-border': ParsedColorToken['$value'];
+  'btn.secondary.active-fg': ParsedColorToken['$value'];
+  'btn.secondary.bg': ParsedColorToken['$value'];
+  'btn.secondary.border': ParsedColorToken['$value'];
+  'btn.secondary.fg': ParsedColorToken['$value'];
+  'btn.secondary.hover-bg': ParsedColorToken['$value'];
+  'btn.secondary.hover-border': ParsedColorToken['$value'];
+  'btn.secondary.hover-fg': ParsedColorToken['$value'];
+  'btn.tertiary.active-bg': ParsedColorToken['$value'];
+  'btn.tertiary.active-border': ParsedColorToken['$value'];
+  'btn.tertiary.active-fg': ParsedColorToken['$value'];
+  'btn.tertiary.bg': ParsedColorToken['$value'];
+  'btn.tertiary.border': ParsedColorToken['$value'];
+  'btn.tertiary.fg': ParsedColorToken['$value'];
+  'btn.tertiary.hover-bg': ParsedColorToken['$value'];
+  'btn.tertiary.hover-border': ParsedColorToken['$value'];
+  'btn.tertiary.hover-fg': ParsedColorToken['$value'];
+  'color.blue.50': ParsedColorToken['$value'];
+  'color.blue.100': ParsedColorToken['$value'];
+  'color.blue.200': ParsedColorToken['$value'];
+  'color.blue.300': ParsedColorToken['$value'];
+  'color.blue.400': ParsedColorToken['$value'];
+  'color.blue.500': ParsedColorToken['$value'];
+  'color.blue.600': ParsedColorToken['$value'];
+  'color.blue.700': ParsedColorToken['$value'];
+  'color.blue.800': ParsedColorToken['$value'];
+  'color.blue.900': ParsedColorToken['$value'];
+  'color.border.default': ParsedColorToken['$value'];
+  'color.border.strong': ParsedColorToken['$value'];
+  'color.border.subtle': ParsedColorToken['$value'];
+  'color.brand.accent': ParsedColorToken['$value'];
+  'color.brand.accent-hover': ParsedColorToken['$value'];
   'color.brand.primary': ParsedColorToken['$value'];
-  'color.btn.link.bg': ParsedColorToken['$value'];
-  'color.btn.link.border': ParsedColorToken['$value'];
-  'color.btn.link.fg': ParsedColorToken['$value'];
-  'color.btn.link.hover.fg': ParsedColorToken['$value'];
-  'color.btn.primary.bg': ParsedColorToken['$value'];
-  'color.btn.primary.border': ParsedColorToken['$value'];
-  'color.btn.primary.fg': ParsedColorToken['$value'];
-  'color.btn.primary.hover.bg': ParsedColorToken['$value'];
-  'color.btn.primary.hover.border': ParsedColorToken['$value'];
-  'color.btn.primary.hover.fg': ParsedColorToken['$value'];
-  'color.btn.secondary.bg': ParsedColorToken['$value'];
-  'color.btn.secondary.border': ParsedColorToken['$value'];
-  'color.btn.secondary.fg': ParsedColorToken['$value'];
-  'color.btn.secondary.hover.bg': ParsedColorToken['$value'];
-  'color.btn.secondary.hover.border': ParsedColorToken['$value'];
-  'color.btn.secondary.hover.fg': ParsedColorToken['$value'];
-  'color.btn.tertiary.bg': ParsedColorToken['$value'];
-  'color.btn.tertiary.border': ParsedColorToken['$value'];
-  'color.btn.tertiary.fg': ParsedColorToken['$value'];
-  'color.btn.tertiary.hover.bg': ParsedColorToken['$value'];
-  'color.btn.tertiary.hover.border': ParsedColorToken['$value'];
-  'color.btn.tertiary.hover.fg': ParsedColorToken['$value'];
-  'color.feedback.error': ParsedColorToken['$value'];
-  'color.feedback.info': ParsedColorToken['$value'];
-  'color.feedback.success': ParsedColorToken['$value'];
-  'color.feedback.warning': ParsedColorToken['$value'];
-  'color.gray.100': ParsedColorToken['$value'];
-  'color.gray.200': ParsedColorToken['$value'];
-  'color.gray.300': ParsedColorToken['$value'];
-  'color.gray.400': ParsedColorToken['$value'];
-  'color.gray.500': ParsedColorToken['$value'];
-  'color.gray.600': ParsedColorToken['$value'];
-  'color.gray.700': ParsedColorToken['$value'];
-  'color.gray.800': ParsedColorToken['$value'];
-  'color.gray.900': ParsedColorToken['$value'];
-  'color.theme.background.default': ParsedColorToken['$value'];
-  'color.theme.background.surface': ParsedColorToken['$value'];
-  'color.theme.border.default': ParsedColorToken['$value'];
-  'color.theme.border.light': ParsedColorToken['$value'];
-  'color.theme.state.disabled': ParsedColorToken['$value'];
-  'color.theme.state.focus': ParsedColorToken['$value'];
-  'color.theme.status.error-text': ParsedColorToken['$value'];
-  'color.theme.status.success-bg': ParsedColorToken['$value'];
-  'color.theme.text.muted': ParsedColorToken['$value'];
-  'color.theme.text.primary': ParsedColorToken['$value'];
-  'color.theme.text.secondary': ParsedColorToken['$value'];
-  'color.white': ParsedColorToken['$value'];
+  'color.brand.primary-hover': ParsedColorToken['$value'];
+  'color.cyan.50': ParsedColorToken['$value'];
+  'color.cyan.100': ParsedColorToken['$value'];
+  'color.cyan.200': ParsedColorToken['$value'];
+  'color.cyan.300': ParsedColorToken['$value'];
+  'color.cyan.400': ParsedColorToken['$value'];
+  'color.cyan.500': ParsedColorToken['$value'];
+  'color.cyan.600': ParsedColorToken['$value'];
+  'color.cyan.700': ParsedColorToken['$value'];
+  'color.cyan.800': ParsedColorToken['$value'];
+  'color.cyan.900': ParsedColorToken['$value'];
+  'color.feedback.error.bg': ParsedColorToken['$value'];
+  'color.feedback.error.border': ParsedColorToken['$value'];
+  'color.feedback.error.fg': ParsedColorToken['$value'];
+  'color.feedback.info.bg': ParsedColorToken['$value'];
+  'color.feedback.info.border': ParsedColorToken['$value'];
+  'color.feedback.info.fg': ParsedColorToken['$value'];
+  'color.feedback.success.bg': ParsedColorToken['$value'];
+  'color.feedback.success.border': ParsedColorToken['$value'];
+  'color.feedback.success.fg': ParsedColorToken['$value'];
+  'color.feedback.warning.bg': ParsedColorToken['$value'];
+  'color.feedback.warning.border': ParsedColorToken['$value'];
+  'color.feedback.warning.fg': ParsedColorToken['$value'];
+  'color.green.50': ParsedColorToken['$value'];
+  'color.green.100': ParsedColorToken['$value'];
+  'color.green.200': ParsedColorToken['$value'];
+  'color.green.300': ParsedColorToken['$value'];
+  'color.green.400': ParsedColorToken['$value'];
+  'color.green.500': ParsedColorToken['$value'];
+  'color.green.600': ParsedColorToken['$value'];
+  'color.green.700': ParsedColorToken['$value'];
+  'color.green.800': ParsedColorToken['$value'];
+  'color.green.900': ParsedColorToken['$value'];
+  'color.interactive.active': ParsedColorToken['$value'];
+  'color.interactive.default': ParsedColorToken['$value'];
+  'color.interactive.disabled': ParsedColorToken['$value'];
+  'color.interactive.focus': ParsedColorToken['$value'];
+  'color.interactive.hover': ParsedColorToken['$value'];
+  'color.neutral.0': ParsedColorToken['$value'];
+  'color.neutral.50': ParsedColorToken['$value'];
+  'color.neutral.100': ParsedColorToken['$value'];
+  'color.neutral.200': ParsedColorToken['$value'];
+  'color.neutral.300': ParsedColorToken['$value'];
+  'color.neutral.400': ParsedColorToken['$value'];
+  'color.neutral.500': ParsedColorToken['$value'];
+  'color.neutral.600': ParsedColorToken['$value'];
+  'color.neutral.700': ParsedColorToken['$value'];
+  'color.neutral.800': ParsedColorToken['$value'];
+  'color.neutral.900': ParsedColorToken['$value'];
+  'color.neutral.1000': ParsedColorToken['$value'];
+  'color.red-feedback.50': ParsedColorToken['$value'];
+  'color.red-feedback.100': ParsedColorToken['$value'];
+  'color.red-feedback.500': ParsedColorToken['$value'];
+  'color.red-feedback.600': ParsedColorToken['$value'];
+  'color.red-feedback.700': ParsedColorToken['$value'];
+  'color.red.50': ParsedColorToken['$value'];
+  'color.red.100': ParsedColorToken['$value'];
+  'color.red.200': ParsedColorToken['$value'];
+  'color.red.300': ParsedColorToken['$value'];
+  'color.red.400': ParsedColorToken['$value'];
+  'color.red.500': ParsedColorToken['$value'];
+  'color.red.600': ParsedColorToken['$value'];
+  'color.red.700': ParsedColorToken['$value'];
+  'color.red.800': ParsedColorToken['$value'];
+  'color.red.900': ParsedColorToken['$value'];
+  'color.surface.elevated': ParsedColorToken['$value'];
+  'color.surface.inverse': ParsedColorToken['$value'];
+  'color.surface.overlay': ParsedColorToken['$value'];
+  'color.surface.page': ParsedColorToken['$value'];
+  'color.text.brand': ParsedColorToken['$value'];
+  'color.text.default': ParsedColorToken['$value'];
+  'color.text.inverse': ParsedColorToken['$value'];
+  'color.text.link': ParsedColorToken['$value'];
+  'color.text.link-hover': ParsedColorToken['$value'];
+  'color.text.muted': ParsedColorToken['$value'];
+  'color.text.secondary': ParsedColorToken['$value'];
+  'color.yellow.50': ParsedColorToken['$value'];
+  'color.yellow.100': ParsedColorToken['$value'];
+  'color.yellow.200': ParsedColorToken['$value'];
+  'color.yellow.300': ParsedColorToken['$value'];
+  'color.yellow.400': ParsedColorToken['$value'];
+  'color.yellow.500': ParsedColorToken['$value'];
+  'color.yellow.600': ParsedColorToken['$value'];
+  'color.yellow.700': ParsedColorToken['$value'];
+  'color.yellow.800': ParsedColorToken['$value'];
+  'color.yellow.900': ParsedColorToken['$value'];
   'max-width.default': ParsedDimensionToken['$value'];
   'max-width.medium': ParsedDimensionToken['$value'];
   'max-width.narrow': ParsedDimensionToken['$value'];
@@ -129,57 +218,146 @@ export declare const meta: {
   'border.width.lg': ParsedDimensionToken;
   'border.width.md': ParsedDimensionToken;
   'border.width.sm': ParsedDimensionToken;
-  'color.black': ParsedColorToken;
-  'color.brand.interactive': ParsedColorToken;
-  'color.brand.interactive-dark': ParsedColorToken;
+  'btn.focus.ring': ParsedColorToken & { $extensions: { mode: typeof modes['btn.focus.ring'] } };
+  'btn.focus.ring-offset': ParsedColorToken & { $extensions: { mode: typeof modes['btn.focus.ring-offset'] } };
+  'btn.link.active-bg': ParsedColorToken;
+  'btn.link.active-border': ParsedColorToken;
+  'btn.link.active-fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.link.active-fg'] } };
+  'btn.link.bg': ParsedColorToken;
+  'btn.link.border': ParsedColorToken;
+  'btn.link.fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.link.fg'] } };
+  'btn.link.hover-bg': ParsedColorToken;
+  'btn.link.hover-border': ParsedColorToken;
+  'btn.link.hover-fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.link.hover-fg'] } };
+  'btn.primary.active-bg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.primary.active-bg'] } };
+  'btn.primary.active-border': ParsedColorToken & { $extensions: { mode: typeof modes['btn.primary.active-border'] } };
+  'btn.primary.active-fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.primary.active-fg'] } };
+  'btn.primary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.primary.bg'] } };
+  'btn.primary.border': ParsedColorToken & { $extensions: { mode: typeof modes['btn.primary.border'] } };
+  'btn.primary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.primary.fg'] } };
+  'btn.primary.hover-bg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.primary.hover-bg'] } };
+  'btn.primary.hover-border': ParsedColorToken & { $extensions: { mode: typeof modes['btn.primary.hover-border'] } };
+  'btn.primary.hover-fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.primary.hover-fg'] } };
+  'btn.secondary.active-bg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.secondary.active-bg'] } };
+  'btn.secondary.active-border': ParsedColorToken & { $extensions: { mode: typeof modes['btn.secondary.active-border'] } };
+  'btn.secondary.active-fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.secondary.active-fg'] } };
+  'btn.secondary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.secondary.bg'] } };
+  'btn.secondary.border': ParsedColorToken & { $extensions: { mode: typeof modes['btn.secondary.border'] } };
+  'btn.secondary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.secondary.fg'] } };
+  'btn.secondary.hover-bg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.secondary.hover-bg'] } };
+  'btn.secondary.hover-border': ParsedColorToken & { $extensions: { mode: typeof modes['btn.secondary.hover-border'] } };
+  'btn.secondary.hover-fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.secondary.hover-fg'] } };
+  'btn.tertiary.active-bg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.tertiary.active-bg'] } };
+  'btn.tertiary.active-border': ParsedColorToken & { $extensions: { mode: typeof modes['btn.tertiary.active-border'] } };
+  'btn.tertiary.active-fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.tertiary.active-fg'] } };
+  'btn.tertiary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.tertiary.bg'] } };
+  'btn.tertiary.border': ParsedColorToken & { $extensions: { mode: typeof modes['btn.tertiary.border'] } };
+  'btn.tertiary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.tertiary.fg'] } };
+  'btn.tertiary.hover-bg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.tertiary.hover-bg'] } };
+  'btn.tertiary.hover-border': ParsedColorToken & { $extensions: { mode: typeof modes['btn.tertiary.hover-border'] } };
+  'btn.tertiary.hover-fg': ParsedColorToken & { $extensions: { mode: typeof modes['btn.tertiary.hover-fg'] } };
+  'color.blue.50': ParsedColorToken;
+  'color.blue.100': ParsedColorToken;
+  'color.blue.200': ParsedColorToken;
+  'color.blue.300': ParsedColorToken;
+  'color.blue.400': ParsedColorToken;
+  'color.blue.500': ParsedColorToken;
+  'color.blue.600': ParsedColorToken;
+  'color.blue.700': ParsedColorToken;
+  'color.blue.800': ParsedColorToken;
+  'color.blue.900': ParsedColorToken;
+  'color.border.default': ParsedColorToken & { $extensions: { mode: typeof modes['color.border.default'] } };
+  'color.border.strong': ParsedColorToken & { $extensions: { mode: typeof modes['color.border.strong'] } };
+  'color.border.subtle': ParsedColorToken & { $extensions: { mode: typeof modes['color.border.subtle'] } };
+  'color.brand.accent': ParsedColorToken;
+  'color.brand.accent-hover': ParsedColorToken;
   'color.brand.primary': ParsedColorToken;
-  'color.btn.link.bg': ParsedColorToken;
-  'color.btn.link.border': ParsedColorToken;
-  'color.btn.link.fg': ParsedColorToken;
-  'color.btn.link.hover.fg': ParsedColorToken;
-  'color.btn.primary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.primary.bg'] } };
-  'color.btn.primary.border': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.primary.border'] } };
-  'color.btn.primary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.primary.fg'] } };
-  'color.btn.primary.hover.bg': ParsedColorToken;
-  'color.btn.primary.hover.border': ParsedColorToken;
-  'color.btn.primary.hover.fg': ParsedColorToken;
-  'color.btn.secondary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.bg'] } };
-  'color.btn.secondary.border': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.border'] } };
-  'color.btn.secondary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.fg'] } };
-  'color.btn.secondary.hover.bg': ParsedColorToken;
-  'color.btn.secondary.hover.border': ParsedColorToken;
-  'color.btn.secondary.hover.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.secondary.hover.fg'] } };
-  'color.btn.tertiary.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.bg'] } };
-  'color.btn.tertiary.border': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.border'] } };
-  'color.btn.tertiary.fg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.fg'] } };
-  'color.btn.tertiary.hover.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.btn.tertiary.hover.bg'] } };
-  'color.btn.tertiary.hover.border': ParsedColorToken;
-  'color.btn.tertiary.hover.fg': ParsedColorToken;
-  'color.feedback.error': ParsedColorToken;
-  'color.feedback.info': ParsedColorToken;
-  'color.feedback.success': ParsedColorToken;
-  'color.feedback.warning': ParsedColorToken;
-  'color.gray.100': ParsedColorToken;
-  'color.gray.200': ParsedColorToken;
-  'color.gray.300': ParsedColorToken;
-  'color.gray.400': ParsedColorToken;
-  'color.gray.500': ParsedColorToken;
-  'color.gray.600': ParsedColorToken;
-  'color.gray.700': ParsedColorToken;
-  'color.gray.800': ParsedColorToken;
-  'color.gray.900': ParsedColorToken;
-  'color.theme.background.default': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.background.default'] } };
-  'color.theme.background.surface': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.background.surface'] } };
-  'color.theme.border.default': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.border.default'] } };
-  'color.theme.border.light': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.border.light'] } };
-  'color.theme.state.disabled': ParsedColorToken;
-  'color.theme.state.focus': ParsedColorToken;
-  'color.theme.status.error-text': ParsedColorToken;
-  'color.theme.status.success-bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.status.success-bg'] } };
-  'color.theme.text.muted': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.text.muted'] } };
-  'color.theme.text.primary': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.text.primary'] } };
-  'color.theme.text.secondary': ParsedColorToken & { $extensions: { mode: typeof modes['color.theme.text.secondary'] } };
-  'color.white': ParsedColorToken;
+  'color.brand.primary-hover': ParsedColorToken;
+  'color.cyan.50': ParsedColorToken;
+  'color.cyan.100': ParsedColorToken;
+  'color.cyan.200': ParsedColorToken;
+  'color.cyan.300': ParsedColorToken;
+  'color.cyan.400': ParsedColorToken;
+  'color.cyan.500': ParsedColorToken;
+  'color.cyan.600': ParsedColorToken;
+  'color.cyan.700': ParsedColorToken;
+  'color.cyan.800': ParsedColorToken;
+  'color.cyan.900': ParsedColorToken;
+  'color.feedback.error.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.feedback.error.bg'] } };
+  'color.feedback.error.border': ParsedColorToken;
+  'color.feedback.error.fg': ParsedColorToken;
+  'color.feedback.info.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.feedback.info.bg'] } };
+  'color.feedback.info.border': ParsedColorToken;
+  'color.feedback.info.fg': ParsedColorToken;
+  'color.feedback.success.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.feedback.success.bg'] } };
+  'color.feedback.success.border': ParsedColorToken;
+  'color.feedback.success.fg': ParsedColorToken;
+  'color.feedback.warning.bg': ParsedColorToken & { $extensions: { mode: typeof modes['color.feedback.warning.bg'] } };
+  'color.feedback.warning.border': ParsedColorToken;
+  'color.feedback.warning.fg': ParsedColorToken;
+  'color.green.50': ParsedColorToken;
+  'color.green.100': ParsedColorToken;
+  'color.green.200': ParsedColorToken;
+  'color.green.300': ParsedColorToken;
+  'color.green.400': ParsedColorToken;
+  'color.green.500': ParsedColorToken;
+  'color.green.600': ParsedColorToken;
+  'color.green.700': ParsedColorToken;
+  'color.green.800': ParsedColorToken;
+  'color.green.900': ParsedColorToken;
+  'color.interactive.active': ParsedColorToken;
+  'color.interactive.default': ParsedColorToken;
+  'color.interactive.disabled': ParsedColorToken & { $extensions: { mode: typeof modes['color.interactive.disabled'] } };
+  'color.interactive.focus': ParsedColorToken;
+  'color.interactive.hover': ParsedColorToken;
+  'color.neutral.0': ParsedColorToken;
+  'color.neutral.50': ParsedColorToken;
+  'color.neutral.100': ParsedColorToken;
+  'color.neutral.200': ParsedColorToken;
+  'color.neutral.300': ParsedColorToken;
+  'color.neutral.400': ParsedColorToken;
+  'color.neutral.500': ParsedColorToken;
+  'color.neutral.600': ParsedColorToken;
+  'color.neutral.700': ParsedColorToken;
+  'color.neutral.800': ParsedColorToken;
+  'color.neutral.900': ParsedColorToken;
+  'color.neutral.1000': ParsedColorToken;
+  'color.red-feedback.50': ParsedColorToken;
+  'color.red-feedback.100': ParsedColorToken;
+  'color.red-feedback.500': ParsedColorToken;
+  'color.red-feedback.600': ParsedColorToken;
+  'color.red-feedback.700': ParsedColorToken;
+  'color.red.50': ParsedColorToken;
+  'color.red.100': ParsedColorToken;
+  'color.red.200': ParsedColorToken;
+  'color.red.300': ParsedColorToken;
+  'color.red.400': ParsedColorToken;
+  'color.red.500': ParsedColorToken;
+  'color.red.600': ParsedColorToken;
+  'color.red.700': ParsedColorToken;
+  'color.red.800': ParsedColorToken;
+  'color.red.900': ParsedColorToken;
+  'color.surface.elevated': ParsedColorToken & { $extensions: { mode: typeof modes['color.surface.elevated'] } };
+  'color.surface.inverse': ParsedColorToken & { $extensions: { mode: typeof modes['color.surface.inverse'] } };
+  'color.surface.overlay': ParsedColorToken & { $extensions: { mode: typeof modes['color.surface.overlay'] } };
+  'color.surface.page': ParsedColorToken & { $extensions: { mode: typeof modes['color.surface.page'] } };
+  'color.text.brand': ParsedColorToken;
+  'color.text.default': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.default'] } };
+  'color.text.inverse': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.inverse'] } };
+  'color.text.link': ParsedColorToken;
+  'color.text.link-hover': ParsedColorToken;
+  'color.text.muted': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.muted'] } };
+  'color.text.secondary': ParsedColorToken & { $extensions: { mode: typeof modes['color.text.secondary'] } };
+  'color.yellow.50': ParsedColorToken;
+  'color.yellow.100': ParsedColorToken;
+  'color.yellow.200': ParsedColorToken;
+  'color.yellow.300': ParsedColorToken;
+  'color.yellow.400': ParsedColorToken;
+  'color.yellow.500': ParsedColorToken;
+  'color.yellow.600': ParsedColorToken;
+  'color.yellow.700': ParsedColorToken;
+  'color.yellow.800': ParsedColorToken;
+  'color.yellow.900': ParsedColorToken;
   'max-width.default': ParsedDimensionToken & { $extensions: { mode: typeof modes['max-width.default'] } };
   'max-width.medium': ParsedDimensionToken;
   'max-width.narrow': ParsedDimensionToken;
@@ -233,61 +411,148 @@ export declare const meta: {
 };
 
 export declare const modes: {
-  'color.btn.primary.bg': {
+  'btn.focus.ring': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.primary.border': {
+  'btn.focus.ring-offset': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.primary.fg': {
+  'btn.link.active-fg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.secondary.bg': {
+  'btn.link.fg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.secondary.border': {
+  'btn.link.hover-fg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.secondary.fg': {
+  'btn.primary.active-bg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.secondary.hover.fg': {
+  'btn.primary.active-border': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.tertiary.bg': {
+  'btn.primary.active-fg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.tertiary.border': {
+  'btn.primary.bg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.tertiary.fg': {
+  'btn.primary.border': {
     dark: ParsedColorToken['$value'];
   };
-  'color.btn.tertiary.hover.bg': {
+  'btn.primary.fg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.theme.background.default': {
+  'btn.primary.hover-bg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.theme.background.surface': {
+  'btn.primary.hover-border': {
     dark: ParsedColorToken['$value'];
   };
-  'color.theme.border.default': {
+  'btn.primary.hover-fg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.theme.border.light': {
+  'btn.secondary.active-bg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.theme.status.success-bg': {
+  'btn.secondary.active-border': {
     dark: ParsedColorToken['$value'];
   };
-  'color.theme.text.muted': {
+  'btn.secondary.active-fg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.theme.text.primary': {
+  'btn.secondary.bg': {
     dark: ParsedColorToken['$value'];
   };
-  'color.theme.text.secondary': {
+  'btn.secondary.border': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.secondary.fg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.secondary.hover-bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.secondary.hover-border': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.secondary.hover-fg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.tertiary.active-bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.tertiary.active-border': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.tertiary.active-fg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.tertiary.bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.tertiary.border': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.tertiary.fg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.tertiary.hover-bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.tertiary.hover-border': {
+    dark: ParsedColorToken['$value'];
+  };
+  'btn.tertiary.hover-fg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.border.default': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.border.strong': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.border.subtle': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.feedback.error.bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.feedback.info.bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.feedback.success.bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.feedback.warning.bg': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.interactive.disabled': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.surface.elevated': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.surface.inverse': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.surface.overlay': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.surface.page': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.text.default': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.text.inverse': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.text.muted': {
+    dark: ParsedColorToken['$value'];
+  };
+  'color.text.secondary': {
     dark: ParsedColorToken['$value'];
   };
   'max-width.default': {

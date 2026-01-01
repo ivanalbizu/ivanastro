@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "description": "My personal Site built with Astro. Write about html, css, scss, javascript, astro, webgl, php, android, java",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "npm run tokens:build && astro dev",
+    "build": "npm run tokens:build && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
@@ -14,8 +14,8 @@
     "generate-screenshots": "node generate-screenshots.js",
     "test:features": "playwright test",
     "matter": "node .scripts/matter.cjs",
-    "build:tokens": "npx co build",
-    "build:tokens:watch": "npx co build --watch"
+    "tokens:build": "cobalt build",
+    "tokens:watch": "cobalt build --watch"
   },
   "author": "@ivanalbizu",
   "license": "MIT",
