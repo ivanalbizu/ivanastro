@@ -1,0 +1,41 @@
+# =============================================================================
+# TOKENS SEMÁNTICOS DE TRANSICIÓN
+# =============================================================================
+# Tokens de duración para transiciones y animaciones.
+# No requieren capa primitiva por ser valores específicos y pocos.
+# Incluyen soporte para prefers-reduced-motion.
+# =============================================================================
+
+transition:
+  $type: duration
+
+  # ---------------------------------------------------------------------------
+  # DURACIONES SEMÁNTICAS
+  # Nombres descriptivos con soporte de accesibilidad
+  # ---------------------------------------------------------------------------
+  duration:
+    instant:
+      $value: 50ms
+      $extensions:
+        mode:
+          reducedMotion: 0s
+    fast:
+      $value: 100ms
+      $extensions:
+        mode:
+          reducedMotion: 0s
+    normal:
+      $value: 200ms
+      $extensions:
+        mode:
+          reducedMotion: 0s
+    slow:
+      $value: 300ms
+      $extensions:
+        mode:
+          reducedMotion: 0s
+    slower:
+      $value: 500ms
+      $extensions:
+        mode:
+          reducedMotion: 0s

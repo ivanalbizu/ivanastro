@@ -13,9 +13,19 @@ import {
 } from '@cobalt-ui/core';
 
 export declare const tokens: {
+  'border.radius.0': ParsedDimensionToken['$value'];
+  'border.radius.2': ParsedDimensionToken['$value'];
+  'border.radius.4': ParsedDimensionToken['$value'];
+  'border.radius.8': ParsedDimensionToken['$value'];
+  'border.radius.full': ParsedDimensionToken['$value'];
   'border.radius.lg': ParsedDimensionToken['$value'];
   'border.radius.md': ParsedDimensionToken['$value'];
+  'border.radius.none': ParsedDimensionToken['$value'];
+  'border.radius.pill': ParsedDimensionToken['$value'];
   'border.radius.sm': ParsedDimensionToken['$value'];
+  'border.width.1': ParsedDimensionToken['$value'];
+  'border.width.2': ParsedDimensionToken['$value'];
+  'border.width.4': ParsedDimensionToken['$value'];
   'border.width.lg': ParsedDimensionToken['$value'];
   'border.width.md': ParsedDimensionToken['$value'];
   'border.width.sm': ParsedDimensionToken['$value'];
@@ -163,9 +173,21 @@ export declare const tokens: {
   'max-width.medium': ParsedDimensionToken['$value'];
   'max-width.narrow': ParsedDimensionToken['$value'];
   'max-width.thin': ParsedDimensionToken['$value'];
+  'space.0': ParsedDimensionToken['$value'];
+  'space.1': ParsedDimensionToken['$value'];
+  'space.2': ParsedDimensionToken['$value'];
+  'space.3': ParsedDimensionToken['$value'];
+  'space.4': ParsedDimensionToken['$value'];
+  'space.5': ParsedDimensionToken['$value'];
+  'space.6': ParsedDimensionToken['$value'];
+  'space.7': ParsedDimensionToken['$value'];
+  'space.8': ParsedDimensionToken['$value'];
+  'space.9': ParsedDimensionToken['$value'];
   'space.lg': ParsedDimensionToken['$value'];
   'space.md': ParsedDimensionToken['$value'];
+  'space.semantic.gap': ParsedDimensionToken['$value'];
   'space.semantic.padding': ParsedDimensionToken['$value'];
+  'space.semantic.section': ParsedDimensionToken['$value'];
   'space.sm': ParsedDimensionToken['$value'];
   'space.xl': ParsedDimensionToken['$value'];
   'space.xs': ParsedDimensionToken['$value'];
@@ -174,12 +196,13 @@ export declare const tokens: {
   'space.xxxl': ParsedDimensionToken['$value'];
   'space.xxxs': ParsedDimensionToken['$value'];
   'transition.duration.fast': ParsedDurationToken['$value'];
+  'transition.duration.instant': ParsedDurationToken['$value'];
   'transition.duration.normal': ParsedDurationToken['$value'];
   'transition.duration.slow': ParsedDurationToken['$value'];
+  'transition.duration.slower': ParsedDurationToken['$value'];
   'typography.font-family.body': ParsedFontFamilyToken['$value'];
   'typography.font-family.mono': ParsedFontFamilyToken['$value'];
   'typography.font-family.primary': ParsedFontFamilyToken['$value'];
-  'typography.font-family.secondary': ParsedFontFamilyToken['$value'];
   'typography.font-size.btn.default': ParsedDimensionToken['$value'];
   'typography.font-size.btn.sm': ParsedDimensionToken['$value'];
   'typography.font-size.heading.1': ParsedDimensionToken['$value'];
@@ -212,9 +235,19 @@ export declare const tokens: {
 };
 
 export declare const meta: {
+  'border.radius.0': ParsedDimensionToken;
+  'border.radius.2': ParsedDimensionToken;
+  'border.radius.4': ParsedDimensionToken;
+  'border.radius.8': ParsedDimensionToken;
+  'border.radius.full': ParsedDimensionToken;
   'border.radius.lg': ParsedDimensionToken;
   'border.radius.md': ParsedDimensionToken;
+  'border.radius.none': ParsedDimensionToken;
+  'border.radius.pill': ParsedDimensionToken;
   'border.radius.sm': ParsedDimensionToken;
+  'border.width.1': ParsedDimensionToken;
+  'border.width.2': ParsedDimensionToken;
+  'border.width.4': ParsedDimensionToken;
   'border.width.lg': ParsedDimensionToken;
   'border.width.md': ParsedDimensionToken;
   'border.width.sm': ParsedDimensionToken;
@@ -362,9 +395,21 @@ export declare const meta: {
   'max-width.medium': ParsedDimensionToken;
   'max-width.narrow': ParsedDimensionToken;
   'max-width.thin': ParsedDimensionToken & { $extensions: { mode: typeof modes['max-width.thin'] } };
+  'space.0': ParsedDimensionToken;
+  'space.1': ParsedDimensionToken;
+  'space.2': ParsedDimensionToken;
+  'space.3': ParsedDimensionToken;
+  'space.4': ParsedDimensionToken;
+  'space.5': ParsedDimensionToken;
+  'space.6': ParsedDimensionToken;
+  'space.7': ParsedDimensionToken;
+  'space.8': ParsedDimensionToken;
+  'space.9': ParsedDimensionToken;
   'space.lg': ParsedDimensionToken;
   'space.md': ParsedDimensionToken;
+  'space.semantic.gap': ParsedDimensionToken;
   'space.semantic.padding': ParsedDimensionToken;
+  'space.semantic.section': ParsedDimensionToken;
   'space.sm': ParsedDimensionToken;
   'space.xl': ParsedDimensionToken;
   'space.xs': ParsedDimensionToken;
@@ -373,12 +418,13 @@ export declare const meta: {
   'space.xxxl': ParsedDimensionToken;
   'space.xxxs': ParsedDimensionToken;
   'transition.duration.fast': ParsedDurationToken & { $extensions: { mode: typeof modes['transition.duration.fast'] } };
+  'transition.duration.instant': ParsedDurationToken & { $extensions: { mode: typeof modes['transition.duration.instant'] } };
   'transition.duration.normal': ParsedDurationToken & { $extensions: { mode: typeof modes['transition.duration.normal'] } };
   'transition.duration.slow': ParsedDurationToken & { $extensions: { mode: typeof modes['transition.duration.slow'] } };
+  'transition.duration.slower': ParsedDurationToken & { $extensions: { mode: typeof modes['transition.duration.slower'] } };
   'typography.font-family.body': ParsedFontFamilyToken;
   'typography.font-family.mono': ParsedFontFamilyToken;
   'typography.font-family.primary': ParsedFontFamilyToken;
-  'typography.font-family.secondary': ParsedFontFamilyToken;
   'typography.font-size.btn.default': ParsedDimensionToken;
   'typography.font-size.btn.sm': ParsedDimensionToken;
   'typography.font-size.heading.1': ParsedDimensionToken;
@@ -564,10 +610,16 @@ export declare const modes: {
   'transition.duration.fast': {
     reducedMotion: ParsedDurationToken['$value'];
   };
+  'transition.duration.instant': {
+    reducedMotion: ParsedDurationToken['$value'];
+  };
   'transition.duration.normal': {
     reducedMotion: ParsedDurationToken['$value'];
   };
   'transition.duration.slow': {
+    reducedMotion: ParsedDurationToken['$value'];
+  };
+  'transition.duration.slower': {
     reducedMotion: ParsedDurationToken['$value'];
   };
   'typography.font-size.scale': {

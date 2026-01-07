@@ -1,0 +1,37 @@
+# =============================================================================
+# TOKENS SEMÁNTICOS DE BORDE
+# =============================================================================
+# Tokens con significado contextual que referencian primitivos.
+# Estos tokens SÍ pueden usarse en componentes y estilos globales.
+# =============================================================================
+
+border:
+  $type: dimension
+
+  # ---------------------------------------------------------------------------
+  # ANCHO DE BORDE
+  # Nombres semánticos para diferentes grosores
+  # ---------------------------------------------------------------------------
+  width:
+    sm:
+      $value: "{border.width.1}"
+    md:
+      $value: "{border.width.2}"
+    lg:
+      $value: "{border.width.4}"
+
+  # ---------------------------------------------------------------------------
+  # RADIO DE BORDE
+  # Nombres semánticos para diferentes redondeos
+  # ---------------------------------------------------------------------------
+  radius:
+    none:
+      $value: "{border.radius.0}"
+    sm:
+      $value: "{border.radius.2}"
+    md:
+      $value: "{border.radius.4}"
+    lg:
+      $value: "{border.radius.8}"
+    pill:
+      $value: "{border.radius.full}"

@@ -1,0 +1,108 @@
+# =============================================================================
+# TOKENS SEMÁNTICOS DE TIPOGRAFÍA
+# =============================================================================
+# Tokens de tipografía para fuentes, tamaños, pesos y espaciado.
+# No requieren capa primitiva por ser valores específicos y directos.
+# =============================================================================
+
+typography:
+  # ---------------------------------------------------------------------------
+  # FAMILIAS TIPOGRÁFICAS
+  # ---------------------------------------------------------------------------
+  font-family:
+    $type: fontFamily
+    primary:
+      $value: ["AtkinsonHyperlegible", "-system-ui", "sans-serif"]
+    body:
+      $value: ["AtkinsonHyperlegible", "-system-ui", "sans-serif"]
+    mono:
+      $value: monospace
+
+  # ---------------------------------------------------------------------------
+  # TAMAÑOS DE FUENTE
+  # ---------------------------------------------------------------------------
+  font-size:
+    $type: dimension
+    heading:
+      1:
+        $value: calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale))
+      2:
+        $value: calc(clamp(1.5rem, 3vw + 1rem, 3rem) * var(--typography-font-size-scale))
+      3:
+        $value: calc(clamp(1.3rem, 2.5vw + 1rem, 2.5rem) * var(--typography-font-size-scale))
+      4:
+        $value: calc(clamp(1.2rem, 2.5vw + 1rem, 2rem) * var(--typography-font-size-scale))
+      5:
+        $value: calc(clamp(1.15rem, 2vw + 1rem, 1.4rem) * var(--typography-font-size-scale))
+      6:
+        $value: calc(clamp(1.125rem, 1.8vw + 1rem, 1.25rem) * var(--typography-font-size-scale))
+    paragraph:
+      1:
+        $value: calc(1.2rem * var(--typography-font-size-scale))
+      2:
+        $value: calc(1.1rem * var(--typography-font-size-scale))
+      3:
+        $value: calc(1rem * var(--typography-font-size-scale))
+      4:
+        $value: calc(0.95rem * var(--typography-font-size-scale))
+      5:
+        $value: calc(0.9rem * var(--typography-font-size-scale))
+    btn:
+      default:
+        $value: calc(1.15rem * var(--typography-font-size-scale))
+      sm:
+        $value: calc(1rem * var(--typography-font-size-scale))
+    scale:
+      $type: number
+      $value: 1
+      $extensions:
+        mode:
+          zoomed: 1.15
+
+  # ---------------------------------------------------------------------------
+  # PESOS DE FUENTE
+  # ---------------------------------------------------------------------------
+  font-weight:
+    $type: number
+    lighter:
+      $value: 300
+    normal:
+      $value: 400
+    bold:
+      $value: 700
+    bolder:
+      $value: 900
+
+  # ---------------------------------------------------------------------------
+  # ALTURA DE LÍNEA
+  # ---------------------------------------------------------------------------
+  line-height:
+    $type: number
+    xs:
+      $value: 1
+    sm:
+      $value: 1.1
+    md:
+      $value: 1.3
+    lg:
+      $value: 1.6
+    xl:
+      $value: 1.7
+
+  # ---------------------------------------------------------------------------
+  # ESPACIADO ENTRE LETRAS
+  # ---------------------------------------------------------------------------
+  letter-spacing:
+    $type: dimension
+    xs:
+      $value: 0.01rem
+    sm:
+      $value: 0.02rem
+    md:
+      $value: 0.03rem
+    lg:
+      $value: 0.05rem
+    xl:
+      $value: 0.08rem
+    xxl:
+      $value: 0.1rem
