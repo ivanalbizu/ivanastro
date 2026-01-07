@@ -1,0 +1,44 @@
+# =============================================================================
+# TOKENS SEMÁNTICOS DE ESPACIADO
+# =============================================================================
+# Tokens con significado contextual que referencian primitivos.
+# Estos tokens SÍ pueden usarse en componentes y estilos globales.
+# =============================================================================
+
+space:
+  $type: dimension
+
+  # ---------------------------------------------------------------------------
+  # ALIASES DE TAMAÑO
+  # Nombres descriptivos que referencian la escala numérica
+  # ---------------------------------------------------------------------------
+  xxxs:
+    $value: "{space.1}"
+  xxs:
+    $value: "{space.2}"
+  xs:
+    $value: "{space.3}"
+  sm:
+    $value: "{space.4}"
+  md:
+    $value: "{space.5}"
+  lg:
+    $value: "{space.6}"
+  xl:
+    $value: "{space.7}"
+  xxl:
+    $value: "{space.8}"
+  xxxl:
+    $value: "{space.9}"
+
+  # ---------------------------------------------------------------------------
+  # LAYOUT SEMÁNTICO
+  # Tokens específicos para patrones de layout comunes
+  # ---------------------------------------------------------------------------
+  semantic:
+    padding:
+      $value: "{space.sm}"
+    gap:
+      $value: "{space.md}"
+    section:
+      $value: "{space.xl}"

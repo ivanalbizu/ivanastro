@@ -5,9 +5,19 @@
  */
 
 export const tokens = {
+  'border.radius.0': '0',
+  'border.radius.2': '2px',
+  'border.radius.4': '4px',
+  'border.radius.8': '8px',
+  'border.radius.full': '9999px',
   'border.radius.lg': '8px',
   'border.radius.md': '4px',
+  'border.radius.none': '0',
+  'border.radius.pill': '9999px',
   'border.radius.sm': '2px',
+  'border.width.1': '1px',
+  'border.width.2': '2px',
+  'border.width.4': '4px',
   'border.width.lg': '4px',
   'border.width.md': '2px',
   'border.width.sm': '1px',
@@ -155,9 +165,21 @@ export const tokens = {
   'max-width.medium': '50rem',
   'max-width.narrow': '20rem',
   'max-width.thin': '37.5rem',
+  'space.0': '0',
+  'space.1': '0.25rem',
+  'space.2': '0.5rem',
+  'space.3': '0.75rem',
+  'space.4': '1rem',
+  'space.5': '1.5rem',
+  'space.6': '2rem',
+  'space.7': '3rem',
+  'space.8': '4rem',
+  'space.9': '5rem',
   'space.lg': '2rem',
   'space.md': '1.5rem',
+  'space.semantic.gap': '1.5rem',
   'space.semantic.padding': '1rem',
+  'space.semantic.section': '3rem',
   'space.sm': '1rem',
   'space.xl': '3rem',
   'space.xs': '0.75rem',
@@ -165,13 +187,14 @@ export const tokens = {
   'space.xxs': '0.5rem',
   'space.xxxl': '5rem',
   'space.xxxs': '0.25rem',
-  'transition.duration.fast': '0.1s',
-  'transition.duration.normal': '0.2s',
-  'transition.duration.slow': '0.3s',
+  'transition.duration.fast': '100ms',
+  'transition.duration.instant': '50ms',
+  'transition.duration.normal': '200ms',
+  'transition.duration.slow': '300ms',
+  'transition.duration.slower': '500ms',
   'typography.font-family.body': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
   'typography.font-family.mono': ['monospace'],
   'typography.font-family.primary': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
-  'typography.font-family.secondary': ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
   'typography.font-size.btn.default': 'calc(1.15rem * var(--typography-font-size-scale))',
   'typography.font-size.btn.sm': 'calc(1rem * var(--typography-font-size-scale))',
   'typography.font-size.heading.1': 'calc(clamp(2rem, 4vw + 1rem, 3.5rem) * var(--typography-font-size-scale))',
@@ -180,8 +203,8 @@ export const tokens = {
   'typography.font-size.heading.4': 'calc(clamp(1.2rem, 2.5vw + 1rem, 2rem) * var(--typography-font-size-scale))',
   'typography.font-size.heading.5': 'calc(clamp(1.15rem, 2vw + 1rem, 1.4rem) * var(--typography-font-size-scale))',
   'typography.font-size.heading.6': 'calc(clamp(1.125rem, 1.8vw + 1rem, 1.25rem) * var(--typography-font-size-scale))',
-  'typography.font-size.paragraph.1': 'calc(1.1rem * var(--typography-font-size-scale))',
-  'typography.font-size.paragraph.2': 'calc(1rem * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.1': 'calc(1.2rem * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.2': 'calc(1.1rem * var(--typography-font-size-scale))',
   'typography.font-size.paragraph.3': 'calc(0.95rem * var(--typography-font-size-scale))',
   'typography.font-size.paragraph.4': 'calc(0.9rem * var(--typography-font-size-scale))',
   'typography.font-size.paragraph.5': 'calc(0.85rem * var(--typography-font-size-scale))',
@@ -204,9 +227,84 @@ export const tokens = {
 };
 
 export const meta = {
-  'border.radius.lg': {
+  'border.radius.0': {
+    _original: {
+      $value: 0,
+    },
+    _group: {
+      id: 'border.radius',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.radius.0',
+    $type: 'dimension',
+    $value: '0',
+  },
+  'border.radius.2': {
+    _original: {
+      $value: '2px',
+    },
+    _group: {
+      id: 'border.radius',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.radius.2',
+    $type: 'dimension',
+    $value: '2px',
+  },
+  'border.radius.4': {
+    _original: {
+      $value: '4px',
+    },
+    _group: {
+      id: 'border.radius',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.radius.4',
+    $type: 'dimension',
+    $value: '4px',
+  },
+  'border.radius.8': {
     _original: {
       $value: '8px',
+    },
+    _group: {
+      id: 'border.radius',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.radius.8',
+    $type: 'dimension',
+    $value: '8px',
+  },
+  'border.radius.full': {
+    _original: {
+      $value: '9999px',
+    },
+    _group: {
+      id: 'border.radius',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.radius.full',
+    $type: 'dimension',
+    $value: '9999px',
+  },
+  'border.radius.lg': {
+    _original: {
+      $value: '{border.radius.8}',
     },
     _group: {
       id: 'border.radius',
@@ -221,7 +319,7 @@ export const meta = {
   },
   'border.radius.md': {
     _original: {
-      $value: '4px',
+      $value: '{border.radius.4}',
     },
     _group: {
       id: 'border.radius',
@@ -234,9 +332,39 @@ export const meta = {
     $type: 'dimension',
     $value: '4px',
   },
+  'border.radius.none': {
+    _original: {
+      $value: '{border.radius.0}',
+    },
+    _group: {
+      id: 'border.radius',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.radius.none',
+    $type: 'dimension',
+    $value: '0',
+  },
+  'border.radius.pill': {
+    _original: {
+      $value: '{border.radius.full}',
+    },
+    _group: {
+      id: 'border.radius',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.radius.pill',
+    $type: 'dimension',
+    $value: '9999px',
+  },
   'border.radius.sm': {
     _original: {
-      $value: '2px',
+      $value: '{border.radius.2}',
     },
     _group: {
       id: 'border.radius',
@@ -249,9 +377,54 @@ export const meta = {
     $type: 'dimension',
     $value: '2px',
   },
-  'border.width.lg': {
+  'border.width.1': {
+    _original: {
+      $value: '1px',
+    },
+    _group: {
+      id: 'border.width',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.width.1',
+    $type: 'dimension',
+    $value: '1px',
+  },
+  'border.width.2': {
+    _original: {
+      $value: '2px',
+    },
+    _group: {
+      id: 'border.width',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.width.2',
+    $type: 'dimension',
+    $value: '2px',
+  },
+  'border.width.4': {
     _original: {
       $value: '4px',
+    },
+    _group: {
+      id: 'border.width',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'border.width.4',
+    $type: 'dimension',
+    $value: '4px',
+  },
+  'border.width.lg': {
+    _original: {
+      $value: '{border.width.4}',
     },
     _group: {
       id: 'border.width',
@@ -266,7 +439,7 @@ export const meta = {
   },
   'border.width.md': {
     _original: {
-      $value: '2px',
+      $value: '{border.width.2}',
     },
     _group: {
       id: 'border.width',
@@ -281,7 +454,7 @@ export const meta = {
   },
   'border.width.sm': {
     _original: {
-      $value: '1px',
+      $value: '{border.width.1}',
     },
     _group: {
       id: 'border.width',
@@ -2954,9 +3127,159 @@ export const meta = {
       },
     },
   },
-  'space.lg': {
+  'space.0': {
+    _original: {
+      $value: 0,
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.0',
+    $type: 'dimension',
+    $value: '0',
+  },
+  'space.1': {
+    _original: {
+      $value: '0.25rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.1',
+    $type: 'dimension',
+    $value: '0.25rem',
+  },
+  'space.2': {
+    _original: {
+      $value: '0.5rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.2',
+    $type: 'dimension',
+    $value: '0.5rem',
+  },
+  'space.3': {
+    _original: {
+      $value: '0.75rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.3',
+    $type: 'dimension',
+    $value: '0.75rem',
+  },
+  'space.4': {
+    _original: {
+      $value: '1rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.4',
+    $type: 'dimension',
+    $value: '1rem',
+  },
+  'space.5': {
+    _original: {
+      $value: '1.5rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.5',
+    $type: 'dimension',
+    $value: '1.5rem',
+  },
+  'space.6': {
     _original: {
       $value: '2rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.6',
+    $type: 'dimension',
+    $value: '2rem',
+  },
+  'space.7': {
+    _original: {
+      $value: '3rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.7',
+    $type: 'dimension',
+    $value: '3rem',
+  },
+  'space.8': {
+    _original: {
+      $value: '4rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.8',
+    $type: 'dimension',
+    $value: '4rem',
+  },
+  'space.9': {
+    _original: {
+      $value: '5rem',
+    },
+    _group: {
+      id: 'space',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.9',
+    $type: 'dimension',
+    $value: '5rem',
+  },
+  'space.lg': {
+    _original: {
+      $value: '{space.6}',
     },
     _group: {
       id: 'space',
@@ -2971,7 +3294,7 @@ export const meta = {
   },
   'space.md': {
     _original: {
-      $value: '1.5rem',
+      $value: '{space.5}',
     },
     _group: {
       id: 'space',
@@ -2981,6 +3304,21 @@ export const meta = {
       $type: 'dimension',
     },
     id: 'space.md',
+    $type: 'dimension',
+    $value: '1.5rem',
+  },
+  'space.semantic.gap': {
+    _original: {
+      $value: '{space.md}',
+    },
+    _group: {
+      id: 'space.semantic',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.semantic.gap',
     $type: 'dimension',
     $value: '1.5rem',
   },
@@ -2999,9 +3337,24 @@ export const meta = {
     $type: 'dimension',
     $value: '1rem',
   },
+  'space.semantic.section': {
+    _original: {
+      $value: '{space.xl}',
+    },
+    _group: {
+      id: 'space.semantic',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'dimension',
+    },
+    id: 'space.semantic.section',
+    $type: 'dimension',
+    $value: '3rem',
+  },
   'space.sm': {
     _original: {
-      $value: '1rem',
+      $value: '{space.4}',
     },
     _group: {
       id: 'space',
@@ -3016,7 +3369,7 @@ export const meta = {
   },
   'space.xl': {
     _original: {
-      $value: '3rem',
+      $value: '{space.7}',
     },
     _group: {
       id: 'space',
@@ -3031,7 +3384,7 @@ export const meta = {
   },
   'space.xs': {
     _original: {
-      $value: '0.75rem',
+      $value: '{space.3}',
     },
     _group: {
       id: 'space',
@@ -3046,7 +3399,7 @@ export const meta = {
   },
   'space.xxl': {
     _original: {
-      $value: '4rem',
+      $value: '{space.8}',
     },
     _group: {
       id: 'space',
@@ -3061,7 +3414,7 @@ export const meta = {
   },
   'space.xxs': {
     _original: {
-      $value: '0.5rem',
+      $value: '{space.2}',
     },
     _group: {
       id: 'space',
@@ -3076,7 +3429,7 @@ export const meta = {
   },
   'space.xxxl': {
     _original: {
-      $value: '5rem',
+      $value: '{space.9}',
     },
     _group: {
       id: 'space',
@@ -3091,7 +3444,7 @@ export const meta = {
   },
   'space.xxxs': {
     _original: {
-      $value: '0.25rem',
+      $value: '{space.1}',
     },
     _group: {
       id: 'space',
@@ -3106,7 +3459,7 @@ export const meta = {
   },
   'transition.duration.fast': {
     _original: {
-      $value: '0.1s',
+      $value: '100ms',
       $extensions: {
         mode: {
           reducedMotion: '0s',
@@ -3122,7 +3475,32 @@ export const meta = {
     },
     id: 'transition.duration.fast',
     $type: 'duration',
-    $value: '0.1s',
+    $value: '100ms',
+    $extensions: {
+      mode: {
+        reducedMotion: '0ms',
+      },
+    },
+  },
+  'transition.duration.instant': {
+    _original: {
+      $value: '50ms',
+      $extensions: {
+        mode: {
+          reducedMotion: '0s',
+        },
+      },
+    },
+    _group: {
+      id: 'transition.duration',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'duration',
+    },
+    id: 'transition.duration.instant',
+    $type: 'duration',
+    $value: '50ms',
     $extensions: {
       mode: {
         reducedMotion: '0ms',
@@ -3131,7 +3509,7 @@ export const meta = {
   },
   'transition.duration.normal': {
     _original: {
-      $value: '0.2s',
+      $value: '200ms',
       $extensions: {
         mode: {
           reducedMotion: '0s',
@@ -3147,7 +3525,7 @@ export const meta = {
     },
     id: 'transition.duration.normal',
     $type: 'duration',
-    $value: '0.2s',
+    $value: '200ms',
     $extensions: {
       mode: {
         reducedMotion: '0ms',
@@ -3156,7 +3534,7 @@ export const meta = {
   },
   'transition.duration.slow': {
     _original: {
-      $value: '0.3s',
+      $value: '300ms',
       $extensions: {
         mode: {
           reducedMotion: '0s',
@@ -3172,7 +3550,32 @@ export const meta = {
     },
     id: 'transition.duration.slow',
     $type: 'duration',
-    $value: '0.3s',
+    $value: '300ms',
+    $extensions: {
+      mode: {
+        reducedMotion: '0ms',
+      },
+    },
+  },
+  'transition.duration.slower': {
+    _original: {
+      $value: '500ms',
+      $extensions: {
+        mode: {
+          reducedMotion: '0s',
+        },
+      },
+    },
+    _group: {
+      id: 'transition.duration',
+      $extensions: {
+        requiredModes: [],
+      },
+      $type: 'duration',
+    },
+    id: 'transition.duration.slower',
+    $type: 'duration',
+    $value: '500ms',
     $extensions: {
       mode: {
         reducedMotion: '0ms',
@@ -3221,21 +3624,6 @@ export const meta = {
       $type: 'fontFamily',
     },
     id: 'typography.font-family.primary',
-    $type: 'fontFamily',
-    $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
-  },
-  'typography.font-family.secondary': {
-    _original: {
-      $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
-    },
-    _group: {
-      id: 'typography.font-family',
-      $extensions: {
-        requiredModes: [],
-      },
-      $type: 'fontFamily',
-    },
-    id: 'typography.font-family.secondary',
     $type: 'fontFamily',
     $value: ['AtkinsonHyperlegible', '-system-ui', 'sans-serif'],
   },
@@ -3361,7 +3749,7 @@ export const meta = {
   },
   'typography.font-size.paragraph.1': {
     _original: {
-      $value: 'calc(1.1rem * var(--typography-font-size-scale))',
+      $value: 'calc(1.2rem * var(--typography-font-size-scale))',
     },
     _group: {
       id: 'typography.font-size.paragraph',
@@ -3372,11 +3760,11 @@ export const meta = {
     },
     id: 'typography.font-size.paragraph.1',
     $type: 'dimension',
-    $value: 'calc(1.1rem * var(--typography-font-size-scale))',
+    $value: 'calc(1.2rem * var(--typography-font-size-scale))',
   },
   'typography.font-size.paragraph.2': {
     _original: {
-      $value: 'calc(1rem * var(--typography-font-size-scale))',
+      $value: 'calc(1.1rem * var(--typography-font-size-scale))',
     },
     _group: {
       id: 'typography.font-size.paragraph',
@@ -3387,7 +3775,7 @@ export const meta = {
     },
     id: 'typography.font-size.paragraph.2',
     $type: 'dimension',
-    $value: 'calc(1rem * var(--typography-font-size-scale))',
+    $value: 'calc(1.1rem * var(--typography-font-size-scale))',
   },
   'typography.font-size.paragraph.3': {
     _original: {
@@ -3841,10 +4229,16 @@ export const modes = {
   'transition.duration.fast': {
     reducedMotion: '0ms',
   },
+  'transition.duration.instant': {
+    reducedMotion: '0ms',
+  },
   'transition.duration.normal': {
     reducedMotion: '0ms',
   },
   'transition.duration.slow': {
+    reducedMotion: '0ms',
+  },
+  'transition.duration.slower': {
     reducedMotion: '0ms',
   },
   'typography.font-size.scale': {

@@ -1,0 +1,36 @@
+# =============================================================================
+# TOKENS PRIMITIVOS DE BORDE
+# =============================================================================
+# Valores numéricos base para anchos y radios de borde.
+# Estos tokens NO deben usarse directamente en componentes.
+# Sirven como base para los tokens semánticos.
+# =============================================================================
+
+border:
+  $type: dimension
+
+  # ---------------------------------------------------------------------------
+  # ANCHO DE BORDE (valores en píxeles)
+  # ---------------------------------------------------------------------------
+  width:
+    1:
+      $value: 1px
+    2:
+      $value: 2px
+    4:
+      $value: 4px
+
+  # ---------------------------------------------------------------------------
+  # RADIO DE BORDE (valores en píxeles)
+  # ---------------------------------------------------------------------------
+  radius:
+    0:
+      $value: 0
+    2:
+      $value: 2px
+    4:
+      $value: 4px
+    8:
+      $value: 8px
+    full:
+      $value: 9999px

@@ -1,0 +1,27 @@
+# =============================================================================
+# TOKENS SEMÁNTICOS DE ANCHO
+# =============================================================================
+# Tokens de ancho máximo para layout.
+# No requieren capa primitiva por ser valores específicos y pocos.
+# =============================================================================
+
+max-width:
+  $type: dimension
+
+  # ---------------------------------------------------------------------------
+  # ANCHOS MÁXIMOS DE CONTENEDOR
+  # ---------------------------------------------------------------------------
+  narrow:
+    $value: 20rem
+  thin:
+    $value: 37.5rem
+    $extensions:
+      mode:
+        zoomed: 62.5rem
+  medium:
+    $value: 50rem
+  default:
+    $value: 75rem
+    $extensions:
+      mode:
+        zoomed: 125rem
