@@ -401,7 +401,6 @@ const applyTheme = (isDark) => {
     isDark ? "dark" : "light",
   );
   localStorage.setItem("theme", isDark ? "dark" : "light");
-  console.log(`🎨 Theme changed to: ${isDark ? 'dark' : 'light'}`);
 };
 
 // Obtener preferencia de tema
@@ -425,7 +424,6 @@ const handleThemeToggle = async () => {
   // Verificar si estamos en la página del editor
   if (window.location.pathname.includes('token-editor')) {
     showEditorToast();
-    console.log('⚠️ Theme toggle disabled in token editor page');
     return;
   }
 
@@ -451,24 +449,18 @@ const handleThemeToggle = async () => {
     const result = await createConfirmationModal();
 
     if (result === 'cancel') {
-      console.log('❌ Theme change cancelled by user');
       return;
     }
 
     if (result === 'backup') {
-      console.log('📥 Downloading tokens backup...');
       const downloaded = downloadCurrentTokens();
-      if (downloaded) {
-        console.log('✅ Tokens downloaded successfully');
-      } else {
-        console.error('❌ Failed to download tokens');
+      if (!downloaded) {
         alert('Error al descargar los tokens. ¿Deseas continuar de todos modos?');
         return;
       }
     }
 
     // Limpiar tokens personalizados
-    console.log('🧹 Clearing custom tokens...');
     if (typeof window.clearTokenStyles === 'function') {
       window.clearTokenStyles();
     } else {
@@ -487,7 +479,6 @@ const handleThemeToggle = async () => {
     if (typeof window.__tokenEditor === 'function') {
       const editor = window.__tokenEditor();
       if (editor && typeof editor.loadTokens === 'function') {
-        console.log('🔄 Reloading TokenEditor...');
         await editor.loadTokens();
       }
     }
@@ -496,8 +487,6 @@ const handleThemeToggle = async () => {
     window.dispatchEvent(new CustomEvent('tokens-cleared', {
       detail: { timestamp: Date.now() }
     }));
-
-    console.log('✅ Custom tokens cleared and UI updated');
   }
 
   // Aplicar el tema
@@ -515,8 +504,6 @@ const attachThemeToggle = () => {
 
   // Agregar nuevo listener
   newButton.addEventListener("click", handleThemeToggle);
-  
-  console.log('🔘 Theme toggle button attached');
 };
 
 // Inicializar sistema

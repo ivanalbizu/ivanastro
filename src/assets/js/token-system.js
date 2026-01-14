@@ -38,7 +38,6 @@ class TokenStyleManager {
     const storedTokens = this._loadStoredTokens();
     
     if (!storedTokens) {
-      console.log('📦 No custom tokens found, using default styles');
       this._dynamicSheet.replaceSync('');
       return;
     }
@@ -46,7 +45,6 @@ class TokenStyleManager {
     try {
       const cssRules = this._generateCssVariables(storedTokens);
       this._dynamicSheet.replaceSync(cssRules);
-      console.log('✅ Custom tokens applied successfully');
     } catch (error) {
       console.error('❌ Error applying stored tokens:', error);
     }
@@ -152,10 +150,8 @@ class TokenStyleManager {
     try {
       localStorage.removeItem(this._STORAGE_KEY);
       this._dynamicSheet.replaceSync('');
-      console.log('🧹 Custom styles cleared successfully');
       return true;
     } catch (error) {
-      console.error('❌ Error clearing custom styles:', error);
       return false;
     }
   }
@@ -522,9 +518,8 @@ class TokenEditor {
       const yamlString = jsyaml.dump(this._currentTokens);
       const blob = new Blob([yamlString], { type: 'text/yaml' });
       this._triggerDownload(blob, 'colors.yaml');
-      console.log('✅ YAML downloaded successfully');
     } catch (error) {
-      console.error('❌ Error downloading YAML:', error);
+      // Error downloading YAML
     }
   }
 
@@ -561,11 +556,9 @@ class TokenEditor {
     
     // Re-renderizar el editor
     this.render();
-    
+
     // Notificar a ventanas PiP
     this._notifyPipWindows();
-    
-    console.log('✅ Tokens restaurados a valores originales');
   }
 
   async openPictureInPicture() {
@@ -591,8 +584,6 @@ class TokenEditor {
 
       // Crear contenido del editor en PiP
       this._createPipContent(this._pipWindow);
-
-      console.log('✅ Picture-in-Picture opened');
 
       // Limpiar referencia cuando se cierre
       this._pipWindow.addEventListener('pagehide', () => {

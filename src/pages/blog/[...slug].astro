@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import Button from "@components/Button.astro";
 import PostMeta from "@components/PostMeta.astro";
 import BlogEntryJSONLD from "@components/BlogEntryJSONLD.astro";
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
 import TableOfContents from "@components/TableOfContents.astro";
 import {
   extractHeadings,
@@ -44,11 +44,19 @@ const base = import.meta.env.BASE_URL;
 const publishedTime = post.data.date
   ? new Date(post.data.date).toISOString()
   : undefined;
+
+// Generar URL de imagen para OG
+let ogImageUrl: string | undefined;
+if (post.data.image) {
+  const ogImage = await getImage({ src: post.data.image, width: 1200, format: 'jpg' });
+  ogImageUrl = ogImage.src;
+}
 ---
 
 <Layout
   title={pageTitle}
   description={post.data.description || ''}
+  image={ogImageUrl}
   type="article"
   publishedTime={publishedTime}
 >
@@ -56,7 +64,7 @@ const publishedTime = post.data.date
   <article>
     <header class="post-header">
       <h1 class="post-title" transition:name={`transition-title-${post.id}`}>{post.data.title}</h1>
-      {post.data.image && <Picture src={post.data.image} formats={['avif', 'webp']} alt="A description of my image." transition:name={`transition-picture-${post.id}`} />}
+      {post.data.image && <Picture src={post.data.image} formats={['avif', 'webp']} alt={post.data.image_alt || post.data.title} transition:name={`transition-picture-${post.id}`} />}
       <PostMeta frontmatter={post.data} readingTime={readingTime}></PostMeta>
       <hr class="hr" />
     </header>

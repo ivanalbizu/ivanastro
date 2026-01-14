@@ -205,9 +205,9 @@ export const tokens = {
   'typography.font-size.heading.6': 'calc(clamp(1.125rem, 1.8vw + 1rem, 1.25rem) * var(--typography-font-size-scale))',
   'typography.font-size.paragraph.1': 'calc(1.2rem * var(--typography-font-size-scale))',
   'typography.font-size.paragraph.2': 'calc(1.1rem * var(--typography-font-size-scale))',
-  'typography.font-size.paragraph.3': 'calc(0.95rem * var(--typography-font-size-scale))',
-  'typography.font-size.paragraph.4': 'calc(0.9rem * var(--typography-font-size-scale))',
-  'typography.font-size.paragraph.5': 'calc(0.85rem * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.3': 'calc(1rem * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.4': 'calc(0.95rem * var(--typography-font-size-scale))',
+  'typography.font-size.paragraph.5': 'calc(0.9rem * var(--typography-font-size-scale))',
   'typography.font-size.scale': 1,
   'typography.font-weight.bold': 700,
   'typography.font-weight.bolder': 900,
@@ -3779,7 +3779,7 @@ export const meta = {
   },
   'typography.font-size.paragraph.3': {
     _original: {
-      $value: 'calc(0.95rem * var(--typography-font-size-scale))',
+      $value: 'calc(1rem * var(--typography-font-size-scale))',
     },
     _group: {
       id: 'typography.font-size.paragraph',
@@ -3790,11 +3790,11 @@ export const meta = {
     },
     id: 'typography.font-size.paragraph.3',
     $type: 'dimension',
-    $value: 'calc(0.95rem * var(--typography-font-size-scale))',
+    $value: 'calc(1rem * var(--typography-font-size-scale))',
   },
   'typography.font-size.paragraph.4': {
     _original: {
-      $value: 'calc(0.9rem * var(--typography-font-size-scale))',
+      $value: 'calc(0.95rem * var(--typography-font-size-scale))',
     },
     _group: {
       id: 'typography.font-size.paragraph',
@@ -3805,11 +3805,11 @@ export const meta = {
     },
     id: 'typography.font-size.paragraph.4',
     $type: 'dimension',
-    $value: 'calc(0.9rem * var(--typography-font-size-scale))',
+    $value: 'calc(0.95rem * var(--typography-font-size-scale))',
   },
   'typography.font-size.paragraph.5': {
     _original: {
-      $value: 'calc(0.85rem * var(--typography-font-size-scale))',
+      $value: 'calc(0.9rem * var(--typography-font-size-scale))',
     },
     _group: {
       id: 'typography.font-size.paragraph',
@@ -3820,7 +3820,7 @@ export const meta = {
     },
     id: 'typography.font-size.paragraph.5',
     $type: 'dimension',
-    $value: 'calc(0.85rem * var(--typography-font-size-scale))',
+    $value: 'calc(0.9rem * var(--typography-font-size-scale))',
   },
   'typography.font-size.scale': {
     _original: {
