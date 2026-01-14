@@ -77,7 +77,7 @@ const { categoria } = Astro.params;
                   {post.data.title}
                 </a>
               </h2>
-              {post.data.image && <Picture src={post.data.image} formats={['avif', 'webp']} alt="A description of my image." transition:name={`transition-picture-${post.id}`} />}
+              {post.data.image && <Picture src={post.data.image} formats={['avif', 'webp']} alt={post.data.image_alt || post.data.title} transition:name={`transition-picture-${post.id}`} />}
               <PostMeta frontmatter={post.data} showReadMore />
             </article>
           ))}

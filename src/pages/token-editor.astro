@@ -52,13 +52,11 @@ const pageDescription =
     function initEditor(): void {
       // Si ya existe un editor, no crear otro
       if (editor) {
-        console.log('✅ Editor already initialized');
         return;
       }
 
       // Esperar a que jsyaml esté disponible
       if (typeof jsyaml === 'undefined') {
-        console.log('⏳ Waiting for js-yaml to load...');
         setTimeout(initEditor, 100);
         return;
       }
@@ -73,8 +71,6 @@ const pageDescription =
         
         // Exponer el editor globalmente para que pueda ser recargado
         window.__tokenEditor = () => editor;
-        
-        console.log('✅ Token Editor initialized successfully');
       } catch (error: any) {
         console.error('❌ Error initializing Token Editor:', error);
         
@@ -99,23 +95,20 @@ const pageDescription =
 
     function handlePageLoad(): void {
       const isEditorPage = window.location.pathname.includes('token-editor');
-      
+
       if (isEditorPage) {
-        console.log('📄 Token Editor page detected');
         // Pequeño delay para asegurar que el DOM está completamente listo
         setTimeout(initEditor, 50);
       } else {
         // Limpiar editor si cambiamos de página
         editor = null;
         window.__tokenEditor = undefined;
-        console.log('📄 Left Token Editor page');
       }
     }
 
     // Escuchar evento de tokens limpiados para recargar el editor
     window.addEventListener('tokens-cleared', async () => {
       if (editor && typeof editor.loadTokens === 'function') {
-        console.log('🔄 Tokens cleared event received, reloading editor...');
         await editor.loadTokens();
       }
     });
