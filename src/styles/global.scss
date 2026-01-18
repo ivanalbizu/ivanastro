@@ -240,3 +240,37 @@ hr {
   outline-color: transparent;
   transition: top 0.05s ease-in;
 }
+
+table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  margin: var(--space-md) 0;
+  font-variant-numeric: tabular-nums;
+}
+
+th, td {
+  padding: var(--space-sm);
+  text-align: left;
+  border-bottom: var(--border-width-sm) solid var(--color-border-subtle);
+}
+
+th {
+  font-weight: var(--typography-font-weight-bold);
+  color: var(--color-text-default);
+  border-bottom: var(--border-width-sm) solid var(--color-border-default);
+}
+
+td {
+  color: var(--color-text-secondary);
+  vertical-align: top;
+}
+
+caption {
+  text-align: left;
+  font-size: var(--typography-font-size-paragraph-4);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
