@@ -1,0 +1,153 @@
+---
+title: 'Componente WebGL Hover para Astro: Efectos de Imagen con Rendimiento Optimizado'
+slug: 'componente-webgl-hover-astro'
+published: true
+description: 'Componente Astro para efectos hover con WebGL y Curtains.js. Transiciones de imagen con displacement, fallback automático y soporte para dispositivos de bajo rendimiento.'
+date: '2026-01-17 15:10:00'
+categories:
+  - astro
+  - webgl
+  - curtainsjs
+  - gsap
+image: '../../assets/images/componente-webgl-hover-astro.svg'
+image_alt: 'Banner con título Astro WebGL Hover y tecnologías Curtains.js, GSAP y Performance sobre fondo de ondas'
+---
+
+**astro-webgl-hover** es un componente para Astro que permite crear efectos hover con transiciones WebGL entre imágenes. Utiliza Curtains.js y GSAP para lograr animaciones fluidas con efecto *displacement*, manteniendo el rendimiento optimizado incluso en dispositivos de gama baja.
+
+Este proyecto está basado en una [publicación anterior](/blog/webgl-animacion-de-imagen-hover/) donde exploraba el efecto de distorsión de imágenes con WebGL. Ahora he llevado esa idea más allá, empaquetándola como un componente reutilizable y publicado en npm.
+
+## Instalación
+
+Puedes instalar el paquete en tu proyecto ejecutando el siguiente comando:
+
+```bash
+npm install @ivanalbizu/astro-webgl-hover
+```
+
+## ¿Cómo crear efectos hover WebGL en Astro?
+
+Con este componente, solo necesitas importar dos elementos y configurar las imágenes. La complejidad de WebGL, shaders y animaciones queda abstraída para que puedas enfocarte en el diseño.
+
+```astro
+<WebglHoverImages>
+  <WebglHoverImage
+    texture0="/img-a.jpg"
+    texture1="/img-b.jpg"
+    map="/displacement.jpg"
+    intensity={0.5}
+    easeIn="elastic.out(1, 0.3)"
+  />
+</WebglHoverImages>
+```
+
+## Configuración
+
+### Props de `WebglHoverImages`
+
+Configuración global que aplica a todas las imágenes del contenedor:
+
+| Prop | Tipo | Default | Descripción |
+|------|------|---------|-------------|
+| `durationIn` | `number` | `0.8` | Duración de la animación de entrada (segundos) |
+| `durationOut` | `number` | `0.8` | Duración de la animación de salida (segundos) |
+| `easeIn` | `string` | `'power2.out'` | Curva de easing GSAP para entrada |
+| `easeOut` | `string` | `'power2.out'` | Curva de easing GSAP para salida |
+| `displacementAngle` | `number` | `0` | Ángulo del desplazamiento en grados (0-360) |
+| `intensity` | `number` | `1` | Intensidad del efecto de distorsión |
+| `zoom` | `number` | `0` | Nivel de zoom durante la animación |
+| `imageRotation` | `number` | `0` | Rotación de la imagen en grados |
+| `noiseSpeed` | `number` | `0.5` | Velocidad del ruido animado |
+| `noiseScale` | `number` | `6.0` | Escala del patrón de ruido |
+| `rgbShiftIntensity` | `number` | `0` | Intensidad de la aberración cromática |
+| `debug` | `boolean` | `false` | Activa el panel de control lil-gui |
+
+### Props de `WebglHoverImage`
+
+Configuración individual por imagen (sobrescribe la configuración global):
+
+| Prop | Tipo | Requerido | Descripción |
+|------|------|-----------|-------------|
+| `texture0` | `string` | ✅ | Imagen inicial (estado de reposo) |
+| `texture1` | `string` | ✅ | Imagen final (estado hover) |
+| `map` | `string` | ✅ | Mapa de desplazamiento (imagen en blanco/negro) |
+| `alt` | `string` | No | Texto alternativo para accesibilidad |
+| `intensity` | `number` | No | Sobrescribe intensidad global |
+| `zoom` | `number` | No | Sobrescribe zoom global |
+| `imageRotation` | `number` | No | Sobrescribe rotación global |
+| `noiseSpeed` | `number` | No | Sobrescribe velocidad de ruido global |
+| `noiseScale` | `number` | No | Sobrescribe escala de ruido global |
+| `rgbShiftIntensity` | `number` | No | Sobrescribe RGB shift global |
+
+## Aspectos Relevantes del componente
+
+Como maquetador y desarrollador, mi prioridad no fue solo "que se vea bien", sino "que funcione bien para todos". Aquí es donde destacan las virtudes técnicas del proyecto:
+
+### 1. Rendimiento y Accesibilidad (Progressive Enhancement)
+
+Uno de los mayores desafíos de WebGL es el consumo de recursos. He implementado un sistema de detección de rendimiento (en `performance.ts`) que evalúa el contexto del usuario antes de iniciar WebGL:
+
+- **Detección de Hardware**: Analiza la memoria del dispositivo y los núcleos de la CPU para identificar dispositivos de gama baja.
+- **Modo Ahorro de Datos**: Respeta la configuración del navegador si el usuario ha solicitado ahorrar datos (`saveData`).
+- **Preferencias de Movimiento**: Se integra con la media query `prefers-reduced-motion`.
+
+Si se detecta un entorno limitado, el componente hace un *fallback* automático a una versión CSS optimizada, garantizando que la web siga siendo funcional y rápida sin bloquear el hilo principal.
+
+```typescript
+export function isLowPerformance(): boolean {
+  const nav = navigator as NavigatorWithExtensions;
+
+  // Detect "Data Saver" mode from Browser/OS
+  if (nav.connection?.saveData) {
+    return true;
+  }
+
+  // Hardware Heuristics
+  const memory = nav.deviceMemory;  // RAM in GB (Chrome/Edge)
+  const cores = navigator.hardwareConcurrency;
+
+  // Less than 4GB RAM or 2 or fewer cores → low-end device
+  return (memory !== undefined && memory < 4)
+      || (cores !== undefined && cores <= 2);
+}
+
+export function shouldUseFallback(): boolean {
+  return prefersReducedMotion() || isLowPerformance();
+}
+```
+
+### 2. Experiencia de Desarrollo (DX)
+
+Para facilitar el ajuste fino de las animaciones, incluí un **Modo Debug**. Al activar `debug={true}`, se inyecta un panel de control (lil-gui) que permite modificar en tiempo real parámetros como:
+
+- Intensidad y ángulo del desplazamiento.
+- Escala y velocidad del ruido (*noise*).
+- Curvas de animación (*easing*) de GSAP.
+- Efectos de aberración cromática (*RGB Shift*).
+
+Esto permite a los diseñadores y desarrolladores iterar sobre el aspecto visual directamente en el navegador, sin necesidad de tocar el código constantemente.
+
+### 3. Abstracción Limpia
+
+El código fuente utiliza **TypeScript** para garantizar el tipado y la estabilidad. La lógica de WebGL, el redimensionado del canvas y la gestión del ciclo de vida de los componentes están completamente desacoplados de la capa de presentación, siguiendo las mejores prácticas de la arquitectura de componentes en Astro.
+
+## Requisitos y Compatibilidad
+
+| Requisito | Versión |
+|-----------|---------|
+| Astro | 4.x o superior |
+| Node.js | 18.x o superior |
+| Navegadores | Chrome, Firefox, Safari, Edge (con WebGL) |
+
+**Dependencias incluidas:** Curtains.js, GSAP, lil-gui (solo en modo debug).
+
+El componente detecta automáticamente dispositivos sin soporte WebGL o con bajo rendimiento y aplica un fallback CSS.
+
+## Conclusión
+
+Este proyecto refleja mi filosofía de trabajo: **la tecnología avanzada debe ser accesible y respetuosa con el usuario**. No se trata solo de usar las últimas herramientas, sino de empaquetarlas de forma que aporten valor real sin comprometer la calidad del producto final.
+
+Si quieres probarlo o ver el código fuente:
+
+- [Repositorio en GitHub](https://github.com/ivanalbizu/astro-webgl-hover)
+- [Paquete en npm](https://www.npmjs.com/package/@ivanalbizu/astro-webgl-hover)
