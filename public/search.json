@@ -353,6 +353,37 @@
     "image_alt": "Comparación de imágenes con clip-path y javascript"
   },
   {
+    "title": "Componente Astro Particle Image Viewer: Galería con Animaciones WebGL de Partículas",
+    "slug": "componente-astro-particle-image-viewer",
+    "published": true,
+    "description": "Componente Astro reutilizable para crear galerías de imágenes con espectaculares animaciones de partículas WebGL usando Three.js. Incluye soporte para View Transitions, accesibilidad, gestos táctiles y fallback automático para dispositivos de bajo rendimiento.",
+    "date": "2026-02-01 12:00:00",
+    "categories": [
+      "astro",
+      "webgl",
+      "threejs",
+      "typescript",
+      "view-transitions"
+    ],
+    "image": "../../assets/images/componente-astro-particle-image-viewer.svg",
+    "image_alt": "Ilustración del componente Astro Particle Image Viewer mostrando partículas dispersándose desde una imagen y recomponiéndose en otra, con badges de Astro, Three.js, WebGL y TypeScript"
+  },
+  {
+    "title": "Componente WebGL Hover para Astro: Efectos de Imagen con Rendimiento Optimizado",
+    "slug": "componente-webgl-hover-astro",
+    "published": true,
+    "description": "Componente Astro para efectos hover con WebGL y Curtains.js. Transiciones de imagen con displacement, fallback automático y soporte para dispositivos de bajo rendimiento.",
+    "date": "2026-01-17 15:10:00",
+    "categories": [
+      "astro",
+      "webgl",
+      "curtainsjs",
+      "gsap"
+    ],
+    "image": "../../assets/images/componente-webgl-hover-astro.svg",
+    "image_alt": "Banner con título Astro WebGL Hover y tecnologías Curtains.js, GSAP y Performance sobre fondo de ondas"
+  },
+  {
     "title": "Construir custom dial en Android",
     "slug": "construir-custom-dial-en-android",
     "published": true,
@@ -1085,7 +1116,9 @@
     "description": "Animación Hover realizada con WebGL para transición de imágenes usando librería curtainsjs y gsap. Imágenes usadas como displacement y modificaciones de vertex y fragment shaders",
     "categories": [
       "javascript",
-      "webgl"
+      "webgl",
+      "curtainsjs",
+      "gsap"
     ],
     "date": "2020-10-31 15:10:00",
     "image": "../../assets/images/webgl-hover-image.jpg",
@@ -1099,7 +1132,8 @@
     "categories": [
       "javascript",
       "css",
-      "webgl"
+      "webgl",
+      "curtainsjs"
     ],
     "date": "2020-11-30 15:10:00",
     "image": "../../assets/images/webgl-modal-slideshow-productos.jpg",
@@ -1112,7 +1146,8 @@
     "description": "Animación realizada con WebGL para transición de imágenes usando librería curtainsjs. Imagen como displacement entre transición y modificaciones de vertex y fragment shaders",
     "categories": [
       "javascript",
-      "webgl"
+      "webgl",
+      "curtainsjs"
     ],
     "date": "2020-10-30 15:10:00",
     "image": "../../assets/images/slideshow-webgl-curtainsjs.jpg",
@@ -1125,7 +1160,8 @@
     "description": "Tutorial para integrar SwiperJS con CurtainsJS. Crea sliders con efectos WebGL de alto rendimiento, distorsiones y transiciones fluidas.",
     "categories": [
       "javascript",
-      "webgl"
+      "webgl",
+      "curtainsjs"
     ],
     "date": "2022-12-05 21:30:00",
     "image": "../../assets/images/webgl-swiperjs-curtainsjs.jpg",
