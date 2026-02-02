@@ -7,9 +7,6 @@ date: '2026-02-01 12:00:00'
 categories:
   - astro
   - webgl
-  - threejs
-  - typescript
-  - view-transitions
 image: '../../assets/images/componente-astro-particle-image-viewer.svg'
 image_alt: 'Ilustración del componente Astro Particle Image Viewer mostrando partículas dispersándose desde una imagen y recomponiéndose en otra, con badges de Astro, Three.js, WebGL y TypeScript'
 ---
@@ -49,6 +46,7 @@ import { ParticleImageViewer } from '@ivanalbizu/astro-particle-image-viewer';
   config={{
     openDuration: 2000,
     closeDuration: 1200,
+    maxWidth: 1440,
   }}
 >
   <img src="/image-1.jpg" width="300" alt="Descripción imagen 1" />
@@ -77,6 +75,7 @@ El componente utiliza slots, permitiendo añadir cualquier elemento `<img>` como
   closeDuration?: number;  // Duración animación cierre en ms (default: 1200)
   crossfadeStart?: number; // Cuándo iniciar crossfade 0-1 (default: 0.2)
   srcAttribute?: string;   // Atributo para source de imagen (default: 'src')
+  maxWidth?: number;       // Ancho máximo de imagen en píxeles (default: 0 = sin límite)
 }`} lang="typescript" />
 
 ## Aspectos técnicos destacados
