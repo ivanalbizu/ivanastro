@@ -118,10 +118,12 @@ if (shouldUseFallback()) {
 Se activa el fallback `SimpleLightbox` (sin animaciones WebGL) cuando:
 
 - El usuario tiene `prefers-reduced-motion: reduce` activado
-- El dispositivo tiene poca memoria (< 4GB RAM)
-- El dispositivo tiene pocos cores de CPU (≤ 2)
 - El navegador tiene modo Data Saver activado
+- La conexión es 2G o slow-2g
+- El dispositivo tiene **ambos**: poca memoria (< 4GB RAM) **y** pocos cores de CPU (≤ 2)
 - WebGL no está soportado
+
+**Compatibilidad con navegadores de privacidad**: El componente funciona correctamente en Brave y otros navegadores que falsifican información de hardware. La detección de dispositivos de gama baja requiere que ambos indicadores (memoria y cores) sean bajos, evitando falsos positivos cuando el navegador falsifica solo uno de ellos.
 
 En dispositivos móviles, el número de segmentos se reduce automáticamente (80 en móvil vs 180 en desktop) para mantener un rendimiento fluido.
 
@@ -230,7 +232,7 @@ No se requiere configuración adicional. El componente maneja ambos escenarios d
 ## Compatibilidad
 
 - **Astro**: 4.x y 5.x
-- **Navegadores**: Todos los navegadores modernos con soporte WebGL
+- **Navegadores**: Todos los navegadores modernos con soporte WebGL, incluyendo navegadores de privacidad como Brave
 - **TypeScript**: Tipos incluidos
 
 ## Conclusión
