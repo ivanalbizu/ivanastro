@@ -1,353 +1,673 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import PageHeader from "@components/PageHeader.astro";
-import { Picture } from 'astro:assets';
-import image_cv from '../assets/images/cv/foto-ivan-albizu.jpeg';
-
-import { config } from "../config";
+import { Image } from 'astro:assets';
+import avatar from '../assets/images/cv/foto-ivan-albizu.jpeg';
 
 const base = import.meta.env.BASE_URL;
-
-const pageTitle = "Currículum maquetador";
-const pageDescription =
-  "Puedes ver la versión web de mi currículum como maquetador Web, incluso posibilidad de descarga en formato PDF";
 ---
 
-<Layout
-  title={`${pageTitle}`}
-  description={pageDescription}
-  showSidebar={false}
->
-  <div class="container">
-    <PageHeader title="Currículum maquetador web">
-      <a
-        href={base + "cv-ivan-gonzalez-albizu.pdf"}
-        class="nav-link"
-        target="_blank">Currículum en formato PDF</a
-      >
-    </PageHeader>
-    <div class="cv">
-      <div class="cv__photo">
-        <Picture src={image_cv} formats={['avif', 'webp']} alt="Iván González Albizu" />
-      </div>
-      <section class="cv__intro">
-        <h1>Iván González Albizu</h1>
-        <h2>Maquetador Web</h2>
-        <div class="social-links">
-          {
-            config.social.map((item) => (
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={item.label}
-                class="social-link"
-              >
-                <svg fill="currentColor" aria-hidden="true">
-                  <use href={`#${item.name}`} />
-                </svg>
-                <span>{item.href}</span>
-              </a>
-            ))
-          }
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV – Iván González Albizu</title>
+    <meta
+      name="description"
+      content="Currículum de Iván González Albizu, UI Developer y Frontend Engineer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a
+      class="pdf-download"
+      href={`${base}cv-ivan-gonzalez-albizu.pdf`}
+      target="_blank"
+      rel="noopener"
+      aria-label="Descargar currículum en PDF"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+      Descargar PDF
+    </a>
+    <div class="page">
+      <aside class="sidebar">
+        <div class="avatar-wrap">
+          <Image src={avatar} alt="Iván González Albizu" width={160} height={160} />
         </div>
-      </section>
-      <section class="cv__left">
-        <h3>Perfil</h3>
-        <p>
-          Realizar proyectos atractivos en los que disfrute, que requieran
-          esfuerzo para llevarlos a cabo y de los que me pueda sentir orgulloso.
-          Cada día estudio nuevas tecnologías que me apasionan como VueJS, Nuxt
-        </p>
-        <p>696 79 59 52</p>
-        <a href="">ivan.albizu@gmail.com</a>
-        <p>Sevilla</p>
+
         <div>
-          <h3>Formación</h3>
-          <div>
-            <h4>F.P. Superior aplicaciones multiplataforma</h4>
-            <time>2013</time> - <time>2015</time>
-            <p>C.D.P. Salesianos Triana</p>
+          <p class="s-section-title">Contacto</p>
+          <ul class="contact-list">
+            <li><span class="icon">📞</span> 696 79 59 52</li>
+            <li><span class="icon">✉</span> ivan.albizu@gmail.com</li>
+            <li><span class="icon">📍</span> Sevilla</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="s-section-title">Online</p>
+          <ul class="link-list">
+            <li><a href="https://linkedin.com/in/ivanalbizu/">linkedin.com/in/ivanalbizu</a></li>
+            <li><a href="https://github.com/ivanalbizu">github.com/ivanalbizu</a></li>
+            <li><a href="https://codepen.io/ivan_albizu">codepen.io/ivan_albizu</a></li>
+            <li><a href="https://ivanalbizu.eu">ivanalbizu.eu</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="s-section-title">Habilidades</p>
+
+          <div class="skill-row">
+            <div class="skill-label"><span>HTML / CSS</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:96%"></div></div>
           </div>
-          <div>
-            <h4>Programación web Javascript</h4>
-            <time>2013</time>
-            <p>Estudios Abiertos San Valero</p>
+          <div class="skill-row">
+            <div class="skill-label"><span>Sass / BEM</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:94%"></div></div>
           </div>
-          <div>
-            <h4>Diseño web avanzado con Html5 y Css3</h4>
-            <time>2012</time>
-            <p>Mittsu Consultores y Asesores</p>
+          <div class="skill-row">
+            <div class="skill-label"><span>JavaScript</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
           </div>
-          <div>
-            <h4>Programador aplicaciones informáticas</h4>
-            <time>2012</time>
-            <p>Universidad CEU San Pablo</p>
+          <div class="skill-row">
+            <div class="skill-label"><span>Astro</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
           </div>
-          <div>
-            <h4>Arquitectura técnica</h4>
-            <time>2000</time> - <time>2004</time>
-            <p>Universidad de Sevilla</p>
+          <div class="skill-row">
+            <div class="skill-label"><span>Stencil.js / Web Comp.</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>Design Tokens</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:76%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>Storybook</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>Node.js</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>Angular</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:20%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>Vue</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:20%"></div></div>
           </div>
         </div>
-      </section>
-      <section class="cv__right">
-        <h3>Experiencia profesional</h3>
-        <article class="experience">
-          <h4 class="experience__title">Maquetador web</h4>
-          <div class="experience__content">
-            <h5>Capgemini</h5>
-            <div><time>Mar 2022</time> - Actual</div>
-            <ul>
-              <li>Uso diario de Astro</li>
-              <li>Maquetación con metodología BEM y Atomic Design</li>
-              <li>Creación de historias en Storybook de componentes Stencil y Angular</li>
-              <li>Maquetación de componentes Angular y Stencil</li>
-              <li>Creación de componentes con Stencil</li>
-            </ul>
+
+        <div>
+          <p class="s-section-title">Formación</p>
+
+          <div class="edu-item">
+            <div class="edu-year">2013 – 2015</div>
+            <div class="edu-degree">F.P. Superior Aplicaciones Multiplataforma</div>
+            <div class="edu-school">C.D.P. Salesianos Triana</div>
           </div>
-        </article>
-        <article class="experience">
-          <h4 class="experience__title">Maquetador Web</h4>
-          <div class="experience__content">
-            <h5>Redegal</h5>
-            <div><time>Feb 2018</time> - <time>Feb 2022</time></div>
-            <ul>
-              <li>Maquetación web para tiendas Prestashop con Webpack</li>
-              <li>
-                Aplicación Web con Node, Express, Pug, Gulp, nodeJS, MJML 4,
-                mongo, librerías Mongoose, JWT, bCrypt y CookieParser
-                Maquetación de Aplicación sistema de Templating Pug
-              </li>
-            </ul>
+          <div class="edu-item">
+            <div class="edu-year">2013</div>
+            <div class="edu-degree">Programación Web Javascript</div>
+            <div class="edu-school">Estudios Abiertos San Valero</div>
           </div>
-        </article>
-        <article class="experience">
-          <h4 class="experience__title">Maquetador Web</h4>
-          <div class="experience__content">
-            <h5>Everis</h5>
-            <div><time>Ene 2017</time> - <time>Feb 2018</time></div>
-            <ul>
-              <li>Maquetación web con Sass para importante cliente</li>
-              <li>
-                Contribución de html, css y elementos en entorno Oracle Web
-                Center Sites
-              </li>
-            </ul>
+          <div class="edu-item">
+            <div class="edu-year">2012</div>
+            <div class="edu-degree">Diseño Web Avanzado HTML5 y CSS3</div>
+            <div class="edu-school">Estudios Abiertos San Valero</div>
           </div>
-        </article>
-        <article class="experience">
-          <h4 class="experience__title">Web Developer</h4>
-          <div class="experience__content">
-            <h5>Pixaboo Studio</h5>
-            <div><time>Dic 2015</time> - <time>Abr 2016</time></div>
-            <ul>
-              <li>Sitios web basados en wordpress, php y javascript</li>
-              <li>Maquetación html con css y sass Bootstrap material design</li>
-            </ul>
+          <div class="edu-item">
+            <div class="edu-year">2012</div>
+            <div class="edu-degree">Programador Aplicaciones Informáticas</div>
+            <div class="edu-school">Universidad CEU San Pablo</div>
           </div>
-        </article>
-        <article class="experience">
-          <h4 class="experience__title">Software Developer</h4>
-          <div class="experience__content">
-            <h5>Guadaltech</h5>
-            <div><time>Mar 2015</time> - <time>Oct 2015</time></div>
-            <ul>
-              <li>
-                Desarrollo de módulos para odoo con lenguajes python y xml
-              </li>
-              <li>Generación de informes con Jasper Reports</li>
-            </ul>
+          <div class="edu-item">
+            <div class="edu-year">2001 – 2005</div>
+            <div class="edu-degree">Arquitectura Técnica</div>
+            <div class="edu-school">Universidad de Sevilla</div>
           </div>
-        </article>
-        <article class="experience">
-          <h4 class="experience__title">Web Developer</h4>
-          <div class="experience__content">
-            <h5>Freelance</h5>
-            <div><time>Jun 2012</time> - <time>Sep 2014</time></div>
-            <ul>
-              <li>Desarrollo de sitios web</li>
-              <li>
-                Tecnologías usadas: html, javascript, css, sass, compass,
-                wordpress
-              </li>
-            </ul>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header>
+          <div class="header-name">
+            <span class="first">IVÁN&nbsp;</span><span class="last">GONZÁLEZ ALBIZU</span>
           </div>
-        </article>
-        <article class="experience">
-          <h4 class="experience__title">Oficina Técnica</h4>
-          <div class="experience__content">
-            <h5>Empresa Constructora</h5>
-            <div><time>Oct 2005</time> - <time>Jun 2009</time></div>
-            <ul>
-              <li>
-                Trabajos como aparejador en oficina técnica de empresas
-                constructoras
-              </li>
-            </ul>
+          <div class="header-title">UI Developer · Frontend Engineer</div>
+          <hr class="div" style="margin-top:10px" />
+        </header>
+
+        <section>
+          <p class="section-title">Perfil</p>
+          <p class="profile-text">
+            UI Developer con más de una década en el desarrollo frontend, especializado en <strong
+              >Sistemas de Diseño escalables</strong
+            > y librerías de componentes para grandes clientes. Combino una base sólida en HTML, CSS
+            y Sass con experiencia en Web Components (Stencil.js), Angular y orquestación de Design
+            Tokens. Trabajo aplicando metodologías como BEM y Atomic Design, y disfruto del puente
+            entre diseño e ingeniería: traducir interfaces complejas en componentes mantenibles y
+            consistentes. Curioso por naturaleza, exploro continuamente CSS Houdini, WebGL y nuevas
+            APIs de la plataforma web.
+          </p>
+        </section>
+
+        <section>
+          <p class="section-title">Experiencia Profesional</p>
+
+          <div class="exp-item">
+            <div class="exp-meta">
+              <span class="exp-company">Capgemini Engineering</span>
+              <span class="exp-dates">Mar 2022 – Actual</span>
+            </div>
+            <div>
+              <div class="exp-role">UI Developer</div>
+              <ul class="exp-bullets">
+                <li>
+                  Arquitectura y desarrollo de librerías de componentes core para grandes clientes
+                  (Telco y Seguros).
+                </li>
+                <li>
+                  Ingeniería de Web Components con Stencil.js y maquetación de componentes Angular.
+                </li>
+                <li>Creación de historias Storybook para componentes Stencil.</li>
+                <li>Maquetación modular con metodologías BEM y Atomic Design.</li>
+                <li>Uso de Astro para maquetas y prototipos entregados a otros equipos.</li>
+                <li>
+                  Gestión y orquestación de Design Tokens para consistencia visual a gran escala.
+                </li>
+                <li>
+                  Colaboración con equipos de diseño para validar viabilidad técnica de interfaces
+                  complejas.
+                </li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag">Stencil.js</span><span class="tag">Angular</span><span class="tag"
+                  >Web Components</span
+                >
+                <span class="tag">Storybook</span><span class="tag">Astro</span><span class="tag"
+                  >Design Tokens</span
+                >
+                <span class="tag">Atomic Design</span><span class="tag">BEM</span>
+              </div>
+            </div>
           </div>
-        </article>
-        <h3>Habilidades</h3>
-        <ul class="skills">
-          <li class="css">css / sass</li>
-          <li class="html">html</li>
-          <li class="js">javascript</li>
-          <li class="astro">astro</li>
-          <li class="vue">vuejs</li>
-          <li class="nuxt">nuxt</li>
-          <li class="android">android</li>
-          <li class="mjml">mjml</li>
-        </ul>
-      </section>
+
+          <div class="exp-item">
+            <div class="exp-meta">
+              <span class="exp-company">Redegal S.L.</span>
+              <span class="exp-dates">Mar 2018 – Mar 2022</span>
+            </div>
+            <div>
+              <div class="exp-role">Frontend Developer &amp; Maquetador Web</div>
+              <ul class="exp-bullets">
+                <li>
+                  Desarrollo de SaaS interno para generación automatizada de emails transaccionales
+                  para gran cliente del sector retail. Stack: Node.js, Express, Pug, MJML 4,
+                  MongoDB, JWT, bCrypt.
+                </li>
+                <li>Maquetación web para tiendas PrestaShop con Webpack.</li>
+                <li>Sistemas de templating con Pug y automatización de tareas con Gulp.</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag"
+                  >MJML 4</span
+                >
+                <span class="tag">MongoDB</span><span class="tag">Pug</span><span class="tag"
+                  >Webpack</span
+                ><span class="tag">Gulp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-meta">
+              <span class="exp-company">NTT Data</span>
+              <span class="exp-dates">Ene 2017 – Feb 2018</span>
+            </div>
+            <div>
+              <div class="exp-role">Web Developer</div>
+              <ul class="exp-bullets">
+                <li>
+                  Desarrollo y maquetación web para clientes corporativos con Sass y Oracle Web
+                  Center Sites.
+                </li>
+                <li>HTML/CSS con SASS, Bootstrap y Material Design.</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag">Sass</span><span class="tag">Bootstrap</span><span class="tag"
+                  >Oracle WCS</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-meta">
+              <span class="exp-company">Pixaboo Studio</span>
+              <span class="exp-dates">Dic 2015 – Abr 2016</span>
+            </div>
+            <div>
+              <div class="exp-role">Web Developer</div>
+              <ul class="exp-bullets">
+                <li>Sitios web WordPress con PHP, JavaScript, CSS/Sass y Bootstrap Material Design.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-meta">
+              <span class="exp-company">GuadalTech</span>
+              <span class="exp-dates">Mar 2015 – Oct 2015</span>
+            </div>
+            <div>
+              <div class="exp-role">Software Developer</div>
+              <ul class="exp-bullets">
+                <li>
+                  Módulos para ERP Odoo (Python, XML) y generación de informes con Jasper Reports.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-meta">
+              <span class="exp-company">Freelance</span>
+              <span class="exp-dates">Sep 2011 – Ene 2015</span>
+            </div>
+            <div>
+              <div class="exp-role">Maquetador Web</div>
+              <ul class="exp-bullets">
+                <li>
+                  Maquetación de sitios web estáticos y temas WordPress con HTML, CSS, JavaScript y
+                  Bootstrap.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <p class="section-title">Intereses &amp; Exploración Continua</p>
+          <div class="tag-row">
+            <span class="tag tag-lg">CSS Houdini</span>
+            <span class="tag tag-lg">WebGL</span>
+            <span class="tag tag-lg">Web Animations API</span>
+            <span class="tag tag-lg">Container Queries</span>
+            <span class="tag tag-lg">View Transitions</span>
+            <span class="tag tag-lg">Shadow DOM</span>
+            <span class="tag tag-lg">CSS Layers</span>
+            <span class="tag tag-lg">Lit</span>
+            <span class="tag tag-lg">Vue</span>
+            <span class="tag tag-lg">Web Components</span>
+            <span class="tag tag-lg">Astro</span>
+          </div>
+        </section>
+      </main>
     </div>
-  </div>
-</Layout>
+  </body>
+</html>
 
-<style lang="scss">
-  .cv {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "intro"
-      "left"
-      "right";
-    gap: 48px 32px;
-    margin-block-end: var(--space-sm);
-
-    @media (min-width: 768px) {
-      grid-template-columns: 1fr 3fr;
-      grid-template-rows: auto 1fr;
-      grid-template-areas:
-        "photo intro"
-        "left right";
-    }
-    &__photo {
-      grid-area: photo;
-      display: none;
-      @media (min-width: 768px) {
-        display: block;
-      }
-    }
-    &__intro {
-      grid-area: intro;
-    }
-    &__left {
-      grid-area: left;
-    }
-    &__right {
-      grid-area: right;
-    }
-    img {
-      margin-block-start: 0;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin-block-end: var(--space-xxs);
-    }
-    h4,
-    h5,
-    h6 {
-      font-size: var(--typography-font-size-paragraph-2);
-    }
-  }
-
-  .social-links {
-    display: grid;
-    gap: var(--space-xxs);
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-    a {
-      display: flex;
-      gap: var(--space-xxxs);
-    }
-
-    @media (min-width: 768px) {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .experience {
-    border-bottom: var(--border-width-md) solid var(--color-border-subtle);
-    margin-block-end: 26px;
-
-    @media (min-width: 768px) {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      gap: 0 16px;
-      &__content {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        ul {
-          grid-column: 1 / -1;
-        }
-      }
-    }
-  }
-
-  .skills {
-    width: min(500px, 100%);
-    margin-inline-start: 0;
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
+  }
+
+  :root {
+    --teal: #1a9b8c;
+    --teal-light: #e6f5f3;
+    --dark: #1c1c2e;
+    --mid: #4a4a6a;
+    --soft: #8888a8;
+    --line: #dde0ec;
+    --bg: #f7f8fc;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 12px;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #fff;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 210px 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ════════════ SIDEBAR ════════════ */
+  .sidebar {
+    background: #f0f4f8;
+    padding: 24px 20px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border-right: 1px solid var(--line);
+  }
+
+  .avatar-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--teal);
+    flex-shrink: 0;
+  }
+  .avatar-wrap img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .s-section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+
+  /* contact */
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .contact-list li {
+    display: flex;
     align-items: flex-start;
-    @media (min-width: 768px) {
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0 16px;
+    gap: 7px;
+    color: var(--mid);
+    font-size: 11px;
+  }
+  .contact-list .icon {
+    width: 12px;
+    text-align: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--teal);
+    font-size: 10px;
+  }
+
+  /* skills */
+  .skill-row {
+    margin-bottom: 5px;
+  }
+  .skill-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: var(--mid);
+    margin-bottom: 2px;
+  }
+  .skill-bar {
+    height: 3px;
+    background: #d8dce8;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%;
+    background: var(--teal);
+    border-radius: 4px;
+  }
+
+  /* links */
+  .link-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .link-list li a {
+    color: var(--teal);
+    font-size: 10.5px;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .link-list li a:hover {
+    text-decoration: underline;
+  }
+
+  /* formation */
+  .edu-item {
+    margin-bottom: 8px;
+  }
+  .edu-degree {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.3;
+  }
+  .edu-school {
+    font-size: 10px;
+    color: var(--soft);
+  }
+  .edu-year {
+    font-size: 9.5px;
+    color: var(--teal);
+    margin-bottom: 1px;
+  }
+
+  /* ════════════ MAIN ════════════ */
+  .main {
+    padding: 24px 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* header */
+  .header-name {
+    margin-bottom: 2px;
+  }
+  .header-name .first {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+  }
+  .header-name .last {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--mid);
+    font-weight: 400;
+  }
+  .header-title {
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* divider */
+  hr.div {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 4px 0;
+  }
+
+  /* section title */
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    border-bottom: 2px solid var(--teal-light);
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+  }
+
+  /* profile */
+  .profile-text {
+    font-size: 11.5px;
+    color: var(--mid);
+    line-height: 1.55;
+  }
+  .profile-text strong {
+    color: var(--dark);
+    font-weight: 600;
+  }
+
+  /* experience */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    gap: 0 14px;
+    margin-bottom: 11px;
+  }
+  .exp-meta {
+    text-align: right;
+    padding-top: 1px;
+  }
+  .exp-company {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--teal);
+    display: block;
+    line-height: 1.25;
+  }
+  .exp-dates {
+    font-size: 9.5px;
+    color: var(--soft);
+    white-space: nowrap;
+  }
+  .exp-role {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 3px;
+  }
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .exp-bullets li {
+    font-size: 10.5px;
+    color: var(--mid);
+    padding-left: 11px;
+    position: relative;
+    line-height: 1.45;
+  }
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 8px;
+    top: 3px;
+  }
+
+  /* tag chips */
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 5px;
+  }
+  .tag {
+    background: var(--teal-light);
+    color: var(--teal);
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+  }
+  .tag-lg {
+    font-size: 10.5px;
+    padding: 4px 11px;
+  }
+
+  .pdf-download {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--teal);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 16px rgba(26, 155, 140, 0.3);
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease,
+      background 0.15s ease;
+  }
+  .pdf-download:hover {
+    background: #147e72;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 155, 140, 0.4);
+  }
+  .pdf-download:focus-visible {
+    outline: 3px solid rgba(26, 155, 140, 0.4);
+    outline-offset: 2px;
+  }
+  .pdf-download svg {
+    flex-shrink: 0;
+  }
+
+  @media screen and (min-width: 900px) {
+    body {
+      padding: 32px 16px;
     }
-    li {
-      position: relative;
-      &:not(:last-of-type) {
-        margin-block-end: var(--space-md);
-      }
-      &::before,
-      &::after {
-        display: inline-block;
-        content: "";
-        height: 6px;
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-      }
-      &::before {
-        background-color: #e19d9d;
-        width: 100%;
-      }
-      &::after {
-        background-color: var(--color-brand-primary);
-        width: var(--percentage, 60%);
-      }
+    .page {
+      zoom: 1.35;
     }
-    .css {
-      --percentage: 98%;
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 0;
     }
-    .html {
-      --percentage: 98%;
+    body {
+      background: #fff;
+      padding: 0;
     }
-    .js {
-      --percentage: 90%;
+    .page {
+      zoom: 1;
+      box-shadow: none;
+      width: 210mm;
+      min-height: 297mm;
     }
-    .astro {
-      --percentage: 70%;
-    }
-    .mjml {
-      --percentage: 88%;
-    }
-    .vue {
-      --percentage: 40%;
-    }
-    .nuxt {
-      --percentage: 30%;
-    }
-    .android {
-      --percentage: 10%;
+    .pdf-download {
+      display: none;
     }
   }
 </style>
