@@ -4,6 +4,22 @@
 // Usar en TODAS las páginas
 // ==========================================
 
+function escapeHtml(text) {
+  return String(text == null ? '' : text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function safeCssColor(value) {
+  if (typeof CSS !== 'undefined' && CSS.supports && CSS.supports('color', value)) {
+    return value;
+  }
+  return 'transparent';
+}
+
 class TokenStyleManager {
   constructor() {
     this._dynamicSheet = null;
@@ -393,7 +409,7 @@ class TokenEditor {
 
     card.innerHTML = `
       <div class="token-card__header">
-        <span class="token-card__path">${path}</span>
+        <span class="token-card__path">${escapeHtml(path)}</span>
       </div>
       <div class="token-card__body">
         ${lightControl}
@@ -415,10 +431,10 @@ class TokenEditor {
 
     if (isRef) {
       const resolvedColor = this._resolveReferenceForEditor(value);
-      labelContent += ` <div class="token-card__ref-swatch" style="background-color: ${resolvedColor};"></div>`;
+      labelContent += ` <div class="token-card__ref-swatch" style="background-color: ${safeCssColor(resolvedColor)};"></div>`;
       inputHtml = `
         <div class="token-card__reference">
-          <span class="token-card__ref-path">${value}</span>
+          <span class="token-card__ref-path">${escapeHtml(value)}</span>
         </div>
       `;
     } else if (isTransparent) {
@@ -429,18 +445,18 @@ class TokenEditor {
       `;
     } else {
       inputHtml = `
-        <input type="color" 
-               id="${id}" 
-               value="${value}" 
-               data-path="${path}" 
-               data-mode="${mode}"
-               aria-label="${mode} mode color for ${path}">
+        <input type="color"
+               id="${escapeHtml(id)}"
+               value="${escapeHtml(value)}"
+               data-path="${escapeHtml(path)}"
+               data-mode="${escapeHtml(mode)}"
+               aria-label="${escapeHtml(mode)} mode color for ${escapeHtml(path)}">
       `;
     }
 
     return `
       <div class="token-card__control">
-        <label for="${id}" class="token-card__label-group">${labelContent}</label>
+        <label for="${escapeHtml(id)}" class="token-card__label-group">${labelContent}</label>
         ${inputHtml}
       </div>
     `;
