@@ -6,6 +6,17 @@
       "Bash(bash scripts/security/scan_configs.sh:*)",
       "Bash(bash scripts/security/scan_dependencies.sh:*)",
       "Bash(bash scripts/security/scan_prompt_injection.sh:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(curl:* | bash)",
+      "Bash(wget:* | bash)",
+      "Bash(:* | sh)",
+      "Read(//home/*/.ssh/**)",
+      "Read(//home/*/.aws/**)",
+      "Read(//home/*/.config/**)",
+      "Read(**/.env)",
+      "Read(**/.env.*)"
     ]
   }
 }
