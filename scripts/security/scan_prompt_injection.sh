@@ -5,7 +5,7 @@
 # This script scans for hidden instructions, invisible characters, encoded payloads,
 # and other content designed to manipulate AI coding agents that read the codebase.
 
-set -euo pipefail
+set -uo pipefail
 
 PROJECT_ROOT="${1:-.}"
 FINDING_COUNT=0
