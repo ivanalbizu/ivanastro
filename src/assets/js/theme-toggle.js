@@ -3,6 +3,8 @@
 // Sistema completo de gestión de tema oscuro/claro
 // ==========================================
 
+import jsyaml from 'js-yaml';
+
 // Verificar si hay tokens personalizados
 const hasCustomTokens = () => {
   try {
@@ -433,18 +435,6 @@ const handleThemeToggle = async () => {
   // Si vamos a cambiar a dark mode Y hay tokens personalizados
   if (targetIsDark && hasCustomTokens()) {
     console.warn('⚠️ Custom tokens detected, showing confirmation modal');
-    
-    // Verificar si js-yaml está disponible (necesario para descargar)
-    const hasJsYaml = typeof jsyaml !== 'undefined';
-    if (!hasJsYaml) {
-      // Cargar js-yaml dinámicamente si no está disponible
-      const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js';
-      document.head.appendChild(script);
-      await new Promise(resolve => {
-        script.onload = resolve;
-      });
-    }
 
     const result = await createConfirmationModal();
 

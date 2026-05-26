@@ -4,6 +4,8 @@
 // Usar en TODAS las páginas
 // ==========================================
 
+import jsyaml from 'js-yaml';
+
 function escapeHtml(text) {
   return String(text == null ? '' : text)
     .replace(/&/g, '&amp;')

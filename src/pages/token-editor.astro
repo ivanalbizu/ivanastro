@@ -40,9 +40,6 @@ const pageDescription =
     <div id="token-editor-container"></div>
   </div>
 
-  <!-- js-yaml solo en esta página -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-
   <script>
     // @ts-nocheck - Deshabilitar verificación de tipos en este script inline
     import { TokenEditor } from '../assets/js/token-system.js';
@@ -52,12 +49,6 @@ const pageDescription =
     function initEditor(): void {
       // Si ya existe un editor, no crear otro
       if (editor) {
-        return;
-      }
-
-      // Esperar a que jsyaml esté disponible
-      if (typeof jsyaml === 'undefined') {
-        setTimeout(initEditor, 100);
         return;
       }
 
@@ -80,7 +71,7 @@ const pageDescription =
           container.innerHTML = `
             <div class="error-message">
               <h3>❌ Error al cargar el editor</h3>
-              <p>${error?.message || 'Unknown error'}</p>
+              <p class="error-message__detail"></p>
               <p>Asegúrate de que existen los siguientes archivos en <code>public/tokens/</code>:</p>
               <ul>
                 <li><code>primitives/colors.yaml</code></li>
@@ -89,6 +80,10 @@ const pageDescription =
               </ul>
             </div>
           `;
+          const detail = container.querySelector('.error-message__detail');
+          if (detail) {
+            detail.textContent = error?.message || 'Unknown error';
+          }
         }
       }
     }
