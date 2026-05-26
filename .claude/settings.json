@@ -9,14 +9,23 @@
     ],
     "deny": [
       "Bash(rm -rf:*)",
-      "Bash(curl:* | bash)",
-      "Bash(wget:* | bash)",
-      "Bash(:* | sh)",
-      "Read(//home/*/.ssh/**)",
-      "Read(//home/*/.aws/**)",
-      "Read(//home/*/.config/**)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(ssh:*)",
+      "Bash(scp:*)",
+      "Read(/home/*/.ssh/**)",
+      "Read(/home/*/.aws/**)",
+      "Read(/home/*/.config/**)",
       "Read(**/.env)",
-      "Read(**/.env.*)"
+      "Read(**/.env.*)",
+      "Write(/home/*/.ssh/**)",
+      "Write(/home/*/.aws/**)",
+      "Write(**/.env)",
+      "Write(**/.env.*)",
+      "Edit(/home/*/.ssh/**)",
+      "Edit(/home/*/.aws/**)",
+      "Edit(**/.env)",
+      "Edit(**/.env.*)"
     ]
   }
 }
