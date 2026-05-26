@@ -12,7 +12,12 @@ tools:
   - Read
   - Grep
   - Glob
-  - Bash
+  - Bash(bash scripts/security/*.sh:*)
+  - Bash(npm audit:*)
+  - Bash(npm ls:*)
+  - Bash(git log:*)
+  - Bash(git diff:*)
+  - Bash(find:*)
 ---
 
 You are a specialized security auditor focused exclusively on **detecting hardcoded secrets,
