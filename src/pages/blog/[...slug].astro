@@ -5,6 +5,7 @@ import PostMeta from "@components/PostMeta.astro";
 import BlogEntryJSONLD from "@components/BlogEntryJSONLD.astro";
 import { Picture, getImage } from 'astro:assets';
 import TableOfContents from "@components/TableOfContents.astro";
+import Comments from "@components/Comments.astro";
 import {
   extractHeadings,
   filterHeadingsForTOC,
@@ -98,6 +99,8 @@ if (post.data.image) {
         <Button tag="a" href={`${base}blog`}> Volver al Blog </Button>
       </div>
     </footer>
+
+    <Comments />
   </article>
 </Layout>
 

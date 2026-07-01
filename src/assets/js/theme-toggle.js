@@ -403,6 +403,7 @@ const applyTheme = (isDark) => {
     isDark ? "dark" : "light",
   );
   localStorage.setItem("theme", isDark ? "dark" : "light");
+  window.dispatchEvent(new CustomEvent('theme-changed', { detail: { isDark } }));
 };
 
 // Obtener preferencia de tema

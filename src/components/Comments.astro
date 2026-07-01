@@ -1,0 +1,100 @@
+---
+---
+
+<section id="comments" aria-label="Comentarios">
+  <h2 class="comments-title">Comentarios</h2>
+  <div class="giscus"></div>
+</section>
+
+<script is:inline>
+  (function () {
+    if (window.__giscusInit) return;
+    window.__giscusInit = true;
+
+    const ORIGIN = 'https://giscus.app';
+
+    const darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const getTheme = () => {
+      var isDark = document.documentElement.dataset.theme === 'dark' || darkMQ.matches;
+      return isDark ? 'dark_dimmed' : 'light';
+    };
+
+    const sendTheme = (theme) => {
+      var iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe) {
+        iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, ORIGIN);
+      }
+    };
+
+    const loadGiscus = () => {
+      if (document.querySelector('iframe.giscus-frame')) return;
+      const script = document.createElement('script');
+      script.src = ORIGIN + '/client.js';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      const attrs = {
+        'data-repo': 'ivanalbizu/ivanastro',
+        'data-repo-id': 'R_kgDOPzA98g',
+        'data-category': 'Comentarios',
+        'data-category-id': 'DIC_kwDOPzA98s4DARJu',
+        'data-mapping': 'pathname',
+        'data-strict': '1',
+        'data-reactions-enabled': '1',
+        'data-emit-metadata': '0',
+        'data-input-position': 'bottom',
+        'data-theme': getTheme(),
+        'data-lang': 'es',
+      };
+      Object.entries(attrs).forEach(([k, v]) => script.setAttribute(k, v));
+      document.head.appendChild(script);
+    };
+
+    // Sync de tema cuando Giscus envía su primer mensaje (iframe listo)
+    window.addEventListener('message', function onReady(e) {
+      if (e.origin !== ORIGIN) return;
+      sendTheme(getTheme());
+      window.removeEventListener('message', onReady);
+    });
+
+    // Lazy load al acercarse al viewport
+    const section = document.getElementById('comments');
+    if (section) {
+      new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) {
+          loadGiscus();
+          obs.disconnect();
+        }
+      }, { rootMargin: '200px' }).observe(section);
+    }
+
+    // Toggle manual del sitio
+    window.addEventListener('theme-changed', function (e) {
+      sendTheme(e.detail.isDark ? 'dark_dimmed' : 'light');
+    });
+
+    // Cambio de preferencia del sistema operativo
+    darkMQ.addEventListener('change', function () {
+      sendTheme(getTheme());
+    });
+
+  })();
+</script>
+
+<style lang="scss">
+  #comments {
+    margin-block-start: var(--space-xl);
+    padding-block-start: var(--space-xl);
+    border-top: var(--border-width-sm) solid var(--color-border-default);
+  }
+
+  .comments-title {
+    font-family: var(--typography-font-family-primary);
+    font-size: var(--typography-font-size-heading-4);
+    font-weight: var(--typography-font-weight-bold);
+    color: var(--color-text-default);
+    text-transform: uppercase;
+    letter-spacing: var(--typography-letter-spacing-md);
+    margin-block-end: var(--space-lg);
+  }
+</style>
