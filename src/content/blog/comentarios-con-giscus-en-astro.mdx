@@ -1,0 +1,191 @@
+---
+title: "Comentarios en Astro con Giscus y GitHub Discussions"
+slug: "comentarios-con-giscus-en-astro"
+description: "Cómo añadir un sistema de comentarios gratuito, sin anuncios y con sincronización de tema a un blog estático en Astro usando Giscus y GitHub Discussions."
+categories:
+  - astro
+  - javascript
+date: '2026-07-01 00:00:00'
+image: ../../assets/images/comentarios-con-giscus-en-astro.svg
+image_alt: "Esquema de integración de Giscus en Astro con sincronización de tema"
+---
+
+Un blog estático no tiene backend, pero eso no significa que no pueda tener comentarios. [Giscus](https://giscus.app) usa **GitHub Discussions** como almacén de datos: cada vez que alguien comenta en un post, se crea automáticamente una discusión en el repositorio. El resultado es gratuito, sin anuncios y con toda la gestión de moderación desde GitHub.
+
+En este artículo explico cómo lo he integrado en este blog, prestando atención a la **performance** y a la **sincronización del tema** oscuro/claro.
+
+## Requisitos previos
+
+Antes de tocar código necesitas tres cosas en GitHub:
+
+1. El repositorio debe ser **público**.
+2. Activar **Discussions** en Settings → General → Features → Discussions.
+3. Instalar la **GitHub App de Giscus** en el repositorio desde [github.com/apps/giscus](https://github.com/apps/giscus).
+
+Con eso listo, ve a [giscus.app](https://giscus.app/es), introduce tu repositorio y obtendrás los valores que necesitas:
+
+- `data-repo-id` — identificador único del repositorio
+- `data-category-id` — identificador de la categoría de Discussions
+
+La categoría recomendada es de tipo **Announcement**: solo Giscus puede crear hilos nuevos, los visitantes únicamente responden.
+
+## El componente `Comments.astro`
+
+El widget de Giscus se carga mediante un `<script>` externo que inyecta un `<iframe>`. Para no penalizar el rendimiento, lo cargo de forma **perezosa** con `IntersectionObserver`: el script no se solicita hasta que el usuario se acerca a la sección de comentarios.
+
+```astro
+<section id="comments" aria-label="Comentarios">
+  <h2 class="comments-title">Comentarios</h2>
+  <div class="giscus"></div>
+</section>
+
+<script is:inline>
+  (function () {
+    if (window.__giscusInit) return;
+    window.__giscusInit = true;
+
+    const ORIGIN = 'https://giscus.app';
+    const darkMQ = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const getTheme = () => {
+      const isDark =
+        document.documentElement.dataset.theme === 'dark' || darkMQ.matches;
+      return isDark ? 'dark_dimmed' : 'light';
+    };
+
+    const sendTheme = (theme) => {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe) {
+        iframe.contentWindow.postMessage(
+          { giscus: { setConfig: { theme } } },
+          ORIGIN
+        );
+      }
+    };
+
+    const loadGiscus = () => {
+      if (document.querySelector('iframe.giscus-frame')) return;
+      const script = document.createElement('script');
+      script.src = ORIGIN + '/client.js';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      const attrs = {
+        'data-repo': 'TU_USUARIO/TU_REPO',
+        'data-repo-id': 'TU_REPO_ID',
+        'data-category': 'Comentarios',
+        'data-category-id': 'TU_CATEGORY_ID',
+        'data-mapping': 'pathname',
+        'data-strict': '1',
+        'data-reactions-enabled': '1',
+        'data-emit-metadata': '0',
+        'data-input-position': 'bottom',
+        'data-theme': getTheme(),
+        'data-lang': 'es',
+      };
+      Object.entries(attrs).forEach(([k, v]) => script.setAttribute(k, v));
+      document.head.appendChild(script);
+    };
+
+    // Sincronizar tema cuando el iframe de Giscus está listo
+    window.addEventListener('message', function onReady(e) {
+      if (e.origin !== ORIGIN) return;
+      sendTheme(getTheme());
+      window.removeEventListener('message', onReady);
+    });
+
+    // Lazy load: solo carga cuando el usuario se acerca a los comentarios
+    const section = document.getElementById('comments');
+    if (section) {
+      new IntersectionObserver(
+        function (entries, obs) {
+          if (entries[0].isIntersecting) {
+            loadGiscus();
+            obs.disconnect();
+          }
+        },
+        { rootMargin: '200px' }
+      ).observe(section);
+    }
+
+    // Toggle manual del sitio
+    window.addEventListener('theme-changed', function (e) {
+      sendTheme(e.detail.isDark ? 'dark_dimmed' : 'light');
+    });
+
+    // Cambio de preferencia del sistema operativo
+    darkMQ.addEventListener('change', function () {
+      sendTheme(getTheme());
+    });
+  })();
+</script>
+```
+
+Hay algunas decisiones que merece la pena explicar.
+
+### Por qué `is:inline`
+
+Astro procesa los `<script>` como módulos ES: los bundlea con Vite y los deduplica entre páginas. Con View Transitions, un módulo que ya se cargó no se vuelve a ejecutar en navegaciones posteriores. Al usar `is:inline` el script se incluye literalmente en el HTML y se ejecuta en cada render, que es exactamente lo que necesitamos.
+
+La guardia `if (window.__giscusInit) return` evita que los listeners se registren varias veces si el componente se renderiza más de una vez en la misma sesión.
+
+### Lazy load con `IntersectionObserver`
+
+El `<script>` de Giscus pesa varios kilobytes y hace peticiones a la API de GitHub. Si lo incluimos directamente en el `<head>` bloquearía o retrasaría recursos críticos. Con `IntersectionObserver` y `rootMargin: '200px'`, el script empieza a cargarse cuando el usuario lleva el viewport a 200px del área de comentarios, consiguiendo carga anticipada sin afectar al LCP.
+
+### Sincronización de tema
+
+Este blog usa **Cobalt** para los design tokens, con dos selectores que activan el modo oscuro:
+
+```js
+// En tokens.config.mjs:
+{ mode: "dark", selectors: [
+  "@media (prefers-color-scheme: dark)",
+  '[data-theme="dark"]'
+]}
+```
+
+El modo oscuro se activa cuando **cualquiera** de las dos condiciones es cierta: el usuario puede activarlo manualmente (toggle del header) o depender de la preferencia del sistema. `getTheme()` replica esa misma lógica:
+
+```js
+const getTheme = () => {
+  const isDark =
+    document.documentElement.dataset.theme === 'dark' || darkMQ.matches;
+  return isDark ? 'dark_dimmed' : 'light';
+};
+```
+
+Para los cambios en caliente usamos dos vías:
+
+- **Toggle manual**: `theme-toggle.js` emite un `CustomEvent('theme-changed')` desde `applyTheme()`. El componente lo escucha y envía el nuevo tema al iframe via `postMessage`.
+- **Preferencia del sistema**: un listener en `matchMedia('prefers-color-scheme: dark')` detecta cambios a nivel de OS y sincroniza Giscus sin que el usuario tenga que hacer nada.
+
+El `postMessage` al iframe sigue la API oficial de Giscus:
+
+```js
+iframe.contentWindow.postMessage(
+  { giscus: { setConfig: { theme: 'dark_dimmed' } } },
+  'https://giscus.app'
+);
+```
+
+## Añadir el componente al layout del post
+
+Con el componente creado, basta importarlo en `src/pages/blog/[...slug].astro`:
+
+```astro
+---
+import Comments from "@components/Comments.astro";
+---
+
+<article>
+  <!-- contenido del post -->
+  <Comments />
+</article>
+```
+
+## Resultado
+
+- Los comentarios se cargan **solo cuando el usuario llega a esa zona** de la página.
+- El tema cambia en tiempo real tanto al pulsar el toggle del header como al cambiar la preferencia del sistema operativo.
+- Los comentarios quedan guardados en GitHub Discussions: visibles, buscables y gestionables desde el propio repositorio.
+- Sin coste, sin anuncios, sin cookies de terceros adicionales más allá del iframe de giscus.app.
